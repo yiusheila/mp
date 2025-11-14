@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Number</title>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		td {
+			border: 0px;
+		}
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+	<table style="margin-top: -90px;">
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><h3>Basics</h3></td></tr>
+		<tr>
+			<td>1 mCi</td>
+			<td>37 MBq</td>
+		</tr>
+		<tr>
+			<td>1 R</td>
+			<td>
+				2.58 &times; 10<sup>-4</sup> C kg <sup>-1</sup> <br>
+				8.76 mGy in dry air <sup>[7]</sup> <br>
+				9.6 mGy in soft tissue <sup>[13]</sup>
+
+			</td>
+		</tr>
+		<tr>
+			<td>\( \large \left(\frac{W}{e} \right)_{air} \)</td>
+			<td>33.97 J C<sup>-1</sup>(or eV) </td>
+			<td>average energy to create an ion pair in dry air</td>
+		</tr>
+		<tr>
+			<td>1 rad</td>
+			<td>0.01 Gy</td>
+		</tr>
+		<tr>
+			<td>1 rem</td>
+			<td>0.01 Sv</td>
+		</tr>
+		<tr>
+			<td>1 erg</td>
+			<td>100 nJ</td>
+		</tr>
+		<tr>
+			<td>1 eV</td>
+			<td>1.602 &times; 10<sup>-19</sup> J</td>
+		</tr>
+		<tr>
+			<td>1 cc</td>
+			<td>1 cm<sup>3</sup> </td>
+		</tr>
+		<tr>
+			<td>1 Tesla</td>
+			<td>10 000 Gauss</td>
+		</tr>
+		<tr>
+			<td>Speed of Light</td>
+			<td>3 &times; 10<sup>8</sup> ms<sup>-1</sup></td>
+		</tr>
+		<tr>
+			<td>(N) Avogadro number</td>
+			<td>6.022 &times; 10<sup>23</sup> </td>
+		</tr>
+		<tr>
+			<td>(h) Plank constant</td>
+			<td>6.62 &times; 10<sup>-34</sup> J s </td>
+		</tr>
+		<tr>
+			<td>(k) Boltzmann constant</td>
+			<td>1.38 &times; 10 <sup>-23</sup> J K<sup>-1</sup> </td>
+		</tr>
+		<tr>
+			<td>(R) Gas constant </td>
+			<td>8.314 J K mol<sup>-1</sup> </td>
+		</tr>
+		<tr>
+			<td>Hong Kong Main</td>
+			<td>220 V, 50 Hz</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Solid Angle</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;sr (Steradian)</td>
+			<td>
+				equivalent to the angle that radiates into an area of r<sup>2</sup> <br><br>
+				4&pi; &ensp;=&ensp;all angles covering the whole surface of a sphere
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Temperature</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 K</td>
+			<td>C + 273.15</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 F (Fahrenheit)</td>
+			<td>\(C~\left( {9 \over 5} \right) + 32\)</td>
+		</tr>
+		<br>
+		
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+		<br><br>
+
+		
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Atom</h3></td></tr>
+		<tr>
+			<td>1 U </td>
+			<td>1 &mu;Gy m<sup>2</sup> h<sup>-1</sup> </td> 
+			<td>(Air Kerma Rate Unit)</td>
+		</tr>
+		<tr>
+			<td>1 barn</td>
+			<td>10<sup>-28</sup> m<sup>2</sup></td>
+			<td>unit of cross section area of nuclear reactions</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Radius</b> <sup>[2]</sup></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Atom</td>
+			<td> ~ 10<sup>-10</sup> cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Nucleus</td>
+			<td> ~ 10<sup>-15</sup> cm</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Rest Mass</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Atomic Mass Unit (amu)</td>
+			<td>
+				1.66 &times; 10<sup>-27</sup> kg <br>
+			</td>
+			<td>= \(1 \over 12\) of the mass of a C-12 atom</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;p+</td>
+			<td>939.6 MeV/c<sup>2</sup> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;n</td>
+			<td>938.3 MeV/c<sup>2</sup> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;e-</td>
+			<td>0.5110 MeV/c<sup>2</sup> </td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Charge</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;e-</td>
+			<td> - 1.602 &times; 10<sup>-19</sup> C </td>
+		</tr>
+
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Radiation Physics</h3></td></tr>
+		<tr>
+			<td>\(\large \left( \frac{W_{air} }{e} \right) \)</td>
+			<td>33.97 J C <sup>-1</sup> </td>
+		</tr>
+		<tr>
+			<td>e- Energy Loss Rate</td>
+			<td>2 MeV cm <sup>-1</sup> </td>
+		</tr>
+		<tr>
+			<td>MV scatter from matter at 90°</td>
+			<td>1/10000</td>
+		</tr>
+		<tr>
+			<td>kV scatter from matter at 90°</td>
+			<td>1/1000</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Photon Interaction with Water</b></td>
+		</tr>
+		<tr>
+			<td>Photoelectric Effect dominates <sup>[25]</sup></td>
+			<td>&lt; 26 kV</td>
+		</tr>
+		<tr>
+			<td>Pair Production becomes significant <sup>[11]</sup></td>
+			<td>&gt; 10 MV</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>REB</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Proton</td>
+			<td>1.1</td>
+			<td>ICRU 78</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Radiation Weighting Factor</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;X, &gamma;, &beta;</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;proton</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&alpha;</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><br><b>Neutron Energy Range</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Thermal</td>
+			<td>0 - 0.5 eV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Intermediate</td>
+			<td>0.5 eV - 10 keV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Fast</td>
+			<td>&gt; 10 keV</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Radiative Yield of X-ray from e-</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;~ 100 keV</td>
+			<td>1 %</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;MeV</td>
+			<td>10 - 20 %</td>
+		</tr>
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Imaging</h3></td></tr>
+		<tr>
+			<td colspan="2"><b>Total Filtration</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;X-ray</td>
+			<td>&gt; 2.5 mmAl (by law)</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Mammogram</td>
+			<td>&gt; 0.5 mmAl</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>Minimum FSD</b> <sup>[10]</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;XR</td>
+			<td>&gt; 30 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;XR (with stationary equipment)</td>
+			<td>&gt; 45 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Chest XR</td>
+			<td>&gt; 60 cm</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td><b>CT Contrast - K Edge</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;I: </td>
+			<td>33 keV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Ba:</td>
+			<td>37 keV</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Target - K Edge</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Mo </td>
+			<td>17.9 <br>19.5 keV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;W</td>
+			<td>
+				57.9 <br>
+				59.3 <br>
+				67.2 <br>
+				69.1 keV
+			</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Pb</td>
+			<td>88 keV</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td><b>Photon Beam</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Superficial</td>
+			<td>30 - 80 kV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Orthovoltage</td>
+			<td>100 - 300 kV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;MV</td>
+			<td>4 - 25 MV</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Typical CTDI<sub>vol</sub></b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Perfusion CT</td>
+			<td>100 - 500 mGy <sup>[20]</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;5 yo Pediatric Abdomental Scan</td>
+			<td>&lt; 25 mGy <sup>[21]</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Typical Effective Dose</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Radon <sup>[24]</sup></td>
+			<td>2 mSv/yr</td>
+		</tr>
+		<tr>
+			<td>
+				&emsp;&emsp;Abdomen CT <br>
+				&emsp;&emsp;CT in PET/CT <sup>[22]</sup> <br>
+				&emsp;&emsp;Stress and rest Tc99m Test <sup>[23]</sup>
+			</td>
+			<td>10 mSv</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Whole Body CT <sup>[22]</sup></td>
+			<td>20 mSv</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><br><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>IEC 60601-1 Protective Earth - Conductive Part Resistance</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Fixed installation</td>
+			<td> &lt; 0.1 &Omega; </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Mobile</td>
+			<td> &lt; 0.2 &Omega; </td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>MRI</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Gradient Strength</td>
+			<td>~ 30-45 mT/m</td>
+			<td>(for 1.5 - 3 T)</td>
+		</tr>
+
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+		<br><br>
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>US</h3></td></tr>
+		<tr>
+			<td><b>Sound Wave Frequency</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Audio</td>
+			<td>20 - 20 kHz</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Ultrasound</td>
+			<td>> 20 kHz</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;US Imaging</td>
+			<td>2 - 15 MHz</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		<tr>
+		<tr>
+			<td colspan="2"><b>Sound Speed</b></td>
+		<tr>
+		<tr>
+			<td>&emsp;&emsp;Lung</td>
+			<td>650 ms<sup>-1</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;20&deg;C Water</td>
+			<td>1480 ms<sup>-1</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Soft Tissue</td>
+			<td>1540 ms<sup>-1</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Bone</td>
+			<td>4080 ms<sup>-1</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		<tr>
+		<tr>	
+			<td><b>Acoustic Impedance</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Air</td>
+			<td>~ 0.0004 kg m<sup>-2</sup> s<sup>-1</sup> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Soft Tissue</td>
+			<td>~ 1.63 kg m<sup>-2</sup> s<sup>-1</sup> </td>
+		</tr>
+
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+		<br><br>
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Nuclear Physics</h3></td></tr>
+		<tr>
+			<td>Natural Radiation</td> 	<td>10 &mu;Sv</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Natural Uranium Distribution</b></td> <td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;U-238</td> 	<td>~ 99.3%</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;U-245</td> 	<td>~ 0.7%</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td><b>Radioactivity</b></td> <td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 Ci</td> 	<td>Therapeutic</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 mCi</td> 	<td>Diagnostic</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 &mu;Ci</td> 	<td>QA</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Common Dose/Activity</b></td> 	<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Y-90</td>
+			<td>120 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;I-131 (Post Surgery)</td>
+			<td>&gt; 100 mCi</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;&ensp;(Post Surgery with Residual Thyroid Cells)</td>
+			<td>10 - 100 mCi</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;&ensp;(Hyperthyroidism)</td>
+			<td>&lt; 10 mCi</td>
+		</tr>
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>RT</h3></td></tr>
+		<tr>
+			<td colspan="2"><b>MeV e- PDD</b> (in water, cm)</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;R_100</td>
+			<td> ~ <i>E</i>/4</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;R_90</td>
+			<td> ~ <i>E</i>/3.2</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;R_80</td>
+			<td> ~ <i>E</i>/2.8</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Practical Range</td>
+			<td> ~ <i>E</i>/2</td>
+			<td>
+				&ensp;=&ensp;projection on x-axis of the most negative gradient of the drop off
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>Surface Dose</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;MV</td>
+			<td>10 - 40% <sup>[15]</sup> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;MeV</td>
+			<td>80 - 100% <sup>[16]</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>Bremsstrahlung Tail</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;4 MeV</td>
+			<td>~ 1%</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;20 MeV</td>
+			<td>~ 4%</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td><b>\(d_{max}\) <sup>[8]</sup></b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Superficial/Orthovoltage</td>
+			<td>0 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Co-60</td>
+			<td>~ 0.5 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;4 MV</td>
+			<td>~ 1 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;6 MV</td>
+			<td>~ 1.5 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;10 MV</td>
+			<td>~ 2.5 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;18 MV</td>
+			<td>~ 3.5 cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;25 MV</td>
+			<td>~ 5 cm</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>PDD</b></td>
+		<tr>
+			<td>&emsp;&emsp;6 MV</td>
+			<td>
+				<table>
+					<tr>
+						<td>FS (cm<sup>2</sup>)</td>
+						<td>d<sub>5</sub></td>
+						<td>d<sub>10</sub> </td>
+						<td>d<sub>15</sub> </td>
+						<td>d<sub>20</sub> </td>
+					</tr>
+					<tr>
+						<td>10 x 10</td>
+						<td>86%</td>
+						<td>66%</td>
+						<td>50%</td>
+						<td>38%</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</tr>
+
+		<tr>
+			<td colspan="2"><b>Tissue Attenuation</b> <sup>[9]</sup></td>
+		</tr>
+
+		<tr>
+			<td>&emsp;&emsp;Co-60</td>
+			<td> ~ 5%/cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;6 MV</td>
+			<td> ~ 3%/cm <sup>[12]</sup> <br>
+				 ~ 3.5%/cm <sup>[14]</sup>
+			</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;18 MV</td>
+			<td> ~ 2.4%/cm</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;MeV</td>
+			<td> ~ 2 MeV/cm <sup>[17]</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Heterogeneity Correction</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 cm in Lung</td>
+			<td> = 0.3 cm Tissue <sup>[14]</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;1 Gy to water</td>
+			<td> ~ 0.99 Gy to muscle <sup>[19]</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Lateral Scatter</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp; 6 MV</td>
+			<td> ~ 5% at 2 cm from field edge <sup>[18]</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Neutron Dose</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;e- therapy (15MeV)</td>
+			<td> ~ 5% of 15 MV</td>
+		</tr>
+		<tr>
+			<td><div style="padding-left: 80px;">(25MeV)</div></td>
+			<td> ~ 20% of 25 MV</td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Clinical Convention</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Beam E for Lung </td>
+			<td>&lt; 12 MV </td>
+			<td>AAPM recommendation</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Beam E for Breast </td>
+			<td>&gt; 6 MV if breast separation &lt; 25 cm</td>
+			<td>distance between medial and lateral of breast</td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Prescription Isodose</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;GammaKnife</td>
+			<td>50 %</td>
+		</tr>
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Protection</h3></td></tr>
+		<tr>
+			<td>HK Background &gamma; Radiation Level</td>
+			<td>0.2 - 0.3 &mu; Sv h <sup>-1</sup> </td>
+			<td>beware of leakage/contamination if greater than 3x of background</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2"><b>Rn-222 Reference Level</b></td>
+			<td>&lt; 10 mSv/year</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Domestic Dwelling </td>
+			<td>&lt; 600 Bq m<sup>-3</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Workplace </td>
+			<td>&lt; 1500 Bq m<sup>-3</sup></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td><b>Annual Dose Limit</b></td> 	<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Public</td>
+			<td>&lt; 1 mSv</td>
+		</tr>
+		<tr>
+			<td><br></td>
+		</tr>
+		<tr>
+			<td colspan="2">&emsp;&emsp;<b>Occupational</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;Classified Radiation Worker</td>
+			<td>&lt; 20 mSv</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;Lens</td>
+			<td>
+				&lt; 20 mSv (averaged over 5 years) <br>
+				&lt; 50 mSv (any year)
+			</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;Organ/Skin per 1 cm<sup>2</sup></td>
+			<td>500 mSv</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;Female Abdomen</td>
+			<td>5 mSv in any consecutive 3 mths</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&emsp;&emsp;Finger</td>
+			<td>(need monitoring if &gt; 25 mSv yr <sup>-1</sup>)</td>
+		</tr>
+		<tr>
+			<td><br><br></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Alert Dose Level</td>
+			<td>6 mSv</td>
+			<td>\(6 = 20 \left({3 \over 10}\right)  \)</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Below Reference Level (BRL)</td>
+			<td>0.167 mSv</td>
+			<td>\( 0.167 = 20 \left({1 \over 10}\right) \left({1 \over 12}\right) \)</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+
+
+
+		<tr>
+			<td colspan="2"><b>Release of Patient</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;No restriction</td>
+			<td>&lt; 10 MBq MeV</td>
+			<td>MeV = total GAMMA energy per disintegration</td>
+		</tr>
+		<tr>
+			<td>
+				&emsp;&emsp;&times; radiosensitive work <br>
+				&emsp;&emsp;&times; contact with children
+			</td>
+			<td>&gt; 10 MBq MeV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&times; work in close contact with other people</td>
+			<td>&gt; 50 MBq MeV</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;&times; travel by PUBLIC transport</td>
+			<td>&gt; 150 MBq MeV</td>
+		</tr>
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+
+
+
+		<tr>
+			<td><b>Entrance Dose Rate </b></td>
+			<td>&lt; 100 mGy/min</td>
+			<td>20 cm water, all FS</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Protection Areas</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Controlled Area</td>
+			<td>6 mSv</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Supervised Area</td>
+			<td>2 - 6 mSv</td>
+			<td>\(2 = 20 \left({1 \over 10}\right) \)</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td><b>Room Survey Dose Rate Limit</b></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;(IA) Irradiating Apparatus </td>
+			<td>3 &mu; Sv h<sup>-1</sup> </td>
+			<td>\(  3 = 6 { \Large \left( {  1 \over 50~weeks \times 5~days \times 8~hrs } \right) } \)</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;(RS) Radioactive Substance</td>
+			<td>1 &mu; Sv h<sup>-1</sup></td>
+			<td>24 hrs</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Post-treatment Discharge Limit</b> <sup>[1]</sup></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;I-131</td>
+			<td>400 MBq </td>
+			<td>
+				~ 20-25 uSv/hr @ 1 m
+			</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Y-90</td>
+			<td>1500 MBq</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b></b> </td>
+		</tr>
+
+
+		<tr>
+			<td colspan="2"><br></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Cremation Activity Limit</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Lu-177</td>
+			<td>&lt; 10 MBq</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;I-131/125</td>
+			<td>&lt; 1 MBq</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Y-90/Ra-223</td>
+			<td>&lt; 0.1 MBq</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Contamination</b> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Solid Waste </td>
+			<td>&lt; 40 kBq</td>
+			<td>can be disposed with an appropriate volume of ordinary refuse <br>
+			 (HA Code of Practice 15.12)</td>
+		</tr>
+		<tr>
+			<td>
+				&emsp;&emsp;Surface Contamination Limit <br>
+				&emsp;&emsp;(for Class III Radionuclide)
+			</td>
+			<td></td>
+			<td rowspan="5">
+				Class I&emsp;=&emsp;III / 100 <br>
+				Class II&emsp;=&emsp;III / 10 <br>
+				Class IV&emsp;=&emsp;III * 10 <br>
+				Class V&emsp;=&emsp;III * 100 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="padding-left: 48px;">Items in Glove Boxes and Fume Cupboard (Category A)</div>
+			</td>
+			<td>ALARA</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="padding-left: 48px;">Controlled Area (Category B)</div>
+			</td>
+			<td>30 Bq cm<sup>-2</sup></td>
+		</tr>
+		<tr>
+			<td>
+				<div style="padding-left: 48px;">Body Surface (Category C)</div>
+			</td>
+			<td>3 Bq cm<sup>-2</sup></td>
+		</tr>
+		<tr>
+			<td>
+				<div style="padding-left: 48px;">Supervised/Public Area (Category D)</div>
+			</td>
+			<td>3 Bq cm<sup>-2</sup></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+		<tr>
+			<td>
+				&emsp;&emsp;Measuring Area
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><div style="padding-left: 48px;">Body Surface (&beta;)</div></td>
+			<td>1 cm<sup>2</sup></td>
+		</tr>
+		<tr>
+			<td><div style="padding-left: 48px;">Body Surface</div></td>
+			<td>100 cm<sup>2</sup></td>
+		</tr>
+		<tr>
+			<td><div style="padding-left: 48px;">General</div></td>
+			<td>300 cm<sup>2</sup></td>
+		</tr>
+		<tr>
+			<td><div style="padding-left: 48px;">Floor / Wall / Ceiling</div></td>
+			<td>1000 cm<sup>2</sup></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+
+
+		<tr>
+			<td colspan="2"><b>Leakage Test <sup>[26]</sup> </b> </td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Sealed Source</td>
+			<td>&lt; 200 Bq</td>
+			<td>
+				Assuming 10% of contamination transferred to swab
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>NCRP Shielding Design Goal</b> (50 weeks in a year)</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Controlled Area</td>
+			<td>5 mSv /year</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Non-controlled Area</td>
+			<td>1 mSv /year</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Pb Transmission</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;0.5 mmPb</td>
+			<td>3 - 5 %</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;0.25 mmPb</td>
+			<td>12 - 17 %</td>
+		</tr>
+
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Light</h3></td></tr>
+		<tr>
+			<td>1 LUX</td>
+			<td>1 lm m<sup>-2</sup></td>
+			<td>
+				Luminous Flex incident on a surface <br>
+				&emsp;&gt;&ensp;not referring to emission <br>
+				&emsp;&gt;&ensp;wavelength weighted by Luminosity Function that reflects human sensitivity to that wavelength
+			</td>
+		</tr>
+		<tr>
+			<td>1 lm (Lumen)</td>
+			<td>1 cd sr</td>
+			<td>Luminous Flux = Luminous E per unit time </td>
+		</tr>
+		<tr>
+			<td>1 cd (Candela)</td>
+			<td>1 W sr<sup>-1</sup></td>
+			<td>Luminous Intensity = Luminous Flux per solid angle</td>
+		</tr>
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+
+
+		<tr><td colspan="2" style="border-bottom: 1px solid white;"><br><h3>Radiobiology/Physiology</h3></td></tr>
+
+		<tr>
+			<td>Human Visual Frame Rate <sup>[4]</sup></td>
+			<td>20 frame/s</td>
+		</tr>
+		<tr>
+			<td>LD<sub>50/60</sub> of Human</td>
+			<td>
+				4 Gy (no medical intervention) <br>
+				6 Gy (with medical intervention)
+			</td>
+		</tr>
+		<tr>
+			<td>Doubling Dose</td>
+			<td>1 Gy</td>
+			<td>mouse data, chronic, low LET</td>
+		</tr>
+		<tr>
+			<td>DDREF</td>
+			<td>2</td>
+		</tr>
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Stochastic Risk</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Adult</td>
+			<td>~ 4 %/Sv</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Whole Population</td>
+			<td>~ 6 %/Sv</td>
+		</tr>
+
+
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Pregnancy</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Fetal Malfunction</td>
+			<td>&gt; 100- 200 mGy</td>
+		</tr>
+		<tr>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Medical Condition After Radiation</b></td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Temporary Sterility</td>
+			<td>0.1 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Cardiovascular</td>
+			<td>0.5 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Bone Marrow Syndrome</td>
+			<td>1&ensp;&ensp;Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Cognitive Defect</td>
+			<td>1-2 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Permanent Sterility</td>
+			<td>3 Gy</td>
+			<td>
+				2 - 10 Gy &rarr; Prophylactic (=preventive) antibiotics
+			</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Temporary Hairloss</td>
+			<td>4 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Skin Burn</td>
+			<td>5 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Gastro-intestinal Syndrome</td>
+			<td>6 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Acute Pneumonitis</td>
+			<td>6-7 Gy</td>
+		</tr>
+		<tr>
+			<td>&emsp;&emsp;Renal Failure</td>
+			<td>7-8 Gy</td>
+		</tr>
+
+		<tr><td colspan="2" style="border-top: 1px solid white;"></td></tr>
+	</table>
+
+
+
+
+	<table class="tight_clean">
+		<tr><td colspan="5" style="border-bottom: 1px solid white;"><br><h3>Detector</h3></td></tr>
+		<tr>
+			<td  style="border-bottom: 1px solid white;">Chamber</td>
+			<td  style="border-bottom: 1px solid white;">Active Volume (cc) &emsp;&ensp;</td>
+			<td  style="border-bottom: 1px solid white;">Size </td>
+			<td  style="border-bottom: 1px solid white;">Reference Point </td>
+			<td  style="border-bottom: 1px solid white;">Remark</td>
+		</tr>
+		<tr>
+			<td ><b>Timble</b></td>
+			<td ></td>
+			<td >Radius (mm)</td>
+			<td >(centre, [mm] from tip)</td>
+		</tr>
+		<tr>
+			<td >&emsp; Farmer</td> 
+			<td >0.6</td>
+			<td >3.05</td>
+			<td >13</td>
+			<td >For absolute dose, sharp end</td>
+		</tr>
+		<tr>
+			<td >&emsp; Semiflex</td>
+			<td >0.3 / 0.125 / 0.07 </td>
+			<td >2.75 / 2.75 / 2.4 </td>
+			<td > 9.5 / 4.5 / 3.45</td>
+		</tr>
+		<tr>
+			<td >&emsp; CC13</td>
+			<td >0.13</td>
+			<td >3</td>
+		</tr>
+		<tr>
+			<td >&emsp; CC04</td>
+			<td >0.04</td>
+			<td >2</td>
+		</tr>
+		<tr>
+			<td >&emsp; Pinpoint</td>
+			<td >0.03 / 0.016 / 0.015</td>
+			<td >1.45 / 1.45 / 1</td>
+			<td > 3.4 / 2.4 / 3.4</td>
+		</tr>
+		<tr>
+			<td ><br><br></td>
+		</tr>
+
+		<tr>
+			<td  colspan="3"><b>Parallel Plate</b></td>
+		</tr>
+		<tr>
+			<td >&emsp; ROOS</td>
+			<td >0.35</td>
+			<td ></td>
+			<td >1.12</td>
+			<td >For electron absolute dose</td>
+		</tr>
+		<tr>
+			<td >&emsp; NACP</td>
+			<td >0.16</td>
+			<td ></td>
+		</tr>
+		<tr>
+			<td >&emsp; Markus</td>
+			<td >0.055</td>
+			<td ></td>
+			<td >1.3 below protective cap</td>
+		</tr>
+		<tr>
+			<td >&emsp; Advanced Markus</td>
+			<td >0.02</td>
+			<td ></td>
+			<td >1.3 below protective cap</td>
+			<td >perturbation free</td>
+		</tr>
+
+		<tr>
+			<td ><br><br></td>
+		</tr>
+
+		<tr>
+			<td  colspan="3"><b>Solid State</b></td>
+		</tr>
+		<tr>
+			<td >&emsp; PFD (Photon Diode)</td>
+			<td rowspan="2" style="vertical-align: middle;">
+				<div style="display: inline-flex; align-items: center;">
+					<div style="border: 1px solid white; border-left: 0px; display: inline-block; margin-right: 6px; height: 25px;">&ensp;</div>
+					1.6 mm<sup>3</sup>
+				</div>
+			</td>
+			<td rowspan="2" style="vertical-align: middle;">1</td>
+		</tr>
+		<tr>
+			<td >&emsp; EFD (Electron Diode)</td>
+			<td ></td>
+		</tr>
+		<tr>
+			<td >&emsp; RFD (Reference Diode)</td>
+			<td >2.0 mm<sup>3</sup></td>
+			<td>1.25</td>
+		</tr>
+		<tr>
+			<td >&emsp; RAZOR</td>
+			<td >0.023 mm<sup>3</sup> (0.6 mm dia. x 0.02 mm)</td>
+		</tr>
+		<tr>
+			<td >&emsp; microDiamond</td>
+			<td >0.004 mm<sup>3</sup></td>
+		</tr>
+		<tr><td colspan="5" style="border-top: 1px solid white;"></td></tr>
+	</table>
+
+
+	
+
+
+
+
+	<br>
+	<br>
+	<h3>Reference</h3>
+	<div style="padding-left: 24px;">
+		[1]&emsp;Radiation Board. Basic Safety Standards For Protection Against Ionising Radiation And For the Safety of Radiation Sources <br> 
+		&emsp;&emsp;&ensp;https://www.info.gov.hk/dh-rhd/english/pdf/BASICSST.pdf <br>
+		[2]&emsp;Khan. The Physics of Radiation Therapy p.1 <br>
+		[3]&emsp;Bushong. Radiologic Science for Technologists (p.403) <br>
+		[4]&emsp;Bushong. Radiologic Science for Technologists (p.412) <br>
+		[5]&emsp;IAEA. Specific Safety Guide SSG-46 - Radiation Protection and Safety in Medical Uses of Ionizing Radiation <br>
+		[6]&emsp;IAEA. Safety Guide RS-G-1.9 - Categorization of Radioactive Sources <br>
+		[7]&emsp;Ma. Measurement of Radiation. AAPM Therapy Physics Review Course 2014 (p.13)<br>
+		[8]&emsp;IAEA Radiation Oncology Physics Handbook. IAEA. (p. 173) <br>
+		[9]&emsp;Hansen E K. Handbook of Evidence-Based Radiation Oncology (Table 43.4, p. 918) <br>
+		[10]&ensp;HA COP clause 3.50, p.29 <br>
+		[11]&ensp;Khan, p.218 <br>
+		[12]&ensp;Raphex 2020 T44 <br>
+		[13]&ensp;https://en.wikipedia.org/wiki/R%C3%B6ntgen_equivalent_physical <br>
+		[14]&ensp;Raphex 2011 Therapy T50 <br>
+		[15]&ensp;Raphex 2011 Therapy T51 <br>
+		[16]&ensp;IAEA Oncology Handbook (8.1.1) <br>
+		[17]&ensp;IAEA Oncology Handbook (8.1.2) <br>
+		[18]&ensp;Raphex 2011 Therapy T63 <br>
+		[19]&ensp;Raphex 2011 Therapy T74 <br>
+		[20]&ensp;Raphex 2011 Diagnostic D1 <br>
+		[21]&ensp;Raphex 2011 Diagnostic D8 <br>
+		[22]&ensp;Raphex 2011 Diagnostic D75 <br>
+		[23]&ensp;Raphex 2011 Diagnostic D77 <br>
+		[24]&ensp;Raphex 2011 Diagnostic D81 <br>
+		[25]&ensp;Khan, p.70 <br>
+		[26]&ensp;HA COP A5.4 <br>
+		<br><br>
+	</div>
+
+</body>
+</html>
