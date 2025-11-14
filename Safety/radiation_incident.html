@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -18px;
+		}
+		.highlight {
+			padding: 0px;
+			border: 2px greenyellow solid;
+			margin: auto;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Radiation Incident</h2>
+
+	<b>INES (International Nuclear and Radiological Event Scale)</b>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Classification Criteria</td>
+			<td>
+				<ol>
+					<li>People and the Environment
+						<ul>
+							<li class="stroke">radiation doses to people</li>
+							<li class="stroke">quantities of radioactive materials that spread from a facility</li>
+						</ul>
+					</li><br>
+					<li>Radiological Barriers and Control
+						<ul>
+							<li class="stroke">significant quantities of radioactive materials CONFINED within a facility</li>
+						</ul>
+					</li> <br>
+					<li>Defence-in-Depth <br>
+						&emsp;&emsp;=&emsp;to weaken the attack
+						<ul>
+							<li class="stroke">safety measures did not function properly</li>
+						</ul>
+					</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Scale</td>
+			<td>
+				<table>
+					<col width="1%">
+					<col width="1%">
+					<col width="10%">
+					<col width="30%">
+					<col width="30%">
+					<col width="30%">
+					<tr>
+						<td style="border: 0px;"></td>
+						<td style="border: 0px; text-align: center; vertical-align: bottom;">Level</td>
+						<td style="border: 0px;"></td>
+						<td style="border: 0px; text-align: center; vertical-align: bottom;">People <br> and <br> Environment</td>
+						<td style="border: 0px; text-align: center; vertical-align: bottom;">Radiological <br> Barriers and Control</td>
+						<td style="border: 0px; text-align: center; vertical-align: bottom;">Defence-in-Depth</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; vertical-align: middle;" rowspan="4">
+<!-- 								Accident <div style="border: 1px solid white; border-right: 0px; width: 6px; margin-left: auto; height: 100vh; display: inline;"> <br></div>  -->
+							<table style="margin-left: auto;">
+								<tr>
+									<td style="border: 0px; vertical-align: middle;">
+										Accident
+									</td>
+									<td style="border-right: 0px; border-top: 1px solid white; border-bottom: 1px solid white; border-left: 1px solid white; width: 6px; display: inline-table; height: 100vh;">
+										<br>
+									</td>
+								</tr>
+								
+							</table>
+						</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.7); vertical-align: middle;">7</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.7); vertical-align: middle;">Major Accident</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Major Release</li>
+								<li>Planned+Extended Countermeasures</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.6); vertical-align: middle;">6</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.6); vertical-align: middle;">Serious Accident</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Significant Release</li>
+								<li>Planned Countermeasures</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.5); vertical-align: middle;">5</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.5); vertical-align: middle;">Accident with <br> Wider Consequences</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Several Deaths</li>
+								<li>Some Planned Countermeasures</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Reactor Core Severely Damaged</li>
+								<li>Criticality Accident (uncontrolled nuclear fission chain reaction) / Fire</li>
+								<li>Large quantities released in the facility</li>
+								<li>Significant public exposure highly likely</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.4); vertical-align: middle;">4</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 0, 0, 0.4); vertical-align: middle;">Accident with <br> Local Consequences</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>At least 1 death</li>
+								<li>Local food controls</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Fuel damaged/melt</li>
+								<li>Release of more than 0.1% of core inventory</li>
+								<li>Significant quantities released in the facility</li>
+								<li>Significant public exposure highly likely</li>
+							</ol>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td style="border: 0px; vertical-align: middle;" rowspan="3">
+							<table style="margin-left: auto;">
+								<tr>
+									<td style="border: 0px; vertical-align: middle;">
+										Incident
+									</td>
+									<td style="border-right: 0px; border-top: 1px solid white; border-bottom: 1px solid white; border-left: 1px solid white; width: 6px; display: inline-table; height: 100vh;">
+										<br><br><br><br><br><br><br><br><br>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.3); vertical-align: middle;">3</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.3); vertical-align: middle;">Serious Incident</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Worker > 10 &times; 20 mSv</li>
+								<li>Deterministic effect but not lethal</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Operating area > 1 Svh<sup>-1</sup></li>
+								<li>Severe contamination in the facility</li>
+								<li>but not likely to cause public exposure</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Near accident at nuclear power plant with no safety provisions remained</li>
+								<li>High activity sealed source lost</li>
+								<li>Misdeliver high activity sealed source without set handling procedures</li>
+							</ol>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.2); vertical-align: middle;">2</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.2); vertical-align: middle;">Incident</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Public member > 10 mSv</li>
+								<li>Worker > 20 mSv</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Operating area > 50 mSvh<sup>-1</sup></li>
+								<li>Significant contamination in the facility</li>
+							</ol>
+						</td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Failure in safety measure</li>
+								<li>Misplace high activity sealed orphan source/device/transport package with intact safety provisions</li>
+								<li>Inadequate package for high activity sealed source</li>
+							</ol>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.1); vertical-align: middle;">1</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(255, 255, 0, 0.1); vertical-align: middle;">Anomaly</td>
+						<td style="border: 0px;" colspan="2"></td>
+						<td style="vertical-align: middle;">
+							<ol style="padding-left: 3px;">
+								<li>Public member > 1 mSv</li>
+								<li>Minor problems in safety components</li>
+								<li>Low activity source/device/transport package lost</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px;"></td>
+						<td style="text-align: center; border: 0px; background-color: rgba(0, 255, 0, 0.1); vertical-align: middle;">0</td>
+						<td style="text-align: center; border: 0px; background-color: rgba(0, 255, 0, 0.1); vertical-align: middle;">Below Scale</td>
+						<td style="text-align: center;" colspan="3">No Safety Significance</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>IAEA</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Emergency Category</td>
+			<td>
+				<ol>
+					<table>
+						<tr>
+							<td class="clean"><li>Offsite</li></td>
+							<td class="clean">beyond site</td>
+						</tr>
+						<tr>
+							<td class="clean"><li>Site</li></td>
+							<td class="clean">within site</td>
+						</tr>
+						<tr>
+							<td class="clean"><li>Plant</li></td>
+							<td class="clean">Consequences within Section of plant</td>
+						</tr>
+						<tr>
+							<td class="clean"><li>Standby</li></td>
+							<td class="clean">Within safety level</td>
+						</tr>
+					</table>
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

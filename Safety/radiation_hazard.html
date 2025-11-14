@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Radiation Protection</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		.line {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+			border-top: 2px solid gray;
+			border-bottom: 2px solid gray;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -18px;
+		}
+		.highlight {
+			padding: 0px;
+			border: 2px greenyellow solid;
+			margin: auto;
+		}
+		.box {
+			display: inline-block; 
+			border: 1px solid white; 
+			padding: 3px; 
+			padding-top: 1px;
+			padding-bottom: 1px;
+			text-align: center; 
+			vertical-align: middle;
+			margin-top: 6px;
+			margin-bottom: 6px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Radiation Protection</h2>
+	<table>
+		<tr>
+			<td>Naturally Occurring Radioactive Materials</td>
+			<td>
+				<table>
+					<col width="20%">
+					<col width="10%"> 
+					<tr>
+						<td class="line">Terrestrial <br>
+							<div style="padding-left: 24px;">
+								(from Earth's crust/mantle)
+							</div>
+						</td>
+						<td class="line" style="text-align: center;">
+							<div class="box" style="margin: 1px;">U-235/238</div> <br>
+							<div class="box" style="margin: 1px;">Th-232</div> <br>
+							<div class="box" style="margin: 1px;">K-40</div>
+						</td>
+						<td class="line">
+							Occurring in rock/stone/granite/marble/bricks <br>
+							<br>
+
+							<b>Element Occurred in Uranium/Thorium Decay Chain</b> <sup>[1]</sup><br>
+							<div class="box" style="background-color: rgba(255, 0, 0, 0.3);">Uranium <br> U</div>
+							&rarr;
+							<div class="box">Protactinium <br> Pa</div>
+							&rarr;
+							<div class="box">Thorium <br> Th</div>
+							&rarr;
+							<div class="box">Actinium <br> Ac</div>
+							&rarr;
+							<div class="box">Radium <br> Ra</div>
+							&rarr;
+							<div class="box">Francium <br> Fr</div>
+							&rarr;
+							<div class="box" style="background-color: rgba(255, 255, 0, 0.3);">Radon <br> Rn</div>
+							&rarr;
+							<div class="box">Astatine <br> At</div>
+							&rarr;
+							<div class="box">Polonium <br> Po</div>
+							&rarr;
+							<div class="box">Bismuth <br> Bi</div>
+							&rarr;
+							<div class="box">Lead <br> Pb</div>
+							&rarr;
+							<div class="box">Thallium <br> Tl</div>
+							&rarr;
+							<div class="box">Mercury <br> Hg</div>
+							
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Cosmogenic <br> 
+							<div style="padding-left: 24px;">
+								(from interaction between gases in atmosphere and cosmic rays)
+							</div>
+						</td>
+						<td class="line" style="text-align: center;">
+							<div class="box" style="margin: 1px;">C-14</div> <br>
+							<div class="box" style="margin: 1px;">H-3</div> <br>
+							<div class="box" style="margin: 1px;">Na-22</div> <br>
+							<div class="box" style="margin: 1px;">Be-7</div> <br>
+						</td>
+						<td class="line"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Tobacco</td>
+			<td>
+				<div class="box" style="background-color: rgba(255, 255, 0, 0.3);">Po-210</div> 
+				<div class="box" style="border: 0px;">&larr; Radium-226 from fertilisers in soils</div>
+				
+			</td>
+		</tr>
+	</table>
+	<br>
+	[1] https://www.researchgate.net/profile/Change_Tan/publication/313744940/figure/fig4/AS:462061361733633@1487175421068/Decay-series-of-A-uranium-238-238-U-B-uranium-235-235-U-and-C-thorium-232.png
+</body>
+</html>

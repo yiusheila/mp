@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Radiation Protection</title>
+	<link rel="stylesheet" href="../style.css"> 
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Radiation Protection</h2>
+	<ol class="index">
+		<li><a href="#general">General</a></li>
+		<li><a href="#occupational">Occupational Exposure</a></li>
+		<li><a href="#transport">Transportation</a></li>
+		<li><a href="#shielding">Shielding</a></li>
+		<li><a href="#category">RS Categorisation</a></li>
+		<li><a href="#derivation">Derivation</a></li>
+	</ol>
+	<br>
+	<br>
+
+	<h3 id="general">General Radiological Protection</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>(ICRP) Fundamental Principle <br> of Radiation Protection</td>
+			<td>
+				1.&emsp;Justification <br>
+				2.&emsp;Optimisation <br>
+				3.&emsp;Dose Limit 
+			</td>
+		</tr>
+		<tr>
+			<td>Level of Protection</td>
+			<td>
+				<table >
+					<tr>
+						<td class="clean" colspan="2">(Potential)</td>
+						<td class="clean">Risk Constraint</td>
+					</tr>
+					<tr>
+						<td class="clean" rowspan="2" style="vertical-align: middle; ">
+							Planned 
+							<table style="display: inline-table; vertical-align: middle;">
+								<tr>
+									<td class="clean" style="border-right: 1px solid white;; border-bottom: 1px solid white;"></td>
+									<td class="clean" style="border-top: 1px solid white;"></td>
+								</tr>
+								<tr>
+									<td class="clean"></td>
+									<td class="clean" style="border-left: 1px solid white;; border-bottom: 1px solid white;"></td>
+								</tr>
+							</table>
+						</td>
+						<td class="clean">Public/Occupational</td>
+						<td class="clean">Dose Limit</td>
+					</tr>
+					<tr>
+						<td class="clean">Medical</td>
+						<td class="clean" style="vertical-align: middle;">
+							Dose Constraint
+						</td>
+					</tr>
+					<tr>
+						<td class="clean" colspan="2">Emergency</td>
+						<td class="clean" rowspan="2" style="vertical-align: middle;">
+							<table style="display: inline-flex; vertical-align: middle; height: 100%;">
+								<tr>
+									<td class="clean" style="border-right: 1px solid white;; border-top: 1px solid white;"></td>
+									<td class="clean" style="border-bottom: 1px solid white;"></td>
+								</tr>
+								<tr>
+									<td class="clean" style="border-bottom: 1px solid white;"></td>
+									<td class="clean" style="border-left: 1px solid white;;"></td>
+								</tr>
+							</table>
+							Reference Level
+						</td>
+					</tr>
+					<tr>
+						<td class="clean" colspan="2">Existing</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>DDREF</td>
+			<td>
+				<b>Dose and Dose Rate Effective Factor</b>
+				<div style="margin-left: 24px;">
+					cancer risk &larr; usually quantified using HIGH dose + dose rate <br>
+					in the case of LOW dose + doserate <br>
+					cancer risk reduced by a factor of DDREF (usually 2)
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>AMAD</td>
+			<td>
+				<b>Activity Median Aerodynamic Diameter</b>
+				<div style="margin-left: 24px;">
+					&emsp;&rarr;&emsp;describe the median diameter of a batch of aerosol
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<h3 id="radionuclide">Radionuclide Specific Information</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td><i>f<sub>1</sub></i> value</td>
+			<td> = fractional absorption from GI tract &ensp;&rarr;&ensp; blood</td>
+		</tr>
+	</table>
+	<br><br>
+	<h3 id="occupational">Occupational Exposure</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Monitoring</td>
+			<td>
+				<div style="text-align: center;"> Occupational <br> Effective Dose </div>
+
+				<div style="text-align: center;">
+					<table style="margin-left: auto; margin-right: auto; width: 50%">
+						<tr>
+							<td style="border: 0px; border-bottom: 1px solid white; border-right: 1px solid white; padding: 0px; width: 25%; height: 9px;"></td>
+							<td style="border: 0px; border-bottom: 1px solid white; padding: 0px; width: 25%; "></td>
+						</tr>
+						<tr>
+							<td style="border: 0px; border-left: 1px solid white; padding: 0px; height: 9px;"></td>
+							<td style="border: 0px; border-right: 1px solid white; padding: 0px; height: 9px;"></td>
+						</tr>
+					</table>
+				</div>
+
+				<table width="100%" style="text-align: center;">
+					<tr>
+						<td style="border: 0px; padding: 0px; width: 50%">
+							External <br>
+							&uarr; <br>
+							 H<sub>p</sub>(10) <br>
+							 H<sub>p</sub>(0.07) <br>
+							 or <br>
+							 H*(10) <br>
+							 H'(0.07, &Omega;)
+						</td>
+						<td style="border: 0px; padding: 0px; width: 50%">
+							Internal <br>
+							&uarr; <br>
+							E(50)
+						</td>
+					</tr>
+				</table>
+				<br>
+				<b>H<sub>p</sub>(10) Personal Dose Equivalent</b> <br>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;equivalent dose at 10 mm tissue depth
+					<ul>
+						<li class="stroke">Assume uniform whole body exposures</li>
+						<li class="stroke">Measure using personal dosimeter</li>
+						<br>
+						<li class="stroke"> :)&emsp;estimate of effective dose
+							<ul>
+								<li class="stroke">when well below annual dose limit</li>
+							</ul>
+						</li>
+						<br>
+						<li class="stroke">:(&emsp;approaching/&gt;annual dose limit <br></li>
+						<li class="stroke">:(&emsp;exposed in inhomogeneous radiation fields
+							<ul>
+								<li class="stroke">need to consider body part when assessing the effective dose</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<br>
+				<b>H<sub>p</sub>(0.07) Equivalent Dose to Skin</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;equivalent dose at 0.07 mm tissue depth
+					\[ E_{skin} = H_p(0.07) \times W_{skin} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							<i>E<sub>skin</sub></i>&ensp;=&ensp;Effective Dose to Skin <br>
+							<i>W<sub>skin</sub></i>&ensp;=&ensp;Tissue Weighting Factor for Skin <br>
+							&emsp;&emsp;&ensp;&ensp;=&ensp;0.01
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>H*(10) Ambient Dose Equivalent</b>
+				<ul>
+					<li class="stroke">when no personal dosimeter was worn</li>
+				</ul>
+				<br>
+				<b>H'(0.07, &Omega;) Directional Dose Equivalent</b>
+				<ul>
+					<li class="stroke"></li>
+				</ul>
+				<br>
+				<br>
+				<b>E(t) Committed Effective Dose</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;Effective Dose from Intake in a time period <i>t</i> in year <br>
+					&emsp;&ensp;e.g.&ensp; E(50) &sim; expected years working in the workforce
+					$$
+					\begin{align}
+						E(50) &= E_{inh}(50) + E_{ing}(50) \\ \\
+						\Large &= \sum_i{e_i(50)}~A_i + \sum_j{e_j(50)}~A_j
+					\end{align}
+					$$
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							e&ensp;=&ensp;committed effective dose coefficient (<i>Sv Bq<sup>-1</sup></i>) <br>
+							A&ensp;=&ensp;activity intake (<i>Bq</i>)
+						</div>
+					</div>
+				</div>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Radionuclide Dependent Limit</td>
+			<td>
+				<b>ALI Annual Limit on Intake of a radionuclide</b>
+				<div style="padding-left: 24px;">
+					Considering a person only consume one type of radionuclide <i>j</i>, <br>
+					&emsp;the committed effective dose \( E(50) = e_j(50)~A_j\). <br>
+					<br>
+					When <i>A<sub>j</sub></i> = <i>ALI<sub>j</sub></i>, \(E(50) = E_{limit}\), i.e.<br>
+					\[ E_{limit} = e(50)~ ALI_j \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							<i>E<sub>limit</sub></i> = occupational annual limit 20 mSv yr<sup>-1</sup>
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>DAC Derived Air Concentration of a radionuclide</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;activity concentration in air (<i>Bq m<sup>-3</sup></i>) <br>
+					<div style="padding-left: 19px;">
+						which would lead to an intake of ALI <br>
+						assuming breathing rate = 1.1 m<sup>3</sup>h<sup>-1</sup> <br>
+						and annual working hour = 50 weeks &times; 5 days &times; 8 hrs = 2000 h 
+					</div>
+					\[ DAC_j = \frac{ALI_j}{2200} \]
+					
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Fluoroscopic Scatter</td>
+			<td>
+				mainly from patient 90&deg; to beam direction <sup>[2]</sup>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3 id="transport">Transportation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Transport Index (TI)</td>
+			<td>
+				<i>TI</i> &times; 10 = Dose Rate at <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">1 m (&mu;Sv h<sup>-1</sup>)</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Criticality Safety Index</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Package Label</td>
+			<td>
+				<ol>
+					<li>Trefoil Sign</li>
+					<li>Package Category Number (I/II/III)</li>
+					<li>Radionuclide Type</li>
+					<li>Activity</li>
+					<li>TI</li>
+					<li>"7" (class of restricted articles) <sup>[1]</sup></li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>A<sub>1</sub> / A<sub>2</sub></td>
+			<td>
+				A<sub>1</sub>&emsp;=&emsp;Activity of Special Form Radioactive Material <br>
+				A<sub>2</sub>&emsp;=&emsp;(in other form)
+			</td>
+		</tr>
+
+		<tr>
+			<td>Package Type</td>
+			<td>
+				<b>Expected Package</b> <br>
+				<br>
+				<b>Industrial Package IP-1/2/3</b> <br>
+				<br>
+				<b>A / B(U) / B(M) / C</b>
+				<table>
+					<tr>
+						<td class="clean">A</td>
+						<td class="clean">
+							=&emsp; activity &lt; A<sub>2</sub> (or A<sub>1</sub> for special form radioactive material)
+						</td>
+					</tr>
+				</table>
+
+			</td>
+
+		</tr>
+
+		<tr>
+			<td>Material Type/Group</td>
+			<td>
+				I-WHITE/II-YELLOW/III-YELLOW <br>
+				LSA-I/II/III, SCO-I/II/III <br>
+				<br>
+				<br>
+				<b>(SCO) Surface Contaminated Object</b> <br>
+				<br>
+				<b>Special Form Radioactive Material</b>
+				<ul>
+					<li class="stroke">indispersible solid</li>
+					<li class="stroke">sealed capsule opened only by destroying</li>
+					<li class="stroke">at least 1 dimension &gt; 5 mm</li>
+					<li class="stroke">withstand impact, percussion, bending</li>
+					<li class="stroke">withstand heat</li>
+					<li class="stroke">leaching in water &lt; 2 kBq</li>
+				</ul>
+				<br>
+				<b>Low Dispersible Radioactive Material</b>
+				<ul>
+					<li class="stroke"> &lt; 10 mSv h<sup>-1</sup> at 3 m unshielded </li>
+					<li class="stroke">airborne release &lt; 100 A<sub>2</sub> under heat and impact</li>
+					<li class="stroke">leaching in water &lt; 100 A<sub>2</sub></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Maximum Dose Rate</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean" style="border-top: 2px solid white; border-bottom: 1px solid white;"></td>
+						<td class="clean" style="text-align: center; border-top: 2px solid white; border-bottom: 1px solid white;">Dose Rate <br> on Surface</td>
+						<td class="clean" style="text-align: center; border-top: 2px solid white; border-bottom: 1px solid white;">Dose Rate <br> @ 1 m</td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">Fix Contamination</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 5 &mu;Sv h <sup>-1</sup></td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">Excepted Package</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 5 &mu;Sv h<sup>-1</sup></td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">Exclusive Use</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 10 mSv h <sup>-1</sup></td>
+					</tr>
+					<tr>
+						<td class="clean"></td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">White-I</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 5 &mu;Sv h <sup>-1</sup></td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">Yellow-II</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">
+							&lt; 0.5 mSv h <sup>-1</sup>
+						</td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 0.01 mSv h <sup>-1</sup></td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">TI &lt; 1</td>
+					</tr>
+					<tr>
+						<td class="clean" style="vertical-align: bottom; padding: 0px;">Yellow-III </td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 2 mSv h <sup>-1</sup></td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">&lt; 0.1 mSv h <sup>-1</sup></td>
+						<td class="clean" style="vertical-align: top; padding: 0px; padding-left: 12px;">TI &gt; 1</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; border-top: 2px solid white; " colspan="3"></td>
+					</tr>
+				</table>
+				<br>
+				<b></b>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3 id="shielding">Shielding</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Nominal Shielding</td>
+			<td>
+				<table style="text-align: center;">
+					<tr>
+						<td class="clean" style="border-top: 2px solid white; border-bottom: 1px solid white;"></td>
+						<td class="clean" style="border-top: 2px solid white; border-bottom: 1px solid white;">Direct Beam</td>
+						<td class="clean" style="border-top: 2px solid white; border-bottom: 1px solid white;">Scattered</td>
+					</tr>
+					<tr>
+						<td class="clean">Dental</td>
+						<td class="clean">1.5 mm</td>
+						<td class="clean">0.7 mm</td>
+					</tr>
+					<tr>
+						<td class="clean">Diagnostic <br> X-ray</td>
+						<td class="clean" style="vertical-align: middle;">3 mm</td>
+						<td class="clean" style="vertical-align: middle;">1.5 mm</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="clean" style="border-top: 2px solid white;"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Controlled Area</td>
+			<td>
+				&emsp;=&ensp; access/occupancy/working condition are controlled <br>
+				&ensp;&larr;&ensp; trained worker <br>
+				&ensp;&larr;&ensp; exposure/dose individually monitored
+			</td>
+		</tr>
+
+
+    	<tr>
+    		<td>Primary Barrier</td>
+    		<td>
+    			<div style="text-align: center;">
+	    			<div class="hl" style="display: inline-block; width: 100px;">
+	    				\[ \large B_{pri} = \frac{ P{d_{pri}}^2 }{WUT} \]
+	    			</div>
+    			</div> <br>
+    			<table>
+    				<tr>
+    					<td>(B) Transmission</td>
+    					<td>Fraction of dose (/dose rate) after shielding</td>
+    				</tr>
+    				<tr>
+    					<td>(P) Shielding Design Goal</td>
+    					<td>
+    						Correspond to the effective dose limits for workers and public members <br>
+    						<ul>
+    							<li class="stroke">but hard to determine</li>
+    							<li class="stroke">so instead we use equivalent dose at the point of nearest occupancy beyond the barrier</li>
+    						</ul>
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>\(d_{pri}\)</td>
+    					<td>Distance of point of nearest occupancy <div class="hl">from source</div> </td>
+    				</tr>
+    				<tr>
+    					<td>(W) Workload</td>
+    					<td>
+    						Assume target dose ~ 2.5 Gy for external beam RT at isocentre (i.e. integrated dose summing over the whole FS at isocentre)
+    						\[W=total~working~days~in~1~week \times target~dose \]
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>(U) Use Factor</td>
+    					<td>
+    						\[ U = { time~which~gantry~rotated~to~certain~direction \over time~gantry~pointing~down } \]
+    					</td>
+    				</tr>
+    				<tr>
+    					<td>(T/O) Occupancy of area to be shielded</td>
+    					<td>
+    						\[ T = { time~which~a~person~staying~in~the~area~the~most~(in~a~week) \over beam~on~time~(in~a~week)} \]
+    					</td>
+    				</tr>
+    			</table>
+				<br>
+
+				
+    		</td>	
+    	</tr>
+		<tr>
+			<td>Secondary Barrier</td>
+			<td>
+				<b>Secondary Radiation consists of</b>
+				<div style="margin-left: 24px;">
+					1.&ensp; LINAC Head Leakage <br>
+					2.&ensp; Patient Scatter <br>
+					3.&ensp; Wall Scatter <br>
+					4.&ensp; Secondary Radiation from LINAC Head/Wall <br>
+					<br>
+					&because;&ensp; leakage and scatter at different energy level <br>
+					&there4;&ensp; considered separately <br>
+				</div>
+
+
+				<br>
+				<b>Head Leakage Radiation</b><br>
+				\[ \large B_L = \frac{P{d_L}^2}{ (L)WUT } \]
+				<div style="padding-left: 24px">
+					where
+					<div style="padding-left: 24px">
+						\(d_L\) &ensp;=&ensp; the closest point of occupancy <div class="hl">from source</div> <br>
+						<div style="margin-left: 38px;">
+							if equal usage to all gantry angle, \(d_L\) = distance from the isocentre
+						</div>
+						\(L\) &ensp;=&ensp; 0.1% (10<sup>-3</sup>) of primary beam (LINAC) <br>
+						&emsp;&emsp;&ensp; 0.2% of source energy (Co-60) <br>
+
+					</div>
+				</div>
+
+				
+				<br>
+				<b>Patient Scattered</b><br>
+				\[ \large B_{pat} =  \frac{P~{d_{sca}}^2~{d_{sec}}^2}{a~WT} ~{20 \times 20 \over F} \]
+				<div style="padding-left: 24px">
+					where
+					<div style="padding-left: 24px">
+						\(a\) &ensp;=&ensp; fraction of the primary beam absorbed dose scattered from the patient at a particular angle <br>
+						\(d_{sca}\) &ensp;=&ensp; target &rarr; patient distance <br>
+						\(d_{sec}\) &ensp;=&ensp; patient &rarr; protection point <br>
+						\(20 \times 20\) &ensp;=&ensp; reference field size <br>
+						\(F\) &ensp;=&ensp; field size at 1 m at patient mid-depth
+					</div>
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Maze</td>
+			<td>
+				Main purpose &ensp;=&ensp; &darr; door thickness
+			</td>
+		</tr>
+
+		<tr>
+			<td>Shielding Material</td>
+			<td>
+				<b>Gamma Shielding</b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">Lead</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">:(&ensp; Brittle</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">Iron/Steel/Conrete</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">:)&ensp; Self-supporting</td>
+					</tr>
+				</table>
+				<br>
+				<b>Neutron Shielding</b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 250, 255, 0.3)">&emsp;&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 150, 255, 0.3);">&emsp;&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(255, 0, 0, 0.3);">(n Source)</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;"></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 250, 255, 0.3)">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 150, 255, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 150, 255, 0.3);">Hydrogen-rich <br>plastic </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px; vertical-align: middle;">
+							similar mass with n &ensp;&rarr;&ensp; optimal KE transfer
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 250, 255, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 250, 255, 0.3)">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 250, 255, 0.3);">B-10 </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							n capturing material
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">&emsp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center; background-color: rgba(0, 0, 0, 0.3);">Lead </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							to attenuate secondary &gamma;
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center;">&ensp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center;">&ensp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center;">&ensp;</td>
+						<td style="border: 0px; padding: 0px; margin-left: 12px; text-align: center;">(Surrounding)</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;"></td>
+					</tr>
+				</table>
+				<br>
+				<b>LINAC Primary Beam Shield <sup>[4]</sup></b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center;">Primary Beam</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center;">&darr;</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center; vertical-align: middle; background-color: rgba(0, 0, 0, 0.3);">Lead</td>
+						<td style="border: 0px; padding: 0px; padding-left: 24px;">
+							:)&ensp; attenuate X-ray <br>
+							:(&ensp; produce photoneutron
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center; background-color: rgba(255, 255, 255, 0.3);">Concrete</td>
+						<td style="border: 0px; padding: 0px; padding-left: 24px;">
+							:)&ensp; absorb photoneutrons
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3 id="category">RS Categorisation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Necessity of Categorisation <sup>[3]</sup></td>
+			<td>
+				Why Need Categorisation
+				<ul>
+					<li class="stroke">Regulatory/Register</li>
+					<li class="stroke">Security</li>
+					<li class="stroke">Import/Export Control</li>
+					<li class="stroke">Labelling/Warning</li>
+					<li class="stroke">Emergency Preparedness and Response </li>
+					<li class="stroke">Prioritisation</li>
+					<li class="stroke">Communication to Public</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Categorising RS</td>
+			<td>
+				<b>Activity Ratio <i>A/D</i></b> <br>
+				<div style="padding-left: 24px;">
+					\[ \frac{A}{D} = \frac{Activity~(TBq)}{D~Value} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							<i>D</i> = activity of a radionuclide that would cause <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">severe deterministic health effect</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>Category</b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td>Category</td>
+						<td>A/D</td>
+						<td>Example</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>1000&emsp;&leq; A/D</td>
+						<td>
+							Teletherapy / Gamma Knife <br>
+							Irradiators <br>
+							Radioisotope Thermoelectric Generators <br>
+						</td>
+						<td class="clean">
+							* most dangerous <br>
+							* a few minutes of unshielded Cat 1 source &rarr; fatal <br>
+						</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>10 &emsp;&ensp; &leq; A/D &lt;&ensp; 1000</td>
+						<td>
+							HDR/MDR Brachy <br>
+							Co-60/Cs-137 Cal Source <br>
+						</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>1 &emsp;&emsp; &leq; A/D &lt;&ensp; 10</td>
+						<td>
+							Am-241 Cal Source
+						</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>0.01 &emsp;&leq; A/D &lt;&ensp; 1</td>
+						<td>
+							Bone Densitometer <br>
+							LDR Brachy (others)
+						</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>&emsp; &emsp; &emsp; A/D &lt;&ensp; 0.01 <br>
+							&emsp; &emsp; &emsp; &emsp; &emsp;+ <br>
+							&emsp; &emsp; &emsp;A &gt; exempt 
+						</td>
+						<td>
+							LDR Brachy (Eye Plaques / Permanent Implant) <br>
+							PET Check Source 
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3 id="derivation">Derivation</h3>
+	<table>
+    	<tr>
+    		<td>Shielding Calculation (NCRP Report 151)</td>
+    		<td>
+    			<div style="text-align: center;"><img src="shield.png" alt="B" width="60%"></div>
+				<br>
+				<div style="padding-left: 24px;">
+					Derivation <br>
+					<div style="padding-left: 24px;">
+						<div style="text-align: center;">
+							<img src="shielding_cal.png" alt="img" width="300">
+						</div>
+
+						Similar triangle:
+						\[ {d_o \over d_i} = {r_o \over r_i} \]
+						<br>
+						On the plane where isocentre is,
+						\[ N_i {r_i}^2 = N\]
+						On the plane where the point of occupancy is (after shielding),
+						\[ N_o {r_o}^2 = {NB} \]
+						We now have,
+						\[ N_o {r_o}^2 = {1 \over k} N_i {r_i}^2 \]
+						When \({1 \over k}=B\), 
+						\[ N_o {r_o}^2 = B N_i {r_i}^2 \]
+						$$
+							\begin{align}
+								B & = { N_o \over N_i } \left( {r_o \over r_i} \right)^2 \\
+								  & = { N_o \over N_i } \left( {d_o \over d_i} \right)^2 \\
+								  & = { N_o {d_o}^2 \over N_i {d_i}^2 }
+							\end{align}
+						$$
+					</div>
+				</div>
+    		</td>
+    	</tr>
+	</table>
+	<br>
+	<br>
+	<b>Reference</b> <br>
+	[1] &emsp;International Civil Aviation Organization (ICAO) <br>
+	&emsp; &emsp; https://www.hongkongairlines.com/en_HK/services/baggage/handcarry <br>
+	[2] &emsp;Raphex 2019 Diagnostic D59 <br>
+	[3]&emsp;Categorization of RS, IAEA <br>
+	[4]&emsp;Raphex 2016 T76 <br>
+	<br>
+
+</body>
+</html>
