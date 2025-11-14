@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuclear Physics</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	
+</head>
+<body
+	style="background-color: #383838; line-height: 150%;"
+>
+	<h3>Nuclear Physics</h3>
+	<table>
+		<tr>
+			<td>Atom Notation</td>
+			<td>
+				\[ \Large X^A_Z\]
+				X = element <br>
+				A = Mass Number <br>
+				Z = Atomic Number <br>
+			</td>
+		</tr>
+		<tr>
+			<td>Valance Electron</td>
+			<td>
+				&emsp;=&emsp;outermost shell <br>
+				&emsp;&emsp;&emsp;max 8 &times; e-
+			</td>
+		</tr>
+		<tr>
+			<td>Type of Nuclear Change</td>
+			<td>
+				<table style="margin-left:auto; margin-right:auto;">
+					<tr>
+						<td class="clean" colspan="4" style="text-align: center;">(Induced) <br> Nuclear Reaction</td>
+						<td class="clean">&emsp;</td>
+						<td class="clean"colspan="2" style="text-align: center;">(Spontaneous) <br> Nuclear Decay</td>
+					</tr>
+					<tr>
+						<td class="clean"></td>
+						<td class="clean" style="border-right: 1px solid white; border-bottom: 1px solid white;"></td>
+						<td class="clean" style="border-bottom: 1px solid white;"></td>
+						<td class="clean"></td>
+						<td class="clean"></td>
+						<td class="clean"></td>
+					</tr>
+					<tr>
+						<td class="clean" style="border-right: 1px solid white;"></td>
+						<td class="clean" ></td>
+						<td class="clean" style="border-right: 1px solid white;"></td>
+						<td class="clean"></td>
+						<td class="clean"></td>
+						<td class="clean"></td>
+					</tr>
+					<tr>
+						<td class="clean" colspan="2" style="text-align: center;">Fission</td>
+						<td class="clean" colspan="2" style="text-align: center;">Fusion</td>
+						<td class="clean" colspan="2"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Activity (A)</td>
+			<td>
+				&ensp;=&ensp;rate of decay <br>
+				&ensp;=&ensp;disintegration per unit time
+				\[ A={dN \over dt} = -\lambda~N \]
+				<br>
+				* disintegration not necessarily lead to radiation emission
+				<ol style="margin-top: 0px;">
+					<li>self-absorption</li>
+					<li>decay scheme</li>
+					<li>daughter isotope</li>
+					<li>impurity </li>
+				</ol> 
+				<br>
+				<b>Apparent Activity</b> <br>
+				<div style="padding-left: 24px;">
+					Using \( \dot{\chi} = \frac{ A\Gamma }{d^{~2}} \), we have
+					\[ A_{apparent} = \frac{ \dot{K_{air}}~d^2 }{\Gamma_{AKR}} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							\(\dot{K}\)&ensp;=&ensp;air kerma rate <br>
+							d&ensp;=&ensp;calibration distance <br>
+							&Gamma;<sub>AKR</sub>&ensp;=&ensp;air kerma rate constant
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>Cumulated Activity</b> <br>
+				<br>
+				<b>Specific Activity</b> <br>
+				<div style="padding-left: 24px;">
+					Activity per mass <i>(Bq mg<sup>-1</sup>)</i> <br>
+					A radionuclide may contain stable isotope ( = carrier )
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Decay Equation</td>
+			<td>
+				\[ {{dN}\over{dt}} = {-\lambda~N} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						N&ensp;=&ensp;number of atom  <br>
+					</div>
+					Solution: <br>
+					<div style="padding-left: 24px;">
+						\( N=N_0~e^{-\lambda~t} \) <br>
+						\( A=A_0~e^{-\lambda~t} \)  if plug in \(A=-\lambda~N\) <br>
+					</div>
+				</div>
+				<br>
+				<b>Decay Factor</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;\(e^{-\lambda~t}\)
+				</div>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Half Life</td>
+			<td>
+				\[ T_{1/2} = { ln(2) \over \lambda } \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						&lambda; = Decay Constant
+					</div>
+				</div>
+				<br><br>
+				<b>Effective Decay Constant</b> <br>
+				<div class="hl_block" style="width: 20%">\[ \lambda_{eff} = \lambda_{phy} + \lambda_{bio} \]</div>
+				<div style="padding-left: 24px;">
+					i.e.
+					<div style="padding-left: 24px;">
+						<b>Physical Half Life</b> \( \bf T_{1/2, phy}\) <br>
+						&emsp;&ensp;=&ensp;time to halve radioactivity <br>
+						<b>Biological Half Life</b> \( \bf T_{1/2, bio}\) <br>
+						&emsp;&ensp;=&ensp;time to halve the amount of substance from the target organ
+					</div>
+				</div>
+				<br>
+
+
+			</td>
+
+		</tr>
+		<tr>
+			<td>Mean Life (&tau;) <sup>[1]</sup></td>
+			<td>
+				The total number of decay counting from <i>t=0</i> for a source with <i>A<sub>0</sub></i> <br>
+				&ensp;=&ensp;Area Under Decay Curve
+				$$
+				\begin{align}
+					Total~\#~of~decay &= \int A~dt \\
+					&=\int^\infty_0 { A_0 e^{-\lambda t} } dt \\
+					&=\left[ { -\frac{1}{\lambda} A_0 e^{-\lambda t} } \right]^\infty_0 \\
+					&= 0-\left( { -\frac{1}{\lambda}A_0 } \right) \\
+					N_{total}&= \frac{A_0}{\lambda} \\
+					&=A_0 \tau 
+				\end{align}
+				$$
+
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						<i>&tau;</i>&ensp;=&ensp;mean life
+					</div>
+				</div>	
+				<div class="hl_block" style="width: 20%;">\[ \tau = {1 \over \lambda } = {T_{1/2} \over ln(2)}\]</div></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Metastability</td>
+			<td>
+				Atom State
+				<ul style="margin: 0px; padding-left: 0px;">
+					<li class="stroke">Exited</li>
+					<li class="stroke">Meta-stable</li>
+					<ul>
+						<li class="stroke">energy higher than ground state</li>
+						<li class="stroke">but stable</li>
+						<li class="stroke">transition to ground state is forbidden</li>
+					</ul>
+					<li class="stroke">Ground</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Radioactive Equilibrium</td>
+			<td>
+				<b>Bateman Equation</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;model the activity of parent and daughter nuclides as function of time <br>
+					<br>
+					Daughter Activity <br>
+					&emsp;&lt;&ensp;Daughter production rate <br>
+					&emsp;&emsp;&emsp;&emsp;&lt;&ensp;Parent decay rate <br>
+					&emsp;&lt;&ensp;Daughter decay rate <br>
+					<br>
+					\[ N_2(t) = N_1(0) \frac{\lambda_1}{\lambda_2 - \lambda_1} \left( e^{-\lambda_2 t} - e^{-\lambda_1 t} \right) + N_2(0)e^{-\lambda_2 t} \] 
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							subscript 1 = Parent <br>
+							subscript 2 = Daughter
+						</div>						
+					</div>
+				</div>
+				<br>
+				<b>Equilibrium</b>
+				<div style="padding-left: 24px;">
+					The ratio of <i>&lambda;<sub>parent</sub></i> and <i>&lambda;<sub>daughter</sub></i> defines the type of equilibrium of the composite:
+					<table>
+						<tr>
+							<td class="clean">Daughter Decay Rate</td>
+							<td class="clean"><i>T</i><sub>1/2, daughter</sub></td>
+							<td class="clean">Equilibrium</td>
+							<td class="clean">Equation</td>
+							<td class="clean">Example</td>
+						</tr>
+						<tr>
+							<td>Slower than Parent</td>
+							<td>&gt; Parent</td>
+							<td>None</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Faster than Parent &ensp;~&ensp; 10x </td>
+							<td>&lt; Parent </td>
+							<td>Transient</td>
+							<td>
+								$$
+								\begin{align}
+									A_2(t) &= A_{1}(0) \frac{\lambda_2}{\lambda_2 - \lambda_1} \left( e^{-\lambda_1 t} \right) \\
+									&= A_1(t) \frac{\lambda_2}{\lambda_2 - \lambda_1}
+								\end{align}
+								$$
+							</td>
+							<td>
+								Mo-99 &ensp;&rarr;&ensp; Tc-99m &ensp;&rarr;&ensp; Tc-99 <br>
+								&emsp;&emsp;&emsp; 66 h &emsp;&emsp;&emsp;&ensp; 6 h
+							</td>
+						</tr>
+						<tr>
+							<td>a lot Faster than Parent &ensp;&gt;&ensp; 100x </td>
+							<td>&lt;&lt;&lt; Parent </td>
+							<td>Secular</td>
+							<td>
+								\( A_2(t) = A_1(0) (1-e^{-\lambda_{2} t}) \)
+							</td>
+							<td>
+								Sr-90 &ensp;&rarr;&ensp; Y-90 &ensp;&rarr;&ensp; Zr-90 <br>
+								&emsp;&emsp; 28.8 y &emsp;&emsp;64 h
+							</td>
+						</tr>
+					</table>
+					<br>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Source of Ionising Radiation</td>
+			<td>
+				<table>
+					<tr>
+						<td>EC</td>
+						<td>
+							\( p^+ + e^- \longrightarrow n + \nu_e + \chi \)
+							<div style="padding-left: 24px;">
+								where
+								<div style="padding-left: 24px;">
+									&chi; = characteristic X-ray
+								</div>
+							</div>
+						</td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">X</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&beta;+ Decay</td> 
+						<td>\( p^+~(+E) \longrightarrow n + e^+ + \nu_e \)</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>&beta;- Decay</td>
+						<td>\(n \longrightarrow p^+ + e^- + \bar{\nu_e} \)</td>
+						<td>
+							<div style="background-color: darkcyan; display: inline; padding: 6px;">e-</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Isomeric Transition</td>
+						<td>
+							when parent is at <u>excited NUCLEAR</u> state <br>
+							<br>
+							<b>Gamma emission</b> <br>
+							<ul>
+								<li class="stroke">emit a &gamma; with <i>E<sub>excite</sub></i></li>
+								<li class="stroke">return to ground state</li>
+							</ul>
+							&there4; emitted monoenergetic &gamma; <br>
+							<br>
+							<b>Internal Conversion</b>
+							<ul>
+								<li class="stroke">sometimes gamma emission might be inhibited</li>
+								<li class="stroke">an e- with <i>E<sub>e-</sub></i> = <i>E<sub>excite</sub></i> - <i>E<sub>binding</sub></i> is emitted instead</li>
+							</ul>
+							&there4; emitted monoenergetic &beta;- 
+							 <br>
+
+							 <br>
+						</td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">&gamma;</div>
+							<div style="background-color: darkcyan; display: inline; padding: 6px;">e-</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Annihilation Radiation</td>
+						<td>
+							after &beta;+ decay
+							<ul>
+								<li class="stroke">produce 2 opposite 511 keV photon</li>
+							</ul>
+						</td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">&gamma;</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>De-excitation <br> after &beta;-/&beta;+/EC </td>
+						<td>
+							the daughter nuclear is excited after &beta; decay <br>
+							&there4; monoenergetic
+						</td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">X</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>e- Interaction with matter <br> Bremsstrahlung</td>
+						<td></td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">X</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>e- Interaction with matter <br>Characteristic X-ray</td>
+						<td></td>
+						<td>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">X</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Auger e- Emission</td>
+						<td>
+							when parent is at <u>excited ATOMIC</u> state <br>
+							Emit Auger e- when <i> E<sub>e-</sub> = E<sub>atom-excite</sub> - E<sub>binding</sub></i> <br>
+							&there4; emitted monoenergetic Auger e-
+						</td>
+						<td>
+							<div style="background-color: darkcyan; display: inline; padding: 6px;">e-</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>&alpha; Decay</td>
+						<td>\( 2p^+ + 2n \longrightarrow \alpha^{2+} \) <br>
+							mostly when A>190
+						</td>
+						<td>
+							<div style="background-color: crimson; display: inline; padding: 6px;">Heavy CP</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Spontaneous Fission</td>
+						<td>
+							happens on transuranic isotopes <br>
+							<ul>
+								<li class="stroke">isotopes with Z>92 (Z of Uranium)</li>
+							</ul>
+						</td>
+						<td>
+							<div style="background-color: crimson; display: inline; padding: 6px;">Heavy CP</div>
+							<div style="background-color: steelblue; display: inline; padding: 6px;">n</div>
+						</td>
+					</tr>
+
+
+					<tr>
+						<td>Nuclear Reaction</td>
+						<td>
+							<b>Photo-disintegration</b>
+							<div style="padding-left: 24px;">
+								when photon E > nucleus binging energy <br>
+								e.g. <i><sup>9</sup>Be + &Chi; &rarr; n + 2 <sup>4</sup>Be</i>
+							</div>
+						</td>
+						<td>
+							<div style="background-color: steelblue; display: inline; padding: 6px;">n</div>
+							<div style="background-color: gold; color: black; display: inline; padding: 6px;">&gamma;</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Synchrotron Radiation</td>
+						<td></td>
+						<td></td>
+					</tr>
+
+
+					<tr>
+						<td class="clean" colspan="3">
+							EC&ensp;=&ensp;electron capture <br>
+							<i>&nu;<sub>e</sub></i>&ensp;=&ensp;electron neutrino <br>
+							* beta carrying a spectrum of energy because Q-value is shared with <i>&nu;<sub>e</sub></i> <br>
+
+						</td>
+					</tr>
+
+
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Electron Configuration</td>
+			<td>
+				<table>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px;">Shell</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;" colspan="4">Subshell</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px;">1 K<sup>2</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">s<sup>2</sup></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px;">2 L<sup>8</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">s<sup>2</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">p<sup>6</sup></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px;">3 M<sup>18</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">s<sup>2</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">p<sup>6</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">d<sup>10</sup></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px;">4 N<sup>32</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">s<sup>2</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">p<sup>6</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">d<sup>10</sup></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">f<sup>14</sup></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; padding-left: 3px; text-align: center;">&vellip;</td>
+						<td style="border: 0px; padding: 0px; padding-left: 3px; text-align: center;" colspan="4">&vellip;</td>
+					</tr>
+				</table>
+				<br>
+				Maximum e- a shell can accommodate&ensp;=&ensp;2 n<sup>2</sup>
+			</td>
+		</tr>
+		<tr>
+			<td>Decay Scheme</td>
+			<td><img src="Co60_Decay.jpg" alt="" width="300"></td>
+		</tr>
+		<tr>
+			<td>Nuclide Chart</td>
+			<td>(graph) proton N vs neutron N</td>
+		</tr>
+		<tr>
+			<td>Mass Defect</td>
+			<td>
+				mc<sup>2</sup>&ensp;=&ensp;nuclear binding energy <br>
+				<br>
+				<div style="text-align: center;"><i>m<sub>bound p</sub> + m<sub>bound n</sub> + <div style="display: inline; border: 2px greenyellow solid; padding: 3px;">m<sub>defect</sub></div> = m<sub>free p</sub> + m<sub>free n</sub> </i></div>
+				<br>
+				The binding energy can be obtained through nuclear fission or fusion
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	&ensp;[1]&ensp;https://www.toppr.com/guides/physics/nuclei/radioactivity-law-of-radioactive-decay/
+	<br><br>
+</body>
+</html>

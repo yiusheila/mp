@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: hidden;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		.flow {
+			line-height: 100%;
+			padding: 3px;
+			border: hidden;
+			text-align: center;
+		}
+		.grey{
+			border: 2px solid grey;
+			vertical-align: middle;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>X-ray Tube</h2>
+	<table>
+		<tr>
+			<td>Structure</td>
+			<td>
+				<br>
+				<img src="xray_tube.png" alt="img" width="600">
+				<br>
+				<table>
+					<tr>
+						<td class="clean"><b>Component</b></td>
+						<td class="clean"><b>Material</b></td>
+						<td class="clean"><b></b></td>
+					</tr>
+
+					<tr>
+						<td class="clean">Anode</td>
+						<td class="clean">
+							Tungsten/Rhenium (Target)
+						</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">high atomic number</li>
+								<li class="stroke">high melting point (3422 °C)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean"></td>
+						<td class="clean">Molybdenum/Graphite (Backing+Stem)</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">light weighted</li>
+								<li class="stroke">low thermal expansion</li>
+								<li class="stroke">high melting point</li>
+							</ul>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="clean">Filter</td>
+						<td class="clean">Aluminium/Copper</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">absorb low dose energy photons</li>
+								<ul>
+									<li class="stroke">lower patient dose</li>
+								</ul>
+							</ul>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="clean">Cathode</td>
+						<td class="clean">Tungsten (Filament)</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">:) good electrical conductor</li>
+								<li class="stroke">:) poor thermal conductor</li>
+								<ul>
+									<li class="stroke">good for thermionic e- emission</li>
+								</ul>
+								<li class="stroke">current passing through filament in A range <br> producing tube current in mA range</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean"></td>
+						<td class="clean">Copper (Backing)</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">good thermal conductor</li>
+							</ul>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="clean">Micro-switch</td>
+						<td class="clean"></td>
+						<td class="clean">
+							when diaphragm touches the switch, <br>
+							shut down tube <br> 
+							prevent overheat
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">Window</td>
+						<td class="clean">Beryllium</td>
+					</tr>
+					<tr>
+						<td class="clean">Insert</td>
+						<td class="clean">
+							Glass / Perspex <br> 
+							/ Metal
+						</td>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">Metal expensive but can prevent arching</li>
+								<ul>
+									<li class="stroke">by maintaining a constant electric potential</li>
+								</ul>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="clean"><b>(Mammography)</b></td>
+					</tr>
+					<tr>
+						<td class="clean">Anode</td>
+						<td class="clean">Molybdenum (Target)</td>
+						<td class="clean">
+							<ul class="first">
+								<ul class="stroke">use together with Mo or Rh filter</ul>
+								<ul class="stroke">characteristic radiation at 17.9 and 19.5 keV</ul>
+								<ul class="stroke">it happens that the k edge of Mo = 20.0 keV</ul>
+								<ul class="stroke">k edge of Rh = 23.22 keV</ul>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean"></td>
+						<td class="clean">Rhodium (Target)</td>
+						<td class="clean">
+							<ul class="first">
+								<ul class="stroke">use together with Rh filter</ul>
+								<ul class="stroke">characteristic radiation at 20.3 and 22.7 keV </ul>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Mounting</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ceiling mount</li>
+					<li class="stroke">C-arm</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Tube Aging</td>
+			<td>
+				Deteriorate inherent filtration
+				<ul>
+					<li class="stroke">Target/filament evaboration</li>
+					<ul>
+						<li class="stroke">Dust accumulating on the insert inner surface</li>
+						<li class="stroke">Tube arching</li>
+					</ul>
+					<li class="stroke">Cooling oil impurity</li>
+					<li class="stroke">Target melting</li>
+				</ul>
+				Mechanical
+				<ul>
+					<li class="stroke">Filament burnt out</li>
+					<li class="stroke">Rotor bearing</li>
+					<li class="stroke">Anode cracking</li>
+				</ul>
+				
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>High Voltage Generator</td>
+			<td>
+				* Use inverter to reduce size and improve efficiency <br> 
+				<br> 
+				<b>Signal</b>
+				<div style="padding-left: 24px; text-align: center;">
+					<img src="x-ray-tube-signals.png" alt="" width="400">
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Space Charge Effect <sup>[1]</sup></td>
+			<td>
+				<div style="text-align: center;"><img src="space-charge-effect.png" alt="" width="300"></div>
+				<b>Mechanism</b>
+				<div style="padding-left: 24px;">
+					a cloud of e- (=space charge) form around filament, <br>
+					the electrostatic repulsion may prevent more e- further emitted by the filament. <br>
+					<br> 
+					When kV is too low for a given filament current, <br>
+					the tube current will be limited due to space charge effect. 
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Angle of Anode <sup>[2]</sup></td>
+			<td>
+				<b>Steeper Anode</b>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td class="clean">&ensp;:)&ensp;smaller focal spot</td>
+							<td class="clean">
+								<ul class="first">
+									<li class="stroke">higher resolution</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="clean">&ensp;:(&ensp;smaller useful field size</td>
+							<td class="clean">
+								<ul class="first">
+									<li class="stroke">increase SID for larger coverage</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td class="clean">&ensp;:(&ensp;enhance heel effect</td>
+							<td class="clean">
+								<ul class="first">
+									<li class="stroke">increase SID for better uniformity</li>
+									<li class="stroke">or adjust brightness</li>
+									<ul>
+										<li class="stroke">by altering the gain of the pixels</li>
+										<li class="stroke">or through post-processing (?)</li>
+									</ul>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Focal Spot</td>
+			<td>
+				<b>Nominal (/Effective) Focal Spot</b><br>
+				<div style="padding-left: 24px;">
+					
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Efficiency</td>
+			<td>
+				~ 1 % <br>
+				~ 99 % of e- E converted to head
+			</td>
+		</tr>
+
+		<tr>
+			<td>Tube Loading Curves <sup>[2]</sup></td>
+			<td>
+				<b>Maximum Exposure Time</b> depends on
+				<ul>
+					<li class="stroke">anode rotation speed</li>
+					<li class="stroke">focal spot size</li>
+					<li class="stroke">tube voltage waveform (?)</li>
+					<li class="stroke">anode heat capacity, heating curves, cooling curves</li>
+				</ul>
+				<div style="text-align: center;padding: 6px;"><img src="tube-loading-curves.png" alt="" width="300"></div>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	&ensp;[1]&ensp;Bushong SC. Radiologic Science for Technologists: Physics, Biology and Protection. Elsevier. ISBN: 978-0-323-08135-1 <br>
+	&ensp;[2]&ensp;https://en.wikibooks.org/wiki/Basic_Physics_of_Digital_Radiography/The_Source
+
+</body>
+</html>

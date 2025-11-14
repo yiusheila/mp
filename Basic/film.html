@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic | Film</title>
+	<link rel="stylesheet" href="../style.css">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>Film</h2>
+	<h3>Radiochromic Film</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Background</td>
+			<td>
+				<b>Active component:</b> <br>
+				<div style="margin-left: 24px;">
+					diacetylene monomers (e.g. Li-PCDA [10,12-pentacosadiynoic acid]) <br>
+					(vs radiographic film: silver halide based) <br>
+				</div>
+				<br>
+				<b>Mechanism:</b> <br>
+				<div style="margin-left: 24px;">
+					polymerisation of the diacetylene monomer <br>
+					&ensp;&rarr;&ensp; blue coloured polymer <br>
+					&ensp;&rarr;&ensp; i.e. absorb red + green <br>
+					<div style="text-align: center;">
+						<img src="diacetylene-polymerisation.png" alt="" width="500px">
+					</div>
+				</div>
+				<br>
+				<b>Design:</b>
+				<div>
+					<ol>
+
+						<li>
+							<div style="display: inline-block; vertical-align: top; width: 40%;">
+								&uarr; diacetylene crystal size <br>
+								&uarr; scatter of transmitted light <br>
+								&there4; &darr; spatial resolution <br>
+								&emsp; but &uarr; sensitivity
+							</div>
+							<div style="display: inline-block; vertical-align: top; width: 40%;">
+								&darr; diacetylene crystal size <br>
+								&darr; sensitivity <br>
+								but &uarr; contrast at higher dose <br>
+								&because; steeper slope of dose response curve 
+							</div>
+						</li>
+
+						<li>
+							<div class="hl2">yellow marker dye</div> added to active emulsion layer <br>
+							&rarr; <div class="hl2">absorb blue light</div> <br>
+							&rarr; proportional to the layer thickness <br>
+							&larr; since thicker layer &rarr; more active component per unit area &rarr; more absorption
+						</li>
+						<li>
+							the substrate layers were made rough with silica particles <br>
+							&rarr; &darr; reflection of light between two smooth surface <br>
+							&rarr; prevent <div class="hl2">Newton's rings interference</div>
+						</li>
+						<li>
+							almost energy independent after MeV range down to ~40 keV
+						</li>
+						<li>
+							tissue equivalent
+						</li>
+					</ol>
+				</div>
+
+				<br>
+				<b>Advantages:</b>
+				<div style="margin-left: 24px;">
+					:)&ensp;no film processing <br>
+					:)&ensp; &uarr; resolution, &uarr; dynamic range <br>
+					:)&ensp; &darr; sensitive to visible light > no dark room<br>
+					:)&ensp;Dose rate independent <br>
+					<br>
+					* store at room temperature or lower <br>
+					* keep relative humidity &darr; <br>
+
+				</div>
+				<br>
+				OD-Pixel Value relationship 
+				<div style="margin-left: 24px;">
+					\( OD = log_{10} \Large \frac{2^{16}}{PV} \), for 16-bit scan per channel i.e. 48-bit RGB <br>
+					NIH Rodbard function for fitting: \( D = c \Large \left( \frac{OD-a}{d-OD}\right) ^\frac{1}{b} \)
+				</div>
+				<br>
+				<b>Factors Affecting Dose Response Curve</b>
+				<div>
+					<ol>
+						<li>Film model + lot</li>
+						<li>Type of radiation + energy</li>
+						<li>
+							Readout system <br>
+							<div style="margin-left: 24px;">
+								Film orientation
+								Transmission/reflection mode <br>
+								Temperature of scanner glass <br>
+								Correction
+							</div>
+						</li>
+						<li>
+							Time gap between irradiation and readout <br>
+							&larr; due to post exposure growth
+						</li>
+					</ol>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Model</td>
+			<td>
+				<table class="tight_clean_table">
+					<tr>
+						<td>EBT-3</td>
+						<td>
+							<table class="tight_clean_table">
+								<tr>
+									<td>Dose range</td>
+									<td>:</td>
+									<td>0.2 - 20 Gy</td>
+								</tr>
+								<tr>
+									<td>Resolution</td>
+									<td>:</td>
+									<td>~< 25&mu;m</td>
+								</tr>
+								<tr>
+									<td colspan="4"></td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										
+									</td>
+								</tr>
+							</table>
+							<div style="margin-left: 6px;">
+								Tissue equivalent <br>
+								Symmetric in both side i.e. the thickness of the polyester layers above and below the active layer are the same <br>
+								&emsp;&emsp;(might make a different if scanned in reflective mode)
+							</div>
+							
+							 <br>
+							 
+						</td>
+					</tr>
+					<tr>
+						<td>XR-RV3</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Considerations and Remedies</td>
+			<td>
+				<ol>
+					<b style="margin-left: -24px">Geometrical Effects</b>
+					<li>Lateral Scan Artefact</li>
+					<li>Scanning Orientation <br>
+						&ensp;&larr;&ensp; polarisation / anisotropic scattering of light <br>
+						&ensp;&larr;&ensp; needle like micro-crystal structure
+					</li>
+					<b style="margin-left: -24px">Scanner</b>
+					<li>Scanner Light Output Consistency</li>
+					<b style="margin-left: -24px;">Scanning Procedures</b>
+					<li>distance between film and light source keep constant </li>
+					<b style="margin-left: -24px">Scan Time</b>
+					<li>Post Irradiation Growth</li>
+				</ol>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>AAPM TG-235</td>
+			<td>
+				<b>QA of Scanner</b> <br>
+				<ol>
+					<li>Grayscale</li>
+					<li>RGB Response</li>
+					<li>Spatial Resolution</li>
+					<li>Squareness/Scaling</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Lateral Response Artefact (LRA)</td>
+			<td>
+				Lewis D, Chan MF. Correcting lateral response artifacts from flatbed scanners for radiochromic film dosimetry. Med Phys. 2015 Jan;42(1):416-29. <br>
+				<br>
+				Correct LRA for each color channel, each dose, and each lateral position
+			</td>
+		</tr>
+
+		<tr>
+			<td>Analysis</td>
+			<td>
+				Micke (2011) Multichannel filme dosimetry with non-uniformity correction <br>
+				<div style="margin-left: 24px;">
+					Positive image: [0(black), 2<sup>16</sup>(max) ] <br>
+					PV (ROI mean of raw pixel value) <br>
+					X (channel value = normalised PV) <br>
+					&emsp;&emsp; \( X = \Large \frac{PV_{(R/G/B)}}{2^{16}} \)
+				</div>
+
+				<br><br>
+				<div style="background-color: gray; padding: 3px 12px;">
+					<b>Equations from other papers:</b>
+					<div style="margin-left: 24px;">
+						\[ OD = log_{10} \large \left( \frac{I_0}{I_{exposed}} \right) \]
+						where <div class="grp">
+							\(I_0\) = mean pixel value of 0 Gy <br>
+							\(I_{exposed}\) = mean pixel value of exposed film
+						</div> <br>
+						<br>
+						<b>Fitting</b> <br>
+						NIH Radford function: <br>
+						\[ Dose = c \left( \frac{OD-a}{d-OD} \right)^{\frac{1}{b}} \]
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+	<br> <br>
+	<h3>Scanner</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Basic</td>
+			<td>
+				<b>Reflection vs Transmission Scanning</b> <br>
+				<div style="margin-left: 24px;">
+					Reflection mode: <div class="grp">
+						light source and detectors are on the same glass side <br>
+						light emit from bottom &ensp;&gt;&ensp; <div class="hl">active layer</div> &ensp;&gt;&ensp; <div class="button">reflective white sheet (or white film substrate e.g. for RTQA2)</div> &ensp;&gt;&ensp; <div class="hl">active layer</div> &ensp;&gt;&ensp; detector <br>
+						<br>
+						&ensp;&because; pass through active layer twice <br>
+						&ensp;&rarr;&ensp; enhance response &ensp;&rarr;&ensp; &uarr; sensitive (at low dose) <br>
+						<br>
+						&ensp;:(&ensp; film front surface might reflect some light <br>
+						act as a offset &ensp;&gt;&ensp; &darr; dynamic range 
+					</div>
+					
+
+				</div>
+				<br>
+				<b>Lateral Response Artefact</b> <br>
+				<div style="margin-left: 24px;">
+					lateral position &ensp;=&ensp; perpendicular to scan direction (i.e. along the light source)
+				</div>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>Good Practice</td>
+			<td>
+				<ol>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>QA</td>
+			<td>
+				https://www.stouffer.net/Productlist.htm
+			</td>
+		</tr>
+	</table>
+
+
+	<br><br>
+	<h3>Radiographic Film</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>
+				1. Direct Film <br>
+				<div style="padding-left: 24px;">
+					Properties
+					<ul class="first">
+						<li class="stroke">
+							Exposure Range = 0.01 - 10 mGy
+						</li>
+						<li class="stroke">
+							Optical Density<br>
+							$$
+							\begin{align}
+								OD &= log_{10} \left( \frac{I_0}{I_t} \right)  \\
+								&= log_{10} \left( \frac{1}{T} \right)
+							\end{align}
+							$$
+						</li>
+						<li class="stroke">
+							Characteristic Curve <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;OD vs Log(Exposure) Curve
+								<div style="text-align: center;"><img src="film_characteristic_curve.png" alt="" width="300"></div>
+							</div>
+						</li>
+						<li class="stroke">
+							Reciprocity Law <br>
+							<div style="text-align: center; padding: 6px;">
+								<i>Film Response = Exposure &#215; Time</i> 
+							</div>
+							
+						</li>
+						<li class="stroke">
+							Film Density <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;film darkness
+							</div>
+						</li>
+						<li class="stroke">
+							Base Density <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Inherent OD with no exposure <br>
+								&ensp;~&ensp;0.1 <br>
+							</div>
+						</li>
+						<li class="stroke">
+							Fog Density
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Contaminated OD by <br>
+								<ul>
+									<li class="stroke">Accident exposure during storage</li>
+									<li class="stroke">Chemical contamination</li>
+									<li class="stroke">Improper processing</li>
+								</ul>
+								&ensp;&lt;&ensp;0.1
+							</div>
+						</li>
+						<li class="stroke">
+							Film Speed
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Sensitivity to Radiation/Light <br>
+								&ensp;|&ensp;slow&ensp;=&ensp;more exposure
+								\[ Speed = { 1 \over Exposure } \]
+							</div>
+						</li>
+					</ul>
+
+					Mechanism
+					<ul class="first">
+						<li class="stroke">
+							Steps
+							<div style="text-align: center;">
+								exposure <br>
+								&darr; <br>
+								e- in silver halide (AgX) prompted to conduction band <br>
+								e- fall into traps of dopant (=sensitivity speck) <br>
+								form latent image <br>
+								&darr; <br>
+							</div>
+						</li>
+						<li class="stroke">
+							Densitometer <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Light Source + Light Sensor
+							</div>
+						</li>
+						<li class="stroke">
+							QA using Sensitometry <br>
+						</li>
+					</ul>
+				</div>
+
+				<br><br>
+				2. Screen Film <br>
+				<div style="padding-left: 24px;">
+					
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+
+</body>
+</html>

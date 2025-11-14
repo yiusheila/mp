@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic | Electromagnetics</title>
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Electromagnetics</h2>
+
+
+	<h3>Basic</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Magnetic Field Flux</td>
+			<td>N &rarr; S</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div style="text-align: center;"><img src="F-B-I.png" width="200px"></div>
+			</td>
+		</tr>
+        <tr>
+            <td>
+            	Lorentz Force <br>
+            	(Force on moving charge)
+            </td>
+            <td>
+            	\[ \vec{F} = q~(\vec{E} + \vec{v} \times \vec{B}) \]
+            </td>
+		</tr>
+
+		<tr>
+			<td>
+				Laplace Force <br>
+				(Force on wire with I)
+			</td>
+			<td>
+				* Definition of Tesla <br>
+				\[ \vec{F} = I\vec{l} \times \vec{B} \]
+        		<div style="padding-left: 24px;">
+        			where
+        			<div style="padding-left: 24px;">
+        				<i>F</i> = Force (N) <br>
+        				<i>I</i> = Current (A) <br>
+        				<i>l</i> = length of conductor (m) <br>
+        				<i>B</i> = Magnetic Field (T)
+        			</div>
+        		</div>
+			</td>
+		</tr>	
+	</table>
+
+	<br><br>
+	<h3>Electricity</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Electrode Polarity</td>
+			<td>
+				Cathode&ensp;=&ensp;CATCHing e- into system <br>
+				Anode&ensp;&ensp; =&ensp;taking e- AWAY from system <br>
+				<br>
+				i.e. <br>
+				<div style="padding-left: 24px;">
+					<b>inside the system, </b><br>
+					&emsp; e- go from cathode to anode <br>
+					<br> 
+					<b>to the outside world, </b><br>
+					&emsp; Cathode = negative (need e-) <br>
+					&emsp; Anode = positive <br>
+					<br>
+				</div>
+				<div style="border: 1px solid grey; padding: 6px;">
+					Recap: <b>Redox reaction</b> <br>
+					<div style="padding-left: 24px;">
+						Oxidation = losing e- <br>
+						&emsp; e.g. \( H_2 \rightarrow 2H^+ + 2e^- \) <br> 
+						Reduction = gaining e- <br>
+						&emsp; e.g. \( F_2 + 2e^- \rightarrow 2F^- \)
+					</div>
+
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+	<br>
+	<br>
+	<h3>Electromagnetism</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Maxwell's Equations</td>
+			<td>
+				<table>
+					<tr>
+						<td style="vertical-align: middle;">Gauss's Law</td>
+						<td>\[ \Large \nabla \cdot E = \frac{\rho}{\epsilon_0} \]</td>
+						<td>\[ \Large \oint_V E~ dA = \frac{Q}{\epsilon_0} \]</td>
+						<td style="vertical-align: middle;">
+							Electric flux through a closed surface <br>
+							&emsp;&propto;&emsp;charge enclosed
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: middle;">Gauss's Law for Magnetism</td>
+						<td style="vertical-align: middle;">
+							\[ \Large \nabla \cdot B = 0 \]
+						</td>
+						<td>\[ \Large \oint_V B~ dA = 0 \]</td>
+						<td style="vertical-align: middle;">
+							Magnetic flux through a closed surface <br>
+							&emsp;=&emsp;0
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: middle;">
+							Maxwell–Faraday equation <br>
+							(-ve sign defined by Lenz Law)
+						</td>
+						<td>
+							\[ \Large \nabla \times E = - \frac{\partial B}{\partial t} \]
+						</td>
+						<td>\[ \Large \oint_S E~ dl = - \frac{\partial \Phi_B}{\partial t} \]</td>
+						<td style="vertical-align: middle;">
+							When a conductive closed path experience a time-varying Magnetic flux <br>
+							Electromotive force generated in the loop to produce a B field to counteract 
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align: middle;">Ampère's Circuital Law</td>
+						<td>
+							\[ \Large \nabla \times B = \mu_0 \left( J + \epsilon_0 \frac{\partial E}{\partial t} \right) \]
+						</td>
+						<td>\[ \Large \oint_S B~ dl = \mu_0 (I + \epsilon_0 \frac{\partial \Phi_E}{\partial t}) \]</td>
+						<td style="vertical-align: middle;">
+							Current flowing through a conductive wire <br>
+							creates a Magnetic field around it
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Lentz Law</td>
+			<td>
+				<ol>
+					<li>B flux changes</li>
+					<li>current induced to oppose the change</li>
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h3>Matters in B or E Field</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Permeability (<i>&mu;</i>)</td>
+			<td>
+				Considering a material that is present in a magnetic field <i>B</i>, <br>
+				as the material being magnitised, the magnetic field changes the organisation of magnetic dipoles in the material, <br>
+				a <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">magnetic field intensity <i>H</i></div> is applied to the material from <i>B</i>,
+				<div style="text-align: center;">
+					<img src="B-H-graph.png" alt="" width="250px">
+				</div>
+				<br>
+				<div style="text-align: center;"><i><b>B</b> = &mu;<b>H</b></i></div>
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						B = external magnetic field <br>
+						H = auxiliary magnetic field of a material <br>
+						Unit = H m<sup>-1</sup>
+						<br>
+						H influenced by dipole migration/reorientation
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Permittivity (<i>&epsilon;</i>)</td>
+			<td>
+				<div style="text-align: center;"> <i><b>D</b> = &epsilon;<b>E</b> </i> </div>
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						E = applied electric field <br>
+						D = electric displacement field (C m<sup>-2</sup>) <br>
+						Unit = F m<sup>-1</sup>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+	</table>
+
+	<br>
+	<h3>Application</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>RFID</td>
+			<td>
+				Frequency Hopping =  constantly changing carrier frequency &rarr; &darr; interference/jamming <br>
+				<br>
+				<img src="RFID-reader.png" alt="" width="700px" style="margin: 6px;">
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interaction</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Radiation Interaction With Matters</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="5" style="font-size: 16px;"><b>Photon</b></td>
+			<td>Elastic Scattering <br>(Coherent/Rayleigh)
+			</td>
+			<td>\[ \large \sigma \propto {Z \over E^2} \]</td>
+			<td>
+				&ensp;=&ensp; Inbound photon interacts with orbital e <br>
+				<br>
+				&times; significant to energy transfer <br>
+				&check; contribute to attenuation
+			</td>
+		</tr>
+		<tr>
+			<td>Photoelectric</td>
+			<td>\[ \large \tau \propto {Z^3 \over E^3} \]</td>
+			<td>
+				<b>Mechanism</b>
+				<ul>
+					<li class="stroke">inbound photon having low E that greater but similar to K shell e- binding E</li>
+					<li class="stroke">inbound photon being absorbed</li>
+					<li class="stroke"><div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">inner orbit e- gain E leave atom</div></li>
+					<li class="stroke">outer bound e- fill the hole</li>
+					<li class="stroke">characteristic photon&ensp;=&ensp;<div class="highlight1"> fluorescent X-ray </div>
+						\[ E = h\nu\]
+						\[ W = binding~energy \]
+					</li>
+				</ul>
+
+				<br>
+				<div class="highlight1"><b>Auger Electron</b></div>
+				<ul>
+					<li class="stroke">characteristic photon absorbed by the atom</li>
+					<li class="stroke">MONOENEGETIC e- emitted</li>
+
+				</ul>
+				<br>
+
+				<b>Fluorescent Yield (w)</b>
+				<div style="padding-left: 24px;">
+					\[ \Large w = \frac{N_{characteristic~photon}}{N_{inner~shell~e^-~vacancy}} \]
+				</div>
+				<ul>
+					<li class="stroke">Z&uarr;, w&uarr; <br>
+						e.g. Auger e- &uarr; when Z&lt;30 <br>
+						&emsp;&ensp; soft tissue (Z ~ 7.6) w ~ 0 &ensp;=&ensp; almost all Auger e- <br>
+						&emsp;&ensp; Tungsten (Z = 74) w ~ 0.93 &ensp;=&ensp; characteristic X-ray dominant
+					</li>
+				</ul>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Compton</td>
+			<td>
+				\[ \large \sigma \propto {\rho_e \over E} \]
+				<div style="padding-left: 24px;">
+					\(\rho_e\) = electron density
+				</div>
+				
+			</td>
+			<td>
+				<b>Mechanism</b>
+				<ul>
+					<li class="stroke">free outer bound e- took some of the E as KE</li>
+					<li class="stroke">producing a lower E photon</li>
+				</ul>
+				<br>
+				<b>Angle of the scattered photon</b>
+				<div style="padding-left: 24px;">
+					 \[ \large \lambda_s - \lambda_i = \frac{h}{m_e c}(1-cos\theta) \]
+					 <a href="#compton_derivation">derivation</a> <br>
+					 &there4; maximum transfer when scattered photon @ 180&deg;
+					 <div style="margin-left: 145px;">
+						e- released at 0&deg;
+					 </div>
+				</div>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Pair Production</td>
+			<td>\[ \large \kappa \propto Z~E \]</td>
+			<td>
+				photon > e+ + e- near nucleus * due to momentum conservation <br>
+				 > e+ > annihilation with atomic e- <br>
+				 > emit two photon with 511 keV
+			</td>
+		</tr>
+		<tr>
+			<td>Photodisinegration</td>
+			<td>
+				
+			</td>
+			<td>
+				(&gamma;, n), (&gamma;, p) or (&gamma;, &alpha;)
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<table style="margin-left: 24px">
+		<tr>
+			<td rowspan="5" style="font-size: 16px;"><b>Electron</b></td>
+			<td rowspan="3" style="background-color: rgba(255, 255, 0, 0.1);">&darr; Z target</td>
+			<td  style="background-color: rgba(255, 255, 0, 0.1);">Excitation</td>
+			<td rowspan="2"> 
+				Inelastic collision with e
+				\[ \frac{S_{col}}{\rho} \propto \rho_e \]
+			</td>
+			<td>
+				<ol>
+					<li>Atomic e- excited to a higher level orbit</li>
+					<li>return to ground state</li>
+					<li>emit low E photon (UV/visible light/infrared)</li>
+					&emsp;&rarr;&emsp;incident e- experiences <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">collisional loss</div>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(255, 255, 0, 0.1);">Ionisation</td>
+			<td>
+				Outer shell atomic e- emitted <br>
+				&emsp;&rarr;&emsp;incident e- experiences <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">collisional loss</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(255, 255, 0, 0.1);">Elastic Collision</td>
+			<td>scattered by nuclei <br>
+				\[ scatter~power \propto \frac{Z^2}{E} \]
+			</td>
+			<td>
+				&ensp;:)&emsp;scattering foil <br>
+				&ensp;:(&emsp;inhomogeneity in tissue <br>
+				&emsp;&emsp;&rarr; different scattering
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2"  style="background-color: rgba(0, 255, 255, 0.1);">&uarr; Z target</td>
+			<td style="background-color: rgba(0, 255, 255, 0.1);">Bremsstrahlung</td>
+			<td>
+				Inelastically scattered by nuclei <br>
+				\[ \frac{S_{rad}}{\rho} \approx Z^2 E \]
+				\[ efficiency \propto ZE \]
+				\[ photon~power \propto a^2 q^2 \]
+				<div style="margin-left: 62px; font-size: 9px; line-height: 80%;">
+					a = particle acceleration <br>
+					q = particle charge
+				</div>
+			</td>
+			<td>
+				<ol>
+					<li>Incident e- travel near the nucleus (within the orbital e- cloud)</li>
+					<li>incoming e- change direction</li>
+					<li>emit x-ray</li>
+					&emsp;&rarr;&emsp;incident e- experiences <div style="display: inline; background-color: rgba(0, 0, 255, 0.3);">radiative loss</div>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(0, 255, 255, 0.1);">Characteristic</td>
+			<td>
+				hit inner shell e- <br>
+				\[ v \propto Z^2 \]
+			</td>
+			<td>
+				 - Inner shell atomic e- emitted <br>
+				 - Outer shell atomic e- fill in <br>
+				 - Characteristic x-ray emitted
+
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<table>
+		<tr>
+			<td style="font-size: 16px;"><b>Heavy Charged Particles</b></td>
+			<td>
+				Coulomb Interaction
+			</td>
+			<td>
+				with electrons in medium &ensp;&rarr;&ensp; Excitation <br>
+				<div style="margin-left: 140px;">&ensp;&rarr;&ensp; Ionisation</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<table style="padding-left: 24px;">
+		<tr>
+			<td rowspan="7" style="font-size: 16px;"><b>Neutron</b></td>
+			<td colspan="2">
+				Neutron KE <br>
+				<div style="text-align: center;"><img src="thermal_neutron.png" alt="" width="300px"></div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Elastic Scattering</td>
+			<td>
+				&ensp;=&ensp; TOTAL energy of the system (incoming n + target atom) conserved <br>
+				&ensp;=&ensp; main interaction between FAST neutron and and protons
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Inelastic Scattering</td>
+			<td>
+				&ensp;=&ensp;energy loss to excitation of target atom <br>
+				&ensp;&ensp;&there4;&ensp;target nucleus excitation energy = threshold of inelastic scattering <br>
+				<br>
+				&ensp;*&ensp;occur with high Z and and high neutron E
+			</td>
+		</tr>
+		<tr></tr>
+			<!--  -->
+			<td>Transmutation
+				<div style="padding-left: 24px;">
+					(n, p) <br>
+					(n, &alpha;) <br>
+					(n, 2n) <br>
+					(n, np)
+				</div>
+			</td>
+			<td style="vertical-align: top;">
+				&ensp;=&ensp;the target atom changes to another atom <br>
+				
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Radiative Capture
+				<div style="padding-left: 24px;">
+					(n, &gamma;)
+				</div>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Fission
+				<div style="padding-left: 24px;">
+					(n, fp)
+				</div>
+			</td>
+			<td></td>
+		</tr>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Attenuation</h3>
+	<table>
+		<tr>
+			<td rowspan="6"><h3>Photon</h3></td>
+			<td rowspan="3">Attenuation Coefficient</td>
+			<td>Linear \( \mu \) </td>
+			<td></td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Mass \( \mu \over \rho \)</td>
+			<td>account for density e.g. different temperature</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Compound \( \mu \over \rho \)</td>
+			<td>
+					\[ compound~{\mu \over \rho} = \sum_i w_i \left({\mu \over \rho}\right) (E, Z_i) \]
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				Attenuation of Photon <br>
+				(Lambert-Beer's Law)
+			</td>
+			<td colspan="2">
+				\[ \large I = I_0~e^{-\mu~x} \]
+				&emsp;&emsp; where <br>
+				<div style="padding-left: 60px">
+					\( \mu = \rho~(\mu/\rho)(E,Z) \) 
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				Half Value Layer <br>
+				(For photon only)
+			</td>
+			<td colspan="2">
+				 Thickness of which the ENERGY intensity halves <br>
+				 <br>
+				 Depending on
+				 <ul>
+				 	<li class="stroke">target material</li>
+				 	<li class="stroke">energy</li>
+				 </ul>
+				<br>
+				First HVL < Second HVL < Third HVL ...
+			</td>
+		</tr>
+		<tr>
+			<td>K Edge</td>
+			<td colspan="2">
+				&ensp;=&ensp;the binding energy of K shell e-
+				<ul>
+					<li class="stroke">photoelectric effect mostly happen at K shell</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+
+
+	<br>
+	<table>
+		<tr>
+			<td rowspan="9"><h3>Charged <br> Particle</h3></td>
+			<td rowspan="3">
+				Stopping Power <br>
+				(For charged particles only)
+			</td>
+			<td>
+				<b>Linear Stopping Power</b><br>
+				&emsp;&emsp; average rate of energy loss per unit path length
+				\[ S = - {dE \over dx} \]
+				&emsp;&emsp;where <br>
+				<div style="padding-left: 60px">
+					E = KE of incoming e- <br>
+				</div>
+				<br>
+				<br>
+				<b>Mass Stopping Power</b>
+				\[ S_m = {S \over \rho} \]
+				&emsp;&emsp;where <br>
+				<div style="padding-left: 60px">
+					S = linear stopping power <br>
+					\(\rho\)= density of target material
+				</div>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Total Mass Stopping Power</b> <br>
+				\[ { \left( S \over \rho \right) }_{tot} = { \left( S \over \rho \right) }_{col} + { \left( S \over \rho \right) }_{rad}\]
+				<br>
+				<div style="padding-left: 60px;">
+					<b>Charged Particle Size affects col/rad proportion</b>
+					<table style="margin-top: 6px; margin-left: 24px;">
+						<tr>
+							<td class="line" rowspan="2">Light</td>
+							<td class="line">E < 10MeV</td>
+							<td class="line">\( {S / \rho}_{col} \) dominant</td>
+						</tr>
+						<tr>
+							<!--  -->
+							<td class="line">higher E</td>
+							<td class="line">\( {S / \rho}_{rad} \) dominant</td>
+						</tr>
+						<tr>
+							<td class="line">Heavy</td>
+							<td class="line"></td>
+							<td class="line">\( {S / \rho}_{col} \) largely dominant</td>
+						</tr>
+					</table>
+					<br>
+					<br>
+					<b>Atomic Number </b>
+					<div style="padding-left:24px; ">
+						Z &darr;&emsp;&rarr;&emsp;MeV cm<sup>-1</sup> g<sup>-1</sup> &uarr; <br>
+						Z &uarr;&emsp;&rarr;&emsp;&darr; e- per g
+						<div style="padding-left: 55px;">
+							e- are more tightly bounded
+						</div>
+						<div style="padding-left: 55px;">
+							&there4; &darr; MeV cm<sup>-1</sup> g<sup>-1</sup> 
+						</div>
+					</div>
+				</div>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<b>Restricted Mass Collision Stopping Power </b> <br>
+				<div style="padding-left: 24px;">
+					setting a threshold (&Delta;) to the energy transfer to secondary charge particles  <br>
+					if secondary CP receiving energy &gt; &Delta; <br>
+					not include in \( restricted \large ~(\frac{S}{\rho})_{col} \)
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Path Length</td>
+			<td>
+				the actual distance travelled by a charged particle
+			</td>
+		</tr>
+		<tr>
+			<td>Penetration Depth</td>
+			<td>the distance between the surface and the point where the charged particle lost all its energy</td>
+		</tr>
+		<tr>
+			<td>Projected Range</td>
+			<td>average of penetration depth</td>
+		</tr>
+		<tr>
+			<td>Continuous Slowing Down Approximation (csda)</td>
+			<td>
+				\[ \large csda = \int { 1 \over {dE \over dx}  } dE \]
+				the average path length of charged particles slow down to rest 
+			</td>
+		</tr>
+
+		<tr>
+			<!--  -->
+			<td>Bethe formula</td>
+			<td>
+				Equation that relates the average stopping power with:
+				<ul>
+					<li class="stroke">electron number density</li>
+					<li class="stroke">mean excitation potential</li>
+					<li class="stroke">electron rest mass</li>
+					<li class="stroke">&beta;</li>
+					<li class="stroke">vacuum permittivity</li>
+					<li class="stroke">speed of light</li>
+				</ul>
+				<br>
+				\[ S = - {dE \over dx} \propto { z^2 Z \over v^2 } \]
+				&emsp;&emsp; where <br>
+				<div style="padding-left: 60px">
+					z = incoming particle charge relative to e- <br>
+					Z = target material atomic number <br>
+					v = velocity of incoming particle
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<!--  -->
+			<td>Linear Energy Transfer (LET)</td>
+			<td>
+				\[ \large L_\Delta = {dE_\Delta \over dx} \]
+				<div style="padding-left: 24px;">
+					where <br>
+					<div style="padding-left: 24px">
+						L = Restricted LET <br>
+						E = energy loss by charged particle due to electronic COLLISIONS <br>
+						<ul>
+							<li class="stroke">not including nuclear interaction because radiative loss does not dissipate energy at site</li>
+							<li class="stroke">Restricted LET = collision stopping power</li>
+						</ul>
+						
+						\(\Delta\) = cut-off energy
+						<ul>
+							<li class="stroke">so restricted LET only considers local events</li>
+							<li class="stroke">secondary e- with energy HIGHER then \(\Delta\) would be treated as separated events and not be included here </li>
+						</ul>
+					</div>
+					<br>
+					unit: keV &mu;m<sup>-1</sup>
+				</div>
+				<br>
+				
+
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Derivation</h3>
+	<table style="width: 100%">
+		<tr>
+			<td>
+				<p id="compton_derivation">Compton Scattering</p>
+				&emsp; the angle of the scattered photon
+			</td>
+			<td>
+				<b>Pre-requisites</b>
+				<ol>
+					<b><li>Equivalent Mass of Photon</li></b>
+					<div style="padding-left: 24px;">
+						Given that, \( E = mc^2 \) and \( E_{photon} = hf \), <br>
+						we can express the equivalent mass of photon as
+						\[ m_{eq}c^2=hf \]
+						\[ m_{eq} = \frac{hf}{c^2} \]
+					</div>
+					<br>
+					<b><li>Momentum of Photon</li></b>
+					<div style="padding-left: 24px;">
+						$$
+						\begin{align}
+							p_{photon} &= m_{eq}c \\
+							&= \left( \frac{hf}{c^2} \right) c \\
+							&= \frac{hf}{c}
+						\end{align}
+						$$
+						&there4; For Photon,
+						<div style="border: 2px solid greenyellow; width: 100px; margin-left: auto; margin-right: auto;">\[ pc=hf \]</div>
+					</div>
+
+					<br>
+					<b><li>Relativistic Energy-Momentum Relation</li></b>
+					<div style="padding-left: 24px;">
+						\[ E^2 = (pc)^2 + (m_0c^2)^2 \]
+					</div>
+					<br>
+				</ol>
+				<br>
+				<b>Derivation of the Direction of Scattered Photon</b><br>
+				<div style="text-align: center;"><img src="Compton_PhotonAngle.png" alt="" style="width: 250px;"></div>
+				<ol>
+					<b><li>Conservation of Momentum</li></b>
+					<div style="padding-left: 24px;">
+						\[ \large \vec{p_i} + \vec{p_e} = \vec{p_s} + \vec{p_{e'}} \]
+						\( \large \because \vec{e}=0 \)
+						\[ \large \vec{p_{e'}} = \vec{p_i} - \vec{p_s} \]
+						$$
+						\begin{align}
+							& \quad \large ~|\vec{p_{e'}}|^2 \\
+							&= \large  \vec{p_{e'}} \cdot \vec{p_{e'}} \\
+							&= \large (\vec{p_i} - \vec{p_s}) \cdot (\vec{p_i} - \vec{p_s}) \\
+							&= \large |\vec{p_i}|^2 -2\vec{p_i}\vec{p_s} + |\vec{p_s}|^2 \\
+							{p_{e'}}^2 &= {p_i}^2 + {p_s}^2 -2{p_i}{p_s}cos\theta \\
+						\end{align}
+						$$
+						Multiply both side with \(c^2\), 
+						\[ {p_{e'}}^2c^2 = {p_i}^2 c^2 + {p_s}^2 c^2 -2{p_i}{p_s}c^2cos\theta  \]
+
+						Replacing \(pc=hf\) for incoming and scattered photons,
+						\[ {p_{e'}}^2c^2 = (hf_i)^2 + (hf_s)^2 -2 ({hf_i}) ({hf_s}) cos\theta ~~ ................. (1) \]
+					</div>
+
+					<b><li>Conservation of Energy</li></b>
+					<div style="padding-left: 24px;">
+						\[ hf_i + m_e c^2 = hf_s + \sqrt{ (p_{e'}c)^2 + (m_e c^2)^2 } \]
+						\[ hf_i - hf_s + m_e c^2 = \sqrt{ (p_{e'}c)^2 + (m_e c^2)^2 } \]
+						\[ ( hf_i - hf_s + m_e c^2 )^2 = (p_{e'}c)^2 + (m_e c^2)^2 \]
+						\[ {p_{e'}}^2 c^2 = ( hf_i - hf_s + m_e c^2 )^2 - (m_e c^2)^2 ~~ ................. (2) \]
+					</div>
+
+					<b><li>Equate (1) and (2), </li></b>
+					<div style="padding-left: 24px;">
+						$$
+						\begin{align}
+							(hf_i)^2 + (hf_s)^2 -2 ({hf_i}) ({hf_s}) cos\theta &= ( hf_i - hf_s + m_e c^2 )^2 - (m_e c^2)^2 \\
+							&= \left[~(hf_i - hf_s) + m_e c^2~\right]^2 - (m_e c^2)^2 \\
+							&= (hf_i - hf_s)^2 + 2(hf_i - hf_s)(m_e c^2) + (m_e c^2)^2 - (m_e c^2)^2 \\
+							&= (hf_i)^2 -2(hf_i)(hf_s) + (hf_s)^2 + 2(hf_i - hf_s)(m_e c^2) \\
+							-2 ({hf_i}) ({hf_s}) cos\theta &= -2(hf_i)(hf_s) + 2(hf_i - hf_s)(m_e c^2) \\
+							-cos\theta &= -1 + \frac{2h(f_i-f_s)(m_ec^2)}{2h^2f_if_s} \\
+							1 - cos\theta &= \frac{(f_i-f_s)(m_ec^2)}{hf_if_s} \\
+							\frac{h}{m_e c}(1- cos\theta) &= \frac{c}{f_s} - \frac{c}{f_i}
+						\end{align}
+						$$
+					</div>
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	Reference <br>
+	NIST: Appendix for ESTAR, PSTAR, and ASTAR (viewed on 20-Oct-2019) https://physics.nist.gov/PhysRefData/Star/Text/appendix.html
+
+</body>
+</html>

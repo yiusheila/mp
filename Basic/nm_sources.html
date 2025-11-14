@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Radioactive Source</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+	<style>
+		table.isotope td {
+			border: 0px;
+		}
+
+		.highlight_brachy {
+			background-color: steelblue;
+			display: inline;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+
+		.first {
+			margin: 0px;
+    		margin-left: 18px;
+    		padding-left: 0px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h2>Radioactive Source</h2>
+
+<table class="isotope">
+		<col width="100">
+		<col width="50">
+		<col width="60">
+		<col width="30">
+		<col width="150">
+		<tr><td colspan="7" style="border-bottom: 1px solid white;"><br><h3>Isotope</h3></td></tr>
+		<tr>
+			<td><b>Name</b></td>
+			<td><b>Symbol</b></td>
+			<td><b>T<sub>1/2</sub></b></td>
+			<td><b>Decay Mode</b></td>
+			<td><b>(&gamma;/&beta;/&alpha;) Decay Energy</b></td>
+			<td><b>Usage <sup>[5, 6]</sup></b></td>
+			<td><b>Remarks</b></td>
+		</tr>
+		<tr><td colspan="7" style="border-bottom: 1px solid white; padding: 0px; margin: 0px;"><br></td></tr>
+
+
+		<tr>
+			<td>Carbon-14</td>
+			<td>C-14</td>
+			<td>5730 y</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 156 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Dating</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Radium-226</td>
+			<td>Ra-226</td>
+			<td>1600 y</td>
+			<td>&alpha;</td>
+			<td>
+				<p style="margin: 0px; color: magenta;">
+					(&alpha;) 4.784 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">Antique brachy</div> source</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Americium-241</td>
+			<td>Am-241</td>
+			<td>432 y</td>
+			<td>&alpha;</td>
+			<td>
+				<p style="margin: 0px; color: magenta;">(&alpha;) 5.5 MeV </p>
+				<p style="margin: 0px; color: yellow;">(&gamma;) 59 keV</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Smoke detector</li>
+					<li class="stroke">QA source</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Naturally occur in Uranium mineral</li>
+					<li class="stroke">Nuclear reactor product <br>
+						 n bombardment of Plutonium
+					</li>
+					<li class="stroke">Parents <br>
+						&emsp;=&ensp;Pu-241 (94 Plutonium) <br>
+						&emsp;=&ensp;Cm-241 (96 Curium) <br>
+						&emsp;=&ensp;Bk-245 (97 Berkelium)
+					</li>
+					<li class="stroke">Daughter <br>
+						&emsp;=&ensp;Neptunium-237
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Caesium-137</td>
+			<td>Cs-137</td> 
+			<td>30.17 yr</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">(&gamma;) 661.7 keV</p>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 513 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">HDR Brachy</div></li>
+					<li class="stroke">QA source</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">Group I</div> (e.g. Na, K)</li>
+					<li class="stroke">Chemically reactive</li>
+					<li class="stroke">Soluable in water</li>
+					<li class="stroke">Used in wine dating</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Strontium-90</td>
+			<td>Sr-90</td>
+			<td>28.8 y</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 546 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ophthalmic <div class="highlight_brachy">Brachy</div></li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Decay to Y-90</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Europium-152</td>
+			<td>Eu-152</td>
+			<td>13.5 y</td>
+			<td>EC/&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 122 keV <br>
+					(&gamma;) 344 keV <br>
+					(&gamma;) 779 keV <br>
+					(&gamma;) 964 keV <br>
+					(&gamma;) 1.09 MeV <br>
+					(&gamma;) 1.41 MeV
+				</p>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 1.47 MeV <br>
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Nuclear reactors control rods</li>
+					<li class="stroke">QA source</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Rare-earth</li>
+					<li class="stroke">Neutron absorber</li>
+				</ul>
+			</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Cobalt-60</td>
+			<td>Co-60</td>
+			<td>5.27 yr</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 1.1732 MeV <br>
+					(&gamma;) 1.3325 MeV  
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">Brachy</div></li>
+					<li class="stroke">Teletherapy</li>
+					<li class="stroke">Calibration source</li>
+					<li class="stroke">Level gauges</li>
+				</ul>
+			</td>
+			<td> <sup>60</sup>Co &rarr; <sup>60</sup>Ni </td>
+		</tr>
+
+		<tr>
+			<td>Cobalt-57</td>
+			<td>Co-57</td>
+			<td>272 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 122 keV (86%) <br>
+					(&gamma;) 136 keV (11%)
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Gamma camera check source</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Iridium-192</td>
+			<td>Ir-192</td>
+			<td>73.8 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 675 keV (48%) <br>
+				</p>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 380 keV (avg)
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">HDR Brachy</div></li>
+					<ul>
+						<li class="stroke">sealed by platimum</li>
+					</ul>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Iodine-125</td>
+			<td>I-125</td>
+			<td>59.49 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 35 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">LDR Brachy</div> source for brain/prostate etc</li>
+					<li class="stroke">Not used in HK</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Strontisum-89</td>
+			<td>Sr-89</td>
+			<td>50.55 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 1.491 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Tx for Bone Metastases</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Palladium-103</td>
+			<td>Pd-103</td>
+			<td>17 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(X) 20-23 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">LDR Brachy</div> for CA prostate</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Phosphorus-32</td>
+			<td>P-32</td>
+			<td>14.3 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 1.709 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Tx for Polycythaemia ( = elevated volume percentage of red blood cells in blood)</li>
+					<li class="stroke">Malignant tumours tends to accumulate more P than normal cells</li>
+				</ul>
+				
+			</td>
+			<td></td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Radium-223</td>
+			<td>Ra-223</td>
+			<td>11.4 d</td>
+			<td>&alpha;</td>
+			<td>
+				<p style="margin: 0px; color: magenta;">
+					(&alpha;) 5.7 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Tx for Bond Metastases</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">Group II</div> alkaline</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Erbium-169</td>
+			<td>Er-169</td>
+			<td>9.4 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 35 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Arthritis Joint pain relief</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Iodine-131</td>
+			<td>I-131</td>
+			<td>8 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 606 keV <br>
+				</p>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 364 keV (81%)
+				</p>
+				
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Hyperthyroidism Treatment</li>
+					<li class="stroke">Thyroid Cancer</li>
+					<li class="stroke">I131-MIBG Imaging </li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ingestion &rarr; GI &rarr; bloodstream &rarr; trapped at thyroid gland</li>
+					<li class="stroke">(Injection of Thyrogen 3 days before treatment&ensp;=&ensp;thyroid starving)</li>
+				</ul>
+				 <br> 
+			</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td>Lutetium-177</td>
+			<td>Lu-177</td>
+			<td>6.7 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 490 keV <br>
+				</p>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 113 keV <br>
+					(&gamma;) 210 keV 
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">(PSMA) Prostate specific membrane antigen Tx</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Xenon-133</td>
+			<td>Xe-133</td>
+			<td>5.25 d</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 346 keV <br>
+				</p>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 81 keV 
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">pulmonary imaging</li>
+					<li class="stroke">cerebral blood flow</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">U-235 fission product</li>
+				</ul>
+			</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Gallium-67</td>
+			<td>Ga-67</td>
+			<td>3.2617 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 93 keV (35.7%) <br>
+					(&gamma;) 185 keV (19.7%) <br>
+					(&gamma;) 300 keV (16%) <br>
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ga3+ behaves like Fe3+ in human body
+					<ul>
+						<li class="stroke">uptakes in inflammation/rapid cell division</li>
+					</ul>
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Thallium-201</td>
+			<td>Tl-201</td>
+			<td>3.04 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 135.3 keV (2.7%) <br>
+					(X) 60-82 keV 
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Mimic Potassium biological behaviour</li>
+					<li class="stroke">Myocardial Infarction / Ischemia</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li class="stroke">Thallous Chloride&ensp;=&ensp;isotonic solution</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Indium-111</td>
+			<td>In-111</td>
+			<td>2.8049 d</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 245 keV <br>
+					(&gamma;) 171 keV <br>
+				</p>
+				<p style="margin: 0px; color: cyan;">
+					(e-) 224 keV <br>
+					(e-) 19 keV
+				</p>
+
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Neuroendocrine tumours imaging</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Molybdenum-99</td>
+			<td>Mo-99</td>
+			<td>66 h</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 1.21 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Tc-99m Generator</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Gold-198</td>
+			<td>Au-198</td>
+			<td>65 h</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 411keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke"><div class="highlight_brachy">LDR Brachy source</div> for CA prostate</li>
+					<li class="stroke">Not used in HK</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Yttrium-90</td>
+			<td>Y-90</td>
+			<td>64 h</td>
+			<td>&beta;-</td>
+			<td>
+				<p style="margin: 0px; color: cyan;">
+					(&beta;-) 2.28 MeV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Hepatocellular Carcinoma Treatment</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+
+		<tr>
+			<td>Iodine-123</td>
+			<td>I-123</td>
+			<td>13 h</td>
+			<td>EC</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 159 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Diagnostic study of thyroid diseases</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ingestion as capsule/intravenous injection</li>
+				</ul>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Technetium-99m</td>
+			<td>Tc-99m</td>
+			<td>6 h</td>
+			<td>IT</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 140.5 keV
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">MAA Survey with Gamma Camera</li>
+					<li class="stroke">Bond Scan</li>
+				</ul>
+			</td>
+			<td>
+			</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+		
+		<tr>
+			<td>Fluorine-18</td>
+			<td>F-18</td>
+			<td>1.83 h</td>
+			<td>&beta;+ (/ EC)</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 511 keV &times; 2
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">PET isotope</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">produced at Cyclotron through <br>
+						<sup>18</sup>O + p &rarr; <sup>18</sup>F
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Gallium-68</td>
+			<td>Ga-68</td>
+			<td>1.14 h</td>
+			<td>&beta;+ (/ EC)</td>
+			<td></td>
+			<td>
+				<ul class="first">
+					<li class="stroke">PET isotope</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">produced at Cyclotron through <br>
+					</li>
+					<li class="stroke">decay<br>
+						<sup>68</sup>Ga &rarr; <sup>68</sup>Zn + &beta;<sup>+</sup> + &nu;<sub>e</sub> <br>
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Carbon-11</td>
+			<td>C-11</td>
+			<td>20.4 min</td>
+			<td>&beta;+ (/ EC)</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 511 keV &times; 2
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">PET isotope</li>
+				</ul>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">produced at Cyclotron through <br>
+						<sup>14</sup>N + p &rarr; <sup>11</sup>C + <sup>4</sup>He
+					</li>
+					<li class="stroke">decay<br>
+						<sup>11</sup>C &rarr; <sup>11</sup>B + &beta;<sup>+</sup> + &nu;<sub>e</sub> + 960 keV <br>
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Nitrogen-13</td>
+			<td>N-13</td>
+			<td>9.97 min</td>
+			<td>&beta;+</td>
+			<td>
+				<p style="margin: 0px; color: yellow;">
+					(&gamma;) 511 keV &times; 2
+				</p>
+			</td>
+			<td>
+				<ul class="first">
+					<li class="stroke">PET isotope</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Copper-62</td>
+			<td>Cu-62</td>
+			<td>9.7 min</td>
+		</tr>
+
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td colspan="7" style="border-bottom: 12px solid rgba(255, 255, 255, 0.1);">
+				<br>
+			</td>
+		</tr>
+		<tr><td></td></tr>
+		<tr><td></td></tr>
+        <!-- ---------------------------------------------------------------------- -->
+		<tr>
+			<td>Radon-222</td>
+			<td>Rn-222</td>
+			<td>3.8 d</td>
+			<td>&alpha;</td>
+			<td>
+				<p style="margin: 0px; color: magenta;">
+					(&alpha;) 5.6 MeV
+				</p>
+			</td>
+			<td></td>
+			<td>
+				<ul class="first">
+					<li class="stroke">Ra-226 &rarr; Rn-222 &rarr; Po-218</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td><br></td>
+		</tr>
+		<tr>
+			<td colspan="7" style="border-top: 1px solid white; ">
+				EC = Electron Capture <br>
+				IT = Isometric Transition
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Sealed Source</td>
+			<td>
+				(According to Cap. 303) <br>
+				&ensp;=&ensp;source cannot be separated from container if container is not damaged <br>
+				<br>
+				&beta;- and &gamma; emitter
+				<ul>
+					<li class="stroke">&beta; usually got filtered</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Gamma Spectrum</td>
+			<td>
+				&ensp;=&ensp;energy spectrum of gamma ray emissions 
+				<ul>
+					<li class="stroke">all &gamma; and X-rays in the whole decay chain before coming to stable</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Storage</td>
+			<td>
+				Information must be included on the container
+				<ul>
+					<li class="stroke">Nominal Activity</li>
+					<li class="stroke">Reference Date</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Clinical Sealed Source</td>
+			<td>
+				Desirable properties for both parent and daughters
+				<ul>
+					<li class="stroke">Charged particle emission absent or filtered</li>
+					<li class="stroke">High specific activity</li>
+					<li class="stroke">Not gaseous/soluble/powder</li>
+					<li class="stroke">Non toxic</li>
+					<li class="stroke">Flexible shape</li>
+					<li class="stroke">Can withstand sterilisation</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Tc-99m Generator</td>
+			<td>
+				Parent Nuclei
+				<ul>
+					<li class="stroke">Mo-99</li>
+				</ul>
+				<br>
+				Procedures
+				<ul>
+					<li class="stroke">Reservior of saline</li>
+					<li class="stroke">Flush into column containing Mo-99</li>
+					<li class="stroke">Saline washing off Tc-99m into eluate vial</li>
+					<li class="stroke">Eluate containging Tc-99m, Tc-99, Mo-99, Al</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

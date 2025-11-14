@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Physics</title>
+	<link rel="stylesheet" href="../style.css"> 
+	<script id="MathJax-script" async src="../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Basic Physics</h2><br>
+	<h3>General Physics</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Fluence (&Phi;)</td>
+			<td>
+				\[ ~~~~~~~ \Phi = {N \over A} ~~~~~ [m^{-2}] \]
+				N = count <br>
+				A = cross section area
+			</td>
+		</tr>
+		<tr>
+			<td>Energy Fluence (&Psi;)</td>
+			<td> 
+				\[ ~~~~~~~ \Psi = {E \over A} ~~~~~ [J~m^{-2}]\]
+				E = total energy <br>
+				A = cross section area <br>
+			</td>
+		</tr>
+		<tr>
+			<td>Flux</td>
+			<td>
+				Could be defined as<br>
+				<div style="padding-left: 24px;">
+					rate of flow of a property per unit area
+					\[ \Phi = {dN \over dt} {1 \over A} \]
+				</div>
+				OR <br>
+				<div style="padding-left: 24px;">
+					Flux density that runs through an imaginary area <br>
+					Flux density = density and direction of the field lines (through an area)
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Right-hand Rule for 3D Space Orientation</td>
+			<td>
+				<div style="text-align: center;"><img src="right_hand_rule.png" alt="img" width="150"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Phase and Group Velocity</td>
+			<td>
+				<b>Group Velocity</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;the propagation of envelope of a wave packet <br>
+					\[ v_g = \frac{\partial \omega}{\partial k} \]
+				</div>
+				<br>
+				<b>Phase Velocity</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;the propagation of one phase of a wave
+					\[ v_p = \frac{\omega}{k} \]
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Torque/Moment of Force</td>
+			<td>
+				\[ \vec{\tau} = \vec{r} \times \vec{F} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(\vec{r}\)&ensp;=&emsp;position vector from fixed fulcrum <br>
+						\(\vec{F}\)&ensp;=&ensp;force acting on the point
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Magnetic (dipole) Moment</td>
+			<td>
+				&ensp;=&ensp;torque a dipole object experience in a magnetic field <br>
+				&ensp;>&ensp; magnetic dipole points from S to N <br> 
+				<br>
+				\[ \vec{\tau} = \vec{\mu} \times \vec{B} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(\vec{\mu}\)&ensp;=&ensp;magnetic moment <br>
+						\(\vec{B}\)&ensp;=&ensp;external magnetic field
+					</div>
+				</div>
+				<br>
+				\[ \vec{\mu} = I\vec{A} \]
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Mechanics</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Angular Momentum <i>L</i></td>
+			<td>
+				\[ L = I \omega \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						I&ensp;=&ensp;moment of inertia <br>
+						&omega;&ensp;=&ensp;angular speed <br>
+
+					</div>
+				</div>
+				<br>
+				\[ I = mr^2 \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						r&ensp;=&ensp;distance from the rotation axis
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Centripetal Force</td>
+			<td>
+				&ensp;=&ensp;Force that makes a body follow a curved path <br>
+				&ensp;=&ensp;Towards the centre of curvature <br>
+				&ensp;=&ensp;Orthogonal to motion <br>
+				<br>
+				\[ F=\frac{mv^2}{r} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						m&ensp;=&ensp;mass <br>
+						v&ensp;=&ensp;tangential speed <br>
+						r&ensp;=&ensp;radius of curvature
+					</div>
+				</div>
+				<br><br>
+				<b>Angular Velocity <i>&omega;</i></b> <br>
+				\[ v=\omega r \]
+				<br>
+				<br>
+				<b>Particle Physics</b> <br>
+				When velocity is so high that the mass starts increasing,
+				\[ F_c = \frac{\gamma m v^2}{r} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\( \Large \gamma = \frac{1}{\sqrt{ 1- (\frac{v}{c})^2  }}\)
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+
+
+
+	<br>
+	<h3>Solid Mechanics</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Mass-Thickness</td>
+			<td>unit = \(g~cm^{-2}\)</td>
+		</tr>
+		<tr>
+			<td>Bulk Modulus</td>
+			<td>
+				The degree of anti-compression of material under a given external pressure <br>
+				\[ B = {\Delta P \over \Delta V/V} \]
+				&emsp; where B = Bulk Modulus in \(N~m^{-2}\) <br>
+				&emsp;&emsp;&emsp;&emsp; P = External Pressure <br>
+				&emsp;&emsp;&emsp;&emsp; V = Volume of Material
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Fluid Mechanics</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Ideal Gas Laws</td>
+			<td>
+				$$
+					\begin{align}
+						PV &= nRT \\
+						   &= kNT
+					\end{align}
+				$$
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						P = pressure <br>
+						V = volume <br>
+						T = temperature (K) <br>
+						n = no. of mole <br>
+						R = universal gas constant <br>
+						k = Boltzmann constant <br>
+						N = no. of gas molecule <br>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h3>Relativity</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Special and General</td>
+			<td>
+				<b>Special Relativity</b><br>
+				<div style="padding-left: 24px;">
+					1.&emsp;<div style="display: inline-block; vertical-align: top;">
+						in every inertial frame of reference (moving in constant speed) <br>
+						physical laws should be the same <br>
+						i.e. principle of relativity
+					</div> <br>
+					2.&emsp;<div style="display: inline-block; vertical-align: top;">
+						speed of light in vacuum is constant <br>
+						regardless of inertial frame of reference <br>
+						and light source motion
+					</div>
+				</div>
+				<br>
+				<b>General Relativity</b><br>
+				<div style="padding-left: 24px;">
+					spacetime is curved
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Special Relativity <br>
+				<div style="padding-left: 12px;">
+					-&emsp;Time Dilation and <br>
+					-&emsp;Length Contraction 
+				</div>
+			</td>
+			<td>
+				\[ m' = \gamma m_0 \]
+				\[ t' = \gamma t_0 \]
+				\[ x' = \frac{x_0}{\gamma} \]
+				<div style="margin-left: 24px;">
+					where
+					<div style="margin-left: 24px;">
+						\[ \gamma = \frac{1}{\sqrt{ 1-\beta^2 }} \]
+						\[ \beta = \frac{v}{c} \]
+					</div>
+				</div>
+				<br>
+				<b>Relativistic Velocity</b>
+				<div style="margin-left: 24px;">
+					\[ m' = \gamma m_0 \]
+					$$
+					\begin{align}
+						m'c^2 &= \gamma m_0 c^2 \\
+						&= E'
+					\end{align}
+					$$
+					<br>
+					\[ E' = E_k + m_0 c^2 \]
+					\[ \gamma m_0 c^2 = E_k + m_0 c^2 \]
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br><br><br>
+	<h3>Derivation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Fluence Change over Distance</td>
+			<td>
+				<b>Point Source</b>
+				<div style="padding-left: 24px;">
+					Mass
+					<table width=80%>
+						<tr>
+							<td class="line" style="vertical-align: middle;">
+								<div style="text-align: center; ">
+									<img src="mass.png" alt="img" width="80">
+								</div>	
+							</td>
+							<td class="line">
+								\[ \large Flux~\Phi_1 = k~m_1 \]
+								$$
+									\begin{align} \large
+										Field~F_1 & = {\Phi \over A} \\ 
+										        & = {km_1 \over 4 \pi r^2}
+									\end{align}
+								$$
+							</td>
+						</tr>
+
+						<tr>
+							<td class="line" colspan="2">
+								<div style="text-align: center;">
+									<img src="point_source.png" alt="img" width="200">
+								</div>
+								$$
+									\begin{align}
+										Force~F_{1,2} & = F_1~m_2 \\
+										              & = \left( {k \over 4\pi} \right) {1 \over r^2} m_1m_2 \\
+										              & = \quad G \quad {1 \over r^2} m_1m_2
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+
+					<br>
+					Charge
+					<table width="80%">
+						<tr>
+							<td class="line" style="vertical-align: middle;">
+								<div style="text-align: center;">
+									<img src="charge.png" alt="img" width="80">
+								</div>	
+							</td>
+						</tr>
+					</table>
+
+					<br>
+					Particle
+					<table width="80%">
+						<tr>
+							<td>
+								$$
+									\begin{align}
+										Particle~Fluence~\Phi & = {N \over A} \\
+															  & = {N \over 4\pi r^2} \\
+															  & \propto {1 \over r^2}
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<br>
+
+				<b>Infinite Line Source</b>
+				<div style="padding-left: 24px;">
+					Charge
+					<table width="80%">
+						<tr>
+							<td class="line" style="text-align: center; vertical-align: middle;">
+								<img src="line_source.png" alt="img" width="150">
+							</td>
+							<td class="line">
+								\[ \textrm{For} \quad Charge~Density~\lambda = {dQ \over dh} \]
+								\[ Electrical~Flux~\Phi = k\lambda h \]
+								$$
+									\begin{align}
+										Electrical~Force~F & = {\Phi \over A} \\
+										 				   & = {k\lambda h \over 2\pi r h} \\
+										 				   & = \left( {k \over 2\pi} \right) {1 \over r} \lambda 
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+
+					<br>
+					Particle
+					<table width="80%">
+						<tr>
+							<td>
+								$$
+									\begin{align}
+										Particle~Fluence~\Phi & = {Nh \over A} \\
+															  & = {Nh \over 2\pi rh} \\
+															  & = {N \over 2\pi }{1\over r} \\
+															  & \propto {1 \over r}
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<br>
+				<b>Infinite Planar Source</b>
+				<div style="padding-left: 24px;">
+					Charge
+					<table width="80%">
+						<tr>
+							<td class="line" style="text-align: center; vertical-align: middle;">
+								<img src="plane_source.png" alt="img" width="150">
+							</td>
+							<td class="line">
+								\[ \textrm{For} \quad Charge~Density~\delta = {dQ \over dA} \]
+								\[ Electrical~Flux~\Phi = k\delta A \]
+								$$
+									\begin{align}
+										Electrical~Force~F & = {\Phi \over A} \\
+										 				   & = {k\delta A \over 2A } \\
+										 				   & = {k\delta \over 2 }
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+
+					<br>
+					Particle
+					<table width="80%">
+						<tr>
+							<td>
+								$$
+									\begin{align}
+										Particle~Fluence~\Phi & = {NA \over 2A} \\
+															  & = {N \over 2}
+									\end{align}
+								$$
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

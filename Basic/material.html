@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Material</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		.line {
+			padding: 6px;
+			vertical-align: top;
+			text-align: center;
+			border-left: hidden;
+			border-right: hidden;
+			border-top: 2px solid grey;
+			border-bottom: 2px solid grey;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 36px;
+		}
+		.num {
+			margin-left: 12px;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 12px;
+		}
+		.stroke {
+			list-style-type: none;
+		}
+		.stroke::before {
+			content: "| ";
+			margin-left: -12px;
+			margin-right: 12px;
+		}
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+		.index {
+			border: 2.5px solid white;
+			display: inline-block; 
+			padding: 24px;
+			padding-left: 40px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.linac_head {
+			padding: 0px;
+			vertical-align: middle;
+			text-align: center;
+			border: none;
+		}
+		.modulator {
+			padding: 0px;
+			padding-left: 3px;
+			padding-right: 3px;
+			border: hidden;
+		}
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+		<h2>Materials</h2>
+
+		<h3>DR</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td rowspan="6">X-ray Tube</td>
+				<td>Target</td>
+				<td>Tungsten <br>
+					( + Rhemium )</td>
+				<td class="clean">
+					<br>
+					mechanical strength
+				</td>
+			</tr>
+			<tr>
+				<td>Target (Mammography)</td>
+				<td>Molybdenum + Rhemium</td>
+			</tr>
+			<tr>
+				<td>Target (Digital Breast Tomosynthesis)</td>
+				<td>Tungsten</td>
+			</tr>
+			<tr>
+				<td>Target Stem/Axle</td>
+				<td>Molybdenum</td>
+				<td  class="clean">light weight</td>
+			</tr>
+			<tr>
+				<td>Rotor</td>
+				<td>Copper</td>
+			</tr>
+			<tr>
+				<td>Filament</td>
+				<td>Tungsten</td>
+			</tr>
+			<tr>
+				<td>Window</td>
+				<td>Beryllium</td>
+			</tr>
+
+			<tr>
+				<td>Film</td>
+				<td>Phosphor</td>
+				<td>Silver Bromide Crystal</td>
+			</tr>
+
+
+			<tr>
+				<td rowspan="3">II Tube</td>
+				<td>Input Phosphor</td>
+				<td>CsI</td>
+			</tr>
+			<tr>
+				<td>Output Phosphor</td>
+				<td>Zinc Cadmium Sulfide</td>
+			</tr>
+			<tr>
+				<td>CCD (charge coupling device)</td>
+				<td>silicon</td>
+				<td  class="clean">&rarr; TFT</td>
+			</tr>
+			<tr>
+				<td>CR</td>
+				<td>Phosphor</td>
+				<td>Ba F(/I) Br:Eu </td>
+			</tr>
+			<tr>
+				<td>Indirect DR</td>
+				<td>Phosphor</td>
+				<td>
+					CsI ( + a-Si photodiode ) <br>
+					GdOS (Gadolinium Oxysulfide)
+
+				</td>
+			</tr>
+			<tr>
+				<td>Direct DR</td>
+				<td>Phosphor</td>
+				<td>a-Se</td>
+				<td  class="clean">&rarr; TFT</td>
+			</tr>
+			<tr>
+				<td>Gamma Camera</td>
+				<td>Detector</td>
+				<td>NaI:Tl</td>
+			</tr>
+			<tr>
+				<td>PET</td>
+				<td>Detector</td>
+				<td>
+					BGO (Bismuth Germanate) <br>
+					GSO (Gadolinium Oxyorthosilicate) <br>
+					LSO (Lutetium Oxyorthosilicate) <br>
+					NaI:TI
+				</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+
+
+		<h3>US</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td>Piezoelectric Material</td>
+				<td>
+					PZT (lead zirconate titanate) ceramic <br>
+					PVDF (polyvinyldifluoride) plastic <br>
+					quartz
+				</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h3>MRI</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td>Main Coil</td>
+				<td>NbTi in 4&deg;K Liquid He</td>
+			</tr>
+		</table>
+
+		<br>
+		<br>
+		<h3>RT</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td>Gun</td>
+				<td>Filament</td>
+				<td>Tungsten + Barium</td>
+			</tr>
+			<tr>
+				<td>Waveguide</td>
+				<td>Isolator (RF to Accelerating guide)</td>
+				<td>Ceramic (e.g. beryllium oxide)</td>
+			</tr>
+			<tr>
+				<td rowspan="3">Head</td>
+				<td>Target</td>
+				<td>Tungsten</td>
+			</tr>
+			<tr>
+				<td>Flattening Filter</td>
+				<td>
+					Al /<br>
+					Cu /<br>
+					Tungsten/ <br>
+					Fe
+				</td>
+			</tr>
+			<tr>
+				<td>Shielding</td>
+				<td>
+					Pb /<br>
+					Tungsten
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="3">EPID</td>
+				<td>Metal Plate</td>
+				<td>~ 1 mm Cu</td>
+			</tr>
+			<tr>
+				<td>Phosphor Scintillator</td>
+				<td>Ga<sub>2</sub>O<sub>2</sub>S (Gadolium Oxysulfide)</td>
+				<td class="clean">(plastic scintillator need no metal plate)</td>
+			</tr>
+			<tr>
+				<td>Photodiode</td>
+				<td>a-Si</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h3>Protection</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td rowspan="2">Personal Dosimeter</td>
+				<td>TLD</td>
+				<td>LiF</td>
+			</tr>
+			<tr>
+				<td>OSL</td>
+				<td>Al<sub>2</sub>O<sub>3</sub></td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<h3>Engineering</h3>
+		<table style="margin-left: 24px;">
+			<tr>
+				<td rowspan="2">Diode</td>
+				<td>Germanium</td>
+				<td class="clean"> &gt; 0.3 V forward bias &rarr; current flow </td>
+			</tr>
+			<tr>
+				<td>Silicon</td>
+				<td class="clean"> &gt; 0.7 V </td>
+			</tr>
+		</table>
+		<br>
+		<br>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: hidden;
+		}
+		.line {
+			padding: 6px;
+			border-top: 2px solid grey;
+			border-bottom: 2px solid grey;
+			border-right: hidden;
+			border-left: hidden;
+		}
+		.line_centre {
+			padding: 6px;
+			border-top: 2px solid grey;
+			border-bottom: 2px solid grey;
+			border-right: hidden;
+			border-left: hidden;
+			text-align: center;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>Basic Engineering</h2>
+	<table>
+		<tr>
+			<td>AC RLC Circuit</td>
+			<td>
+				<table>
+					<tr>
+						<td class="line_centre"><b>Component</b></td>
+						<td class="line_centre"><b>Property</b></td>
+						<td class="line_centre"><b>Reactance (X)</b></td>
+						<td class="line_centre"><b>Impedance (Z)</b></td>
+					</tr>
+					<tr>
+						<td class="line_centre">Resistor</td>
+						<td class="line_centre">
+							Resistance (R) <br>
+							(unit: &Omega;) <br>
+							\[R\]
+						</td>
+						<td class="line_centre">0</td>
+						<td class="line_centre">
+							Z<sub>R</sub> = R &ang;0&deg;<br>
+						</td>
+					</tr>
+					<tr>
+						<td class="line_centre">Inductor</td>
+						<td class="line_cenre">
+							Inductance (L) <br>
+							(unit: H, Henry) <br>
+							\[ v(t) = L \frac{di(t)}{dt} \]
+						</td>
+						<td class="line_centre">
+							<i>
+								&ensp;&omega;L <br>
+								 = 2&pi;fL
+							 </i>
+						</td>
+						<td class="line_centre">
+							Z<sub>L</sub> = j&omega;L <br>
+							&emsp;&emsp;&emsp;&emsp; = &omega;L &ang;+90&deg;
+						</td>
+					</tr>
+					<tr>
+						<td class="line_centre">Capacitor</td>
+						<td class="line_centre">
+							Capacitance (C) <br>
+							(unit: F, Farad) <br>
+							\[ C = \frac{q}{V} \]
+							\[ i(t) = C \frac{dv(t)}{dt} \]
+						</td>
+						<td class="line_centre">\(\Large \frac{1}{\omega C}\)</td>
+						<td class="line_centre">
+							<div style="text-align: left;">
+							$$
+							\begin{align}
+								Z_C &= \frac{1}{j\omega C} \\
+								&= \frac{1}{\omega C} \angle -90^{\circ}
+							\end{align}
+							$$
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br>
+				
+				<b>Impedance (Z)</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;how HARD current passes through
+					\[ Z = R + jX \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px; ">
+							R = Resistance <br>
+							X = Reactance <br>
+							All units: &Omega;
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<b>Admittance (Y)</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp;how EASY current passes through
+					\[ Y = G + jB \]
+					\[ Y = \frac{1}{Z} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							G = Conductance (how easy a steady current flow through a component)<br>
+							&emsp;=\(\large \frac{1}{R}\) <br>
+							B = Susceptance (material susceptance to polarisation) <br>
+							&emsp;=\(\large \frac{1}{X}\) <br>
+							All units: siemens <br>
+						</div>
+
+					</div>
+				</div>
+				<br>
+				
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Hormonics</td>
+			<td>
+				<b>Mechanism</b>
+				<ul>
+					<li class="stroke">perfect AC current should be varying sinusoidally at 50 or 60 Hz</li>
+					<li class="stroke">adding a non-linear load (e.g. rectifier)
+						<ul>
+							<li class="stroke">altering current waveforms</li>
+							<li class="stroke">no loner sinusoidal</li>
+							<li class="stroke">waves in other frequencies will have frequency = <i>n ( f<sub>0</sub> )</i> </li>
+								<div style="padding-left: 40px;">
+									where
+									<div style="padding-left: 24px;">
+										<i>f<sub>0</sub></i>&ensp;=&ensp;fundamental frequency <br>
+										n = any integer 
+									</div>
+								</div>
+							
+						</ul>
+					</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Resonant Circuit</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean">
+							<div style="text-align: center;"><img src="RLC.png" alt="" width="250"></div>
+						</td>
+						<td class="clean">
+							$$
+							\begin{align}
+								|Z_{tot}| &= \sqrt{ {X_R}^2 + ( X_L + X_C )^2 } \\
+								&=\sqrt{ R^2 + j^2(\omega L-\frac{1}{\omega C})^2 } \\
+								&=\sqrt{ R^2 - (\omega L-\frac{1}{\omega C})^2 }
+							\end{align}
+							$$
+							i.e. <i>Z<sub>tot</sub></i> depends on <i>&omega;</i>
+						</td>
+					</tr>
+				</table>
+				<br>
+				When <i>X<sub>L</sub></i> = <i>X<sub>C</sub></i> , <br>
+				<i>Z<sub>tot</sub> = R</i> <br>
+				the circuit is in resonant, <br>
+				the current is MAX :)
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Transfer Function</td>
+			<td>
+				\[ Y(s) = H(s) X(s) \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						H = Transfer Function <br>
+						\( Y = \mathcal{L}\{y(t)\} \), \(y(t)\) = output signal <br>
+						\( X = \mathcal{L}\{x(t)\} \), \(x(t)\) = input signal
+					</div>
+					
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>EMF (Electromotive Force, &epsilon;)</td>
+			<td>
+				&ensp;=&ensp;electrical energy that converted from other forms of energy
+			</td>
+		</tr>
+		<tr>
+			<td>Kirchhoff's circuit laws</td>
+			<td>
+				&ensp;=&ensp;all current going into/out from a point = 
+			</td>
+		</tr>
+		<tr>
+			<td>3 Phase Electrical Power</td>
+			<td>
+				120&deg; apart <br>
+				<br>
+				<b>Line Voltage and Phase Voltage</b>
+				<div style="padding-left: 24px;">
+					
+				</div>
+				<br>
+				<b>Three Phase Transformer Configuration </b><br>
+				<div style="padding-left: 24px;">
+					<b>Delta Connection</b> <br>
+
+					<b>Star Connection</b>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Transformer</td>
+			<td>
+				<b>Conventional transformer</b> <br>
+				<div style="padding-left: 24px;">
+					<div style="text-align: center;"><img src="conventional_transformer.png" alt="" width="250"></div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>Autotransformer</b>
+				<div style="padding-left: 24px;">
+					<div style="text-align: center;"><img src="autotransformer.png" alt="" height="250"></div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Rectifier</td>
+			<td>
+				&ensp;=&ensp;AC to DC Converter <br>
+				<br>
+				<b>Design</b> <sup>[1]</sup>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td class="line">Half Wave</td>
+							<td class="line">
+								&ensp;=&emsp;only positive/negative side passes <br> 
+								&ensp;=&emsp;applying step function <br> 
+								&ensp;:(&emsp;low mean voltage <br> 
+								<div style="text-align: center; padding: 3px; "><img src="half-wave_rectifier.png" alt="" width="200">
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="line">Full Wave</td>
+							<td class="line">
+								&ensp;:)&emsp;higher mean voltage <br>
+								&ensp;:)&emsp;less ripple <br>
+								<b>Bridge Rectifier</b>
+								<div style="text-align: center; padding: 3px; padding-left: 24px;">
+									<img src="bridge_rectifier.png" alt="" width="200">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<br>
+				<b>Diodes</b>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td class="line">signal diodes</td>
+							<td class="line">
+								small PN junction <br>
+								might overheat due to high forwarding I and high reversing V
+							</td>
+						</tr>
+						<tr>
+							<td class="line">power semiconductor diode</td>
+							<td class="line">
+								much larger PN junction area <br>
+								can accommodate up to kA and kV <br>
+								but bad for high f > 1 MHz
+							</td>
+						</tr>
+						<tr>
+							<td class="line">Schottky Diodes</td>
+							<td class="line"></td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Inverter</td>
+			<td>
+				&ensp;=&ensp;DC to AC Converter <br> 
+				<br>
+				<b>Design</b>
+				<div style="padding-left: 24px;">
+					<div style="text-align: center;"><img src="inverter.png" alt="" width="200"></div>
+					<ul class="first">
+						<li class="stroke">Switches keep flipping</li>
+						<li class="stroke">magnetic field at primary coil varies</li>
+						<li class="stroke">square wave produced</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Smoothing Capacitor</td>
+			<td>
+				<div style="text-align: center;"><img src="signal_ripple.png" alt="" width="400"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Power Rating</td>
+			<td>
+				For 3-phase generator,
+				\[ W = VA \]
+				Yet for 1-phase,
+				\[ W = 0.7 VA \]
+			</td>
+		</tr>
+		<tr>
+			<td>Dielectric</td>
+			<td>
+				&ensp;=&ensp;material that polarised under electric field <br>
+				&ensp;|&ensp;charge do not flow <br>
+				&ensp;|&ensp;molecules reorganised/reorient to oppose the applied field
+			</td>
+		</tr>
+		<tr>
+			<td>Magnetism</td>
+			<td>
+				Depends on material's
+				<ul>
+					<li class="stroke">chemical composition</li>
+					<li class="stroke">crystalline structure</li>
+					<li class="stroke">microstructure</li>
+					<li class="stroke">temperature</li>
+				</ul>
+				
+				<br>
+				<b>Types of Magnetism</b>
+				<ul>
+					(Materials that render net magnetic moment without external magnetic field)
+					<li class="stroke">Ferromagnetic</li>
+					<li class="stroke">Ferrimagnetic</li>
+					(Materials that respond to external magnetic field)
+					<li class="stroke">Paramagnetic</li>
+					<li class="stroke">Dimagnetic</li>
+				</ul>
+				<br>
+				<br>
+				<b>Coercivity</b>
+				<ul>
+					<li class="stroke">ability to withstand an external magnetic field without being demagnetised</li>
+				</ul>
+				<br>
+				<b>Hysteresis</b>
+				<ul>
+					<li class="stroke">dependence on the history of a system</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Telegrapher's Equations</td>
+			<td>
+				\[ \frac{\partial}{\partial x} V(x,t) = -L \frac{\partial}{\partial t} I (x,t) - R~I(x,t)  \]
+
+				\[ \frac{\partial}{\partial x} I(x,t) = -C \frac{\partial}{\partial t} V(x,t) - G~V(x,t)  \]
+
+				<b>Primary Line Constants </b>
+				<div style="padding-left: 24px;">
+					<i>R</i>&ensp;=&ensp;Distributed Resistance <br>
+					<i>I</i>&ensp;=&ensp;Distributed Inductance <br>
+					<i>C</i>&ensp;=&ensp;C of Shunt Capacitor <br>
+					<i>G</i>&ensp;=&ensp;G of Shunt Resistor <br>
+					&emsp;&emsp; Dielectric Material between the 2 conductors 
+				</div>
+				<br>
+				<b>Secondary Line Constants</b>
+				<div style="padding-left: 24px;">
+					<i>Z<sub>0</sub></i>&ensp;=&ensp;Characteristic Impedance <br>
+					<i>&gamma;</i>&ensp;=&ensp;Propagation Constant <br>
+					<i>&alpha;</i>&ensp;=&ensp;Attenuation Constant <br>
+					<i>&beta;</i>&ensp;=&ensp;Phase Constant
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	[1]&ensp;https://www.electronics-tutorials.ws/diode/diode_6.html
+</body>
+</html>

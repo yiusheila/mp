@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic | Dosimeter</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+	<h2>Basic | Dosimeter</h2>
+
+	<h3>Ionisation Chamber</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Cavity Ionisation Chamber</td>
+			<td>
+
+				<div style="text-align: center; margin: 12px;"><img src="cylindrical.png" alt="" width="600px"></div> <br>
+				<div style="text-align: center; margin: 12px;"><img src="parallel_plate.png" alt="" width="300px"></div> <br>
+				<div style="text-align: center; margin: 12px;"><img src="well_chamber.png" alt="" width="250px"></div> <br>
+			</td>
+		</tr>
+		<tr>
+			<td>Free Air Ionisation Chamber</td>
+			<td>
+				&larr;&ensp; Primary standard for photon < 300 keV <br>
+				<ol>
+					<li>the active volume should be larger enough to cover the maximum secondary e- range <br>
+						i.e.&ensp; ensure <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">charge particle equilibrium</div>
+					</li>
+					<li>field strength = 100 V/cm</li>
+					<li><div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">Guard Electrode Ring</div> makes line of forces straight and perpendicular</li>
+					<li>
+						The exposure <i>X<sub>P</sub></i> at point <i>P</i>
+						\[ X_P = \frac{\Delta Q}{\rho~ A_P~L} \]
+						<div style="padding-left: 24px;">
+							where
+							<div style="padding-left: 24px;">
+								<i>Q</i>&ensp;=&ensp;charge collected <br>
+								<i>&rho;</i>&ensp;=&ensp;density of air <br>
+								<i>A<sub>P</sub></i>&ensp;=&ensp;cross section area at P <br>
+								<i>L</i>&ensp;=&ensp;length of collecting volume <br>
+							</div>
+						</div>
+					</li>
+					<li>Correction for
+						<ul class="first">
+							<li class="stroke">air attenuation</li>
+							<li class="stroke">recombination</li>
+							<li class="stroke">T, P, H</li>
+							<li class="stroke">ionisation due to scattered photon</li>
+						</ul>
+						<br>
+					</li>
+					<li>:( if e- ~ 3 MeV</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>Solid State</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Silicon Diode</td>
+			<td>
+				<b>Basic</b><br>
+				<div style="margin-left: 24px;">
+					<div style="text-align: center; margin: 12px;"><img src="diode.png" alt="" width="200px"></div> <br>
+					p-type doped silicon &ensp;=&ensp; e receptor (holes) <br>
+					n-type doped silicon &ensp;=&ensp; e donor <br>
+					* noted the coaxial output (unlike guarded ion chambers which need triaxial cable)
+				</div> 
+				<br>
+				<table>
+					<tr>
+						<td>
+							<b>:)&ensp;More Sensitive Than Ion Chamber</b>
+							<div style="margin-left: 24px;">
+								&darr;&ensp; energy to produce electron-hole pair <br>
+								&uarr;&ensp; physical density (x1800 of air) <br>
+								&emsp; Si: ~ 2330 kg m<sup>-3</sup>; Air @ 273 K, 101.325 kPa: ~ 1.293 kg m<sup>-3</sup> <br>
+								&there4;&ensp; small size
+							</div>
+						</td>
+						<td>
+							<b>:( Disadvantage, affected by</b>
+							<div style="margin-left: 24px;">
+								temperature <br>
+								dose-rate <br>
+								energy <br>
+								orientation
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<br>
+				<b>Not Recommended for PDD Measurement</b> <br>
+				&ensp;&larr;&ensp; energy spectra vary along depth <br>
+				&ensp;&larr;&ensp; diodes tend to over-respond to low dose <br>
+				<div style="margin-left: 24px;">
+					&ensp;&there4;&ensp; embedded with backscatter shield to lower the response to low dose backscatter
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3>TL/OSL</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Model</td>
+			<td>
+				<table>
+					<tr>
+						<td style="border: 0px; padding: 0px;">TLD-600</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;"><sup>6</sup>Li </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">neutron sensitive</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">TLD-100H</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">+ Cu,P </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">30x sensitive</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">TLD-2/4/900</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">CaF<sub>2</sub> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">highly sensitive in mGy range</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Dosimetry</td>
+			<td>
+				(TG-191) <br>
+				<br>
+				\[ \large D_w = M_{corr} ~ N_{D,w} ~ k_L ~ k_F ~ k_Q ~ k_\theta \]
+				<div style="margin-left: 24px;">
+					\(\large M_{corr}\) &ensp;=&ensp; reading corrected for background <br>
+					<div style="margin-left: 60px;">
+						i.e.&ensp; \( M_{corr} = ( M_{raw} - M_{bkg} ) ~k_{s,i} ~k_d \) <br>
+						<div style="margin-left: 24px;">
+							\( k_d \) = depletion correction (for OSLD only) <br>
+							\( k_{s,i} \) = individual sensitivity correction
+						</div>
+					</div>
+					<br>
+					\(\large N_{D,w}\) &ensp;=&ensp; dose to water calibration factor <br>
+					<div style="margin-left: 55px;">
+						&ensp;&larr;&ensp; cross calibrated with a calibrated ion chamber <br>
+						&ensp;&larr;&ensp; system specific, including:<br>
+						<div style="margin-left: 50px;">
+							reader <br>
+							irradiation condition/geometry <br>
+							dose level <br>
+							readout delay time after irradiation
+						</div>
+						&ensp;&larr;&ensp; account for day-to-day fluctuation and long term shift <br>
+						&ensp;&larr;&ensp; determine for each reading session <br>
+						<div style="margin-left: 28px;">
+							if session specific calibration is not used &ensp;&rarr;&ensp; ~ 1.2 % uncertainty from day-to-day variation would be expected
+						</div>
+					</div>
+					<br>
+					\(\large k_L\) = dose linearity correction <br>
+					<div style="margin-left: 30px;">
+						TLD-100 response &ensp;=&ensp; linear < 2 Gy <br>
+						<div style="margin-left: 100px;">
+							&ensp;=&ensp; supralinear @ high dose <br>
+							&ensp;=&ensp; flat @ very high dose
+						</div>
+					</div>
+					<br>
+					\(\large k_F\) = fading correction <br>
+					<div style="margin-left: 30px;">
+						first few days &rarr; a few precent <br>
+						every month &rarr; ~ 1%
+					</div>
+					<br>
+					\(\large k_Q\) = beam quality correction <br>
+					<div style="margin-left: 30px;">
+						(1) intrinsic energy dependence <br>
+						&emsp;&emsp; &rarr;&ensp; energy spectrum changes &ensp;&rarr;&ensp; signal-to-dose relationship changes <br>
+						(2) medium dependent energy dependence <br>
+						<br>
+						For TLD-100, compare to response @ 6 MV, <br>
+						<table style="margin-left: 24px;">
+							<tr>
+								<td class="tight_clean">@ Co-60</td>
+								<td class="tight_clean">&rarr;&ensp; + 2% </td>
+							</tr>
+							<tr>
+								<td class="tight_clean">@ MV</td>
+								<td class="tight_clean">&rarr;&ensp; &plusmn; 1% </td>
+							</tr>
+							<tr>
+								<td class="tight_clean">@ e-</td>
+								<td class="tight_clean">&rarr;&ensp; - 2%</td>
+								<td class="tight_clean">@ low E e-, under-response &because; mass stopping power ratio of LiF-water &darr; </td>
+							</tr>
+							<tr>
+								<td class="tight_clean">@ kV</td>
+								<td class="tight_clean">&rarr;&ensp; + up to 40% </td>
+								<td class="tight_clean">&because; mass energy absorption coefficient relative to water &uarr; </td>
+							</tr>
+							<tr>
+								<td class="tight_clean">@ very low kV</td>
+								<td class="tight_clean">&rarr;&ensp; + slightly lower than 40% </td>
+								<td class="tight_clean">&because; &uarr; self absorption</td>
+							</tr>
+						</table>
+
+					</div>
+					<br>
+					\(\large k_\theta\) = angular correction <br>
+					<br>
+				</div>
+				<br>
+				Post Tx Irradiate Reference TLD
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h3>Comparison</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Energy Dependence</td>
+			<td>
+				<table>
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center;">
+							More <br>Dependent <br>
+						</td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px; padding-bottom: 6px;">
+							In kV range, photoelectric effect dominates, <br>
+							Z &uarr; &ensp;&rarr;&ensp; more dependent
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; text-align: center;" rowspan="4">
+							&uarr; <br>
+							 | <br>
+							 | <br>
+							 | <br>
+						</td>
+						<td style="border: 0px; padding: 0px; ">Film</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; ">OSLD</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; ">LiF TLD</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px; ">Radiochromic Film</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="4">Ion Chamber</td>
+			<td colspan="2">
+				<b>Dose Determination</b>
+				<div style="margin-left: 24px;">
+					Dose to air
+					\[ D_{air} = {\large \frac{Q}{m_{air}} \left( \frac{W_{air}}{e} \right) } \]
+					\(\large \left( \frac{W_{air}}{e} \right) \) = mean energy to produce an ion pair in air<br>
+					<div style="margin-left: 24px;">
+						depends on humidity
+					</div>
+					<br>
+					Dose to Air &rarr; Dose to Medium <br>
+					<div style="margin-left: 24px;">
+						Bragg-Gray cavity theory <br>
+						+ Spencer-Attix cavity theory
+					</div>
+				</div>
+				<br>
+				<b>Gas Amplification Curve</b><br>
+				<div style="text-align: center;">
+					<img src="gas_amplification_curve.png" alt="curve" width="500">
+				</div>
+				<div style="margin-left: 24px;">
+					\[ Collection~Efficiency = \large \frac{Q(V)}{Q_{sat}} \]
+					<div style="margin-left: 24px;">
+						where
+						<div style="margin-left: 24px;">
+							\(Q(V)\) = the charge collected at given \(V\) <br>
+							\(Q_{sat}\) = the saturation charge
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				Ionisation Chamber
+				<ul class="first">
+					<li class="stroke">200 - 400 V</li>
+					<li class="stroke">use with electrometer</li>
+				</ul>
+			</td>
+			<td>
+				<div style="padding-left: 24px">
+
+					<br>
+					<br>
+
+				</div>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Proportional Counter</td>
+			<td></td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				GM Counter
+				<ul class="first">
+					<li class="stroke">NOT Dosimeter</li>
+					<li class="stroke"> > 700 V</li>
+					<li class="stroke">Sensitive</li>
+				</ul>
+			</td>
+			<td>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2">Other Materials</td>
+			<td>Diamond</td>
+			<td>Thimble ~ 0.002 cc</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Scintillator</td>
+			<td></td>
+		</tr>
+
+
+
+		<tr>
+			<td rowspan="2">Luminescence</td>
+			<td>TLD</td>
+			<td>
+				Material <br>
+				<ul class="first">
+					<li class="stroke">thermoluminescence material + dopant </li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>OSL</td>
+			<td></td>
+		</tr>
+		
+		<tr>
+			<td>Neutron Detector</td>
+			<td>
+				He-3 <br>
+				Li-6 <br>
+				Br-10 <br>
+				U-235
+			</td>
+			<td>
+				<sup>3</sup>He + n &rarr; <sup>1</sup>H + <sup>3</sup>H <br>
+				<sup>6</sup>Li + n &rarr; <sup>4</sup>He + <sup>3</sup>H <br>
+				<sup>10</sup>Br + n &rarr; 2 <sup>4</sup>He + <sup>3</sup>H <br>
+				U fission
+			</td>
+		</tr>
+
+		<tr>
+			<td>Well Chamber</td>
+			<td>Air Chamber</td>
+			<td>
+				Well chamber certificate comes with a calibration factor @ 1 m <br>
+				&emsp;&emsp; e.g. <i>9.397 &times; 10 <sup>5</sup> </i> \( \large \frac{Gy}{A~h} \) <br>
+				When a source is placed in a well chamber, a charge of <i>49.90</i> \(nA\) was measured, <br>
+				the dose rate of the source at <i> 1 m</i> should be 
+				\[ ( 49.90 \times 10^{-9} )(9.397 \times 10^5 ) = 0.0469 \frac{Gy}{h} = 46.9 \frac{mGy}{h} \]
+				<br>
+				From the source certificate we found the conversion of <i>0.110</i> \( \large \frac{mGy~m^2}{h~GBq} \), <br>
+				therefore,
+				\[ \frac{46.9}{0.110} = 426.4 GBq = 11.52 Ci \]
+			</td>
+		</tr>
+
+	</table>
+
+
+	<br>
+	<h3 style="margin-bottom: 0px;">Correction</h3>
+	<b>(Dosimetry for external beam RT according to IAEA TRS-398)</b>
+	<table>
+		
+	</table>
+
+	<br>
+	<h3>Calibration/QA</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>MDA</td>
+			<td>
+				&ensp;=&ensp;Minimum Detactable Activity <br>
+				<br>
+				ISO 11929 <br>
+				<ul>
+					<li class="stroke">Currie MDA tends to underestimate</li>
+					<li class="stroke">Negative values possible</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Acceptance</td>
+			<td>
+				<ol>
+					<table>
+						<tr>
+							<td class="tight_clean"><li>Leakage</li></td>
+							<td class="tight_clean">&plusmn; 0.1%</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Charge-MU Linearity</li></td>
+							<td class="tight_clean">&plusmn; 0.5%</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Ion Recombination</li></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Polarity Effect</li></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Stem Effect</li></td>
+							<td class="tight_clean">&plusmn; 0.5% (acceptance)</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Dose Rate Dependent Error</li></td>
+						</tr>
+						<tr>
+							<td class="tight_clean">Redundancy Check</td>
+							<td class="tight_clean">&plusmn; 2%</td>
+						</tr>
+					</table>
+					
+					
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

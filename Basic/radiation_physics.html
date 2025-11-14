@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>Radiation Physics</h2>
+	<table>
+		<tr>
+			<td>Beam Qualifier</td>
+			<td>
+				<table style="line-height: 100%;">
+					<tr>
+						<td class="clean">kV</td>
+						<td class="clean"> &#8594;&ensp;HVL</td>
+					</tr>
+					<tr>
+						<td class="clean">MV</td>
+						<td class="clean"> &#8594;&ensp;TPR <sub>20, 10</sub></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Material Resembling Patient</td>
+			<td>
+				<table style="line-height: 100%;">
+					<tr>
+						<td class="clean">10 cm perspex</td>
+						<td class="clean">baby</td>
+					</tr>
+					<tr>
+						<td class="clean">20 cm perspex</td>
+						<td class="clean">normal adult</td>
+					</tr>
+					<tr>
+						<td class="clean">30 cm perspex</td>
+						<td class="clean">thick adult</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Fluoroscope XR Tube</td>
+			<td>
+				Usually operate at P-A position
+				<ul class="first">
+					<li class="stroke">lower operator dose</li>
+					<ul>
+						<li class="stroke">mainly phantom scattering</li>
+						<li class="stroke">fluoro mode uses kV range x-ray</li>
+						<li class="stroke">scattering not mainly in forward direction</li>
+						<div style="text-align: center; padding-top: 6px;">
+							<img src="kV_xray_scattering_angle.png" alt="" width="300"><sup>[1]</sup>
+						</div>
+					</ul>
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	[1]&emsp;Seibert J, Boone J. (2005). X-Ray Imaging Physics for Nuclear Medicine Technologists. Part 2: X-Ray Interactions and Image Formation. Journal of nuclear medicine technology. 33. 3-18. 
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Physics | Dosimetry</title>
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Physics | Dosimetry</h2>
+	<table style="margin-left: 24px;">
+
+		<tr>
+			<td>Exposure (&Chi;)</td>
+			<td>
+				&ensp;=&ensp;amount of charge produced through ionisation <br>
+				<ul>
+					<li class="stroke">in a mass of air</li>
+					<li class="stroke">under standard condition</li>
+					<li class="stroke"><div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">by indirect radiation</div></li>
+				</ul>
+				<div style="text-align: center;">
+					\( \LARGE \chi = {Q \over m} \) 
+					<div style="display: inline-block; border: 1px solid white; padding: 6px;">\( \LARGE = \Psi \left({\mu_{en} \over \rho}\right) \)
+					</div>
+					\( \LARGE \left({e \over W_{air}}\right) \)
+				</div>
+				<div style="text-align: center;">\( = \large K_{col} \)</div>
+
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(W_{air}\) &ensp;=&ensp; average energy from incident radiation needed to ionise 1 ion pair <br>
+						&Psi;&ensp;=&ensp;energy flux <br>
+						\(\large \frac{\mu_{en}}{\rho}\)&ensp;=&ensp;mass energy absorption coefficient (collision) <br>
+						unit&ensp;=&ensp;\(C~kg^{-1}\) or R <br>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>KERMA (K)</td>
+			<td>
+				<b>Definition</b>
+				<div style="padding-left: 24px;">
+					KERMA <i>K</i> at a volumn of the target medium is the sum of KE of <div style="display: inline; background-color: rgba(0, 255, 255, 0.3)">charge particles ionised</div> by the incoming <div style="display: inline; background-color: rgba(0, 255, 255, 0.3)">indirect ionising radiation</div>.
+					<br>
+					<br>
+					e.g. &ensp;Air Kerma in air = energy transfer to air surrounded by air <br>
+					&emsp;&emsp;Air Kerma in water = energy transfer to air surrounded by water <br>
+					&emsp;&emsp;Water Kerma in water = energy transfer to water surrounded by water <br>
+					<br>
+					\[ \large K_{tot} = {dE_{tr} \over {dm}} =  \Psi {\left(  \frac{\bar{\mu}_{tr}}{\rho} \right)} = K_{collision} + K_{radiation} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							\(E_{tr}\) = energy transferred <br>
+							<br>
+							<i>K<sub>radiation</sub></i> = loss as radiation through bremsstrahlung
+							<div style="padding-left: 48px;"> = energy not depositing in the medium</div>
+							<br>
+							<i>K<sub>collision</sub></i> = energy absorbed per mass of medium <br>
+							<div style="padding-left: 45px;">
+								= \(\Large {dE_{en} \over dm} \) <br>
+								<br>
+								= the energy absorbed by the target medium <br>
+								= \(  hv\Phi \large \left( \frac{\mu_{ab}}{\rho} \right) \) <br>
+								<br>
+								= Exposure &times; energy required to produce an ion pair in medium <br>
+								\[ K_{col, air, air} = \large{{W_{air} \over e}} \chi \]
+							</div>
+							<br>
+						</div>
+					</div>
+				</div>
+				<b>Transfer-Absorption Relation</b>
+				<div style="padding-left: 24px;">
+					g = radiative fraction <br>
+					&ensp; = portion of incoming energy that will loss through radiation <br>
+					\[ K_{ab} = K_{tr}(1-g) \]
+					\[ \frac{\mu_{ab}}{\rho} = \frac{\mu_{tr}}{\rho} (1-g) \]
+					<br>
+					when Z &darr; and E &lt; 1 MeV, <br>
+					<ul>
+						<li class="stroke"><i>g</i> = 0</li>
+						<li class="stroke"><i>K</i> &simeq; <i>K<sub>collision</sub></i></li>
+					</ul>
+				</div>
+				<br>
+				<br>
+				<b>Air Kerma (of photon)  </b>
+				<div style="padding-left: 24px;">
+					$$
+					\begin{align}
+						K_{air} &= \Psi \left( \frac{\mu_{tr}}{\rho} \right)_{air} \\
+						&= \Phi h f \left( \frac{\mu_{tr}}{\rho} \right)_{air}
+					\end{align}
+					$$
+					<div style="padding-left: 24px;">
+						where	
+						<div style="padding-left: 24px;">
+							&Psi; = energy fluence of photon <br>
+							&Phi; = photon fluence <br>
+							<i>hf</i> = energy of a photon with frequency <i>f</i> <br>
+							&there4; &Phi; <i>h f</i> = total energy carried by the incoming photons <br>
+							<br>
+							\(\left( \frac{\mu_{tr}}{\rho} \right)_{air}\) = mass energy transfer coefficient to air
+							<div style="padding-left: 49px;">
+								= the portion of energy transferred to a volume of air per mass
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<b>Converting Air Kerma in air to Water Kerma in water</b>
+				<div style="padding-left: 24px;">
+					Converting Air Kerma in air <i>K<sub>air, air</sub></i> to Water Kerma in air <i>K<sub>w, air</sub></i> ,
+					\[ K_{w, air} = K_{air, air} \frac{ {( \mu_{en} / \rho)}_w }{ {( \mu_{en} / \rho)}_{air} } \]
+					Converting Water Kerma in air to Water Kerma in water, assuming charged particle equilibrium,
+					\[ K_{w, w} = K_{w, air}B_w \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							<i>B<sub>w</sub></i> = backscatter factor 
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td>Dose</td>
+			<td>
+				Exposure <br>
+				&emsp; | <br>
+				&emsp; | &emsp; &#215; F Factor &emsp; &larr; effective Z + type of radiation <br>
+				&emsp; | &emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&propto; mass energy absorption coefficient of medium-air <br>
+				&emsp; &#8595; <br>
+				Absorbed Dose (D) (Gy) <br>
+				&emsp; | <br>
+				&emsp; | &emsp; &#215; Quality Factor (Q)<br>
+				&emsp; | &emsp; &ensp; <div class="hl">relative to photon</div> <br>
+				&emsp; | &emsp; &ensp; depends on charged particle stopping power <br>
+				&emsp; &#8595; <br>
+				Equivalent (H) (Sv) <br>
+				&emsp; | <br>
+				&emsp; | &emsp; &#215; Radiation Weighting Factor (W) <br>
+				&emsp; | &emsp; &ensp; depends on tissue type + radiation type + energy<br>
+				&emsp; &#8595; <br>
+				Effective (E) (Sv) <br>
+				&emsp; quantifying <div class="hl">stochastic effect</div> <br>
+				\[ E = D(Q)(W)\]
+				<br>
+				<br>
+				<b>Radiation Weighting Factor (Q)</b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td class="clean" style="border-top: 2px solid white;border-bottom: 1px solid white;">Radiation</td>
+						<td class="clean" style="border-top: 2px solid white;border-bottom: 1px solid white;">Q</td>
+					</tr>
+					<tr>
+						<td class="clean">photon</td>
+						<td class="clean">1</td>
+					</tr>
+					<tr>
+						<td class="clean">e-</td>
+						<td class="clean">1</td>
+					</tr>
+					<tr>
+						<td class="clean">p</td>
+						<td class="clean">2</td>
+					</tr>
+					<tr>
+						<td class="clean">n</td>
+						<td class="clean">
+							depends on n energy <br>
+							&lt; 100 keV &rarr; ~ 2.5 <br>
+							~ 10 MeV &rarr; ~ 20
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">&alpha;</td>
+						<td class="clean">20</td>
+					</tr>
+					<tr>
+						<td class="clean" colspan="2" style="border-top: 2px solid white;"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Absorbed Dose</td>
+			<td>
+				\[ D = {dE \over dm } \]
+				\[ D = E_{rad, in} - E_{rad, out} + mass~loss \]
+				<br>
+				\( \beta = \Large \frac{D}{K_{col}} \)
+			</td>
+		</tr>
+
+		<tr>
+			<td>Charged Particle Equilibrium (CPE)</td>
+			<td>
+				Assuming CPE achieved, we have 
+				<div style="margin-left: 24px;">
+					<div style="text-align: center;">Absorption Dose = collisional KERMA</div>
+				</div>
+				
+				<br>
+				<b>Transient Charged Particle Equilibrium (TCPE)</b>
+				<div style="margin-left: 24px;"> 
+					collision KERMA @ surface &ensp;&rarr;&ensp; max <br>
+					&because;&ensp; greatest photon fluence <br>
+					collision KERMA &darr; exponentially as photon fluence &darr; <br>
+					the absorbed dose after d<sub>max</sub> &uarr; then collision KERMA &because; scatter
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Bragg–Gray Cavity Theory</td>
+			<td>
+				Describe relationship between D in dosimeter and D in surrounding medium <br>
+				<br>
+				\[ \large D_{surrounding} = D_{cavity} \bar{\left( \frac{S}{\rho} \right)}_{surrounding-cavity} \]
+				<div style="padding-left: 24px;">
+					where
+					<div>
+						<div style="padding-left: 24px;">
+							(S/&rho;)&emsp;=&emsp;average, unrestricted mass collision stopping power ratio of surrounding medium over measuring cavity
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>Assumptions</b>
+				<ol>
+					<li>Small Cavity
+						<div style="padding-left: 24px;">
+							not perturbing the fluence of charged particle <br>
+							&there4; fluence in cavity = surrounding medium
+						</div>
+						
+					</div>
+					</li>
+					<li>
+						Absorbed Dose in Cavity &larr; Charged Particle Across
+						<div style="padding-left: 24px;">
+							photon interaction ignored <br>
+							no secondary e- produced <br>
+							no e- stopped in cavity
+						</div>
+					</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Dose in Free Space</td>
+			<td>
+				 = dose to a small mass of medium in air <br>
+				 = concept for TAR and PSF calculation <br>
+				 <br>
+			</td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+
+	<h3>Radionuclide</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Exposure Rate</td>
+			<td>
+				When we compare the exposure of 2 sources, time need to be considered. <br>
+				<br>
+				For <br>
+				(1) a specific <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">&gamma;/X-ray emitting</div> radionuclide, that is a <br>
+				(2) point source, with <br>
+				(3) Activity <i>A</i> (<i>mCi</i>), at a <br>
+				(4) Distance of <i>d</i> (<i>cm</i>) <br>
+				<br>
+				The exposure rate&ensp;=&ensp; 
+				<div class="highlight" style="width: 20%;">\[ \large \dot{\chi} = \frac{ A\Gamma }{d^{~2}} \]</div>
+				where
+				<div style="padding-left: 24px;">
+					A&ensp;=&ensp;Activity <br>
+					&Gamma;&ensp;=&ensp;Exposure Rate Constant (for both &gamma; and X-ray)<br>
+					&emsp;&emsp;/ Specific Gamma-ray Constant (for &gamma; only) <sup>[1]</sup><br>
+					d&ensp;=&ensp;Distance from source <br>
+					Unit:&ensp;<i>R h<sup>-1</sup></i> <br>
+				</div>
+				<br>
+				If a radionuclide is enclosed in a <div style="display: inline; background-color: rgba(256, 256, 0, 0.3);">wall > 0.5 mm</div>, a correction term needs to be added:
+				\[ \large \dot{\chi} = \frac{ A\Gamma }{d^{~2}} e^{-\mu x} \]
+				where
+				<div style="padding-left: 24px;">
+					<i>&mu;</i>&ensp;=&ensp;linear attenuation coefficient of the wall material <br>
+					<i>x</i>&ensp;=&ensp;thickness of wall
+				</div>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Specific Gamma-ray Constant <br>
+				/ Exposure Rate Constant
+			</td>
+			<td>
+				&ensp;=&ensp;Exposure Rate per Activity at 1 cm <br>
+				<ul>
+					<li class="stroke">of a specific <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">&gamma;/X-ray emitting</div> radionuclide</li>
+					<li class="stroke">point source</li>
+					<li class="stroke">unit&ensp;=&ensp;\( \large \frac{R~cm^2}{mCi~h} \) or \( \large \frac{R~m^2}{Ci~h} \)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Air Kerma Rate Constant (<i>&Gamma;<sub>AKR</sub></i>)
+			</td>
+			<td>
+				<div style="padding-left: 24px;">
+				 =&emsp;unique constant for each radionuclide <br>
+				 =&emsp;Kerma at a distance per activity per hour <br>
+
+					<div>unit: \( \large \frac{\mu~Gy~m^2}{GBq~h} \) <br></div>
+				</div>
+				<br><br>
+				<b>From Exposure Rate Constant to Air Kerma Rate Constant</b>
+				<div style="padding-left: 24px;">
+					Using <br>
+					exposure rate constant <i>&Gamma;<sub>X</sub></i>, <br>
+					1 R = 8.76 &times; 10<sup>-3</sup> Gy in dry air, and <br> 
+					1 mCi = 37 MBq, <br>
+					<br>
+					rearrange <i>&Gamma;<sub>X</sub></i> to get <i>&Gamma;<sub>AKR</sub></i> <br>
+					unit&ensp;=&ensp;\( \large \frac{\mu~Gy~m^2}{GBq~h} \) <br>
+					<br>
+					<br>
+					e.g. if we have a material,<br>
+					which <i>&Gamma;<sub>X</sub></i> is given in (R.m<sup>2</sup>.Ci<sup>-1</sup>.h<sup>-1</sup>), <br>
+					the <i>&Gamma;<sub>AKR</sub></i> of the material will be,
+					\[ \Gamma_{AKR} = \frac{ (0.876 \times 10^{-2})~Gy}{ 3.7 \times 10^{10}~Bq}~\Gamma_{X} \] 
+
+				</div>
+				<br>
+				<br>
+				<b>Reference Air Kerma Rate</b><br>
+				<div style="padding-left: 24px;">
+					\[ RAKR = \frac{ A_{apparent} \Gamma_{AKR} }{ d^2 } \]
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br><br><br>
+	[1] https://www.utoledo.edu/med/depts/radther/pdf/RDII%20-%20Chapter%205-6n%20handout.pdf
+
+</body>
+</html>
