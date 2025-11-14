@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beam Data</title>
+	<style>
+		.up {
+			display: inline; 
+			background-color:rgba(110, 255, 110, 0.3); 
+			padding-left: 3px; 
+			padding-right: 3px;
+		}
+	</style>
+	<link rel="stylesheet" href="../style.css"> 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Beam Data</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td class="clean"></td>
+			<td class="clean" style="text-align: center; background-color: rgba(0, 20, 255, 0.2);">Photon</td>
+			<td class="clean" style="text-align: center; background-color: rgba(0, 200, 10, 0.1);">Electron</td>
+		</tr>
+		<tr>
+			<td>Profile Flatness </td>
+			<td>
+				TG-45 <sup>[1]</sup>
+				\[ F = \frac{D_{max} - D_{min}}{D_{max} + D_{min}} \]
+				<ul>
+					<li class="stroke">10 cm depth</li>
+					<li class="stroke">in the central 80% of the profile</li>
+					<li class="stroke">&plusmn; 3%</li>
+				</ul>
+			</td>
+			<td>
+				IEC specification <sup>[2]</sup> <br>
+				<div style="margin-left: 24px; background-color: rgba(255, 0, 0, 0.1);">
+					1.&emsp;90% of the profile - geometrical beam edge (?)
+					<ul>
+						<li class="stroke"> &lt; 1 cm</li>
+					</ul>
+					2.&emsp;in central 90% of the profile
+					<ul>
+						<li class="stroke"> &lt; 1.05</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Symmetry</td>
+			<td>
+				TG-45 <sup>[1]</sup> <br>
+				<ul>
+					<li class="stroke">10 cm depth</li>
+					<li class="stroke">in the central 80% of the profile</li>
+					<li class="stroke">D &plusmn; 2%</li>
+				</ul>
+			</td>
+			<td>
+				IEC specification <sup>[2]</sup> <br>
+				<div style="margin-left: 24px;">
+					any pair of symmetric points
+					<ul>
+						<li class="stroke"> &lt; 3%</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Penumbra</td>
+			<td>
+				TG-45 <sup>[1]</sup>
+				<ul>
+					<li class="stroke">distance between 80% and 20%</li>
+				</ul>
+				<br>
+				<b>Beam Energy &uarr; </b>
+				<ul>
+					<li class="stroke">2nd e- E &uarr;</li>
+					<li class="stroke">travel farther, &uarr; scatter</li>
+				</ul>
+			</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Isodose Line</td>
+			<td></td>
+			<td>
+				&ensp;&larr;&ensp;e- Scattering <br>
+				&ensp;&larr;&ensp; collimation system <br>
+				<br>
+				&ensp;&rarr;&ensp;angular dispersion <br>
+				&ensp;&rarr;&ensp;energy spread 
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>Beam Data Dependence</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td class="clean"></td>
+			<td class="clean" style="text-align: center; background-color: rgba(0, 20, 255, 0.2);">Photon</td>
+			<td class="clean" style="text-align: center; background-color: rgba(0, 200, 10, 0.1);">Electron</td>
+		</tr>
+		<tr>
+			<td>Surface Dose</td>
+			<td>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">surface dose &darr;</div> <br>
+				<div style="margin-left: 55px;">
+					&because;&ensp; secondary e- range &uarr;
+				</div>
+				<br>
+				
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">oblique angle &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">surface dose &uarr;</div> <br>
+
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">FS &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">surface dose &uarr;</div>
+			</td>
+			<td>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">surface dose &uarr;</div>
+				<br>
+				\[ E_{0, max} \propto R_p \]
+				\[ \overline{E_0} \propto R_{50}\]
+				\[ \overline{E_z} = \overline{E_0}~(1-\frac{z}{R_p}) \]
+				<br>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">oblique angle &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">surface dose &uarr;</div>
+			</td>
+		</tr>
+		<tr>
+			<td>d<sub>max</sub></td>
+			<td>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">d<sub>max</sub> &uarr;</div>
+				<br>
+
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">FS &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">d<sub>max</sub> &darr;</div>
+				
+			</td>
+			<td>
+				no trend <br>
+				depends on machine design + accessories <br>
+				<br>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">oblique angle &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">d<sub>max</sub> &darr;</div>
+			</td>
+		</tr>
+		<tr>
+			<td>PDD</td>
+			<td>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">slower fall-off</div>
+				<br>
+				
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">FS &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">slower fall-off</div>
+			</td>
+			<td>
+				&check;&emsp;bremsstrahlung tail
+				<div style="padding-left: 22px;">
+					photon contamination from gantry head + air
+				</div>
+				<br>
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">E &darr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">steeper dose gradient</div>
+				<div style="padding-left: 54px;">
+					&because; scatter at greater angles
+				</div>
+				<br>
+
+				(FS &gt; R<sub>p</sub>) <br>
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">RS &darr;</div>
+				&ensp;&rarr;&ensp;
+				PDD not changing much
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">(R  &darr; slightly)</div> <br>
+				<div style="margin-left: 58px;">
+					&because; sufficient lateral scatter equilibrium
+				</div>
+
+				(RS &lt; R<sub>p</sub>) <br>
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">FS &darr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">R<sub>100</sub></div> <br>
+				<div style="margin-left: 31px;">
+					&ensp;&rarr;&ensp;
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">relative surface dose &uarr;</div>
+				</div>
+				<br>
+				<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">oblique angle &uarr;</div>
+				&ensp;&rarr;&ensp;
+				<div style="display: inline; background-color:rgba(0, 110, 225, 0.3); padding-left: 3px; padding-right: 3px;">R<sub>80</sub> &darr;</div>
+				<div style="padding-left: 90px;">
+					&ensp;&rarr;&ensp;
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">R<sub>20</sub> &uarr;</div>
+				</div>
+			</td>
+
+			<tr>
+				<td>Penumbra</td>
+				<td>
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+					&ensp;&rarr;&ensp;
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">lateral scatter &uarr;</div>
+				</td>
+				<td>
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">air gap &uarr;</div>
+					&ensp;&rarr;&ensp;
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">penumbra &uarr;</div><br>
+					<br>
+					
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">E &uarr;</div>
+					&ensp;&rarr;&ensp;
+					<div style="display: inline; background-color:rgba(110, 255, 110, 0.3); padding-left: 3px; padding-right: 3px;">penumbra @ d<sub>90%</sub> &uarr;</div><br>
+					<div style="margin-left: 52px;">
+						&because;&ensp; &uarr; scatter
+					</div>
+				</td>
+			</tr>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<b>Reference</b><br>
+	[1]&emsp;Khan. p.386 <br>
+	[2]&emsp;IAEA Oncology Handbook p.285 <br>
+</body>
+</html>

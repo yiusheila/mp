@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Patient QA</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>External Beam | Patient QA</h2>
+
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>IMRT/VMAT Uncertainty</td>
+			<td>
+				In <u>Modelling</u> and <u>Planning</u>
+				<ul>
+					<li>modelling of MLC leaf round ends </li>
+					<li>modelling of MLC tong-and-groove effects </li>
+					<li>modelling of leaf transmission </li>
+					<li>modelling of MLC penumbra </li>
+					<li>small FS output factor </li>
+					<li>head backscatter </li>
+					<li>off-axis profile </li>
+					<li>dose calculation grid size </li>
+					<li>heterogeneity correction </li>
+				</ul>
+				<br>
+				In Delivery
+				<ul>
+					<li>MLC leaf position errors</li>
+					<li>MLC leaf speed </li>
+					<li>Gantry rotational stability </li>
+					<li>Beam flatness/symmetry/output/dose rate/low MU stability </li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Tolerance / Action Level</td>
+			<td>
+				<div class="hl">Tolerance limit</div> <div class="grp">
+					&ensp;=&ensp; plan + treatment operating normally <br>
+					&ensp;=&ensp; only random error
+				</div> <br>
+				<div class="hl" style="background-color: rgba(255, 0, 0, 0.3)">Action limit</div> &ensp;&ensp;&ensp;=&ensp; no risking harm to patient
+			</td>
+		</tr>
+		<tr>
+			<td>Gamma Index</td>
+			<td>
+				\[ \Gamma^2 = \left( \frac{\Delta D}{\Delta D_c} \right)^2 + \left( \frac{\Delta DTA}{\Delta DTA_c} \right)^2 \]
+				<div style="margin-left: 24px;">
+					where
+					<div style="margin-left: 24px;">
+						DTA&ensp;=&ensp;distance to agreement <br>
+						&Delta;<i>D<sub>c</sub></i>&ensp;=&ensp;acceptance criteria of dose difference <br>
+						&Delta;<i>DTA<sub>c</sub></i>&ensp;=&ensp;acceptance criteria of DTA <br>
+						&Gamma; &gt; 1 &ensp;&rarr;&ensp; Fail <br>
+					</div>
+					<br>
+					
+				</div>
+				<br>
+				<b>Dose Normalisation &rarr; consideration for dose difference</b> <br>
+				<div style="margin-left: 24px;">
+					<table>
+						<tr>
+							<td style="border: 0px; padding: 3px;"></td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;"><i>&Delta;D</i></td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;"><i>&Delta;DTA</i></td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px;"></td>
+						</tr>
+						<tr>
+							<td style="border: 0px; padding: 3px; vertical-align: middle;">Global</td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;">\( \Large \frac{D_{plan} - D_{measure}  }{max(D_{plan})} \)</td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;"> - </td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px;"></td>
+						</tr>
+						<tr>
+							<td style="border: 0px; padding: 3px; vertical-align: middle;">Local</td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;">\( \Large \frac{D_{plan} - D_{measure} }{D_{plan}} \)</td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px; text-align: center;"> - </td>
+							<td style="border: 0px; padding: 3px; padding-left: 24px;">
+								:)&ensp; target/OAR receiving different dose range <br>
+								&ensp;&rarr;&ensp; same percentage tolerance relative to the receiving dose <br>
+								:(&ensp; low dose region <br>
+								&ensp;&rarr;&ensp; percentage dose difference unrealistically high
+							</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<b>Spatial Resolution &rarr; consideration of DTA</b> <br>
+				<div style="margin-left: 24px;">
+					rule of thumb &ensp;&rarr;&ensp; evaluated dose distribution resolution &ensp;&le;&ensp; 1/3 DTA criterion <br>
+					<div style="margin-left: 78px;">
+						&ensp;+&ensp; interpolation
+					</div>
+				</div>
+
+				<br>
+				<b>Tolerance</b> (according to TG-218) <br>
+				<div style="margin-left: 24px;">
+					Ideally &ensp;&rarr;&ensp; organ + dose specific <br>
+					<div style="margin-left: 48px;">
+						+&ensp; heterogeneous phantom mimicking actual patient geometry <br>
+						:(&ensp; not possible
+					</div>
+					<br>
+					Current Practice &ensp;&rarr;&ensp; regular phantom (regardless of patient external contour/organ inhomogeneity)
+					<div style="margin-left: 94px;">
+						&rarr;&ensp; apply dose threshold &ensp;&larr;&ensp; focus on clinically relevant points <br>
+					</div>
+					<br>
+					<b>Interpretation</b> <br>
+					<div style="margin-left: 24px;">
+						&gamma; fail &ensp;&rarr;&ensp; DTA fail in low dose region? <br>
+						<div style="margin-left: 58px;">
+							&rarr;&ensp; still acceptable because clinically trivial? 
+						</div>
+						<div style="margin-left: 34px;">
+							&rarr; &Delta;d fail at steep dose gradient region? <br>
+						</div>
+						<div style="margin-left: 58px;">
+							&rarr;&ensp; still acceptable because spatial shift is small? 
+						</div>
+						<br>
+						&gamma; pass &ensp;&rarr;&ensp; but error clustered in high dose region i.e. tumour?
+						<div style="margin-left: 41px;">
+							&rarr;&ensp; tumour is too small?
+						</div>
+					</div>
+				</div>
+				<br>
+
+				<b>TG-218 Recommended Criteria </b> <br>
+				<div style="margin-left: 24px;">
+					For <div class="hl">3%/2 mm</div>, <div class="hl">10%</div> dose threshold, <div class="hl">global</div> normalisation<br>
+					<table class="tight_clean">
+						<tr>
+							<td>Tolerance Limit: </td>
+							<td>&gamma; &ge; 95% </td>
+						</tr>
+						<tr>
+							<td>Action Limit: </td>
+							<td>&gamma; &ge; 90%</td>
+						</tr>
+					</table>
+				</div>	
+			</td>
+		</tr>
+
+		<tr>
+			<td>Measurement Methods</td>
+			<td>
+				<b>QA Plan Delivery </b>
+				<div style="margin-left: 24px;">
+					1.&emsp;True Composite <br>
+					<div style="margin-left: 24px;">
+						=&ensp;actual plan deliver to stationary phantom <br>
+						:)&ensp;pick up inaccuracies of gantry/collimator/couch angle/MLC position/attenuation of couch etc <br>
+						:)&ensp;dose distribution at clinically relevant area (high dose region/OAR)
+						<br>
+						:(&ensp;patient contour different from phantom <br>
+						:(&ensp;lack of heterogeneities <br>
+						:(&ensp;angular dependence &larr; <div class="grp">
+							diode itself <br>
+							internal electronics/device/air gaps etc. <br>
+						</div> <br>
+						:(&ensp;non-coplanar beam &rarr; irradiating electronics <br>
+						:|&ensp;low spatial resolution compared to film <br>
+
+					</div>
+					<br>
+					2.&emsp;Perpendicular Field-by-field/Composite <br>
+					<div style="margin-left: 24px;">
+						=&emsp;array/film perpendicular to beam <br>
+						&ensp;&emsp;array/film could be mounted on gantry
+						&ensp;&emsp;(or) <br>
+						&ensp;&emsp;fixed gantry at 0&deg; <br>
+						(Perpendicular composite) = all beam dose combined <br>
+						<br>
+						:) can pick up small deviations when plan is highly modulated
+					</div>
+				</div>
+				<br>
+				<b>Dose Measurement</b> <br>
+				<div style="margin-left: 24px;">
+					1.&emsp; Point Dose <br>
+					<ul>
+						<li>cylindrical ionisation chamber in phantom</li>
+						<li>small size <br>
+							max/min across the IC volume &lt; 5% of mean chamber dose
+						</li>
+						<li>should place at region corresponding to PTV/OAR </li>
+						<li>should be compared to the active volume of the chamber on planned dose distribution </li>
+					</ul>
+					<br>
+					2.&emsp; 2D Dose Distribution
+					<ul>
+						<li>using IC arrays / diode arrays / EPID / film </li>
+					</ul>
+					<br>
+					3.&emsp; Reconstruction Method<br>
+					<ul>
+						<li>Forward Calculation Algorithm <br>
+							measurement data with EPID / 2D diode arrays / 2D IC arrays<br>
+							&rarr;&ensp; act as <div class="hl2">fluence map</div> &rarr; feed to algorithm to calculate the dose deposit in patient CT 
+						</li>
+						<li>Rotating 2D Array in Phantom <br>
+							&rarr;&ensp; rotate with gantry to stay perpendicular to the beam <br>
+							&rarr;&ensp; reconstruct 3D dose distribution in phantom 
+						</li>
+						<li>During Treatment Exit Dose Reconstruction <br>
+							&rarr;&ensp; EPID collect transmission flence map <br>
+							&rarr;&ensp; correct for EPID response <br>
+							&rarr;&ensp; backproject dose deposit in patient
+						</li>
+					</ul>
+					<br>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>When Tumour is SMALL</td>
+			<td>
+				high dose region corresponds to dose to tumour <br>
+				tumour volume to irradiated volume is small <br>
+				even error to tumour &uarr;, only little points fail &gamma; analysis <br>
+				&there4; always review the &gamma; distribution, not just statistics
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h3>Practical</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Notes</td>
+			<td>
+				Translate patient plan to phantom plan <br>
+				Send patient plan and phantom plan from TPS to control room console through network to check the connection <br>
+				the centre of the phantom might be put at the isocentre or the hot spot <br>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>3DVH</td>
+			<td>
+				&ensp;=&ensp; software that take beam measurement &rarr; reconstruct 3D dose distribution back on patient image
+			</td>
+		</tr>
+		<tr>
+			<td>Phantom Spec Comparison</td>
+			<td>
+				<table>
+					<tr>
+						<td></td>
+						<td>ArcCHECK</td>
+					</tr>
+					<tr>
+						<td>Detector</td>
+						<td>1386 diode, helical, 10 mm spacing</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>ArcCheck</td>
+			<td>
+				<ol>
+					<li>Generate QA plan</li>
+					<li>Approve QA plan (otherwise the plan can not be delivered)</li>
+					<li>Export dose and plan (RD + RP) to ArcCheck</li>
+					<li>Record phantom shift (x, y, z)</li>
+					<li>Chart the plan for irradiation <br>
+						Appointment Scheduling &gt; Eclipse CAP (not clinical) <br>
+						double click time slot (same date, earlier the time, machine does not allow irradiating a plan later than current time) <br>
+						(in dialogue window) <br>
+						&emsp;&gt;&ensp; Activity Service <br>
+						&emsp;&gt;&ensp; Selected Patient 
+					</li>
+					<li>(Past patient QA record can be found on computer &gt; 17. QA Statistics)</li>
+				</ol>
+				<br>
+				<b>Measurement</b>
+				<ol>
+					<li>Dose Calibration <br>
+						Measure a 10&times;10 <br>
+						Enter absolute dose energy
+					</li>
+					<li>Irradiate patient plan
+						<table>
+							<tr>
+								<td style="text-align: center;">Chart 1 <br>
+									Measured Dose
+								</td>
+								<td style="text-align: center;">Chart 2 <br>
+									ArcCheck Dose
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="text-align: center;">Gamma Index</td>
+							</tr>
+						</table>
+					</li>
+				</ol>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Compass</td>
+			<td>
+				<div style="margin-left: 6px;">(on Eclipse)</div>
+				<ol>
+					<li>Create Verification Plan</li>
+					<li>Compass no couch <br>
+						&because; Compass uses mass density but Eclipse uses e- density
+					</li>
+					<li>Calculate dose</li>
+					<li>Create 20 cGy to structure <br>
+						(only consider pixels with D &gt; 20 cGy i.e. 10% of prescription dose 2 Gy)
+					</li>
+					<li>Export structure + dose + phantom CT to designated folder (S:/Compass Patient QA) <br>
+						Export &gt; Compass 
+					</li>
+				</ol>
+				<br>
+				<div style="margin-left: 6px;">(on Compass workstation)</div>
+				<ol>
+					<li>File &gt; import plan <br>
+						root folder &gt; (select folder) &gt; <div class="button">Search</div> &gt; select RT Plan &gt; <div class="button">Get</div> <br>
+						Change Name &rarr; QA <br>
+						&emsp;&emsp;&emsp;&ensp; Description &rarr; (blank) <br>
+						&gt; <div class="button">Ok</div>
+					</li>
+					<li>
+						Computation &gt; Compute Dose
+					</li>
+					<li>
+						Statistics &gt; Comparative Goal &gt; Gamma and Diff &gt; 
+						<div class="button">add</div> <br>
+						ROI &rarr; 20 cGy plan dose dose line <br>
+						Goal Type: Volume with &gamma; &gt; 1 at most 0.45%
+					</li>
+					<li>Save &gt; Close</li>
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+</body>
+</html>

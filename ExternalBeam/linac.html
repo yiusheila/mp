@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LINAC Machine</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		.line {
+			padding: 6px;
+			vertical-align: top;
+			text-align: center;
+			border-left: hidden;
+			border-right: hidden;
+			border-top: 2px solid grey;
+			border-bottom: 2px solid grey;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 36px;
+		}
+		ol {
+			margin: 0px;
+			padding-left: 24px;
+		}
+		.num {
+			margin-left: 12px;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 12px;
+		}
+		.stroke {
+			list-style-type: none;
+		}
+		.stroke::before {
+			content: "| ";
+			margin-left: -12px;
+			margin-right: 12px;
+		}
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+		li {
+			padding-left: 12px;
+		}
+		.index {
+			border: 2.5px solid white;
+			display: inline-block; 
+			padding: 24px;
+			padding-left: 40px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.linac_head {
+			padding: 0px;
+			vertical-align: middle;
+			text-align: center;
+			border: none;
+		}
+		.modulator {
+			padding: 0px;
+			padding-left: 3px;
+			padding-right: 3px;
+			border: hidden;
+		}
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>LINAC</h2>
+	<ol class="index">
+		<li><a href="#ion_chamber">Ion Chamber</a></li>
+		<li><a href="#mlc">MLC</a></li>
+		<li><a href="#accelerating_guide">Accelerating Waveguide</a></li>
+		<li><a href="#pumps">Pumps</a></li>
+	</ol>
+
+	<br>
+	<br>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Machine</td>
+			<td>
+				<b>Head (Varian)</b>
+				<div style="border: 2px solid white; width: 50%; margin-left: auto; margin-right: auto;">
+					<table style="margin: 6px; margin-left: auto; margin-right: auto;">
+						<tr>
+							<td class="linac_head" style="border-right: 1px solid white; border-left: 1px solid white; background-color: rgba(255, 255, 255, 0.3);">
+								Electron Beam
+							</td>
+						</tr>
+						<tr>
+							<td class="linac_head" style="border-right: 1px solid white; border-left: 1px solid white; background-color: rgba(255, 255, 255, 0.3);">
+								&darr;
+							</td>
+						</tr>
+						<tr>
+							<td class="linac_head" style="border-right: 1px solid white; border-left: 1px solid white; background-color: rgba(255, 255, 255, 0.3);">
+								<div style="border: 1px solid white; margin: auto; width: 50%">Target</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="linac_head" style="border-right: 1px solid white; border-left: 1px solid white; background-color: rgba(255, 255, 255, 0.3);">
+								&darr;
+							</td>
+						</tr>
+						<tr>
+							<td class="linac_head" style="border: 1px solid white;">
+								Beryllium Window
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+						<tr>
+							<td class="linac_head">
+								<div align="center" style="border: 1px solid white; margin: 3px; width: 70%; margin-left: auto; margin-right: auto;">
+									<br>
+									<br>
+									Primary Collimator
+								</div>
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+
+						<tr>
+							<td class="linac_head">
+								<div style="border: 1px solid white; margin: 3px; width: 100%; margin-left: auto; margin-right: auto; padding: 5px;">Flattening Filter / Scattering Foil</div>
+								<div style="padding-left: 150px;">Carrousel</div>
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+						<tr>
+							<td class="linac_head">
+								<div style="border: 1px solid white; margin: 3px; width: 50%; margin-right: auto; margin-left: auto;">Ion Chamber</div>
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+						<tr>
+							<td class="linac_head">
+								<div style="border: 1px solid white; margin: 3px;">Secondary Collimator</div>
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+						<tr>
+							<td class="linac_head">
+								<div style="border: 1px solid white; margin: 3px; width: 70%; margin-right: auto; margin-left: auto;">Tertiary Collimator <br> (Upper Jaw)</div>
+							</td>
+						</tr>
+						<tr><td class="linac_head">&darr;</td></tr>
+						<tr>
+							<td class="linac_head">
+								<div style="border: 1px solid white; margin: 3px; width: 70%; margin-right: auto; margin-left: auto;">Tertiary Collimator <br> (Lower Jaw)</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+
+				<br>
+				<b>Beryllium</b> <br>
+				<ul>
+					<li class="stroke">Low Density</li>
+					<li class="stroke">Low Atomic Mass</li>
+				</ul>
+				<br>
+				<b>Jaw Convention</b> <br>
+				<ul>
+					<li class="stroke">Y jaw = upper</li>
+					<li class="stroke">X jax = lower</li>
+				</ul>
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td>Electron Gun</td>
+			<td>
+				<b>Types:</b> <br>
+				<ul>
+					<li class="stroke">Diode Gun
+						<ul>
+							<li class="stroke">Directly heated</li>
+							<li class="stroke">Beam Current controlled by filament temperature and current</li>
+						</ul>
+					</li>
+					<li class="stroke">Triode Gun
+						<ul>
+							<li class="stroke">Barium molecules placed in porous Tungsten</li>
+							<li class="stroke">Barium reduced operating temperature to ~ 700 &deg;C (from 1750 &deg;)</li>
+							<li class="stroke">Beam Current controlled by grid</li>
+							<li class="stroke">&ensp;:)&ensp;filament kept in rather stable temperature</li>
+						</ul>
+					</li>
+				</ul>
+				<br>
+				<b>General Features</b>
+				<ul>
+					<li class="stroke">Vacuum</li>
+					<li class="stroke">Concave cathode &there4; Focusing Effect</li>
+					<br>
+					<li class="stroke">Cathode at -5k to -20kV</li>
+					<li class="stroke">Accelerator Guide at 0V </li>
+					<br>
+					<li class="stroke">Cathode Temperature needs to be high enough to maintain the space charge limited region</li>
+					<ul>
+						<li class="stroke">Excessive electrons ready to be accelerated</li>
+					</ul>
+				</ul>
+
+				<br>
+				<b>Gun Desk</b> <br>
+				&ensp;=&ensp;Gun Driver
+				<ul>
+					<li class="stroke">Gun Filament Power Supply</li>
+					<li class="stroke">Cathode HV</li>
+					<li class="stroke">Grid Pulse</li>
+					<li class="stroke">Filament+Grid Bias Monitoring</li>
+					<li class="stroke">Issue GFIL Interlock</li>
+				</ul>
+				<div style="padding-left: 24px; text-align: center;">
+					<img src="LINAC_GunDriver.png" alt="" width="80%">
+					<div style="padding-left: 25%;">
+					<table width="80%">
+						<tr>
+							<td class="clean"><b>Cold Desk</b></td>
+							<td class="clean"><b>Hot Desk</b></td>
+						</tr>
+						<tr>
+							<td class="line">Referenced to Ground</td>
+							<td class="line">Referenced to Gun Cathode HV</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="line">HVPS &rarr; <div style="border: 1px solid white; display: inline;">Hot Desk</div></td>
+						</tr>
+					</table>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>RF System</td>
+			<td>
+				<ul>
+					<li class="stroke">Operating Frequency ~ 3GHz</li>
+					<li class="stroke">Pressurised SF6 Gas in Rectangular Transmission Waveguide
+						<ul>
+							<li class="stroke">SF6 is diaelectric</li>
+						</ul>
+					</li>
+					<li class="stroke">Connecting to Highly Vacuumed Cylindrical Accelerating Waveguide
+						<ul>
+							<li class="stroke">Ceramic RF Window in between</li>
+						</ul>
+					</li>
+				</ul>
+				<br>
+				Types:
+				<table width="100%">
+					<tr>
+						<td class="line">Type</td>
+						<td class="line">Magnetron</td>
+						<td class="line">Klystron</td>
+					</tr>
+					<tr>
+						<td class="line"></td>
+						<td class="line">RF Oscillator</td>
+						<td class="line">RF Amplifier</td>
+					</tr>
+					<tr>
+						<td class="line">Input</td>
+						<td class="line">HV Pulse</td>
+						<td class="line" style="text-align: left;">
+							<ul>
+								<li class="stroke">HV Pulse</li>
+								<li class="stroke">Low Power RF</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Mechanism</td>
+						<td class="line" style="text-align: left;">
+							<ul>
+								<li class="stroke">cathode indirectly heated by filament</li>
+								<li class="stroke">even number resonant cavities</li>
+								<li class="stroke">e- travel toward the anode in circular motion imparted by B field</li>
+								
+							</ul>
+						</td>
+						<td class="line" style="text-align: left;">
+							<ul>
+								<li class="stroke">thermionic e- generated in gun</li>
+								<li class="stroke">e- attracted to earth potential anode</li>
+								<li class="stroke">lower power RF from RF driver fill the buncher cavity</li>
+								<li class="stroke">the velocities of e- in buncher cavity are modulated by the RF frequency</li>
+								<li class="stroke">addition resonant cavities to increase the RF power gain</li>
+								<li class="stroke">amplified RF is extracted from the final catcher cavity</li>
+								<li class="stroke">e- in Klystron collected by the collector and dissipate their energy through water cooling</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Modulator</td>
+			<td>
+				<b>Roles</b>
+				<ul>
+					<li class="stroke">Convert 380 Vac to 10k Vdc</li>
+					<li class="stroke">Convert 10k Vdc to 150k Vdc for</li>
+					<ul>
+						<li class="stroke">Accelerator Guide</li>
+						<li class="stroke">Diode Gun (LE LINAC)</li>
+						<li class="stroke">Gun Desk (HE LINAC)</li>
+					</ul>
+				</ul>
+				<br>
+				<b>Components</b> <br>
+				<div style="padding-left: 24px;">
+					Simple Circuit <br>
+					<div style="text-align: center;"><img src="modulator_s.png" alt=""></div>
+					<div style="padding-left: 48px;">
+						<table>
+							<tr>
+								<td class="modulator">R2</td>
+								<td class="modulator">=&ensp;RF System / Filament / Gun Desk</td>
+							</tr>
+							<tr>
+								<td class="modulator">S3</td>
+								<td class="modulator">
+									=&ensp;Main Thyratron <br>
+									<div style="padding-left: 12px;">
+										<b>During Discharge</b>
+										<ul>
+											<li class="stroke">Main Thyratron Closes</li>
+											<li class="stroke">Current flows from PFN &rarr; Main Thyratron &rarr; RF System Primary Transformer</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="modulator">S2 + R1</td>
+								<td class="modulator">=&ensp;DeQing Thyratron
+									<div style="padding-left: 12px;">
+										<b>Output Dose Rate Control</b>
+										<ul>
+											<li class="stroke">Receive signal from compensated voltage divider</li>
+											<li class="stroke">Closes DQ Thyratron</li>
+											<li class="stroke">current flow through DQ Thyratron instead of charging up the PFN</li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="modulator">L1</td>
+								<td class="modulator">=&ensp;Charging choke</td>
+							</tr>
+							<tr>
+								<td class="modulator">CR1</td>
+								<td class="modulator">=&ensp;Charging diode</td>
+							</tr>
+						</table>
+					</div>
+					
+				</div>
+				<br>
+				<div style="text-align: center;"><img src="modulator_m.png" alt=""></div>
+				<div style="padding-left: 48px;">
+					<table>
+						<tr>
+							<td class="modulator">(C5, R4) + (C6, R5)</td>
+							<td class="modulator">=&ensp;Compensated Voltage Divider</td>
+						</tr>
+						<tr>
+							<td class="modulator">R2</td>
+							<td class="modulator">
+								=&ensp;HVPSI Monitor Circuit <br>
+								=&ensp;Check for Positive Mismatch
+							</td>
+						</tr>
+						<tr>
+							<td class="modulator">T2, CR3, R3</td>
+							<td class="modulator">
+								=&ensp;End Clipper Circuit <br>
+								=&ensp;Check for Negative Mismatch
+							</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<br>
+				<b>Impedance Matching</b> <br>
+				<div style="padding-left: 24px;">
+					<i>Z<sub>0</sub></i> = Impedance of PFN <br>
+					<i>R<sub>L</sub></i> = Impedance of RF System <br>
+					<br>
+					<b>Mismatch Conditions</b> <br>
+					<i>Z<sub>0</sub></i> = <i>R<sub>L</sub></i>
+					<ul>
+						<li class="stroke">Maximum Efficiency</li>
+					</ul>
+					<i>R<sub>L</sub></i> &gt; <i>Z<sub>0</sub></i> (Positive Mismatch)
+					<ul>
+						<li class="stroke">After 2T, Charges still remain in PFN</li>
+					</ul>
+					i>Z<sub>0</sub></i> &gt; <i>R<sub>L</sub></i> (Negative Mismatch)
+					<ul>
+						<li class="stroke">After 2T, PFN is charged to the opposite sign</li>
+					</ul>
+				</div>
+				
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Dose Rate Control</td>
+			<td>
+				<table>
+					<tr>
+						<td class="modulator">Low Energy (LE)</td>
+						<td class="modulator">
+							<ul>
+								<li class="stroke">PRF (Pulse Repetition Frequency)</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="modulator">High Energy (HE)</td>
+						<td class="modulator">
+							<ul>
+								<li class="stroke">Injection Pulse coincides with RF Driver Pulse</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				
+				<br>
+				<b>General Features</b><br>
+				<ul>
+					<li class="stroke">PRF for 6 MV = 360 Hz (higher E, 180 Hz)</li>
+					<li class="stroke">Nominal Maximum Dose&ensp;=&ensp;600 MU min<sup>-1</sup></li>
+					<li class="stroke">Sync Pulses comes as a train of 6 pulses </li>
+					<li class="stroke">One Sync Pulse: 
+						<div style="text-align: center;"><img src="LINAC_pulses.png" alt="" width="60%"></div>
+						<div style="padding-left: 24px">
+							<ul>
+								<li class="stroke">RFDR at 360Hz constantly </li>
+								<li class="stroke">Injection Pulse determine if one sync pulse ejects electron or not</li>
+							</ul>
+							
+						</div>
+						
+					</li>
+				</ul>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Bending Magnet</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean" style="text-align: right;">0&deg;</td>
+						<td class="clean"></td>
+					</tr>
+					<tr>
+						<td class="clean" style="text-align: right;">90&deg;</td>
+						<td class="clean">
+							<ul>
+								<li class="stroke">Permanent Magnet</li>
+								<li class="stroke">Compact</li>
+								<li class="stroke">NOT achromatic</li>
+								<li class="stroke">Focal spot elongated in GT plane <br>
+									&emsp;:(&ensp;Prenumbra
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean" style="text-align: right;">270&deg;</td>
+						<td class="clean">
+							<ul>
+								<li class="stroke">Achromatic</li>
+								<li class="stroke">Electro-magnets <br> 
+									&emsp;:)&ensp;different E different B field strength
+								</li>
+								<li class="stroke">Energy Slits to control E &pm; 3% </li>
+								<li class="stroke">
+									\[ qvB = \frac{mv^2}{r} \]
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean" style="text-align: right;">Slalom</td>
+						<td class="clean">
+							 - 45&deg; <br> + 45&deg; <br> + 122.5&deg;
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Peaking a LINAC</td>
+			<td>
+				<ol>
+					<table>
+						<tr>
+							<td><li class="num">RF Power</li></td>
+							<td>
+								RF Power Controlled by
+								<ul>
+									<li class="stroke">
+										For KLM (Klystron Linear Mode)
+										<ul>
+											<li class="stroke">RFDR (RF Driver)</li>
+										</ul>
+									</li>
+
+									<li class="stroke">
+										For non-KLM ( = satuation mode )
+										<ul>
+											<li class="stroke">PFNV (Pulse Forming Network Voltage)</li>
+											<li class="stroke">Shunt Tee</li>
+										</ul>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td><li class="num">AFC</li></td>
+							<td>
+								<ul>
+									<li class="stroke">Auto Frequency Control</li>
+									<ul>
+										<li class="stroke">Accelerator Waveguide Resoanance</li>
+									</ul>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td><li class="num">Gun I</li></td>
+							<td>
+								<ul>
+									<li class="stroke">Gun Current which is controlled by Grid Voltage (not grid pulse duration)
+										<div style="text-align: center; margin: 3px;">
+											<img src="GunI-MV.png" alt="" width="150">
+											<img src="RF-GunI.png" alt="" height="150">
+										</div>
+									</li>
+								</ul>
+								
+							</td>
+						</tr>
+						<tr>
+							<td><li class="num">Bending Magnet</li></td>
+							<td>
+								<ul>
+									<li class="stroke">Interlock: ANG R/T </li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td><li class="num">Steering Coil</li></td>
+							<td>
+								<ul>
+									<li class="stroke">Interlock: BUR R/T, POS R/T </li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td><li class="num">Accelerator Solenoid</li></td>
+							<td></td>
+						</tr>
+					</table>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>OBI <br> (On-board Imaging)</td>
+			<td>
+				<b>Hardware</b>
+				<ul>
+					<li class="stroke">kV Panel</li>
+					<li class="stroke">MV Panel</li>
+					<li class="stroke">CBCT</li>
+					<li class="stroke">BrainLab's ExacTrac</li>
+				</ul>
+				<br>
+				<b>MV Panel</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">Use ~1mm Cu as to attenuate MV beam</li>
+						<li class="stroke">Use ASIC to amplify read-out signal</li>
+					</ul>
+				</div>
+
+				<br>
+				<b>kV Panel</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">Use robotic arms</li>
+						<ul>
+							<li class="stroke">Shoulder/Arm/Elbow/Forearm/Wrist/Hand</li>
+						</ul>
+					</ul>
+				</div>
+				
+				<br>
+				<b>CBCT (Cone Beam CT)</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">broad beam</li>
+						<ul>
+							<li class="stroke">more scattering than conventional fan beam CT</li>
+						</ul>
+						<li class="stroke">reconstruct image using the whole panel</li>
+						<ul>
+							<li class="stroke">do not have septums in between pixels like conventional CT</li>
+						</ul>
+					</ul>
+				</div>
+
+				<br>
+				<b>DRR (Digitally Reconstructed Radiography)</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">shrink CT image to 1 direction</li>
+						<li class="stroke">add appropriate magnification to mimic x-ray (usually 1.4)</li>
+					</ul>
+
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Winston Lutz Test <br> for Isocentre QA</td>
+			<td>
+				&ensp;--&ensp;Critical for SRS <br>
+				<br>
+				<b>Isocentre of 3 axes</b>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td rowspan="2" class="clean">Gantry</td>
+							<td class="clean"></td>
+							<td class="clean"></td>
+							<td class="clean"></td>
+						</tr>
+						<tr>
+							<!--  -->
+							<td class="clean" style="border-top: solid white 1px; border-right: solid white 1px;"></td>
+							<td rowspan="2" class="clean"> &lt; 0.5 mm radius</td>
+							<td class="clean" style="border-top: solid white 1px; border-right: solid white 1px;"></td>
+						</tr>
+						<tr>
+							<td rowspan="2" class="clean">Collimator</td>
+							<td class="clean" style="border-bottom: solid white 1px; border-right: solid white 1px;"></td>
+							<!--  -->
+							<td class="clean" style="border-right: solid white 1px;"> </td>
+							<td rowspan="2" class="clean"> &lt; 0.75 mm radius</td>
+						</tr>
+						<tr>
+							<!--  -->
+							<td class="clean"></td>
+							<td class="clean"></td>
+							<td class="clean" style="border-right: solid white 1px;"></td>
+						</tr>
+						<tr>
+							<td rowspan="2" class="clean">Table</td>
+							<td class="clean"></td>
+							<td class="clean"></td>
+							<td class="clean" style="border-bottom: solid white 1px; border-right: solid white 1px;"></td>
+						</tr>
+					</table>
+				</div>
+					
+				<br>
+				<b>Tools for Winston Lutz Test</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">BB (Ball Bearing) Phantom</li>
+						<li class="stroke">Stereotactic Cone -OR- mMLC (micro MLC)</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Waveguide</td>
+			<td>
+				Resistive load -> energy loss as heat <br>
+				standing wave -> RF power usually need to be maintained <br>
+				travelling wave -> RF power tends to decrease along the waveguide <br>
+				<br>
+				
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p id="accelerating_guide"><h3>Accelerating Waveguide</h3></p>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Monitoring</td>
+			<td>
+				Temperature&ensp;&sim;&ensp;30 - 40 &deg;C
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p id=ion_chamber><h3>Ion Chamber</h3></p>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Profile/Dose Monitoring</td>
+			<td>
+				<div style="text-align: center;"><img src="LINAC_IonChambers.png" alt="" style="width: 600px;"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Collimator Exchange Effect</td>
+			<td>
+				&emsp;=&emsp;backscatter to chamber <br>
+				<ul>
+					<li class="stroke">chamber receives higher radiation</li>
+					<li class="stroke">output &darr; than expected</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<p id="mlc"><h3>MLC</h3></p>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Design</td>
+			<td>
+				<b>Material</b>
+				<div style="padding-left: 24px;">
+					Teflon as T-nut
+					<ul>
+						<li class="stroke">&ensp;:)&ensp;no need extra lubrication </li>
+					</ul>
+				</div>
+
+				<br>
+
+				<b>Source-MLC Distance</b>
+				<ul>
+					<li class="stroke">Use lower edge of MLC</li>
+				</ul> 
+				<br>
+				<b>Secondary vs Tertiary</b>
+				<div style="padding-left: 24px;">
+					Some vendor use MLC to replace upper/lower jaw <br>
+					e.g.
+					<table>
+						<tr>
+							<td class="clean"></td>
+							<td class="clean"></td>
+							<td class="clean" style="text-align: center;">Transmission <br> Acceptance</td>
+						</tr>
+						<tr>
+							<td class="line" style="text-align: left;">Varian</td>
+							<td class="line" style="text-align: left;">MLC as Tertiary Collimation</td>
+							<td class="line"> &lt; &plusmn; 5 %</td>
+						</tr>
+						<tr>
+							<td class="line" style="text-align: left;">Elekta</td>
+							<td class="line" style="text-align: left;">Upper Jaw Replacement</td>
+							<td class="line" rowspan="2" style="text-align: center; vertical-align: middle;"> &lt; &plusmn; 1 %</td>
+						</tr>
+						<tr>
+							<td class="line" style="text-align: left;">Siemens</td>
+							<td class="line" style="text-align: left;">Lower Jaw Replacement</td>
+						</tr>
+					</table> 				
+				</div>
+				<br>
+				<b>Design for Focusing</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">Curve Path + Leaf Geometry</li>
+						<li class="stroke">Round End Leaf Geometry</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>MLC Position Feedback</td>
+			<td>
+				<ol>
+					<li>Initialisation <br>
+						<ul>
+							<li class="stroke">when machine is on, feedback system loses information on the position of the leaves</li>
+							<li class="stroke">leaf travelling towards midline one by one</li>
+							<li class="stroke">stop when it reaches the IR light in the middle</li>
+						</ul>
+					</li>
+					<br>
+					<li>Touch Test <br>
+						<ul>
+							<li class="stroke">after initialisation</li>
+							<li class="stroke">A and B bank travel to midline until physically touch the other bank</li>
+							<li class="stroke">check the compression force at the spring</li>
+						</ul>
+					</li>
+					<br>
+					<li>Encoder (Primary Feedback) <br>
+						<ul>
+							<li class="stroke">magnetic disk with alternating polarity at each segment</li>
+						</ul>
+						
+					</li>
+					<br>
+					<li>Soft Pot (Secondary Feedback) <br>
+						<ul>
+							<li class="stroke">resolution lower than encoder</li>
+						</ul>
+					</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Pulse Width Modulation (PWM)</td>
+			<td>
+				make sure the distance of 1 step is fulfilled <br>
+				<br>
+				<b>Mechanism</b>
+				<ul>
+					<li class="stroke">MLC motor driven by H-bridge motor driver</li>
+					<li class="stroke">1 pulse &rarr; 1 step</li>
+					<li class="stroke">yet the pulse duration of 1 pulse ( = duty cycle) can vary from leaf to leaf or over time
+						<ul>
+							<li class="stroke">different friction</li>
+						</ul>
+					</li>
+					<li class="stroke">longer the pulse, the more power need to be applied to achieve 1 step</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<p id="pumps"><h3>Pumps</h3></p>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Rotary Pump</td>
+			<td>
+				* need to gas-out before installation
+
+				<ul>
+					<li class="stroke"> </li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Turbo Pump</td>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Ion Pump</td>
+			<td>
+				&sim; 0.n mA
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<p id="Waveguide"><h3>Waveguide</h3></p>
+	<table>
+		<tr>
+			<td>Energy Loss</td>
+			<td>
+				<b>Skin Effect</b>
+				<div style="padding-left: 24px;">
+					&uarr;&emsp;frequency <br>
+					&uarr;&emsp;self induction in the centre of conductor <br>
+					&darr;&emsp;effective cross-section area <br>
+					&uarr;&emsp;resistance <br>
+					&uarr;&emsp;power loss <br>
+					<br>
+					<b>Energy Loss to Material Between Conductor via Heating </b>
+					<div style="padding-left: 24px;">
+						
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3>Elekta Specific</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Elekta</td>
+			<td>
+				<b>Travelling Wave Waveguide</b>
+				<ul>
+					<li class="stroke">can use less complex demountable diode e- gun</li>
+					<li class="stroke">RF unchanged, control filament current to control output dose</li>
+					<li class="stroke">0.4c at gun</li>
+					<li class="stroke">ultra-high vacuum 10<sup>-6</sup> mbar</li>
+					<li class="stroke"></li>
+				</ul>
+
+				<br>
+				<b>Target</b> <br>
+				<div style="margin-left: 24px;">
+					same target for all photon energy (but different flattening filter) <br>
+					(whereas Varian got different targets for different energies) <br>
+       				+ nickle window for election <br>
+				</div>
+				<br>
+				<b>Flattening Filter</b>
+				<div style="margin-left: 24px;">
+					1 for low E (6x, 8x) <br>
+					1 for mid E (10x, 15x) <br>
+					(none for high E - 25x has its own primary collimator with hardening filter + difference filter)
+				</div>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Absolute Dosimetry</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>External Beam | Absolute Dosimetry  (IAEA TRS-398)</h2> <br>
+
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Calibration in Dose to Water</td>
+			<td>
+				<table class="tight_clean" style="text-align: center; margin-left: auto; margin-right: auto;">
+					<col width="190px">
+					<tr>
+						<td class="tight_clean">Calibration in air kerma</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: left; padding-left: 100px;">
+							|&emsp; <br>
+							|&emsp; less uncertainty <br>
+							|&emsp; &emsp;&uarr;&ensp; dose to water more relevant to biological effect <br>
+							|&emsp; &emsp;&uarr;&ensp; also the wall attenuation difference from the surrounding &uarr; &rarr; error &uarr;<br>
+							&darr;&emsp; 
+						</td>
+					</tr>
+					<tr>
+						<td>Calibration in terms of dose to water </td>
+						<td style="text-align: left;">&rarr;&emsp; <div style="display: inline; border: 1px solid white; padding: 6px; padding-left: 10px; padding-right: 10px;">current approach in TRS-398</div></td>
+					</tr>
+					<tr>
+						<td>&darr;</td>
+					</tr>
+					<tr>
+						<td>(dose to medium?)</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Instrument Hierarchy</td>
+			<td>
+				<br>
+				<table class="tight_clean" style="text-align: center; margin-left: auto; margin-right: auto;">
+					<tr>
+						<td><div class="button" style="padding: 4px; padding-left: 12px; padding-right: 12px;">Primary Standard</div></td>
+					</tr>
+					<tr>
+						<td style="padding: 6px;">&darr;</td>
+					</tr>
+					<tr>
+						<td><div class="button" style="padding: 4px; padding-left: 12px; padding-right: 12px;">Secondary Standard</div></td>
+						<td rowspan="3" style="vertical-align: top;">
+							<table>
+								<tr>
+									<td rowspan="2" style="vertical-align: top; line-height: 200%; text-align: left;">
+										&rarr; &ensp;<div class="button" style="padding: 4px; padding-left: 12px; padding-right: 12px;">Reference Instrument</div> = highest metrological instrument at a cite
+										<br>
+										<div style="margin-left: 85px;">
+											&darr;
+										</div>
+										<div class="button" style="padding: 4px; padding-left: 12px; padding-right: 12px; margin: 3px; margin-left: 31px;">Field Instrument</div> for routine measurement, calibrated to reference instrument
+									</td>
+								</tr>
+							</table>
+							
+						</td>
+					</tr>
+					<tr>
+						<td style="padding: 6px;">&darr;</td>
+					</tr>
+					<tr>
+						<td><div class="button" style="padding: 4px; padding-left: 12px; padding-right: 12px;">Tertiary Standard</div></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<h3>Absolute Dosimetry</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="2">
+				High Energy Photon Beam <br> 
+				<div style="margin-left: 24px;">
+					(from 1 - 50 MeV e-) <br>
+					(TRS-398 Ch.6) <br>
+				</div>
+			</td>
+			<td>
+				<div style="padding-left: 295px;">
+					\( D_{w, Q} = \) 
+					<div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">\( N_{D, w, Q} \)</div>&ensp;
+					<div style="display: inline; background-color: rgba(255, 0, 255, 0.3);">\( M_{corr} \) </div>
+				</div>
+
+				<div style="padding-left: 326px; margin-top: 3px;">
+					\( = \)
+					<div style="display: inline; background-color: rgba(255, 255, 0, 0.3); padding-top: 5px; padding-bottom: 5px;">\( \left( \left( \frac{N_{D, w, Q}}{N_{D, w, Q_0}} \right) ~ N_{D, w, Q_0}  \right) \) </div>&ensp;
+					<div style="display: inline; background-color: rgba(255, 0, 255, 0.3);">\( M_{corr} \) </div>
+				</div>
+
+				<div style="padding-left: 326px;">
+					\( = \)
+					<div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">\( ( k_{Q, Q_0} ~ N_{D, w, Q_0} ) \) </div>&ensp;
+					<div style="display: inline; background-color: rgba(255, 0, 255, 0.3);">\( M_{uncorr} (k_{TP} ~k_H ~k_{pol} ~k_{s}  ~k_{ele} ) \) </div>
+				</div>
+
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						<table class="clean">
+							<tr>
+								<td>\( k_{Q, Q_0} \)</td>
+								<td>Beam Quality Correction Factor</td>
+								<td>
+									&larr;&ensp; chamber behaviour under difference beam quality <br>
+									&larr;&ensp; <div style="display: inline-block; border: 0px solid white; vertical-align: top; padding-left: 6px; padding-right: 6px;">
+										chamber model <br>
+										beam quality
+									</div>
+
+								</td>
+							</tr>
+							<tr>
+								<td>\( N_{D, w, Q_0} \)</td>
+								<td>Calibration Factor</td>
+								<td>
+									&larr;&ensp; chamber behaviour relative to traceable standard <br>
+									&emsp;&ensp; = ? Gy(nC)<sup>-1</sup>
+								</td>
+							</tr>
+							<tr>
+								<td>\(M_{corr}\)</td>
+								<td>
+									CORRECTED Dosimeter Reading <br>at beam quality <i>Q</i>
+								</td>
+								<td>
+									 which is defined as <br>
+									\[ M_{corr} = (M_{raw} - M_{bg})~k_{TP}~k_H~k_s~k_{pol}~k_{ele} \] 
+									<div style="padding-left: 24px;">
+										where
+										<div style="padding-left: 24px;">
+											<table class="tight_clean">
+												<tr>
+													<td>elec</td>
+													<td>=</td>
+													<td>electrometer </td>
+												</tr>
+												<tr>
+													<td>H</td>
+													<td>=</td>
+													<td>humidity </td>
+												</tr>
+												<tr>
+													<td>pol</td>
+													<td>=</td>
+													<td>polarity <br>
+														<div style="border: 1px solid white; display: inline; padding: 8px;">\(  k_{pol} = \large \frac{|M_+| + |M_-|}{2M} \)</div>
+														<br><br>
+													</td>
+												</tr>
+												<tr>
+													<td>s</td>
+													<td>=</td>
+													<td>
+														ion recombination <br>
+														<div style="border: 1px solid white; display: inline; padding: 12px;">\(  k_{s} = a_0 + a_1 \large{ \frac{M_1}{M_2} } \normalsize{a_2} \large{ \left( \frac{M_1}{M_2} \right)^2 }  \)</div> <br>
+														<div style="margin-top: 6px;">
+															especially when dose rate &uarr; <br>
+															e.g. FFF
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td rowspan="2">TP</td>
+													<td>=</td>
+													<td>
+														temperature and pressure <br>
+														<div style="border: 1px solid white; display: inline; padding: 8px;">\(  k_{TP} = \large \frac{273.2 + T}{273.2 + T_0} \frac{P_0}{P} \)</div> <br>
+															<div style="margin-top: 12px;">
+																Ideal Gas Law:
+																<table>
+																	<tr>
+																		<td class="tight_clean">
+																			\[pV = nRT\]
+																			\[ \frac{p}{T} = \frac{nR}{V} \]
+																			\[ k_{TP} = { \rho_0 \over \rho' } \]
+																		</td>
+																		<td class="tight_clean" style="padding-left: 32px;">
+																			where <i>R</i> = ideal gas constant <br>
+																			<div style="margin-left: 47px;">
+																				= <i>k<sub>B</sub> N<sub>A</sub></i> <br>
+																				<i>k<sub>B</sub></i> = Boltzmann constant <br>
+																				<i>N<sub>A</sub></i> = Avogadro constant
+																			</div>
+																			&emsp;&emsp; &ensp; n = number of moles <br>
+																			&emsp;&emsp; &ensp; p = pressure <br>
+																			&emsp;&emsp; &ensp; V = volume <br>
+																			&emsp;&emsp; &ensp; T = temperature (273.15 + C = K) <br>
+
+																		</td>
+																	</tr>
+																</table>
+															</div>
+													</td>
+												</tr>
+											</table>
+
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="clean">\(D_{w,Q}\)</td>
+								<td class="clean">Absorbed Dose in Water</td>
+								<td class="clean">
+									&larr;&ensp; at reference depth \(z_{ref}\) <br>
+									&emsp;&ensp; at beam quality \(Q\)
+								</td>
+							</tr>
+
+						</table>
+
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>Steps</b><br> 
+				<table class="clean">
+					<tr>
+						<td>1.&emsp; Verify \(d_{max}\) and \(D_{max}\)</td>
+					</tr>
+					<tr>
+						<td>
+							2.&emsp; Measure \(D_5\) or \(D_{10}\)
+						</td>
+						<td>
+							&ensp;&rarr;&ensp; percentage depth dose at \(d_{ref}\) <br>
+							if measure at \(d_{max}\), electron contamination affect the dose
+						</td>
+					</tr>
+					<tr>
+						<td>3.&emsp; Measure \(TPR_{20,10}\)</td>
+						<td>for \(k_{Q, Q_0}\)</td>
+					</tr>
+					<tr>
+						<td>4.&emsp; Determine \( k_{TP} \)</td>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>5.&emsp; Determine \(k_s\)</td>
+						<td>
+							<b>Two Voltage Method</b> <br>
+							<div style="margin-left: 24px;">
+								keep the MV, MU and MU/min constant, <br>
+								take reading \(M_1\) @ normal bias voltage \(V_1\) , <br>
+								take reading \(M_2\) @ \(V_2\) where \(V_1/V_2\) &ge; 3, <br>
+								calculate \(k_s\) using <br>
+								<div style="margin-left: 24px;">
+									\(k_s = a_0 + a_1 \left( \large \frac{M_1}{M_2} \right) + a_2 \left( \large \frac{M_1}{M_2} \right)^2 \)
+									<div style="margin-left: 24px;">
+										where \(a_0\), \(a_1\) and \(a_2\) can be found in TABLE 4.VII in TRS-398
+									</div>
+									
+								</div>
+							</div>
+						</td>
+					</tr>
+					
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Electron Beam
+				<div style="margin-left: 24px;">
+					(3 - 50 MeV)
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Quick Summary</td>
+			<td>
+
+				<table style="margin-left: 24px;">
+					<tr>
+						<td style="border: 0px;"></td>
+						<td style="border: 0px; text-align: center;">General</td>
+						<td style="border: 0px; text-align: center;">MV Photon</td>
+						<td style="border: 0px; text-align: center;">kV Photon</td>
+						<td style="border: 0px; text-align: center;">Electron</td>
+					</tr>
+					<tr>
+						<td class="clean">\(z_{ref}\)</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>\(0.6 R_{50} -0.1 \) &ensp; g cm<sup>-2</sup></td>
+					</tr>
+					<tr>
+						<td style="border: 0px;">Chamber</td>
+						<td>
+
+						</td>
+						<td>cylindrical</td>
+						<td></td>
+						<td>
+							parallel plate <br>
+							(&lt; 10 MeV mandatory) <br>
+							(cylindrical might be used when &gt; 10 MeV)
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">Effective Point <br>of Measurement </td>
+						<td></td>
+						<td>0.6 \(r_{cyl}\) <br>
+							e.g. 0.6 cc farmer r = 3 mm <br> &there4; 1.8 mm above centre <br>
+							<div style="text-align: center;">
+								<img src="effective_pt_of_mea.png" alt="" width="100px">
+							</div>
+						</td>
+						<td></td>
+						<td>
+							centre of the window, <br>
+							on the inner surface of the entrance window <br>
+							(cylindrical: 0.5 \(r_{cyl}\))
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px;">Phantom</td>
+						<td>Water Phantom <br>
+							&gt; 5 cm from max field edge <br>
+							&gt; 5 g cm <sup>-2</sup> from max depth
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td style="border: 0px;">Beam Quality Index</td>
+						<td></td>
+						<td>
+							TPR<sub>20, 10</sub> <br>
+							:)&emsp;independent on e- contamination
+						</td>
+						<td></td>
+						<td>
+							\(R_{50}\) = depth in water at 50% depth-dose curve <br>
+							<div style="margin-left: 32px;">
+								@ 100 SSD, 10&times;10 FS
+							</div>
+							<div style="margin-left: 83px;">
+								/ 20&times;20 FS (\(E_0 > 16 MeV\))
+							</div>
+							<div style="margin-left: 22px;">
+								\( = 1.029 ~ R_{50,ion} - 0.06\) &ensp; g cm<sup>-2</sup> &emsp; for \(R_{50,ion}\) &le; 10 g cm<sup>-2</sup> <br>
+								\( = 1.059 ~ R_{50,ion} - 0.37\) &ensp; g cm<sup>-2</sup> &emsp; for \(R_{50,ion}\) &gt; 10 g cm<sup>-2</sup> <br>
+							</div>
+							
+						</td> 
+
+					</tr>
+					<tr>
+						<br>
+						<td colspan="5" class="clean">\(r_{cyl}\) = cavity radius</td>
+					</tr>
+				</table>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Explanation</td>
+			<td>
+				<table>
+					<col width="80px">
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>N<sub>D, air</sub></i></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							Factor converting dosimetry reading to air KERMA
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>N<sub>D,w,Q</sub></i> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							Factor that convert dosimeter reading to Absorbed Dose in Water at beam quality <i>Q</i> <br>
+							\[ N_{D, w, Q} = N_{D, air} ~ (s_{w, air})_{Q} ~ p_{Q} \]
+						</td>
+					</tr>
+
+
+					<tr>
+						<td style="border: 0px; padding: 0px;" colspan="2"><br><br><b>Beam Quality</b></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>k<sub>Q,Q<sub>0</sub></sub></i> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							Beam Quality Correction Factor <br>
+							At standard lab, dosimeter was calibrated using reference beam quality <i>Q<sub>0</sub></i>. <br>
+							At site, user beam quality <i>Q</i> was used <br> 
+							&there4; dosimeter reading needs to be corrected <br>
+							<br>
+							<b>Definition</b> <br>
+							<div style="text-align: center;">
+								\(k_{Q, Q_0} = \) \( \large \frac{N_{D, w, Q}}{N_{D, w, Q_0}} \)
+							</div>
+							Obtained By Measurement
+							<div style="margin-left: 294px; margin-bottom: 6px;">
+								\( =  \large \frac{ D_{w,Q} / M_Q }{ D_{w,Q_0} / M_{Q_0} } \) <br>
+							</div>
+							Theoretically, \(k_{Q,Q_0}\) can also be calculated, using Bragg-Gray theory, we have <br>
+							<div style="margin-left: 294px; margin-top: 6px;">
+								\( \large = \frac{ (s_{w, air})_Q }{ (s_{w, air})_{Q_0}} ~ \frac{(W_{air})_{Q}}{(W_{air})_{Q_0}} ~ \frac{p_Q}{p_{Q_0}}\)
+							</div>
+							
+							<div style="padding-left: 24px;">
+								where
+								<div style="padding-left: 24px;">
+									<i>s<sub>w, air</sub></i>&emsp;=&emsp;water-air stopping power ratio <br>
+									<i>W<sub>air</sub></i>&emsp;=&emsp;mean energy needed to produce 1 ion pair <br>
+									<i>p</i>&emsp;=&emsp;perturbation factor
+								</div>
+							</div>
+							<br>
+							For therapeutic e- and photon beam where Bragg-Gray condition is fulfilled, we can assume <i>(W<sub>air</sub>)<sub>Q</sub></i>=<i>(W<sub>air</sub>)<sub>Q<sub>0</sub></sub></i> , hence
+							\[ k_{Q, Q_0} \approx \frac{ (s_{w, air})_Q }{ (s_{w, air})_{Q_0}} ~ \frac{p_Q}{p_{Q_0}}\]
+							<br>
+							* not applicable to kV photon beam &because; Bragg-Gray condition not applied<br>
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>k<sub>Q,Q<sub>cross</sub></sub></i> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							Cross calibration of parallel plate chamber against a secondary cylindrical chamber <br>
+							<br>
+							Consider an intermediate beam quality <i>Q<sub>int</sub></i>, where
+							\[ k_{Q, Q_{cross}} = \frac{ k_{Q, Q_{int}} }{ k_{Q_{cross}, Q_{int}} } \]
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>Q<sub>0</sub></i> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">Reference Beam Quality (Co-60)</td>
+					</tr>
+
+
+
+					<tr>
+						<td style="border: 0px; padding: 0px;" colspan="2"><b><br><br>Dosimeter Correction Factors (difference at site and at standard labs)</b></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>M<sub>Q</sub></i> </td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+
+							<br>
+						</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>p<sub>Q</sub></i></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">
+							Overall Perturbation Factor <br>
+							Consider when determining <i>k<sub>Q, Q<sub>0</sub></sub></i>
+							\[ p_Q = p_{cav} ~ p_{cel} ~ p_{dis} ~ p_{wall} \]
+							<div style="padding-left: 24px;">
+								where
+								<div style="padding-left: 24px;">
+									<i>p<sub>cav</sub></i> = air cavity perturbation factor <br>
+									<i>p<sub>cel</sub></i> = central electrode perturbation factor<br>
+									&emsp;&emsp;&ensp; air-equivalent response <br>
+									<i>p<sub>dis</sub></i>&emsp;=&emsp;displacement perturbation factor <br>
+									<div style="margin-left: 18px;">
+										&emsp;=&emsp;using effective point of measurement
+									</div>
+									<i>p<sub>wall</sub></i>&ensp;=&ensp;chamber wall perturbation factor
+									<div style="margin-left: 42px;">
+										account for the difference in attenuation of wall from phantom <br>
+										wall attenuation in PHOTON &rarr; negligibly small <br>
+										wall attenuation in ELECTRON &larr; effective point of measurement
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+
+
+					<tr>
+						<td style="border: 0px; padding: 0px;" colspan="2"><br><br><b>Phantom</b></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>c<sub>pl</sub></i></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">Distance scaling factor to obtain water equivalent depth of plastic phantom</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">&emsp;&emsp;<i>h<sub>pl</sub></i></td>
+						<td style="border: 0px; padding: 0px; padding-left: 12px;">Fluence scaling factor </td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<h3>Definition</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Reference Point of Chamber <br>v.s. <br>Effective Point of Measurement</td>
+			<td>
+				<b>Effective Point of Measurement</b> <br>
+				<ul>
+					<li class="stroke">the actual point of measurement</li>
+					<li class="stroke">towards the source</li>
+				</ul>
+
+				<br>
+				<b>Reference Point of a Chamber</b> <br>
+				<ul>
+					<li class="stroke">the point at which the calibration factor applied</li>
+					<li class="stroke">specified by calibration document</li>
+					<li class="stroke">e.g. cylindrical chamber &rarr; centre of chamber</li>
+				</ul>
+				<br>
+				<br>
+				<b>In TRS-398,</b>
+				<ul>
+					<li class="stroke">shift to effective point of measurement when taking PDD</li>
+					<li class="stroke">use chamber centre for all other measurements</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Calibration with Co-60</td>
+			<td>
+				Placing the reference point of chamber at <i>z<sub>ref</sub></i> <br>
+				with Co-60 which gives <i>Q<sub>0</sub></i> <br>
+				we can find the absorbed dose in water using <br>
+				\[ D_{w, Q_0} = M_{Q_0}~N_{D, w, Q_0} \]
+			</td>
+		</tr>
+
+		<tr>
+			<td>Calibration Certificate</td>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Practical</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Measurement</td>
+			<td>
+				&emsp;1.&emsp;Verify dmax <br>
+				&emsp;2.&emsp;d @ 5 cm <br>
+				&emsp;3.&emsp;TPR 20, 10 <br>
+				<div style="margin-left: 34px;">
+					according to laser, draw 10 cm and 20 cm depth
+				</div>
+				&emsp;4.&emsp;k factors <br>
+				&emsp;5.&emsp;Calculate Gy <br>
+				<div style="text-align: center; padding: 6px; line-height: 200%;">
+					<div style="display: inline; border: 1px solid white; padding: 6px; ">
+						compare with expected
+					</div> <br>
+					&darr; <br>
+					<div style="display: inline; border: 1px solid white; padding: 6px;">
+						dose discrepancy
+					</div> <br>
+					&darr; <br>
+					<div style="display: inline; border: 1px solid white; padding: 6px;">
+						adjust LINAC
+					</div>
+
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+</body>
+</html>

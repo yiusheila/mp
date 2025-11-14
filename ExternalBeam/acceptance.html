@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | LINAC Acceptance Test</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<style>
+		li {
+			margin-left: 24px;
+		}
+		.q {
+			display: inline;
+			background-color: rgba(255, 0, 0, 0.3);
+		}
+	</style>
+</head>
+<body>
+	<h2>External Beam | LINAC Acceptance Test</h2>
+
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>IPA Items</td>
+			<td>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" style="border-bottom: 1px solid white;">Items</td>
+							<td class="tight_clean" style="border-bottom: 1px solid white;">E.g. Varian TrueBeam Tolerance</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Software</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Door Interlock</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Room Survey</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean" colspan="2"><br> Mechanical</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Mechanical Isocentre</li></td>
+							<td class="tight_clean">
+								radius <br>
+								height relative to floor
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Light Field Alignment</li></td>
+							<td class="tight_clean"> &lt; 1.0 mm </td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Crosshair and Jaw Alignment</li></td>
+							<td class="tight_clean">
+								Crosshair walk out &lt; 1.0 mm radius 
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Jaw Position</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>MLC Position</li></td>
+							<td class="tight_clean">&plusmn; 1 mm <br>
+								(@ 90&deg;/270&deg;) &plusmn; 1.5 mm (see IMRT/VMAT)
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>MLC Position Repeatability</li></td>
+							<td class="tight_clean">&plusmn; 0.5 mm</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Gantry Rotation Accuracy</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Collimator Rotation Accuracy</li></td>
+							<td class="tight_clean">&plusmn; 0.5&deg;</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Couch Position Accuracy</li></td>
+							<td class="tight_clean">
+								(Rotation) &plusmn; 0.4&deg; <br>
+								(Longitudinal) &plusmn; 0.2&deg; <br>
+								(Vertical) &plusmn; 2 mm <br>
+								(6D) &plusmn; 0.25&deg; <br>
+								(Overall Position) &plusmn; 0.7 mm <br>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>ODI</li></td>
+							<td class="tight_clean">
+								&plusmn; 0.1 @ 100 cm <br>
+								&plusmn; 0.5 @ other distance
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Accessory Communication</li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean" colspan="2"><br>Radiation</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Light Field / Radiation Field Coincidence</li></td>
+							<td class="tight_clean">&plusmn; 1.5 mm per EDGE</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Isocentre</li></td>
+							<td class="tight_clean">
+								(Gantry + Collimator) &emsp;&emsp;&emsp; &ensp; &le; 0.5 mm radius <br>
+								(Gantry + Collimator + Couch) &le; 0.75
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Dose Rate Stability during Gantry Rotation</li></td>
+							<td class="tight_clean">
+								&plusmn; 10%
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Mounting Verification</li></td>
+							<td class="tight_clean">
+								Identification and Alignment
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2"><br>Photon</td>
+						</tr>
+							<tr>
+								<td class="tight_clean"><li>d_max</li></td>
+								<td class="tight_clean">&plusmn; 1.5 mm </td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>D_10cm</li></td>
+								<td class="tight_clean">&plusmn; 1%</td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>Flatness (Inplane + Crossplane)</li></td>
+								<td class="tight_clean">
+									(10 &times; 10) &plusmn; 3% <br>
+									(40 &times; 40) &plusmn; 2.5%
+							</td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>Symmetry (Inplane + Crossplane)</li></td>
+								<td class="tight_clean">&le; 2%</td>
+							</tr>
+							<tr>
+								<td class="tight_clean">&emsp;</td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>FFF Field Intensity and Symmetry (Inplane + Crossplane)</li></td>
+								<td class="tight_clean">
+										(2 cm from CAX) &plusmn; 2% <br>
+										(4 cm from CAX) &plusmn; 2% <br>
+										(Symmetry) &le; 2%
+								</td>
+							</tr>
+					</table>
+				</ol>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2"><br>Electron</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Depth</li></td>
+							<td class="tight_clean">
+								R<sub>90</sub> &plusmn; 1 mm <br>
+								R<sub>80</sub> &plusmn; 0.7 mm <br>
+								R<sub>50</sub> &plusmn; 1 mm
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Flatness (Inplane + Crossplane)</li></td>
+							<td class="tight_clean">&plusmn; 4.5%</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Symmetry (Inplane + Crossplane)</li></td>
+							<td class="tight_clean">&le; 2%</td>
+						</tr>
+					</table>
+				</ol>
+				<br>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2">Dosimetry</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li><div class="q">Dose Reproducibility</div></li>
+							</td>
+							<td class="tight_clean"></td>
+						</tr>
+					</table>
+				</ol>
+				<br>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2">IMRT/VMAT</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li><div class="q">EDW</div></li></td>
+							<td class="tight_clean"></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Total Arc Degree</li></td>
+							<td class="tight_clean">
+								(Gantry) &le; 0.5&deg; <div class="q">RMS = rms?</div> <br>
+								(MU) &le; 0.2 MU <div class="q">??</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>MLC position @ 90&deg; and 270&deg;</li></td>
+							<td class="tight_clean">&le; 1.5 mm</td>
+						</tr>
+					</table>
+				</ol>
+				<br>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2">Collision Protection</td>
+						</tr>
+					</table>
+				</ol>
+				<br>
+				<ol>
+					<table>
+						<col width="300px">
+						<tr>
+							<td class="tight_clean" colspan="2">Imaging System</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>MV Panel</li></td>
+							<td class="tight_clean">
+								<table>
+									<tr>
+										<td class="tight_clean">Dark Field</td>
+										<td class="tight_clean">400 &le; Mean &le; 800 <br>
+											SD &lt; 10
+										</td>
+									</tr>
+									<tr>
+										<td class="tight_clean">Low Contrast</td>
+									</tr>
+									<tr>
+										<td class="tight_clean">Small Object (High Contrast)</td>
+									</tr>
+									<tr>
+										<td class="tight_clean">Dosimetry reference to 100 MU </td>
+										<td class="tight_clean"></td>
+									</tr>
+
+								</table>
+								 
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>kV</li></td>
+							<td class="tight_clean">
+								<table>
+									<tr>
+										<td class="tight_clean">Tube kVp, mA, ms, HVL, dose</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>PDD</td>
+			<td>
+				Varian both electron and photon profile are obtained with cc13 chamber pointing upwards <br>
+				Therefore, a set of data is acquired for AT,  <br>
+				another set of data acquired with parallel plate is used for commissioning
+			</td>
+		</tr>
+		
+		<tr>
+			<td>DLG</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Installation</td>
+			<td>
+				<ol>
+					<li>water cooling at the back</li>
+					<li>install base frame (under turn table) <br>
+						level <br>
+						distance from finishing floor &larr; the patient couch place onto base frame
+					</li>
+					<li>
+						4 Piece Breakdown <br>
+						1st piece: Stand <br>
+						2nd piece: Gantry <br>
+						3rd piece: Patient Couch <br>
+						4th piece: Counterbalance <br>
+						<br>
+						(pin from stand need to release to lock the gantry head before servicing the gantry)
+					</li>
+					<li>join the stand with the gantry on jig cart first</li>
+					<li>bolt down the stand to the floor</li>
+					<li>turn the gantry to 90&deg; <br>
+						add counterbalance to the other side of gantry head
+					</li>
+					<li>
+						Connect the water hoses and wires <br>
+						(components in gantry head &rarr; radiation resistant)
+					</li>
+					<li>
+						Preliminarily check the level of the stand 
+					</li>
+					<li>
+						Install couch onto turn table<br>
+						connect cables
+					</li>
+					<br>
+					<li>
+						Isocentre Adjustment <br>
+						* assuming collimator bearing is optimal <br>
+						1.&emsp; adjust the "iso-turner" disc to sit in line with the collimation centre <br>
+						&emsp;&emsp; 3 pin to adjust rotation <br>
+						&emsp;&emsp; 4 pin to adjust translation <br>
+						2.&emsp; adjust gantry sagging + translation <br>
+						&emsp;&emsp; (since turntable cannot adjust translation) <br>
+						&emsp;&emsp; (turn the couch to 90&deg; and 270&deg; &rarr; find the couch axis) <br>
+						&emsp;&emsp; (translate the stand to match the couch axis) <br>
+						&emsp;&emsp; take measurement when gantry @ 0&deg; and 180&deg; <br>
+						&emsp;&emsp; adjust the gantry level by adding shims to the bottom of the stand <br>
+						3.&emsp; adjust couch <br>
+						4.&emsp; install back pointer <br>
+						5.&emsp; radiation isocentre using "iso-lock" <br>
+						&emsp;&emsp; ~ to wintson luts <br>
+						6.&emsp; use front pointer to find the mechanical isocentre <br>
+						7.&emsp; head leakage <br>
+						8.&emsp;
+					</li>
+				</ol>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+
+</body>
+</html>

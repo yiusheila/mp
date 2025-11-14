@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Planning</title>
+	<link rel="stylesheet" href="../style.css">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>External Beam | Planning</h2>
+
+	<h3>Planning</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Guidelines</td>
+			<td>
+				<b>ICRU Report (&emsp;) - Prescribing, Recording and Reporting (&emsp;) Beam Therapy</b>
+				<table>
+					<tr>
+						<td class="clean">ICRU-50</td>
+						<td class="clean">(1993)</td>
+						<td class="clean">Photon</td>
+					</tr>
+					<tr>
+						<td class="clean">ICRU-62</td>
+						<td class="clean">(1999)</td>
+						<td class="clean">Photon (supplement to 50)</td>
+					</tr>
+					<tr>
+						<td class="clean">ICRU-71</td>
+						<td class="clean">(2004)</td>
+						<td class="clean">Electron</td>
+					</tr>
+					<tr>
+						<td class="clean">ICRU-83</td>
+						<td class="clean">(2010)</td>
+						<td class="clean">IMRT Photon</td>
+					</tr>
+				</table>
+				<br>
+				<b>QUANTEC</b> <br>
+				<b>RTOG Radiotherapy Oncology Group</b> <br>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Treatment Course and Phase</td>
+			<td>
+				Course
+				<ul>
+					<li class="stroke">Site Specific</li>
+					<li class="stroke">A treatment involving several sites needs different courses for different sites</li>
+				</ul>
+				<br>
+				Phase
+				<ul>
+					<li class="stroke">Time Specific</li>
+					<li class="stroke">Different plans might be needed over the whole treatment period</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>ICRU Volume Definition</td>
+			<td>
+				<div style="text-align: center;">
+					<img src="ICRU_vol.png" alt="" height="200" style="padding: 6px; ">
+				</div>
+				
+				<table>
+					<tr>
+						<td class="line"><b>Volume</b></td>
+						<td class="line"><b>What does it consist of?</b></td>
+						<td class="line"><b>What to be specified?/Why useful?</b></td>
+					</tr>
+					<tr>
+						<td class="line">GTV</td>
+						<td class="line">
+							<b>Gross Tumour Volume</b>
+							<ul >
+								<li class="stroke">Primary Tumour</li>
+								<li class="stroke">Regional Lymph Nodes</li>
+								<li class="stroke">Distant Metastases</li>
+							</ul>
+							(Absence of GTV if surgically removed)
+						</td>
+						<td class="line">
+							<ol>
+								<li>location and tumour extent according to clinical staging system</li>
+								<li>modality used to delineate GTV</li>
+								<li>when this GTV is evaluated with respect to the start of treatment</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">CTV</td>
+						<td class="line">
+							<b>Clinical Target Volume</b>
+							<ul>
+								<li class="stroke">Possible primary tumour spread</li>
+								<li class="stroke">Possible regional infiltration</li>
+								<li class="stroke">Possible metastatic involvement</li>
+							</ul>
+							(For SBRT, GTV=CTV)
+						</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">ITV</td>
+						<td class="line">
+							<b>Internal Target Volume</b> <br>
+							&ensp;=&ensp;CTV + internal margin
+							<div style="margin-left: 53px; border-top: 1px solid white; width: 90px; text-align: center;">
+								\(\uparrow\)
+							</div>
+							<div style="margin-left: 24px;">
+								uncertainties of CTV due to difference in
+								<ul>
+									<li class="stroke">size</li>
+									<li class="stroke">shape</li>
+									<li class="stroke">position</li>
+								</ul>
+							</div>
+
+						</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">PTV</td>
+						<td class="line">
+							<b>Planning Target Volume</b> <br>
+							&ensp;=&ensp;CTV + internal margin <br> 
+							<div style="margin-left: 47px;">
+								+ set-up margin
+							</div>
+							<div style="margin-left: 52px; border-top: 1px solid white; width: 83px; text-align: center;">
+								\(\uparrow\)
+							</div>
+							<ul>
+								<li class="stroke">patient positioning</li>
+								<li class="stroke">beam variation during treatment</li>
+								<li class="stroke">beam variation across sessions</li>
+								<li class="stroke">LINAC mechanical uncertainty</li>
+							</ul>
+						</td>
+						<td class="line">
+							Latest recommendation:
+							<div style="padding-left: 24px;">
+								When defining the PTV, DON'T try to avoid OAR!!
+							</div>
+							<br>
+							e.g. For HN IMRT, patient set-up with only kV AP + Lat <br>
+							&emsp;&emsp;PTV = CTV + 3 mm <br>
+							&emsp;&emsp;&emsp;&emsp;&emsp;(also 3 mm away from body)  
+						</td>
+					</tr>
+					<tr>
+						<td class="line">TV</td>
+						<td class="line">
+							<b>Treated Volume</b>
+							&ensp;=&ensp;volume enclosed by specific isodose envelope
+							<div style="margin-left: 20px;">
+								e.g. D<sub>98%</sub>
+							</div>
+							
+						</td>
+						<td class="line">
+							to evaluate cause of local recurrence
+						</td>
+					</tr>
+					<tr>
+						<td class="line">OAR</td>
+						<td class="line">
+							<div style="text-align: center;">
+								<img src="OAR.png" alt="" height="200">
+							</div>
+							<br>
+						</td>
+						<td class="line">
+							Tissue organisiation is useful for
+							<ul class="first">
+								<li class="stroke">determining dose-volume constraint</li>
+								<li class="stroke">delineation of OARs</li>
+							</ul>
+							<br>
+							<br>
+							Series &ensp; &rarr; max dose <br>
+							Parallel &rarr; dose volume constraint <br>
+
+						</td>
+					</tr>
+					<tr>
+						<td class="line">PRV</td>
+						<td class="line">
+							<b>Planning Organ at Risk Volume</b> <br>
+							&ensp;=&ensp;OAR + internal + setup margin
+						</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">RVR</td>
+						<td class="line">
+							<b>Remaining Volume at Risk</b> <br>
+							&ensp;=&ensp;Patient Volume - OARs
+							 <div style="padding-left: 105px;"> - CTVs</div>
+						</td>
+						<td class="line">
+							Indication of late effects - important for young patient
+						</td>
+					</tr>
+				</table>
+				<br>
+				<b>How to define the size of margin</b>
+				<div style="margin-left: 24px;">
+					Different machine/treatment technique/setup etc. &ensp;&rarr;&ensp; different margins <br>
+					e.g. for H&N (QEH) 
+					<div style="margin-left: 24px;">
+						PTV 70 = <div style="display: inline; padding: 6px; padding-bottom: 1px;border-bottom: 1px solid white;"> GTV + 3 mm</div> <br>
+						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &darr; + 1 cm <br>
+						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;CTV <br>
+						PTV 66 &emsp; &larr; &emsp; &darr; + setup margin <br>
+						PTV 60 = potential lymph node spread
+					</div>
+				</div>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Plan Normalisation</td>
+			<td>
+				e.g. if normalise to 95% <br>
+				<div style="padding-left: 24px;">
+					MU &uarr; 5% <br>
+					dose &uarr; 5%
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Electron Cut-out</td>
+			<td>
+				<b>Customised Coutout</b>
+				<div style="margin-left: 24px;">
+					request sent to mould lab <br>
+					(QEH) &gt; if area&gt;10% from regular cutout &gt; need measurement of customised cutout factor
+				</div>
+				<br>
+				<b>Cutout on Jig</b> (instead of cone + insert + cutout) <br>
+				<div style="margin-left: 24px;">
+					&ensp;&rarr;&ensp; measure point dose at isocentre 
+					<div style="margin-left: 24px;">
+						&emsp;&uarr; information need to know before measurement
+						<ul style="margin-left: 24px; margin-top: 0px;">
+							<li class="stroke">energy</li>
+							<li class="stroke">cone + insert size</li>
+							<li class="stroke">SSD</li>
+							<li class="stroke">air gap between jig to skin</li>
+							<li class="stroke">cutout thickness</li>
+						</ul>
+					</div>
+					&ensp;&rarr;&ensp; \( CF =  \Large \frac{Standard~Cone~(nC)}{Tx~Setup~(nC)} \) <br>
+					<div style="margin-left: 24px; margin-top: 3px; line-height: 200%;">
+						\( MU = \Large \frac{Prescribed~Dose~(cGy)}{Prescribed~Isodose \times CF} \) <br>
+						Prescribed isodose e.g. 90%
+					</div>
+				</div>
+
+			</td>
+		</tr>
+
+
+	</table>
+
+	<br><br>
+
+
+	<br><br>
+	<h3>Tissue Compensation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Physical Wedge</td>
+			<td>
+				<b>Optimal Wedge Angle</b>
+				<div style="padding-left: 24px;">
+					to produce uniform dose distribution
+					\[ 90^\circ - \frac{1}{2}\theta_{hinge} \]
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Dynamic Wedge</td>
+			<td>
+				use STT to define MU and different collimator position <br>
+				<br>
+				<b>Limitations</b>
+				<div style="padding-left: 24px;">
+					:)&ensp;non-wedge direction any size <br>
+					:(&ensp;wedge direction, min FS <br>
+					:(&ensp;thin end stationary (?) <br>
+					:(&ensp;min MU <br>
+					:(&ensp;wedge direction might not be the same as MLC direction <br>
+				</div>
+
+				<br>
+				<b>Wedge Angle</b>
+				<div style="padding-left: 24px;">
+					angle between <br>
+					80% isodose line tangent at central axis <br>
+					and normal line to central axis
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Bolus vs Compensator</td>
+			<td>
+				<b>Bolus</b> <br>
+				&emsp;:)&emsp;can be modelled in TPS <br>
+				<br>
+				<b>Compensator</b> <br>
+				&emsp;:)&emsp;&check; skin sparing <br>
+				&emsp;:(&emsp;laborious + time consuming
+			</td>
+		</tr>
+
+	</table>
+
+
+	<br>
+	<br>
+	<h3>Treatment</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>e- vs superficial X-ray</td>
+			<td>
+				<b>Electron Beam</b>
+				<div style="padding-left: 24px;">
+					:)&ensp;NO increase dose to bone bone <br>
+					:)&ensp;deep tissue sparing <br>
+					:)&ensp;&uarr; dose rate <br>
+					:)&ensp;slight skin sparing <br>
+				</div>
+				<br>
+				<b>Superficial X-ray</b>
+				<div style="padding-left: 24px;">
+					:)&ensp;shape field with THIN sheet of lead 
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Electron Beam FS</td>
+			<td>
+				<div style="text-align: center;">
+					<img width="250px" src="e-constriction.png" alt="[img]">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Course/Phase</td>
+			<td>
+				1 Course &ensp;=&ensp; tx involving several sites <br>
+				1 Phase &emsp;=&ensp; progression of tx across time
+			</td>
+		</tr>
+	</table>
+
+
+
+	<br>
+	<br>
+	<h3>Reference</h3> <br>
+
+
+</body>
+</html>

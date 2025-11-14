@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Plan Evaluation</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>External Beam | Plan Evaluation</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Ways to evaluate a plan</td>
+			<td>
+				<ol>
+					<li>Dose Distribution <br>
+						Isodose line/normal tissue hot spot/PTV cold spot
+					</li>
+					<li>DVH</li>
+					<li>Plan Quality Index <br>
+						e.g. conformity index/homogeneity index
+					</li>
+					<li>Biological Performance Index <br>
+						EUD/TCP/NTCP
+					</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Cumulative DVH</td>
+			<td>
+				<i>D<sub>n%</sub></i> = the dose received by <i>n</i>% of the specified volume
+			</td>
+		</tr>
+		<tr>
+			<td>Conformity Index</td>
+			<td>
+				(RTOG) Conformity Index <br>
+				\[ CI = \frac{V_{RI}}{TV} \]
+				<div style="margin-left: 24px;">
+					<i>RI</i> = reference isodose <br>
+					<i>TV</i> = target volume
+				</div>
+				<br>
+				Other indicators:
+				<div style="margin-left: 24px;">
+					(SALT) Lesion Coverage Factor 
+					\[ LCF = \frac{TV_{RI}}{TV} \] <br>
+					(Lomax) Healthy Tissue Conformity Index 
+					\[ HTCI = \frac{TV_{RI}}{V_{RI}} \]
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Homogeneity Index</td>
+			<td>
+				(ICRU-83)
+				\[ HI = \frac{ D_{2\%} - D_{98\%} }{ D_{50\%} } \]
+			</td>
+		</tr>
+		<tr>
+			<td>Clinical/Biological Evaluation</td>
+			<td>
+				<b>Tumour Control Probability (TCP) <br>
+					Normal Tissue Complication Probability (NTCP)</b> <br>
+				<div style="margin-left: 24px;">
+					* assuming Linear-Quadratic Model
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Modulation Index</td>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>MLC Movement</td>
+			<td>
+				<div style="text-align: center;">
+					<img src="mlc_time-position_plot.png" alt="" width="400px">
+				</div>
+				Dose @ at point = Dose Rate &times; ( Open Time + MLC Leakage &times; Close Time) <br>
+				Intensity Profile = Dose - Leaf Position Graph
+
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+</body>
+</html>

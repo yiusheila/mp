@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Small Field Dosimetry</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="../code-prettify-master/loader/run_prettify.js"></script>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> for IE11 -->
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>External Beam | Small Field Dosimetry (TPS )</h2> <br>
+
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Small Field Definition</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean">If any of the following conditions is TRUE:</td>
+					</tr>
+					<tr>
+						<td class="clean">
+							&emsp;1.&emsp; Loss of LCPE on Central Axis <br>
+							<div style="margin-left: 38px;">
+								&ensp;=&ensp; beam radius &lt; maximum range of secondary e- <br>
+								<br>
+								<i>r</i><sub> LCPE</sub> = lateral charged particle equilibrium range <br>
+								 &emsp; &emsp; &rarr; collision Kerma in water = absorbed D to water at the centre 
+							</div>
+						</td>
+						<td class="clean" rowspan="2">
+							<table style="display: inline-block; height: 100%;">
+								<tr>
+									<td style="border-left: 0px; border-bottom: 0px;"><br><br><br></td>
+									<td style="border-top: 0px; border-right: 0px;"></td>
+									<td rowspan="2" style="vertical-align: middle; border: 0px;">
+										&darr; beam output
+									</td>
+								</tr>
+								<tr>
+									<td style="border-left: 0px; border-top: 0px;"><br><br><br></td>
+									<td style="border-bottom: 0px; border-right: 0px;"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">
+							&emsp;2.&emsp; Partial Occlusion of Primary Photon Source <br>
+							<div style="margin-left: 38px;">
+								&rarr; penumbrae overlap <br>
+								<br>
+								primary photon source &rarr; <div style="display: inline-block; vertical-align: top;">
+									extended focal spot <br>
+									= FWHM of the bremsstrahlung photon fluence distribution exiting the target
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">
+							&emsp;3.&emsp; detector &gt; beam 
+							<div style="margin-left: 38px;">
+								:( averaging effect <br>
+								:( perturbation of charged particle fluence &uarr; <br>
+								&emsp;&lt;&emsp;large dose gradient across the active volume <br>
+								&emsp;&lt;&emsp;absence of LCPE
+							</div>
+						</td>
+					</tr>
+				</table>
+				<br> 
+				<b>Factors that worsen the small field effect:</b> <br>
+				electron range &uarr; <div style="display: inline-block; vertical-align: top;">
+					&lt; beam energy &uarr; <br>
+					&lt; medium density &darr;
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Absolute Dosimetry</td>
+			<td>
+				<b>Problems</b>
+				<ol>
+					<li>
+						Ionization Chamber Size <br>
+						:(&emsp;volume averaging <br>
+						:(&emsp;lack of electron equilibrium <br>
+						:(&emsp;the uncertainty of the corrections that account for the perturbation of particle fluence is large <br>
+					</li>
+					<li>significant change in beam quality when field size &darr;</li>
+				</ol>
+				<br>
+				<b>Proposed Method</b>
+				<div style="margin-left: 24px;">
+					introduce msr field (static machine specific reference field) <br>
+					translate the standard 10&times;10 field dosimetry to small field by applying field output factor
+				</div>
+				<br>
+				<b><i>f</i><sub>msr</sub></b>
+				<div style="margin-left: 24px;">
+					close to 10&times;10 <br>
+					field edge at least large than the outer boundaries of the reference ionization chamber by <i>r</i><sub> LCPE</sub> <br>
+				</div>
+				 <br>
+				plan class specific reference field <br>
+				<br>
+				Field Size = FWHM @ 10 cm
+			</td>
+		</tr>
+
+		<tr>
+			<td>Relative Dosimetry</td>
+			<td>
+				<b>Output Correction Factor</b>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

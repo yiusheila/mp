@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam Treatment | Overview</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>External Beam Treatment | Overview</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Treatment</td>
+			<td>
+				<table class="tight_clean_table">
+					<tr>
+						<td></td>
+						<td></td>
+						<td>Prescription</td>
+						<td>Planning System</td>
+						<td>Immobilisation Device</td>
+					</tr>
+
+					<tr>
+						<td rowspan="5">2D</td>
+						<td>
+							SVCO (superior vena cava obstruction)
+						</td>
+						<td>5 - 10 fr ?</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Cord Compression</td>
+						<td>1/3 ?</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Breast Tumour Bed </td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>API / PMB / QB </td>
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>PCI (prophylactic cranial irradiation) </td>
+						<td>25 Gy in 10 fr ?</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td>Electron</td>
+						<td>
+							Keloid / Scar <br>
+							Breast Electron Boost <br>
+							Skin
+						</td>
+					</tr>
+					<tr>
+						<td>3D Conformal</td>
+						<td>
+							WPI <br>
+							FiF (Pelvis/Rectum/Adb/Breast/Tho etc)
+						</td>
+					</tr>
+					<tr>
+						<td>IMRT/VMAT</td>
+						<td>
+							H&N <br>
+							Brain <br>
+							Breast <br>
+							Thorax <br>
+							Abdomen/Pelvis <br>
+							(Gastric?) <br>
+							Prostate <br>
+							Rectum/Anal
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Error</td>
+			<td>
+				ICRU 24 recommended dose delivery at tumour 
+				<ul>
+					<li class="stroke">overall error &plusmn; 5%</li>
+				</ul>
+				<br>
+				<b>Source of errors</b>
+				<ol>
+					<li>LINAC output</li>
+					<li>Relative dose data</li>
+					<li>Equipment commissioning + QA</li>
+					<li>Treatment planning</li>
+					<li>Patient set-up</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Reference Condition</td>
+			<td>
+				<b>RT:</b>
+				<div style="text-align: center;">
+					<img src="rt_reference_condition.png" alt="" height="250px">
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Delivery</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Delivering Methods</td>
+			<td>
+				<table class="line">
+					<tr>
+						<td></td>
+						<td style="text-align: center;"><b>Gantry</b></td>
+						<td style="text-align: center;"><b>MLC</b></td>
+						<td style="text-align: center;"><b>Couch</b></td>
+					</tr>
+					<tr>
+						<td><b>3D Conformal RT</b></td>
+						<td style="text-align: center;">&#10005;</td>
+						<td style="text-align: center;">&#10005;</td>
+						<td style="text-align: center;">&#10005;</td>
+					</tr>
+					<tr>
+						<td colspan="4"><b>IMRT</b></td>
+					</tr>
+					<tr>
+						<td>&emsp;Segmental MLC (Step-and-Shoot)</td>
+						<td style="text-align: center;">Step-wise <br> Static at one angle</td>
+						<td style="text-align: center;">Step-wise <br>Static at one angle</td>
+						<td style="text-align: center;">Static</td>
+					</tr>
+					<tr>
+						<td>&emsp;Dynamic MLC (Sliding Window)</td>
+						<td style="text-align: center;">Static</td>
+						<td style="text-align: center;">Dynamic</td>
+						<td style="text-align: center;">Static</td>
+					</tr>
+					<tr>
+						<td>&emsp;Intensity Modulated Arc Therapy (IMAT)</td>
+						<td style="text-align: center;">Rotating</td>
+						<td style="text-align: center;">Dynamic</td>
+						<td style="text-align: center;">Static</td>
+					</tr>
+					<tr>
+						<td>&emsp;Serial Tomotherapy</td>
+						<td style="text-align: center;">Rotating</td>
+						<td style="text-align: center;">Dynamic</td>
+						<td style="text-align: center;">Step-wise <br>Static during one rotation</td>
+					</tr>
+					<tr>
+						<td>&emsp;Helical Tomotherapy</td>
+						<td style="text-align: center;">Rotating</td>
+						<td style="text-align: center;">Binary Leave <br>modulating a fan beam</td>
+						<td style="text-align: center;">Moving</td>
+					</tr>
+					<tr>
+						<td>&emsp;Robotic RT</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Anatomical Position</td>
+			<td>
+				<table>
+					<tr>
+						<td class="line">Supine</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">Prone</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">Left Lateral Recumbent</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">Right Lateral Recumbent</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">Fowler's</td>
+						<td class="line"></td>
+					</tr>
+					<tr>
+						<td class="line">Trendelenburg</td>
+						<td class="line"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>CT on-rail</td>
+			<td>CT matching on the same rail as LINAC patient couch</td>
+		</tr>
+
+		<tr>
+			<td>3 Phase Planning CT</td>
+			<td>
+				arterial + venous + washout scan
+			</td>
+		</tr>
+
+		<tr>
+			<td>SRS with ExactTrac</td>
+			<td>
+				<ol>
+					<li>Load plan</li>
+					<li>Set up patient + localiser</li>
+					<li>Set patient couch until ExacTrac IR camera detect all reflective balls</li>
+					<li>capture kV using ExacTrac to adjust patient position</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Cat I Patient</td>
+			<td>
+				Complete treatment within 45 calendar days (QEH standard)
+			</td>
+		</tr>
+
+		<tr>
+			<td>Pacemaker</td>
+			<td>
+				<b>Type</b>
+				<table class="line" style="margin-left: 24px;">
+					<tr>
+						<td class="line">Bradycardia Pacemaker</td>
+					</tr>
+					<tr>
+						<td class="line">Resynchronisation Pacemaker</td>
+					</tr>
+					<tr>
+						<td class="line">Defibrillator</td>
+						<td class="line">
+							Detect Tachycardia ( &uarr; heart rate) <br>
+							Detect Ventricular Fibrillation (abnormal heart rhythm)
+						</td>
+					</tr>
+					
+				</table>
+				<br>
+				<b>Effects of Radiation</b> <sup>[1]</sup>
+				<table class="tight_clean" style="margin-left: 24px;">
+					<tr>
+						<td>CMOS Circuit</td>
+						<td>
+							Complex <br>
+							Low power consumption
+						</td>
+						<td>
+							Modify threshold <br>
+							
+						</td>
+					</tr>
+				</table>
+				<br>
+				<ol class="in_table">
+					<table class="tight_clean">
+						<tr>
+							<td><li></li></td>
+							<td>Cumulative Dose</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>Neutron Induced Upsets</td>
+							<td>&uarr; LET particles (p or secondary n) &rarr; 1/0 change in RAM <br>
+							&there4; &darr; photon energy <br>
+							&times; proton
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>Dose Rate</td>
+							<td>
+								primarily transient <br>
+								manifest as noise
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>Magnetic Field</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>Electromagnetic Interference (EMI)</td>
+							<td>
+								
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<br>
+				<b>ICP/ICD Dose Estimation</b>
+				<ol class="in_table">
+					<table class="tight_clean">
+						<tr>
+							<td><li></li></td>
+							<td>
+								 &gt; 10 cm from field edge / (for IMRT) from 50% isodose line 
+								&ensp;&rarr;&ensp;measure if coplanar/vertex beam
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>
+								&lt; 10 cm from field edge / (for IMRT) from 50% isodose line
+								&ensp;&rarr;&ensp;measure
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td> 
+								&lt; 3&ensp; cm from field edge / (for IMRT) from 5% isodose line
+								&ensp;&ensp;&rarr;&ensp;calculate from TPS
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>dose-to-water (even though CIEDs are actually electronic device)</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>
+								outside Tx field <br>
+								&ensp;&rarr;&ensp;mainly low energy scatter (e.g. 6 MV beam ~ 1.5 MeV in field -vs- 400 keV out field) <br>
+								&ensp;&rarr;&ensp;:) flat energy response
+							</td>
+						</tr>
+					</table>
+				</ol>
+
+
+				<br>
+				<b>Notes</b>
+				<ol class="in_table">
+					<table class="tight_clean">
+						<tr>
+							<td><li></li></td>
+							<td>
+								modern CMOS circuit <br>
+								&ensp;&rarr;&ensp;complex <br>
+								&ensp;&rarr;&ensp;&darr; power consumption <br>
+								&emsp;&emsp;&rarr;&ensp; might modify threshold
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>typically located 1 - 3 cm below skin (min. 0.5 cm)</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>
+								ICP/ICD Dose 
+								<div style="margin-left: 24px;">
+									&uarr; modulation, &uarr; head scatter <br>
+									uarr; treatment volume &darr;, &darr; patient scatter <br>
+									max at surface, decrease to dmax, than relatively constant
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td><li></li></td>
+							<td>
+								(QEH) normally for plan below belly button <br>
+								&emsp;&rarr;&emsp; x pacemaker monitoring <br>
+								<div style="text-align: center; width: 100%;">
+									<img src="pacemaker_dose.png" alt="" width="250px">
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Hypofractionation</td>
+			<td>
+				effective dose to normal tissue &lt; to tumour <br>
+				&emsp;&emsp; e.g. EUD Equivalent Uniform Dose <br>
+
+			</td>
+		</tr>
+	</table>
+	
+	<br><br>
+	<b>Reference</b> <br>
+	<table class="tight_clean">
+		<tr>
+			<td>[1]</td>
+			<td>AAPM TG-203</td>
+		</tr>
+	</table>
+
+</body>
+</html>

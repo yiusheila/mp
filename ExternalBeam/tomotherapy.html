@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -18px;
+		}
+		.highlight {
+			padding: 0px;
+			border: 2px greenyellow solid;
+			margin: auto;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Tomotherapy</h2>
+	<h3>Component</h3>
+	<table>
+		<tr>
+			<td>Overview</td>
+			<td>
+				AAPM TG-148 <br>
+				300 pulse/s <br>
+				6 MV <br>
+				2 MV for MVCT <br>
+				<br>
+				<ul>
+					<li class="stroke">No Light Field</li>
+					<li class="stroke">Scan from patient head to feet</li>
+					
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>MLC</td>
+			<td>
+				<b>Profile</b>
+				<ul>
+					<li class="stroke">Use compressed air to control movement
+						<ul>
+							<li class="stroke">use optical sensor instead of IR reflector/potentiometer</li>
+							<li class="stroke">pressure need to maintain at 60 psi
+								<ul>
+									lower pressure > optical not sensing MLC
+								</ul>
+							</li>
+							
+							<li class="stroke">use bumper pins to mechanically stop the MLC</li>
+						</ul>
+					</li>
+					<li class="stroke">Binary!! either open or close</li>
+					<li class="stroke">Leaves travel in IEC-Y direction</li>
+				</ul>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Laser System</td>
+			<td>
+				<ol>
+					<li>Green Laser</li>
+					<li>Red Laser</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>RF System uses Magnetron</td>
+			<td>
+				<ul>
+					<li class="stroke">very arduous</li>
+					<li class="stroke">usually replace every 1.5 year</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Dose Monitoring</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>MVCT</td>
+			<td>
+				<b>Usage</b>
+				<ul>
+					<li class="stroke">Treatment setup</li>
+					<li class="stroke">Images can be used in adaptive treatment</li>
+					<li class="stroke">Use synogram + MVCT image to recalculate the actual treatment dose distribution</li>
+				</ul>
+				
+				<br>
+				<b>Detector</b>
+				<ul>
+					<li class="stroke">arc shape</li>
+					<li class="stroke">40 cm FOV (fixed!)</li>
+					<li class="stroke">512 x 512</li>
+					<li class="stroke">Xenon air ion chamber</li>
+					<li class="stroke">(previous) filtered back projection</li>
+					&emsp;(nowadays) iterative reconstruction
+				</ul>
+				<br>
+				QA
+				<ul>
+					<li class="stroke">HU value</li>
+					<li class="stroke">HU Uniformity</li>
+				</ul>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<h3>QA</h3>
+	<table>
+		<tr>
+			<td>Output Calibration</td>
+			<td>
+				AAPM TG-148 <br>
+				Cheese Phantom <br>
+				Set a plan to deliver 2 Gy to the target<br>
+				&there4; need to commission TPS before output calibration !!!
+			</td>
+		</tr>
+		
+		<tr>
+			<td>IEC-Y Jaw Centring</td>
+			<td>
+				Use long chamber (like CTDI chamber, e.g. EXRADIN A17) <br>
+				<br>
+				2mm jaw opening <br>
+				with different Y jaw shift <br>
+				when jaw shift = 0, measurement should be maximum <br>
+				when jaw shift at other position, 2 sides should be symmetric <br>
+				parabolic fit
+			</td>
+		</tr>
+
+		<tr>
+			<td>IEC-Y Jaw Divergence</td>
+			<td>
+				&ensp;=&ensp;source tilting <br>
+				<br>
+				place film on couch <br>
+				down shift the patient couch to magnify error <br>
+				irradiate at 0 and 180 deg <br>
+				draw the 2 profiles and check if the centres align 
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>IEC-X Jaw Centring</td>
+			<td>
+				Check if tongue and groove effect is symmetric 
+			</td>
+		</tr>
+		<tr>
+			<td>Modulation Factor in Accuray</td>
+			<td>
+				if a histogram of open time of each MLC is plotted, <br>
+				$$ Modulation~Factor = \frac{Max~Open~Time}{Mean~Open~Time} $$
+			</td>
+		</tr>
+
+
+	</table>
+
+</body>
+</html>

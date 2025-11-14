@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Dose Calibration</title>
+	<link rel="stylesheet" href="../style.css"> 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>External Beam - Dose Calibration</h2>
+
+	<h3>MU Calculation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>MU Calculation</td>
+			<td>
+				<table style="margin-left: 28px; margin-right: 28px">
+					<tr>
+						<td class="clean" rowspan="2" style="text-align: center;"># of MU =</td>
+						<td class="clean" colspan="3" style="border-bottom: 1px solid white; text-align: center;"> Prescribed Dose <br>(cGy)</td>
+						<td class="clean" rowspan="2" style="text-align: center;">\(\times\)</td>
+						<td class="clean" rowspan="2" style="text-align: center;">Setting <br> Correction Factor</td>
+					</tr>
+					<tr>
+						<td class="clean" style="text-align: center;">Beam Absolute Output <br> (cGy/MU)</td>
+						<td class="clean">\(\times\)</td>
+						<td class="clean" style="text-align: center;">Beam <br> Correction Factor</td>
+					</tr>
+				</table>
+				<br>
+				i.e. If I want point (x) to be receiving (?) cGy <br>
+				&emsp;&nbsp; How many MU I should tell the machine to generate? <br>
+				<br>
+				Assuming PDD, beam profile and output table correction factors are independent <br>
+				<br>
+
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+
+
+	<h3>Beam Data</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<col width="20%">
+			<td>Field Size (output table / field correction factor / relative dose factor)</td>
+			<td>
+				<b>Equivalent Field </b>
+				<div style="padding-left: 24px;">
+					<b>Day's Rule:</b> <br>
+					<div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">rectangular field</div> can be characterised by <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">equivalent square field</div> by keeping <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">\( \large \frac{Area}{Perimeter} \) ratio the same</div>, i.e. <br>
+					\[ \frac{ab}{2(a+b)} = \frac{q^2}{4q} \]
+					\[ q = \frac{2ab}{a+b} \]
+					<br>
+					The equivalent spare field can be equated to a <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">circular field</div> with the <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">same area</div>,
+					\[ q^2 = \pi~r_{eq}^2 \]
+					\[ r_{eq} = \frac{1}{\sqrt{\pi}}~q \]
+				</div>
+				<br>
+				<br>
+				<b>Field Correction Factor</b>
+				<div style="padding-left: 24px;">
+					<div style="border: 2px greenyellow solid; width:200px; ;margin-left: auto; margin-right: auto;">
+						$$
+						\begin{align}
+							FCF(FS,~E) &= CF~SF \\
+							&=\frac{D(FS)}{D(10)}
+						\end{align}
+						$$
+					</div>
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							at SSD + <i>z<sub>max</sub></i> <br>
+							<i>CF</i> = collimator scattering factor <br>
+							<i>SF</i> = phantom scattering factor
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>PDD</td>
+			<td>
+				<b>Definition</b>
+				<div style="padding-left: 24px;">
+					For a given <br>
+					<ol>
+						<li>FS <i>A</i>,</li>
+						<li>SSD <i>f</i>, and</li>
+						<li>photon energy <i>E</i>,</li>
+					</ol>   
+					\[ PDD(z) = \frac{D_z}{D_{max}} \]
+				</div>
+				<br>
+				<b>Contribution</b>
+				<div style="padding-left: 24px;">
+					Elements that make up of PDD:
+					<ol>
+						<li>inverse square law</li>
+						<li>attenuation in phantom</li>
+						<li>phantom scattering</li>
+					</ol>
+				</div>
+				<br>
+				<b>Extended SSD</b>
+				<div style="padding-left: 24px;">
+					<b>1.&emsp;Output</b> <br>
+					<div style="padding-left: 24px;">
+						&becaus; Inverse Square <br>
+						&darr; Dose Rate <br>
+						&darr; cGy/MU <br>
+					</div>
+					<br>
+					<b>2. &emsp;PDD &rarr; Mayneord F Factor</b>
+					<div style="padding-left: 24px;">
+						\[ \frac{PDD_2}{PDD_1} = \frac{ \left( \frac{f_2 + d_m}{f_2+d} \right)^2 }{ \left( \frac{f_1 + d_m}{f_1 + d} \right)^2 } \]
+						<div style="border: 2px greenyellow solid; width: 300px; ;margin-left: auto; margin-right: auto;">
+							\[ PDD_2 = PDD_1 \left( \frac{f_2 + d_m}{f_2+d} \right)^2 \left( \frac{f_1 + d}{f_1 + d_m} \right)^2 \]
+						</div>
+
+						\[ F = \left( \frac{ f_2 + d_{max} }{f_1+ d_{max}} \right)^2 \left( \frac{f_1+d}{f_2+d} \right)^2 \]
+						<br>
+						For extended SSD setting with the same FS on surface, the PDD at a point at the same depth will be<br>
+						\[ PDD(d, f_2) = PDD(d, f_1) \times F \]	
+					</div>
+					<br>
+					<b>3. Surface Dose</b>
+					<div style="padding-left: 24px;">
+						&darr; dose rate <br>
+						&darr; surface dose (accumulative)
+					</div>
+					<br>
+					<b>4. Exit Dose</b>
+					<div style="padding-left: 24px;">
+						PDD fall off &darr; rapid <br>
+					</div>
+
+					
+				</div>
+				<br>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3>Scatter From Machine</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Collimator Factor</td>
+			<td>
+				&ensp;=&ensp;represents the scatter component that contributes to the dose <br>
+				<br>
+				<b>Measurement</b>
+				<div style="padding-left: 24px;">
+					<ol>
+						<li>chamber in air with buildup cap</li>
+						<li>at SSD + <i>z<sub>max</sub></i></li>
+						<br>
+						For every
+						<li>FS</li>
+						<li>beam energy</li>
+					</ol>
+					\[ CF(FS,~E) = \frac{D'(FS)}{D'(10)} \]
+				</div>
+				<br>
+				<b>Factors</b>
+				<div style="padding-left: 24px;">
+					&uarr; FS, &uarr; secondary photons 
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>Phantom Scattering</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Scatter Factor</td>
+			<td>
+				<b>Peak Scatter Factor</b>
+				<div style="padding-left: 24px;">
+					&ensp;=&ensp; ratio of the dose in air to dose in phantom at SSD + <i>z<sub>max</sub></i><br>
+					\[ PSF(FS,~E) = \frac{D_{w}}{D_{air}} \]
+				</div>
+				<br>
+				<b>Measurement</b>
+				<div style="padding-left: 24px;">
+					<ol>
+						<li>at SSD + <i>z<sub>max</sub></i></li>
+						<br>
+						For every
+						<li>FS</li>
+						<li>beam energy</li>
+					</ol>
+					\[ SF(FS,~E) = \frac{PSF(FS)}{PSF(10)} \]
+				</div>
+				<br>
+				<b>Factors</b>
+				<div style="padding-left: 24px;">
+					<ol>
+						<li>low E, low scattered photon E, easier to backscatter + side scatter</li>
+						<li>high E, high scattered photon E, more penetrating </li>
+						&there4;
+						<li>&uarr; E, &uarr;PSF &emsp;&rarr;&emsp; reach peak &emsp;&rarr;&emsp; &uarr; E, &darr;PSF</li>
+						<li>for the same E, FS &uarr;, PSF &uarr;</li>
+					</ol>
+					
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3>Tissue Inhomogeneity Correction</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>AAPM TG-65</td>
+			<td>
+				&emsp;&rarr;&ensp; To better estimate the absorbed dose in lung/cavities/compact bones/metal object <br>
+				&emsp;&because;&ensp; 
+				<div style="margin-left: 6px; display: inline-block; vertical-align: top;">
+					&uarr; beam modulation <br>
+					&uarr; conformity
+				</div>
+				<br>
+				(VOI bulk correction/pixel-by-pixel/MC sim)
+			</td>
+		</tr>
+		<tr>
+			<td>Beam Attenuation + Scatter</td>
+			<td>
+				&ensp;=&ensp;tissues with <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">density</div> and <div style="display: inline; background-color: rgba(0, 255, 255, 0.3);">atomic number</div> different from those of water <br>
+				<div style="padding-left: 24px;">
+					e.g. <br>
+					after air, dose &uarr; <br>
+					after bone, dose &darr;
+					<ul>
+						<li class="stroke">bond &rho;<sub>e</sub> &uarr; (500 kV - 4 MV)</li>
+						<li class="stroke"><div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">shielding effect</div> (&gt; 10 MV) <br>
+							&because; pair production &uarr;
+						</li>
+					</ul>
+				</div>
+
+				<br>
+				<br>
+				<div style="text-align: center;">
+					<img src="inhomogeneity.png" alt="" width="300px">
+				</div>
+				<br>
+				<b>Effect of tissue inhomogeneity</b>
+				<div style="padding-left: 24px;">
+					<ol>
+						<table>
+							<tr>
+								<td class="tight_clean"><li>dose from primary beam</li></td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>dose from scattered photons</li></td>
+							</tr>
+							<tr>
+								<td class="tight_clean"><li>electron fluence</li></td>
+							</tr>
+						</table>
+						
+						
+						
+					</ol>
+				</div>
+				<br>
+				<b>Tissue Inhomogeneity Correction Methods <sup>[1]</sup></b>
+				<div style="padding-left: 24px;">
+				 	<ol>
+				 		<b><li>TAR method</li></b>
+					 		<div style="padding-left: 48px;">
+					 			=&emsp;correct for <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">equivalent water depth</div> <br>
+					 			:(&emsp;only account for primary beam, not consider scatter<br>
+					 			&there4;&ensp; overestimates dose
+					 			<br>
+
+					 			\[ D_{P, d'} = D_{P, d}~\frac{TAR_{d'}}{TAR_d} \]
+					 			<div style="padding-left: 24px;">
+					 				where
+					 				<div style="padding-left: 24px;">
+					 					<i>d</i>&ensp;=&ensp;uncorrected depth <br>
+					 					&emsp;\( = d_1 + d_2 + d_3\) <br>
+					 					<i>d'</i>&ensp;=&ensp;water equivalent depth <br>
+					 					&emsp;\( = d_1 + \rho_{e, 2}~d_2 + d_3 \)
+					 				</div>
+					 			</div>
+					 		</div>
+				 		<br>
+				 		<b><li>Batho Power Law method</li></b>
+				 			<div style="padding-left: 48px;">
+					 			Assume <br>
+					 			(1) Compton scattering only, <br>
+					 			(2) for a point <i>P</i> that is not in the build-up region and <br>
+					 			(3) not inside the inhomogeneity,
+					 			\[ D_P = D_{P, d}~\left( \frac{TAR_{d_2 + d_3}}{TAR_{d_3}} \right)^{\rho_{e, 2} - 1} \]
+				 			</div>
+				 		<br>
+				 		<b><li>Equivalent TAR method</li></b>
+				 			<div style="padding-left: 48px;">
+				 				=&emsp;correct for <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">equivalent water depth</div> and <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">scattering effect on FS</div><br>
+				 				\[ D_{P, d', r'} = D_{P, d}~\frac{TAR_{d', r'}}{TAR_{d, r}} \]
+				 				<div style="padding-left: 24px;">
+				 					where
+				 					<div style="padding-left: 24px;">
+				 						<i>r</i>&ensp;=&ensp;scaled FS <br>
+				 						&emsp;\( = r ~\rho_e' \) <br>
+				 						\(\rho_e'\)&ensp;=&ensp;weighted e density summing over the entire irradiated volume <br>
+										&emsp;&ensp;\(\large =\frac{\sum \rho_e W}{\sum W}\) <br>
+										W&ensp;=&ensp;weighting factor accounting for Compton scatter cross section
+				 					</div>
+				 				</div>
+				 			</div>
+				 		<br>
+				 		<b><li>Isodose Shift method</li></b>
+				 		<div style="padding-left: 48px;">
+				 			&emsp;=&emsp;shifting isodose line beyond the inhomogeneity by n &times; <i>d<sub>2</sub></i> <br>
+							<div style="padding-left: 30px;">
+								e.g. after bone, isodose line shift towards the surface <br>
+								&emsp;&ensp; after air, isodose line shift away from surface
+							</div>
+				 		</div>
+				 	</ol>
+			 	</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>Surface Irregularity Correction</h3>
+	<br>
+	<br>
+	<h3>Accessory/Setting Correction</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td class="clean"><b>Settings</b></td>
+			<td class="clean"><b>Correction Factor</b></td>
+			<td class="clean"><b>Setting Factor</b></td>
+		</tr>
+		<tr>
+			<td class="grey">SAD</td>
+			<td class="grey">\[ SADCF=\left({100 \over 100 + d_m}\right)^2 \]</td>
+			<td class="grey"></td>
+		</tr>
+		<tr>
+			<td class="grey">Couch</td>
+			<td class="grey" rowspan="3" style="vertical-align: middle;">
+				\[ CF={1 \over Setting~Factor} \]
+				\[ \large ={D_{no~setting} \over D_{setting}} \]
+			</td>
+			<td class="grey" rowspan="3" style="vertical-align: middle;">
+				\( \Large {D_{setting} \over D_{no~setting}} \)
+			</td>
+		</tr>
+		<tr>
+			<td class="grey">Perspex</td>
+		</tr>
+		<tr>
+			<td class="grey">Wedge</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<h3>Notes</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Beam Weighting</td>
+			<td>
+				of DOSE
+			</td>
+		</tr>
+		<tr>
+			<td>QA</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean">Prescribed <br> dose</td>
+						<td class="clean">=</td>
+						<td class="clean">Dose <br> back-calculated <br> from plan</td>
+						<td class="clean">&plusmn;</td>
+						<td class="clean">3 %</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+
+
+	<br><br><br><br>
+	<h3>Dose Calculation Algorithm</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Correction Based</td>
+			<td>Look Up Table</td>
+			<td>
+				&emsp;&larr;&ensp; Beam Data <br>
+				&emsp;&larr;&ensp; Correction Factors
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">Model Based</td>
+			<td>AAA <br>&emsp;&emsp;(Anisotropic Analytic Algorithm)</td>
+			<td>
+				&emsp;=&emsp;Pencil Beam with kernel <br>
+				<br>
+				<b>Components</b>
+				<ol>
+					<li>Primary Beam (from target)</li>
+					<li>Photon Scatter (from gantry head)</li>
+					<li>Electron Contamination (from gantry head + air)</li>
+					<li>Tissue Inhomogeneity <br>
+						<ul>
+							<li class="stroke">photon scatter kernel scaling</li>
+							<li class="stroke">lateral spread only</li>
+							<li class="stroke">based on density</li>
+						</ul>
+					</li>
+				</ol>
+
+				<br>
+				<b>Dose</b>
+				<ul>
+					<li class="stroke">
+						Dose = Fluence &times; Intensity Profile &times; Kernel
+					</li>
+					<li class="stroke">Intensity Profile <br>
+						depends on density and equivalent depth
+
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>CCC <br>&emsp;&emsp;(Collapsed Cone Convolution)</td>
+			<td>
+				Kernel in cone ray
+			</td>
+		</tr>
+		<tr>
+			<td>Acuros XB <br>&emsp;&emsp;(Linear Boltzmann Transport Equation)</td>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Monte Carlo Simulation</td>
+			<td></td>
+			<td>
+				&emsp;&larr;&ensp; path from gantry head to phantom/patient <br>
+				&emsp;:)&ensp; dose to medium <br>
+				&emsp;:(&ensp; computer resources intensive <br>
+				<br>
+				https://mcnp.lanl.gov/manual.html <br>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<h3>Compass Modelling</h3>
+	<table>
+		<tr>
+			<td>Parameters</td>
+			<td>
+				<ol>
+					<table>
+						<tr>
+							<td class="tight_clean"><li>Photon Energy Spectrum</li></td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Electron Contamination</li></td>
+							<td class="tight_clean">
+								\[ Electron~Fluence = E^c~e^{\large -E/E_0} \]
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Output Factor</li></td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									Off-axis Softening <br>
+									&emsp;=&ensp; Flattening Filter Modelling
+								</li> 
+							</td>
+							<td class="tight_clean">
+								Assuming rotationally symmetric <br>
+								the curve of flattening filter along the radius &larr; expressed in terms of <div class="hl">water equivalent thickness</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean"><li>Beam Profile Correction</li></td>
+							<td class="tight_clean">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									Effective Distance to Source
+									<div style="margin-left: 24px;">
+										Flattening Filter <br>
+										X/Y Jaw <br>
+										MLC
+									</div>
+								</li>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									Transmission 
+									<div style="margin-left: 24px;">
+										Jaw (Compass supports X only) <br>
+										MLC
+									</div>
+								</li> 
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									Weighting (????)
+									<div style="margin-left: 24px;">
+										Flattening filter <br>
+										Electron source 
+									</div>
+								</li>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>Source Width in x and y</li>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									MLC
+									<div style="margin-left: 24px;">
+										Tongue and groove <br>
+										Leaf tip width
+									</div>
+								</li>
+							</td>
+						</tr>
+						<tr>
+							<td class="tight_clean">
+								<li>
+									Collimator Calibration <br>
+									&emsp;=&ensp; Jaw + MLC position adjustment
+									<div style="margin-left: 24px;">
+										offset <br>
+										gain <br>
+										curvature
+									</div>
+								</li>
+							</td>
+							<td class="tight_clean">
+								
+							</td>
+						</tr>
+					</table>
+					
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	
+
+	<br>
+
+	<b>Reference</b> <br>
+	[1]&emsp;Khan, p.215 <br>
+</body>
+</html>

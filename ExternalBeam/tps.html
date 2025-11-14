@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | TPS</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="../code-prettify-master/loader/run_prettify.js"></script>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> for IE11 -->
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<!-- Header -->
+	<table width="100%" id="menu">
+		<col width="40%">
+		<col width="6%">
+		<col width="40%">
+		<tr>
+			<td class="clean" style="border-bottom: 2px solid white; height: 50%"></td>
+			<td class="clean" rowspan="2" style="text-align: center; vertical-align: middle; "><h2>TPS</h2></td>
+			<td class="clean" style="border-bottom: 2px solid white;"></td>
+		</tr>
+		<tr>
+			<td class="clean"></td>
+			<td class="clean"></td>
+		</tr>
+	</table>
+
+	<!-- Menu -->
+	<ol class="index" id="menu">
+		<li><a href="#eclipse">Eclipse</a></li>
+	</ol>
+
+	<h3 id="eclipse">Eclipse Operation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Generate Plan Without CT</td>
+			<td>
+				<ol>
+					<li>Open the patient</li>
+					<li>Go to <div class="hl">plan parameters</div> and insert a new course, plan and field <br>
+						(Must be done in plan parameters as there is no 3D image to place the plan on, so it cannot be created in Eclipse.)
+					</li>
+					<li>Save</li>
+					<li>Go to external beam planning</li>
+					<li>Select the plan and create a verification plan <br>
+						Planning > create verification plan
+					</li>
+				</ol>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Create Water Phantom</td>
+			<td>
+				<ol>
+					<li>Treatment Planning > Contouring</li>
+					<li>Structure > New Phantom Image <br>
+						(according to MyVarian - 000006920 - How to create a Water Phantom in Eclipse, <br>
+						when after a sphere phantom, need to clear the body structure and use brush to re-draw it... WHY?) 
+					</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Generate DRR</td>
+			<td>
+				External Beam Planning > Open a plan with CT > right click Field > New DRR
+			</td>
+		</tr>
+
+		<tr>
+			<td>Registration Line Hide/Display</td>
+			<td>
+				When registration lines disappear, right click the small square above the image volumes <br>
+				uncheck all hide registration options
+			</td>
+		</tr>
+		<tr>
+			<td>GPU Memory Limit</td>
+			<td>
+				* Error when trying to start optimisation <br>
+				<br>
+				<ul>
+					<li><div class="hl">Remove the SETUP fields</div> (most effective)</li>
+					<li>Reduce calculation volume</li>
+					<li>Reduce field size</li>
+					<li>Delete unnecessary structures </li>
+					(less desirable)
+					<li>Reduce structure resolution from high to standard </li>
+					<li>Increase calculation grid size</li>
+					<li>Create 3D volume with fewer CT slices </li>
+					<li>? use Acuros XB Field dose instead of Plan dose option for intermediate dose</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Organise Reference Point</td>
+			<td>
+				2 Types of reference point: <br>
+				&ensp;(1)&ensp; fixed location <br>
+				&ensp;(2)&ensp; DPV (dose prescription volume, for dose recording purpose only) <br>
+				<br>
+				Change from fix location &rarr; DPV <br>
+				(right click reference point) &gt; Delete &gt; Delete from (current image) &gt; OK <br>
+				<br>
+				Hide/Display Reference Point <br>
+				Move point in Organiser
+			</td>
+		</tr>
+	</table>
+
+	<br><br><br>
+	<div class="to_menu">
+		<a href="#menu">Back to Menu</a>
+	</div>
+</body>
+</html>

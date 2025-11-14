@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | MR in RT</title>
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>External Beam | MR in RT</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Main Difference From Diagnostic</td>
+			<td>
+				<ol>
+					<li>Larger Bore</li>
+					<li>Flat Couch</li>
+					<li>Laser</li>
+					<li>RF Coil Bridge</li>
+					<li>(RF Coil Dedicated for RT) </li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Acceptance </td>
+			<td>
+				<b>Basic</b>
+				<ol>
+					<li>Electrical Safety</li>
+					<li>Bore Levelling (without patient table)</li>
+				</ol>
+				<br>
+				<b>Pre-installation</b>
+				<ol>
+					<li>vibration measurement</li>
+					<li>Background B-field analysis / EMI sources </li>
+					<li>RF shielding verification: Faraday cage integrity <br>
+						<b>RF Attenuation Test</b> <br>
+						<div style="margin-left: 24px;">
+							
+						</div>
+						using insulation tester to measure <div class="hl">Insulation Resistance</div> <br>
+						other indicators: <br>
+						<div style="margin-left: 24px;">
+							Polarization Index (PI, resistance ratio of 10-min to 1-min), <br>
+							Dielectric Absorption Rate (DAR, resistance ratio of 60-s to 30-s)<br>
+						</div>
+						*&ensp; ensure constant temperature (&plusmn; 10&deg; results in half/double resistance) <br>
+						&emsp; temperature compensation to 40&deg; <br>
+						*&ensp; test voltage <br>
+						*&ensp; test duration (?) <br>
+					</li>
+					<li>Acoustic noise measurement</li>
+				</ol>
+				<br>
+				<b>Post-installation </b>
+				<ol>
+					<li>B0 shimming</li>
+					<li>RF / gradients performance</li>
+					<li>Image quality for each coil</li>
+					<li>Laser installation </li>
+				</ol>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Commissioning</td>
+			<td>
+				<ol>
+					<li>5 Gauss line</li>
+					<li>RF noise during operations (consider all kinds of equipment)</li>
+					<li>Laser iso</li>
+					<li>Table alignment with B0</li>
+
+					<div style="margin-left: -24px;"><br><b>Machine Performance</b></div>
+					<li>B0 homogeneity <br>
+						-&emsp;measured in ppm over a certain DSV (diameter of spherical volume) <br>
+						&ensp;&emsp;e.g. 3T magnet that guaranteed to have homogeneity < 1 ppm over a 40 cm DSV <br>
+						can be estimated using <u>spectral peak</u> or <u>phase difference mapping</u> <br>
+						<br>
+						<u>Spectral Peak</u> <br>
+						\[FWHM(ppm) = \frac{FWHM(Hz)}{\gamma_{water}(Hz/T)~B_0(T)}\]
+						<br>
+						<u>Phase Difference Mapping</u> <br>
+						Acquired 2 GRE phase images at TE1 and TE2 (separated by a few ms)<br>
+						(1 x dual echo GRE or 2 x GRE scans) <br>
+						(unwrap phase images) <br>
+						(phase subtraction)
+						<br>
+					</li>
+					<br>
+					<li>Gradient Non-linearity <br>
+						poor linearity&ensp;&rarr;&ensp;<div class="hl">geometric distortion</div>
+					</li>
+					<br>
+					<li>Magnetic field strength </li>
+					<li>Central frequency (as baseline)</li>
+					<li>Transmitter gain stability</li>
+					<li>Slice thickness</li>
+					<br>
+					<li>RF Coil Evaluation / QA <br>
+						Performance consistency of <div class="hl">SNR</div> and <div class="hl">uniformity</div>
+					</li>
+
+					<div style="margin-left: -24px;"><br><b>Image Quality</b></div>
+					<li>ACR Phantom</li>
+					<li>SNR</li>
+					<br>
+					<li>Network</li>
+					<li>Emergency</li>
+					<br>
+					<li>Patient monitoring system <br>
+						A/V, intercom, emergency squeeze ball
+					</li>
+					<br>
+					<li>Patient Setup/Immobilisation Device</li>
+					<li>End-to-end test</li>
+					<li>DICOM Coordinate</li>
+					<li>4D spatial and temporal accuracy</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Registration Technique</td>
+			<td>
+				diagnostic MRI + deformable registration <br>
+				or <br>
+				MRI in RT position + rigid registration
+			</td>
+		</tr>
+		<tr>
+			<td>Image Quality</td>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>SNR</td>
+			<td>
+				<div style="text-align: center; width: 200px;">
+					adding flat table on top of curve table in diagnostic MR machine <br>
+					&darr; <br>
+					&darr; SNR
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Reduce Scan Time</td>
+			<td>
+				<b>Limitation</b>
+				<div style="margin-left: 24px;">
+					(PNS) Peripheral Nerve Simulation in patient<br>
+					&ensp;&larr;&ensp; physiological limit <br>
+				</div>
+				
+				<br>
+				SMS &ensp;=&ensp; Simultaneous Multi-Slice <br>
+				Fast Imaging <br>
+				Parallel Imaging <br>
+				&ensp;&larr;&ensp; use coil element sensitivity information in decoding image<br>
+				Compressed Sensing (?)<br>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Reduce Artefact</td>
+			<td>
+				Radial Acquisition <br>
+				&uarr; band width (?)
+			</td>
+		</tr>
+		<tr>
+			<td>MR-only RT</td>
+			<td>
+				1.&ensp; bulk segmentation <br>
+				2.&ensp; voxel based <br>
+				3.&ensp; atlas based <br>
+
+				Sequence <br>
+				DIXON <br>
+				UTE Ultrashort TE <br>
+				TOF Time of Flight <br>
+				 > angiography
+			</td>
+		</tr>
+	</table>
+
+	<br>
+
+</body>
+</html>

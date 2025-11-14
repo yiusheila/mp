@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>External Beam | Commissioning</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>External Beam | Commissioning </h2>
+
+	<h3>LINAC</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Commissioning Items</td>
+			<td>
+				<table>
+					<tr>
+						<td>Measurement For TPS</td>
+						<td>
+							<ol>
+								<li>PDD</li>
+								<li>Profile</li>
+								<li>Diagonal Profile</li>
+								<li>Output Factor</li>
+								<li>Surface Dose</li>
+								<li>Absolute Dosimetry</li>
+								<li>Couch Attenuation</li>
+								<li>DLG initial guess</li>
+								<li>Couch Model + Attenuation</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>Verification</td>
+						<td>
+							<ol>
+								<li>IAEA 1540 (AT of TPS)</li>
+								<li>IAEA 1583 (Commissioning of TPS)</li>
+								<li>Conformal plan</li>
+								<li>Irreg plan</li>
+								<li>IMRT/VMAT plan</li>
+							</ol>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Reference</td>
+			<td>
+				TG-40 (QA for Radiation Oncology) <br>
+				TG-53 (QA for Treatment Planning) <br>
+				<div style="margin-left:24px;">
+					&rarr; non-dosimetric <br>
+					&rarr; dosimetric 
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>QA Tools</td>
+			<td>
+				<ol>
+					<li>ArcCheck</li>
+					<li>Delta4</li>
+					<li>Mobius</li>
+					<li>Radcal/Manteia</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>New Machine</td>
+			<td>
+				Acceptance <br>
+				Commissioning <br>
+				&ensp;&rarr;&ensp; Beam Data <br>
+				&ensp;&rarr;&ensp; IAEA 1540 <br>
+				&ensp;&rarr;&ensp; IAEA 1583 <br>
+				&ensp;&rarr;&ensp; Clinical Plan (for DLG adjustment)
+			</td>
+		</tr>
+		<tr>
+			<td>DLG</td>
+			<td>
+				For TPS only model MLC with leaf transmission and DLG, <br>
+				after obtaining an initial guess of DLG, <br>
+				the final value should be adjust to match the dose distribution (measured or independent TPS) of clinical plan <br>
+				(* if 2 machines are beam matched, both machine should be commissioned for TPS)
+				<br>
+				the type and number of cases should be used according to usage of that machine <br>
+				 
+			</td>
+		</tr>
+		<tr>
+			<td>MLC Leaf Gap Offset</td>
+			<td>
+				&emsp;=&ensp; physical offset of MLC leaf position <br>
+				&emsp;=&ensp; to beam match 2 machines <br>
+				&emsp;&rarr;&ensp; -ve value (e.g. -6) = actual gap is larger than the set value by 6 &times; 0.01 mm
+			</td>
+		</tr>
+	</table>
+	<br><br>
+</body>
+</html>
