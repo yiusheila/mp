@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gamma Camera</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>Gamma Camera</h2>
+	
+	<h3>Components</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Pb Shield</td>
+			<td>
+				<b>Role</b>
+				<ul>
+					<li class="stroke">Block Radiation</li>
+					<li class="stroke">Block Light</li>
+					<li class="stroke">Maintain Low Humidity (For NaI)</li>
+					<li class="stroke">Maintain Temperature (For PMT)</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Collimator</td>
+			<td>
+				<b>Energy Variant</b>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td class="clean">Low Energy</td>
+							<td class="clean">Tc-99m, I-123, Tl-201</td>
+						</tr>
+						<tr>
+							<td class="clean">Medium Energy</td>
+							<td class="clean">Ga-67, In-111, Lu-177</td>
+						</tr>
+						<tr>
+							<td class="clean">High Energy</td>
+							<td class="clean">I-131</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<b>Purpose Variant</b>
+				<div style="padding-left: 24px;">
+					<table>
+						<tr>
+							<td class="clean">General Purpose</td>
+							<td class="clean"></td>
+						</tr>
+						<tr>
+							<td class="clean">High Resolution</td>
+							<td class="clean">SPECT</td>
+						</tr>
+						<tr>
+							<td class="clean">High Sensitivity</td>
+							<td class="clean">Cardiac</td>
+						</tr>
+					</table>
+				</div>
+				<br>
+				<b>:(&ensp;Incorrect Collimator</b>
+				<ul>
+					<li class="stroke">Septal penetration</li>
+					<li class="stroke">Reduce sensitivity</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Scintillator</td>
+			<td>
+				<b>Material</b>
+				<ul>
+					<li class="stroke">NaI(Tl)&ensp;=&ensp;Thallium-doped sodium iodide</li>
+					<ul>
+						<li class="stroke">NaI is hydroscopic</li>
+						<li class="stroke">Tl doping allows higher light yield at room temperature <sup>[1]</sup></li>
+						<li class="stroke">with light guide</li>
+						<li class="stroke">typical thickness = 1/4 - 3/4 inch</li>
+					</ul>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+
+	<h3>Mechanism</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Mechanism</td>
+			<td>
+				<div style="text-align: center;"><img src="gamma_camera.png" alt="" width="300"> <br><br>
+				<img src="gamma_camera_signal.png" alt="" width="400">
+				</div>
+				<br>
+				<b>Energy Spectrum</b>
+				<ul>
+					<li class="stroke">PHA window usually &plusmn; 10%</li>
+				</ul>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td>Correction</td>
+			<td>
+				<b>Energy</b>
+				<ul>
+					<li class="stroke">Z channel</li>
+				</ul>
+				<br>
+				<b>Non-linearity</b>
+				<div style="padding-left: 24px;">
+					&emsp;=&emsp;correct for spatial distortion <br>
+					<br>
+					<b>Steps</b>
+					<ul>
+						<li class="stroke">without collimator</li>
+						<li class="stroke">X-Y channel</li>
+					</ul>
+				</div>
+				<br>
+
+				<b>Uniformity</b>
+				<ul>
+					<li class="stroke">ultimate intensity correction</li>
+				</ul>
+				<br>
+				<b>For SPECT</b><br>
+				<div style="padding-left: 24px;">
+					<b>Centre of Rotation (COR)</b> <br>
+					<b>Attenuation </b>
+				</div>
+			</td>
+		</tr>
+
+
+	</table>
+	<br>
+	<br>
+	<h3>QA</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Properties</td>
+			<td>
+				<b>Spatial Resolution</b>
+				<div style="padding-left: 24px;">
+					:(&emsp;low incoming &gamma; E <br>
+					:(&emsp;thicker scintillator
+				</div>
+				<br>
+				<b>Efficiency / Sensitivity</b>
+				<div style="padding-left: 24px;">
+					:)&emsp;thicker scintillator
+				</div>
+				<br>
+				<b>Energy Resolution</b>
+				<div style="padding-left: 24px;">
+					:(&emsp;variation in scinillation <br>
+					:(&emsp;variation in PMT (photocathode/diodes) <br>
+					:(&emsp;non-uniformity
+				</div>
+				<br>
+				<b>Dead Time</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">baseline shift</li>
+						<li class="stroke">pulse pile-up</li>
+						<ul>
+							<li class="stroke">bipolar pulse shaping circuit in preamplifier of PMT can shorten the pulse duration</li>
+						</ul>
+					</ul>
+
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>QA</td>
+			<td>
+				<b>Intrinsic Energy Resolution</b>
+				<div style="margin-left: 24px;">
+					=&ensp; FWHM / photopeak centre energy &times; 100% <br>
+					Source &ensp;&rarr;&ensp; Tc-99m or Co-57 point source <br>
+					<div style="margin-left: 66px;">centered at 5 &times; UFOV <br>
+						&lt; 20 kcount/s <br>
+						peak channel total &gt; 10 kcount
+					</div>
+				</div>
+
+				<ul style="margin-top: 3px;">
+					<li class="stroke">Inspect pulse-height spectrum <br>
+						photopeak at 140 keV?
+					</li>
+					<li class="stroke">Intrinsic</li>
+
+				</ul>
+
+				<b>Intrinsic Spatial Resolution</b>
+				<ul>
+					<li class="stroke">Tc-99m Point source at 5 * UFOV </li>
+					<li class="stroke">Quadrant-bar Phantom</li>
+				</ul>
+				<br>
+				<b>Extrinsic Spatial Resolution</b>
+				<ul>
+					<li class="stroke">Quadrant-bar Phantom</li>
+					<ul>
+						<li class="stroke">bars are thicker than parallel-line phantom</li>
+					</ul>
+				</ul>
+				<br>
+				<br>
+				<b>Intrinsic Spatial Linearity</b> <br>
+				<ul>
+					<li class="stroke">Parallel-line Equal Spacing Phantom</li>
+				</ul>
+				<br>
+				<br>
+				<b>Intrinsic Uniformity</b>
+				<ul>
+					<li class="stroke">(daily) Co-57 flood source  <br>
+						(weekly) Tc-99m Point source at 5 * UFOV 
+					</li>
+					<li class="stroke" style="margin-top: 6px; margin-bottom: 6px;">Integral Uniformity = \( \large \frac{ N_{max} - N_{min} }{ N_{max} + N_{min} } \)</li>
+					<li class="stroke" style="margin-top: 6px; margin-bottom: 6px;">Differential Uniformirt = \( \large \frac{ Max(\Delta N_{6~adjacent}) - Min(\Delta N_{6~adjacent}) }{ Max(\Delta N_{6~adjacent}) + Min(\Delta N_{6~adjacent}) } \)
+					</li>
+				</ul>
+				<br>
+				<br>
+				<b>External Sensitivity</b>
+				<ul>
+					<li class="stroke">For each collimator</li>
+					<li class="stroke">Different source for LE, ME and HE</li>
+					<li class="stroke">Sensitivity (cps min<sup>-1</sup> Bq<sup>-1</sup>) = \( \large \frac{ N_{ROI} - N_{background} }{ (Time)(Activity) } \)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Artefact</td>
+			<td>
+				PMT defect &rarr; circular cold defect <br>
+				crystal crack &rarr; irregular, focal, cold centre, hot edge
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	[1] Sailer C. Low temperature light yield measurements in NaI and NaI(Tl). Eur. Phys. J. C 72, 2061 (2012).
+	https://link.springer.com/article/10.1140/epjc/s10052-012-2061-7
+</body>
+</html>

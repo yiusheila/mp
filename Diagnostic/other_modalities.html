@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>  </title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		.line {
+			padding: 6px;
+			vertical-align: top;
+			text-align: center;
+			border-left: hidden;
+			border-right: hidden;
+			border-top: 2px solid grey;
+			border-bottom: 2px solid grey;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 36px;
+		}
+		.num {
+			margin-left: 12px;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 12px;
+		}
+		.stroke {
+			list-style-type: none;
+		}
+		.stroke::before {
+			content: "| ";
+			margin-left: -12px;
+			margin-right: 12px;
+		}
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+		.index {
+			border: 2.5px solid white;
+			display: inline-block; 
+			padding: 24px;
+			padding-left: 40px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.linac_head {
+			padding: 0px;
+			vertical-align: middle;
+			text-align: center;
+			border: none;
+		}
+		.modulator {
+			padding: 0px;
+			padding-left: 3px;
+			padding-right: 3px;
+			border: hidden;
+		}
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h3>Mammogram</h3>
+	<table>
+		<tr>
+			<td>kV</td>
+			<td>
+				50 kVp (maximum kVp) <br>
+				&emsp; + <br>
+				Cu (relatively high Z but excessively attenuating x-ray beam) </td>
+		</tr>
+		<tr>
+			<td>ACR Phantom</td>
+			<td>
+				<b>Total</b>
+				<div style="padding-left: 24px;">
+					6 Fibres <br>
+					5 Speck groups <br>
+					5 Masses <br>
+				</div>
+
+				<br>
+				<b>Pass</b>
+				<div style="padding-left: 24px;">
+					4 Fibres <br>
+					3 Speck groups <br>
+					3 Masses
+				</div>
+
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<table>
+		<tr>
+			<td>Bone Densidometry</td>
+			<td>
+				&check; dual energyb <br>
+				&check; pencil/fan beam <br>
+				&check; body composition measurement
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

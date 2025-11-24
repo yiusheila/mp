@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PET</title>
+	<link rel="stylesheet" href="../../style.css">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h3>Components</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>
+				electronic collimation <br>
+			</td>
+			<td>
+				old BGO <br>
+				recent LSO/LYSO/LBS
+			</td>
+		</tr>
+		<tr>
+			<td>Detector Rings</td>
+			<td>
+				<div style="text-align: center;"><img src="detector-ring.png" alt=""></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>2D/3D</td>
+			<td>
+				<b>2D PET</b>
+				<ul>
+					<li class="stroke">with lead/tungsten septa confining LOR</li>
+					<li class="stroke">&darr; sensitivity</li>
+				</ul>
+				3D no septa
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+
+	<h3>Mechanism</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Annihilation Coincidence <br> Detection (ACD)</td>
+			<td>
+				<ol>
+					<li>patient injected with <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">radionuclides</div></li>
+					<li>radionuclides decay &rarr; position</li>
+					<li>position travel a few mm in tissue &rarr; <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">position + e-</div> &rarr; 2 &times; 511 keV &gamma; at opposite direction</li>
+					<li>from the <div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">Line Of Response (LOR)</div> the position of the annihilation event can be computed</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Signals</td>
+			<td>
+				<b>Coincidence</b>
+				<ol>
+					<li>True</li>
+					<li>Scattered</li>
+					<div style="padding-left: 24px;">
+						<ul>
+							<li class="stroke">annihilation &gamma; undergoes Compton scatter</li>
+							<li class="stroke">but energy still fall within energy window</li>
+						</ul>
+					</div>
+					<li>Random</li>
+					<div style="padding-left: 24px;">
+						<ul>
+							<li class="stroke">separate annihilation events</li>
+							<li class="stroke">happen at similar times that fall within time window (~ 4.5 - 12 ns)</li>
+						</ul>
+					</div>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>SUV</td>
+			<td>
+				\[ SUV = \frac{Activity~in~Tissue~[kBq/ml]}{Injected~dose/body~weight} \]
+				<br>
+				<b>Factors affecting SUV value</b>
+				<div style="margin-left:24px;">
+					fasting for 6 hour <br>
+					serum glucose level &lt; 11 mmol/L <br>
+					x exercise 1 day before exam <br>
+					weight scale accuracy
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+
+	<h3>Image Quality</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Acceptance</td>
+			<td>
+				acceptance of CT first
+			</td>
+		</tr>
+		<tr>
+			<td>Calibration/Correction</td>
+			<td>
+				Geometry correction <br>
+				Energy correction <br>
+				Linearity/Distortion correction <br>
+				Coincidence timing calibration
+			</td>
+		</tr>
+		<tr>
+			<td>Spatial Resolution</td>
+			<td>
+				<ol>
+					<b><li>Positron Range</li></b>
+					<div style="padding-left: 24px;">
+						<ul>
+							<li class="stroke">&uarr; energy of position, &uarr; rms range</li>
+						</ul>
+					</div>
+
+					<b><li>Detector Size</li></b>
+					<b><li>Non-colinearity</li></b>
+					<div style="padding-left: 24px;">
+						<ul>
+							<li class="stroke">residual momentum of positron just before annihilation</li>
+							<li class="stroke">annihilation &gamma;s not in 180&deg; but (180+0.25)&deg;</li>
+							<li class="stroke">
+								\( R_{180} = 0.0022 D \) <br>
+								D = diameter of the detector ring
+							</li>
+						</ul>
+					</div>
+
+				
+					<br>
+					<div style="margin-left: -8px;">
+						<b>System Resolution</b>
+						<div style="padding-left: 24px;">
+							\[ R_{sys} = \sqrt{ {R_{range}}^2 + {R_{det}}^2 + {R_{180}}^2 } \]
+						</div>
+					</div>
+					<br>
+					<b><li>Depth-of-interaction</li></b>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Scatter Fraction / Count Loss / Random</td>
+			<td>
+				Noise equivalent count rate
+			</td>
+		</tr>
+		<tr>
+			<td>Sensitivity</td>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>Image Quality / Accuracy of Attenuation / Scatter Correction</td>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

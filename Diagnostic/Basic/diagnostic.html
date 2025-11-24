@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Diagnostic</title>
+	<link rel="stylesheet" href="../../style.css">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>Beam Quality</td>
+			<td>
+				<b>Spectrum Shape</b> depends on 
+				<div style="margin-left: 24px;">
+					1. &ensp;target material <br>
+					2. &ensp;filtration <br>
+					3. &ensp;anode angle
+					<div style="margin-left: 24px;">
+						&darr;&theta; , harder beam
+						<div style="margin-left: 23px;">better resolution</div>
+					</div>
+				</div>
+				<br>
+				(according to IEC 61267)
+				<table>
+					<tr>
+						<td class="line">Radiation Quality</td>
+						<td class="line">Target / Filter</td>
+						<td class="line">Application</td>
+					</tr>
+					<tr>
+						<td class="line">RQR</td>
+						<td class="line">W / none</td>
+						<td class="line">
+							simulating primary 
+							general <br>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">RQA</td>
+						<td class="line">W / Al</td>
+						<td class="line">
+							simulating spectrum behind a patient <br>
+							&there4; for detector QA <br>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">RQT</td>
+						<td class="line">W / Cu</td>
+						<td class="line">simulating an unattenuated beam in CT</td>
+					</tr>
+					<tr>
+						<td class="line">RQR-M / RQA-M</td>
+						<td class="line">Mo / Mo</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Sinogram</td>
+			<td>
+				<div style="text-align: center;"><img src="sinogram.png" alt="" width="400px"></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Image Reconstruction Algorithm</td>
+			<td>
+				<b>Analytic Approach</b>
+				<ul>
+					<li class="stroke"><div style="display: inline; background-color: rgba(244, 0, 0, 0.3);">e.g. Filtered Back Projection </div></li>
+					<li class="stroke">fast</li>
+					<li class="stroke"><div style="display: inline; background-color: rgba(244, 244, 0, 0.3);">Central Slice Theorem</div> <br>
+						&emsp;&ensp;&emsp;image projection on an axis with an angle passing through centre <br>
+						&emsp;=&emsp;line on Fourier transformed image with the same angle passing through the centre
+					</li>
+				</ul>
+				<br>
+				<b>Iterative Approach</b>
+				<ul>
+					<li class="stroke">e.g. MLEM, OSEM</li>
+					<li class="stroke"></li>
+				</ul>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td>Imaging CNR / SNR</td>
+			<td>
+				<b>SNR</b>
+				<div style="padding-left: 24px;">
+					\[ SNR = \frac{\mu}{\sigma} \]
+					<br>
+					&mu; = N <br>
+					\( \sigma = \sqrt{N} \) <br>
+					\( SNR = \sqrt{N} \)
+				</div>
+				<br>
+				<b>CNR</b>
+				<div style="padding-left: 24px;">
+					\[ CNR = \frac{|\mu_1 - \mu_2|}{\sigma_0} \]
+				</div>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+
+	<b>Registration</b>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Entropy (<i>H</i>)</td>
+			<td>
+				<b>Entropy </b> of a random variable <i>X</i>
+				\[ H(X) = - \sum_{x\in X} P(x)logP(x) \]
+
+			</td>
+		</tr>
+		<tr>
+			<td>Mutual Information</td>
+			<td>
+				For two discrete random variables, <i>X</i> and <i>Y</i>, <br>
+				\[ MI(X:Y) = H(X) + H(Y) - H(XY) \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						H&ensp;=&ensp;Shannon Entropy
+					</div>
+				</div>
+				<br>
+				In terms of probabilities,
+				\[ MI(X, Y) = \sum_{y\in sY} \sum_{x\in X} p(x, y) log \frac{p(x, y)}{ f(x) g(y) } \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						p&ensp;=&ensp;joint probability distribution function of <i>X</i> and <i>Y</i> <br>
+						f, g&ensp;=&ensp;marginal probability distribution function of <i>X</i> and <i>Y</i> respectively
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

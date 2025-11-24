@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ultrasound</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>Ultrasound</h2>
+	<h3>Physics</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="3">Sound Wave Properties</td>
+			<td>
+				<b>1. Temporal</b>
+				$$
+					\begin{align}
+						\omega &= 2\pi f \\
+							   &= { 2\pi \over T }
+					\end{align}
+				$$
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(\omega\) = angular frequency (radians per s) <br>
+						\( f \) = wave frequency
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>2. Spatial</b>
+				\[ k = {2\pi \over \lambda} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(k\) = wavenumber (radians per m) <br> 
+						\(\lambda\) = wavelength
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>3. Speed</b>
+				$$
+					\begin{align}
+						c &= f \lambda \\
+						  &= {\omega \over k}
+					\end{align}
+				$$
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\( c \) = wave speed
+					</div>
+				</div>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Acoustic Velocity (c)</td>
+			<td>
+				<b>Sound wave speed depends on material physical properties</b>
+				\[ c = \sqrt{\kappa \over \rho} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(\kappa\) = bulk modulus of elasticity <br>
+						&emsp;&ensp; (stiffness) <br>
+						&emsp; = \( \large \frac{P}{\Delta V/V} \) <br>
+						\(\rho\) = density <br>
+					</div>
+					<br>
+					i.e. <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">density &uarr;, c &darr; </div>
+				</div>
+				<br>
+				<br>
+				<b>Relationship with Frequency</b>
+				\[ c=f~\lambda\]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						c&ensp;=&ensp;constant in a particular medium <br>
+						\(c,~f,~\lambda\) NOT intensity dependent <br>				
+					</div>
+
+				</div>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Intensity (I)</td>
+			<td>
+				$$
+				\begin{align}
+					I &= {Average~P \over cross~section~A} \\
+					& \propto Wave~Amplitude^2 \\
+					&= (mW cm^{-2})
+				\end{align}
+				$$
+			</td>
+		</tr>
+		<tr>
+			<td>Decibel (dB)</td>
+			<td>
+				\[ dB = 10~log\left( {I \over I_0} \right) \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						I = Intensity of a point <br>
+						\(I_0\) = Reference Intensity <br>
+					</div>
+				</div>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Intensity Attenuation</td>
+			<td>
+				\[ Loss (dB) = \mu f x  \]
+				<div style="padding-left: 24px;;">
+					where
+					<div style="padding-left: 24px;">
+						&mu; = intensity attenuation coefficient (dB cm<sup>-1</sup> MHz<sup>-1</sup>) <br>
+						<div style="margin-left: 21px;">
+							medium specific
+						</div>
+						f = sound frequency <br>
+						x = distance travelled				
+					</div>
+					<br>
+					&there4;&emsp;f &uarr; &ensp;&rarr;&ensp; &uarr;dB loss
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Acoutic Impedance (Z)</td>
+			<td>
+				\[ Z=\rho~c\]
+				<div style="padding-left: 24px;">
+					unit: (kg m<sup>-2</sup> s<sup>-1</sup> )
+				</div>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Doppler Effect</td>
+			<td>
+				\[ f_{doppler} = {2~f~v~cos\theta \over c_0} \]
+			</td>
+		</tr>
+
+
+	</table>
+
+	<br>
+	<h3>Transducer</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Layers</td>
+			<td>
+				<table style="text-align: center;">
+					<tr>
+						<td style="border:0px; background-color: rgba(255, 255, 255, 0.3); padding: 0px; padding-left: 2px; padding-right: 2px; height: 8px; vertical-align: middle;">Matching Layer</td>
+						<td style="padding: 0px; border: 0px; padding-left: 2px; padding-right: 2px; vertical-align: middle;">0.25 &lambda;</td>
+					</tr>
+					<tr>
+						<td style="border:0px; background-color: rgba(255, 255, 255, 0.5); padding: 2px; height: 20px; vertical-align: middle;">Piezoelectric Material</td>
+						<td style="padding: 2px; border: 0px; vertical-align: middle;">0.5 &lambda;</td>
+					</tr> 
+					<tr>
+						<td style="border:0px; background-color: rgba(255, 255, 255, 0.8); padding: 1px; height: 80px; vertical-align: middle; color: black">Backing Layer</td>
+					</tr>
+				</table>
+				<br>
+				<b>Matching Layer</b> <br>
+				<div style="padding-left: 24px;">
+					&uarr; intensity transmitted <br>
+					e.g. Al in epoxy resin
+				</div>
+				<br>
+				<b>Piezoelectric Material</b>
+				<div style="padding-left: 24px;">
+					=&emsp;dipole crystal <br>
+					e.g. PZT ceramic (lead zircronate titanate) <br>
+					&emsp;&ensp; PVDF plastic (polyvinyldifluoride) <br>
+					&emsp;&ensp; quartz
+				</div>
+				<br>
+				<b>Backing Layer</b> <br>
+				<div style="padding-left: 24px;">
+					&uarr; damping <br>
+					&darr; ringing <br>
+					&darr; pulse length <br>
+					&uarr; spatial resolution <br>
+					<br>
+					&darr; reflection back to crystal <br>
+					e.g. tungsten powder in epoxy resin 
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<h3>Interaction with Tissue</h3>
+	<table style="margin-left: 24px;">
+
+		<tr>
+			<td>Reflection</td>
+			<td>
+				<ol>
+					<b><li>Specular</li></b>
+					<ul>
+						<li class="stroke">interface size &gt;&gt; &lambda;</li>
+						<li class="stroke"> NOT f denpendent</li>
+						<li class="stroke"><b>Reflection Coefficient</b><br>
+							<div style="padding-left: 24px;">
+								\[ R = \frac{Z_2 - Z_1}{Z_2 + Z_1} \]
+							</div>
+							<b>Transmission Coefficient</b><br>
+							<div style="padding-left: 24px;">
+								\[ T = \frac{2~Z_2}{Z_2 + Z_1} \]
+							</div>
+							<br>
+							<b>Energy Reflection/Transmission Coefficients</b>
+						</li>
+						<li class="stroke"> Refraction <br>
+							<div style="text-align: center;"><img src="us_interface.png" alt="" width="200"></div>
+							\[ \frac{sin \theta_2}{sin \theta_1} = \frac{c_2}{c_1} \]
+						</li>
+					</ul>
+					<br>
+					<b><li>Diffusive</li></b>
+					<ul>
+						<li class="stroke">partical size &lt;&lt; &lambda;</li>
+						&rarr; &ensp; scatter
+						<li class="stroke">f dependent !!</li>
+					</ul>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Artefact</td>
+			<td>
+				<b>Assumptions</b>
+				<ul>
+					<li class="stroke">all echoes received are from line of sight</li>
+					<li class="stroke">constant sound speed 1540 ms<sup>-1</sup></li>
+				</ul>
+				<br>
+				<b>Common artefacts</b>
+				<ol>
+					<li>Registration Error</li>
+					<ul>
+						<li class="stroke">velocity in medium different from expected</li>
+					</ul>
+					<br>
+					<li>Shadowing/Echo Enhancement</li>
+					<ul>
+						<li class="stroke">particularly strong/weak reflector</li>
+					</ul>
+					<br>
+					<li>Speckle</li>
+					<ul>
+						<li class="stroke">diffusive scattering</li>
+						<li class="stroke">constructively/destructively superimpose</li>
+						<li class="stroke">false maxima/minima on image &rarr; grainy appearance</li>
+					</ul>
+					<br>
+					<li>Reverberation/Comet Tail</li>
+					<ul>
+						<li class="stroke">two parallel strong layers of reflector</li>
+					</ul>
+					<br>
+					<li>Multipath Reflection</li>
+					<ul>
+						<li class="stroke">echo reflect/transmit at oblique angle</li>
+						<li class="stroke">travel extra length before reflected back to transducer</li>
+						&rarr;&emsp;mis-location of structure <br>
+						&rarr;&emsp;false structure
+					</ul>
+					<br>
+					<li>Partial Volume</li>
+					<ul>
+						<li class="stroke"> &darr; contrast</li>
+					</ul>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Safety</td>
+			<td>
+				&larr;&emsp; microscopic interaction <br>
+				<ol>
+					<li>Thermal</li>
+					<li>Mechanical</li>
+					<ul>
+						<li class="stroke">cavitation</li>
+						<li class="stroke">streaming</li>
+					</ul>
+				</ol>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<br>
+	<h3>Operation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Pulse Parameter</td>
+			<td>
+				<b>Spatial Pulse Length (SPL)</b>
+				<div style="padding-left: 24px;">
+					=&emsp;the length a pulse occypied (mm) <br>
+					\[ Axial~Resolution = \frac{SPL}{2} \]
+					&emsp; &uarr; SPL, :( axial resolution 
+				</div>
+				<br>
+				<b>Pulse Repetition Period (PRP)</b>
+				<div style="padding-left: 24px;">
+					=&emsp;time for an echo to travel 2 &times; depth
+				</div>
+				<br>
+				<b>Pulse Repetition Frequency (PRF)</b>
+				<div style="padding-left: 24px;">
+					&emsp;=&emsp;sampling frequency <br>
+					&emsp;i.e.&ensp;\( Nyquist~Frequency = \frac{PRF}{2} \)
+					$$
+					\begin{align}
+						PRF &= \frac{1}{PRP} \\ \\
+						&= \frac{c}{2~depth}
+					\end{align}
+					$$
+				</div>
+				<br>
+				<b>Duty Factor (DF)</b>
+				<div style="padding-left: 24px;">
+					\[ DF = \frac{Pulse~Duration}{Pulse~Repetition~Period} \]
+				</div>
+				<br>
+				<b>Frame Rate</b>
+				<div style="padding-left: 24px;">
+					Every Line of Sight emits a pulse <br>
+					&ensp;&rarr;&ensp; to construct a frame
+					\[ FR = \frac{PRF}{N} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							N&ensp;=&ensp;line of sight per frame <br>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Near Field / Far Field</td>
+			<td>
+				d&ensp;=&ensp;transducer size <br>
+
+				<br>
+				<b>Depth of Near Field ( = Focal Length)</b>
+				\[ D = \frac{d^2}{4 \lambda} \]
+				<br>
+				<b>Far Field Angle</b>
+				\[ sin \theta = 0.6 \frac{\lambda}{d} \]
+				<br>
+				<div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">Beam width &darr;</div> of focused transducer <br>
+				<ul>
+					<li class="stroke">transducer size &uarr;</li>
+					<li class="stroke"><i>f</i> &uarr;</li>
+					<li class="stroke">measurement depth &darr;</li>
+				</ul>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Time Gain Compensation (TGC)</td>
+			<td>
+				&emsp;|&emsp;used to increase brightness of deeper tissue <br>
+				&emsp;:(&ensp; &uarr;gain, &uarr;noise
+			</td>
+		</tr>
+
+		<tr>
+			<td>Image Quality</td>
+			<td>
+				<ol>
+					<b><li>Frequency</li></b>
+					<div style="padding-left: 24px;">
+						&uarr; f <br>
+						&uarr; attenuation <br>
+						<br>
+						&darr; SPL <br>
+						<div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">:) axial spatial resolution</div>
+					</div>
+					<br>
+					<b><li>PRF</li></b>
+					<div style="padding-left: 24px;">
+						&darr; PRF, &uarr; depth
+					</div>
+					<br>
+					<b><li>Duty Factor (Q)</li></b>
+					<div style="padding-left: 24px;">
+						&darr; Q <br>
+						<div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">:) axial spatial resolution</div>
+					</div>
+					<br>
+					<b><li>SPL</li></b>
+					<div style="padding-left: 24px;">
+						&darr; SPL <br>
+						<div style="display: inline; background-color: rgba(255, 0, 0, 0.3);">:) axial spatial resolution</div>
+					</div>
+					<br>
+					<b><li>Beam Width *at Measurement Depth</li></b>
+					<div style="padding-left: 24px;">
+						<div style="display: inline; background-color: rgba(0, 255, 0, 0.2);">&rarr;&ensp; lateral spatial resolution</div> <br>
+						&larr;&ensp; the point of measurement is in near/far field
+					</div>
+					<br>
+					<b><li>Slice Thickness</li></b>
+					<div style="padding-left: 24px;">
+						&larr;&ensp;elevation
+					</div> 
+					<br>
+					<b><li>Frame Rate</li></b>
+					<div style="padding-left: 24px;">
+						&uarr; frame rate <br>
+						<div style="display: inline; background-color: rgba(0, 0, 255, 0.3);">:) temporal resolution</div> <br>
+						<br>
+						&check; frame average <br>
+						<div style="display: inline; background-color: rgba(0, 0, 255, 0.3);">:( temporal resolution</div>
+					</div>
+					<br>
+					<b><li>Line of Sight</li></b>
+					<div style="padding-left: 24px;">
+						&uarr; LS <br>
+						<div style="display: inline; background-color: rgba(0, 255, 0, 0.2);">:) lateral spatial resolution</div> <br>
+						<div style="display: inline; background-color: rgba(0, 0, 255, 0.3);">:( temporal resolution</div>
+					</div>
+					<br>
+					<b><li>FOV</li></b>
+					<div style="padding-left: 24px;">
+						&uarr; FOV depth/width <br>
+						<div style="display: inline; background-color: rgba(0, 0, 255, 0.3);">:( temporal resolution</div>
+					</div>
+					<br>
+					<b><li>Partial Volume Effect</li></b>
+					<div style="padding-left: 24px;">
+						<div style="display: inline; background-color: rgba(255, 0, 255, 0.3);">&darr; contrast resolution</div>
+					</div>
+					<br>
+					<b><li>Side Lobe</li></b>
+					<div style="margin-left: 24px;">
+						&darr; side lobes <br>
+						<div style="display: inline; background-color: rgba(255, 0, 255, 0.3);">&uarr; contrast resolution</div>
+					</div>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Elastography</td>
+			<td></td>
+		</tr>
+	</table>
+	<br>
+	<h3>Wave Equation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="3">Acoustic Properties <br> (particle level)</td>
+			<td><b>1. Particle Displacemen, velocity</b></td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>2. Acoustic p, \(\rho\), T</b> <br>
+				\[ p' = p_0 + p \]
+				\[ {\rho}' = {\rho}_0 + \rho \]
+				\[ T' = T_0 + T \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						p = Pressure <br> 
+						\( \rho = density \) <br> 
+						T = Temperature
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>
+				<b>3. Energy, Intensity, Power</b>
+				<div style="padding-left: 24px;">
+					<b>Energy (J)</b> <br>
+					<b>Power (W)</b> <br>
+					<b>Intensity (mW cm<sup>2</sup>)</b> <br>
+
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Wave Equation</td>
+			<td>
+				\[ {1 \over c_0^2} {\partial^2 \over \partial t^2} p = \left( {\partial^2 \over \partial x^2} + {\partial^2 \over \partial y^2} + {\partial^2 \over \partial z^2}  \right) p \]
+				\[ \left( {1 \over c_0^2} {\partial^2 \over \partial t^2} - \nabla^2 \right) p = 0 \]
+				<br>
+				Derivation
+				<div style="padding-left: 24px;">
+					<b>1.&emsp;Continuity Equation (conservation of mass)</b><br> 
+					<div style="padding-left: 24px;">
+						
+					</div>
+					<b>1.&emsp;Euler's Equation (conservation of momentum)</b><br> 
+					<div style="padding-left: 24px;">
+						
+					</div>
+					<b>1.&emsp;Pressure-Density Relation</b><br> 
+					<div style="padding-left: 24px;">
+						
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+	<br>
+	<h3>Derivation</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Doppler Equation</td>
+			<td>
+				Static Ultrasound Source, but Moving Reflector
+				\[ f_{doppler} = {2~f~v~cos\theta \over c_0} \]
+				<img src="doppler_derivation.png" alt="" height="400">
+				$$
+					\begin{align}
+						f_e - f_t &= f_e - { f_e (c_e - v) \over (c_e + v) } \\
+								  &= {f_e (c_e + v) - f_e (c_e - v) \over c_e +v} \\
+								  &= {f_e (c_e + v - c_e +v) \over c_e+v} \\
+								  &= { 2 f_e v \over c_e + v } \\
+						\textrm{When}~v~{\ll}~c_e, \\
+						\Delta f  &= {2 f_e v \over c_e}
+					\end{align}
+				$$
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

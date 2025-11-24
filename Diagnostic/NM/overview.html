@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Diagnostic NM</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		.column {
+			padding: 6px;
+			vertical-align: top;
+			border-top: 0px solid white;
+			border-bottom: 0px solid white;
+			border-left: 2px solid gray;
+			border-right: 2px solid gray;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 24px;
+		}
+		ul.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		li.stroke {
+			list-style-type: none;
+		}
+		li.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2 style="margin-bottom: 6px;">Diagnostic NM</h2>
+	<ul class="first">
+		<li class="stroke">Radionuclide injected to patients</li>
+		<li class="stroke">Functional Image</li>
+		<li class="stroke">Give Information as Count in ROI</li>
+		<li class="stroke">Whole Body Study</li>
+		<ul>
+			<li class="stroke">Moving Camera or Moving Patient Table</li>
+		</ul>
+	</ul>
+	
+	<br>
+	<table>
+		<tr>
+			<td class="column" style="border-bottom: 2px solid gray; border-top: 2px solid gray;"></td>
+			<td class="column" style="border-bottom: 2px solid gray; border-top: 2px solid gray;"><b>PET</b></td>
+			<td class="column" style="border-bottom: 2px solid gray; border-top: 2px solid gray;"><b>SPECT</b></td>
+			<td class="column" style="border-bottom: 2px solid gray; border-top: 2px solid gray;"><b>Planar</b></td>
+		</tr>
+		<tr>
+			<td class="column">Tracer <br> (Contrast)</td>
+			<td class="column">
+				Positron Emitter
+				<ul class="first">
+					<li class="stroke">F-18 (FDG, glucose uptake indicator)</li>
+					<li class="stroke">C-11</li>
+					<li class="stroke">N-13</li>
+					<li class="stroke">O-15</li>
+				</ul>
+			</td>
+			<td class="column" colspan="2">
+				Gamma Emitter
+				<ul class="first">
+					<li class="stroke">Tc-99m</li>
+					<li class="stroke">I-131/123</li>
+					<li class="stroke">Tl-201</li>
+					<li class="stroke">Ga-67</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td class="column">Application</td>
+			<td class="column">
+				<ul class="first">
+					<li class="stroke">Perfusion</li>
+					<li class="stroke">Blood Volume</li>
+					<li class="stroke">Oxygen Uptake</li>
+					<li class="stroke">Glucose Uptake</li>
+					<li class="stroke">Pre/post-Synaptic Receptor Density and Affinity</li>
+					<li class="stroke">Neurotransmitter release</li>
+					<li class="stroke">Enzyme Activity</li>
+					<li class="stroke">Drug Uptake</li>
+					<li class="stroke">Gene Expression</li>
+				</ul>
+			</td>
+			<td class="column"></td>
+			<td class="column">
+				<ul class="first">
+					<li class="stroke">Planar Gating Image (Cardiac)</li>
+					<li class="stroke">First Pass Study (Cardiac)</li>
+				</ul>
+
+			</td>
+
+		</tr>
+		<tr>
+			<td class="column">Mechanism</td>
+			<td class="column">
+				<ol>
+					<li>Tracer undergoes &beta;+ decay</li>
+					<li>Positron emitted</li>
+					<li>Positron and Electron Annihilate</li>
+					<li>Two opposite direction &gamma; <br> with 511 keV emitted simultaneously</li>
+				</ol>
+			</td>
+			<td class="column">
+				&ensp;=&ensp;Rotating Gamma Camera
+			</td>
+			<td class="column">
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td class="column">Advantage</td>
+			<td class="column">
+				High Sensitivity
+				<ul class="first">
+					<li class="stroke">Coincidence-detection of opposite 511 keV photon</li>
+					<li class="stroke">Do not require collimator</li>
+				</ul>
+			</td>
+			<td class="column">
+				Cost Effective
+				<ul class="first">
+					<li class="stroke">Tracers normally have longer half-life <br> &emsp; (transport friendly)
+					</li>
+				</ul>
+			</td>
+			<td class="column"></td>
+		</tr>
+
+		<tr>
+			<td class="column">Disadvantage</td>
+			<td class="column">
+				Short Half-Life
+				<ul class="first">
+					<li class="stroke">usually produced with on-site cyclotron</li>
+				</ul>
+			</td>
+			<td class="column">
+				Depends on Collimator
+				<ul class="first">
+					<li class="stroke">collimator blocks incoming &gamma;</li>
+					<li class="stroke">reduced sensitivity</li>
+				</ul>
+			</td>
+			<td class="column"></td>
+		</tr>
+		<tr>
+			<td colspan="4" class="clean" style="border-top: 2px solid gray;"></td>
+		</tr>
+
+
+	</table>
+
+
+<b>Reference</b> <br>
+Lammertsma AA. PET/SPECT: functional imaging beyond flow. Vision Research 2001 41:1277–1281 <br>
+Rahmim A, Zaidi H. PET versus SPECT: strengths, limitations and challenges. Nuclear Medicine Communications 2008, 29:193–207
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CT</title>
+	<link rel="stylesheet" href="../../style.css"> 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>CT</h2>
+
+	<br>
+	<h3>Generation</h3>
+	<table style="text-align: center; margin-left: 24px;">
+		<tr>
+			<td class="clean"><b>Generation</b></td>
+			<td class="clean"><b>Beam</b></td>
+			<td class="clean"><b>Detector</b></td>
+			<td class="clean"><b>Scan</b></td>
+		</tr>
+		<tr>
+			<td>1st</td>
+			<td>Single Ray</td>
+			<td>Single</td>
+			<td style="text-align: left;">
+				<ol>
+					<li>source and detector move in parallel path together</li>
+					<li>rotate</li>
+					<li>repeat linear scanning</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>2nd</td>
+			<td>Narrow <br>Fan Beam</td>
+			<td>Short Row <br>Linear</td>
+			<td style="text-align: left;">
+				<ol>
+					<li>source and detector move in straight line together</li>
+					<li>rotate</li>
+					<li>repeat linear scanning</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>3rd</td>
+			<td>Fan Beam</td>
+			<td>Single Row <br>Curved</td>
+			<td style="btext-align: left;">
+				<ol>
+					<li>gantry rotate together with source and detector row</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>4th</td>
+			<td>Fan Beam</td>
+			<td>Whole Ring</td>
+			<td style="text-align: left;">
+				<ol>
+					<li>source rotate</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>5th</td>
+			<td>Firing e- <br> to the ring target <br>installed along the bore</td>
+			<td></td>
+			<td style="text-align: left;">
+				
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">6th</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">Fan Beam</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">Single Row <br>Curved</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3); text-align: left;">
+				helical scanning <br>
+				&ensp;=&ensp;patient table moving while scanning
+			</td>
+		</tr>
+		<tr>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">7th</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">Cone Beam</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3);">Multislice <br> Curved</td>
+			<td style="background-color: rgba(255, 255, 0, 0.3); text-align: left;">
+				
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Components</h3>
+	<table style="text-align: left; margin-left: 24px;">
+		<tr>
+			<td>X-ray Tube</td>
+			<td>
+				<table>
+					<tr>
+						<td class="clean">
+							<ul class="first">
+								<li class="stroke">
+									Anode-cathode direction aligns with z-direction
+									<ul class="first">
+										<li class="stroke">reduce gyroscopic effects</li>
+										<li class="stroke">reduce heel effect in across fan angle</li>
+										<li class="stroke">wider angular range compared to anode-cathode direction range</li>
+									</ul>
+								</li>
+							</ul>
+
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Detector</td>
+			<td>
+				<b>Recent Design (Scintillation)</b>
+				<ul>
+					<li class="stroke">Gd Scintillation Crystal + photodiodes</li>
+					<li class="stroke">Crystal + optical cement + photodiodes</li>
+					<li class="stroke">Crystal coated with reflective paint on the other 3 sides</li>
+					<li class="stroke">Diodes separated by thin tungsten plate to avoid crosstalk</li>
+				</ul>
+			</td>
+		</tr>
+
+	</table>
+
+	<br>
+	<h3>Characteristics</h3>
+	<table style="text-align: left; margin-left: 24px;">
+		<tr>
+			<td>CT Number</td>
+			<td>
+				\[ \large CT~Number = 1000 \left( { \mu - \mu_{water} \over \mu_{water}} \right) \]
+				&emsp; where \(\mu\) = Linear attenuation coefficient of tissue <br>
+				&emsp;&emsp;&emsp;&emsp; \(\mu_{water}\) = \(\mu\) of water in standard pressure and temperature <br>
+				<br>
+				Unit: Hounsfield Unit
+			</td>
+		</tr>
+
+		<tr>
+			<td>Window Width</td>
+			<td>
+				Range of HU displayed <br>
+				<ul class="first">
+					<li class="stroke">dark = lowest HU</li>
+					<li class="stroke">bright = highest HU</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Window Level</td>
+			<td>HU value of the centre</td>
+		</tr>
+
+
+		<tr>
+			<td>Pitch (P) <br> (for helical CT only)</td>
+			<td>
+				\[ \large P = {d_{couch} \over s } \]
+				&emsp; where \(d_{couch}\) = couch moving distance in 1 gantry rotation <br>
+				&emsp;&emsp;&emsp;&emsp; s = total slice thickness <br>
+				<br>
+				P = 1 when gantry rotation is moving at the same speed as the patient table <br>
+				P < 1 faster <br>
+				P > 1 slower <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Isocentre</td>
+			<td>
+				&emsp;=&emsp;centre of CT gantry rotation <br>
+				<br>
+				&emsp;|&emsp;slice thickness and pixel size is defined at isocentre!!
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Beam Width</td>
+			<td>
+				<b>Single Slice</b>
+				<div style="padding-left: 24px;">
+					z-axis FWHM dose profile at isocentre
+				</div>
+				<br>
+				<b>Multi-slice</b>
+				<div style="padding-left: 24px;">
+					z-axis non-penumbra region
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Machine Conditioning</td>
+			<td>
+				<b>&emsp;1.&emsp;Air Calibration</b>
+				<div style="padding-left: 24px;">
+					<ul>
+						Calibration
+						<li class="stroke">Scan air</li>
+						<li class="stroke">Ray sum values tabulated</li>
+						<li class="stroke">Repeat for all
+							<ul class="first">
+								<li class="stroke">kV</li>
+								<li class="stroke">mA</li>
+								<li class="stroke">focal spot size</li>
+								&emsp;&emsp;...
+							</ul>
+						</li>
+						<br>
+						During Operation
+						<li class="stroke">Divide raw data by air calibration data</li>
+					</ul>
+				</div>
+				<br>
+				<b>&emsp;2.&emsp;Spectrum Correction</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">prevent bowling artefact</li>
+					</ul>
+				</div>
+				<br>
+				<b>&emsp;3.&emsp;Detector Correction</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">isolated faulty detector</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Calibration During Operation</td>
+			<td>
+				<b>&emsp;1.&emsp;Dynamic Calibration</b>
+				<div style="padding-left: 24px;">
+					<ul class="first">
+						<li class="stroke">Read both the leading and trailing reference detectors</li>
+						<li class="stroke">if average not the same</li>
+						<li class="stroke">correct the whole row by multiplying the raw data with a linear gain curve</li>
+					</ul>
+				</div>
+				<br>
+				<b>&emsp;2.&emsp;Dynamic Reference</b>
+				<ul>
+					<li class="stroke">Read both the leading and trailing reference detectors</li>
+					<li class="stroke">take the average of them as <i>I<sub>0</sub></i></li>
+					<li class="stroke">divide all raw data by <i>I<sub>0</sub></i></li>
+				</ul>
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td>Reconstruction</td>
+			<td>
+				<b>Filtered Back Projection</b>
+				<div style="padding-left: 24px;">
+					Assumption
+					<ul>
+						<li class="stroke">perfect photon statistics and electronic noise</li>
+						<li class="stroke">focal spot = point source</li>
+						<li class="stroke">detector/reconstruction voxel = point </li>
+					</ul>
+				</div>
+				<br>
+				<b>Model-Based Iterative Reconstruction</b>
+				<div style="padding-left: 24px;">
+					Statistical Noise Model
+				</div>
+				<br>
+				*we want constant noise throughout the volume
+			</td>
+		</tr>
+
+		<tr>
+			<td>MAR</td>
+			<td>
+				&ensp;=&ensp; Metal Artifact Refuction Algorithm <br>
+				<br>
+				
+			</td>
+		</tr>
+
+
+	</table>
+
+	<br>
+	<h3>Dose</h3>
+	<table style="text-align: left; margin-left: 24px;">
+		<tr>
+			<td>CT Dose Index (CTDI)</td>
+			<td>
+				<b>CTDI<sub>100</sub></b>
+				<div style="padding-left: 24px;">
+					\[ \large CTDI_{100} = {1 \over n~T} \int^{+50~mm}_{-50~mm} D(z)~dz \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							n&ensp;=&ensp;number of slice in 1 rotation <br>
+							T&ensp;=&ensp;width of 1 slice <br>
+							-50 mm to + 50 mm&ensp;=&ensp;position along the central axis <br>		
+						</div>
+					</div>	
+				</div>
+				<br>
+				<b>CTDI<sub>weighted</sub></b>
+				<div style="padding-left: 24px;">
+					\[ CTDI_w = { {2 \over 3} CIDI_{peripheral}} + { {1 \over 3} CTDI_{centre} } \] 
+					<br>
+					
+					Derivation: <br>
+					<div style="margin-left: 24px;">
+						Assuming PDD of kV beam in CT attenuates linearly, <br>
+						Let P = dose at periphery, <br>
+						&emsp;&ensp; C = dose at centre, <br>
+						&emsp;&ensp; r = radius of phantom <br>
+						Area under curve integrated over the whole phantom circular surface <br>
+						&emsp;\( = \large\pi r^2 P - \frac{1}{3}\pi r^2 (P-C)\) <br>
+						&emsp;\( = \large\pi r^2 (P - \frac{1}{3}P + \frac{1}{3}C)\) <br>
+						&emsp;\( = \large\pi r^2 (\frac{2}{3}P + \frac{1}{3}C)\) <br>
+						&emsp;\( = \large\pi r^2 (CTDI_w)\) <br>
+						<br>
+						<img src="CTDIw_derive.png" alt="" width="400px">
+					</div>
+					
+				</div>
+				<br>
+				<b>CTDI<sub>vol</sub></b>
+				<div style="padding-left: 24px;">
+					\[ CDTI_{vol} = \frac{CTDI_w}{P} \]
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							P&ensp;=&ensp;pitch
+						</div>
+					</div>
+				</div>
+				<br>
+				<b>DLP</b>
+				<div style="padding-left: 24px;">
+					DLP can be converted to Effective Dose with conversion factor (ICRP 60, 103)
+					\[ DLP = \frac{CTDI_{vol}}{nT} \]
+
+				</div>
+				<br>
+				<b>Factors affacting effective dose</b>
+				<div style="padding-left: 24px;">
+					CNR &rarr; CTDI<sub>w</sub> 
+					<ul>
+						<li class="stroke">kV</li>
+						<li class="stroke">mAs</li>
+						<li class="stroke">pitch</li>
+						<li class="stroke">slice thickness</li>
+					</ul>
+					<br>
+					Coverage &rarr; DLP and Effective Dose
+					<ul>
+						<li class="stroke">Exposed area size</li>
+						<li class="stroke">Exposed organs</li>
+					</ul>
+					<br>
+					Machine
+					<ul>
+						<li class="stroke">Over-beaming
+							<div style="padding-left: 24px;">
+								&ensp;=&ensp;the dose contributed by penumbra at the end of the detector rows <br>
+								&ensp;=&ensp;out of FOV
+							</div>
+							
+						</li>
+						<li class="stroke">Over-ranging</li>
+					</ul>
+
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>SSDE <br>(Size Specific Dose Estimation)</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>ESD (Entrance Surface Dose)</td>
+			<td>
+				\[ ESD = \frac{mAs}{200} n~CTDI_{100, p} \]
+			</td>
+		</tr>
+
+		<tr>
+			<td>Paediatric CTDI</td>
+			<td>
+				Some machines display CTDI<sub>vol</sub> with conversion factor in paediatric protocols <br>
+				to compensate the effect of patient size
+			</td>
+		</tr>
+		<tr>
+			<td>Flying Focal Spot</td>
+			<td>
+				<div style="margin-left: 24px;">
+					:)&emsp;longitudinal (z direction) resolution <br>
+					&darr;&emsp;spiral artefact <br>
+				</div>
+				<br>
+				<b>Mechanism</b>
+				<div style="margin-left: 24px;">
+					Collimation = 32 x 0.6 mm <br> 
+					but Resolution = 64 x 0.3 mm<br>
+				</div>
+			</td>
+		</tr>
+
+	</table>
+
+
+
+	<br>
+	<h3>QA</h3>
+
+	<table style="text-align: left; margin-left: 24px;">
+		<tr>
+			<td>QA</td>
+			<td>
+				<b>&emsp;1.&emsp;Image Quality</b>
+				<ul>
+					<li class="stroke">High Contrast Spatial Resolution</li>
+					<ul>
+						<li class="stroke">Focal Spot Size</li>
+						<li class="stroke">Slice Thickness</li>
+						<ul>
+							<li class="stroke">affect the spatial resolution in z direction</li>
+						</ul>
+						<li class="stroke">Detector Size</li>
+						<ul>
+							<li class="stroke">affect the spatial resolution in xy direction</li>
+						</ul>
+						<li class="stroke">FOV</li>
+						<li class="stroke">Post-processing</li>
+						<ul>
+							<li class="stroke">Matrix Size</li>
+							<li class="stroke">Convolution Filter</li>
+						</ul>
+					</ul>
+					<li class="stroke">Low Contrast Detectability</li>
+					<li class="stroke">Uniformity</li>
+					<li class="stroke">Noise</li>
+				</ul>
+				&emsp;2.&emsp;CTDI Consistency with System Claim <br>
+				&emsp;3.&emsp;CT Number Linearity <br>
+				&emsp;4.&emsp;Slice Sensitivity Profile
+				<ul>
+					<li class="stroke">actual slice width consistency with set value</li>
+				</ul>
+				&emsp;5.&emsp;Radiation Profile
+				<ul>
+					<li class="stroke">actual collimation consistency</li>
+				</ul>
+				&emsp;6.&emsp;Couch
+				<ul>
+					<li class="stroke">Travel Distance Accuracy</li>
+					<li class="stroke">Horizontality</li>
+					<li class="stroke">Gantry Alignment</li>
+				</ul>
+				&emsp;7.&emsp;X-ray Tube
+				<ul>
+					<li class="stroke">kV, mA, time, Accuracy</li>
+					<li class="stroke">mAs-Dose Linearity</li>
+				</ul>
+				&emsp;8.&emsp;Laser Alignment with Radiation Beam <br>
+				&emsp;9.&emsp;Head Leakage <br>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>Noise</td>
+			<td>
+				<b>CNR</b>
+				<div style="padding-left: 24px;">
+					Considering background
+					\[ CNR = \frac{ |{ROI - ROI_{bg}}| }{ \sqrt{SD^2 + {SD_{bg}}^2} } \]
+				</div>
+				<br>
+				<b>SNR</b>
+				<div style="padding-left: 24px;">
+					\[ SNR = \frac{{\mu^2}}{\rho^2} \]
+				</div>
+			</td>
+		</tr>
+
+	</table>
+
+	<br>
+	<br>
+	<h3>Artefacts</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Cause</td>
+			<td style="width: 200px">Artefact</td>
+			<td colspan="2">Remedy</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Beam Hardening</td>
+			<td>Cupping</td>
+			<td>
+				<ol>
+					<li>Bowtie filter</li>
+					<li>Phantom correction</li>
+					
+				</ol>
+			</td>
+			<td rowspan="2" style="vertical-align: middle;">
+				<ol>
+					<li>Filter pre-hardening beam</li>
+					<li>Iterative collection algorithm</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Streaking/Dark Bands</td>
+			<td style="border-right: hidden"></td>
+		</tr>
+		<tr>
+			<td colspan="2">Partial Volume in z-direction</td>
+			<td>&emsp;&darr;&emsp;slice thickness</td>
+		</tr>
+		<tr>
+			<td>Multislice CT</td>
+			<td>Windmill Spiral Artefact
+				<div style="margin-left: 24px;">
+					In helical mode, several row of detectors contribute to a single reconstruction slice 
+				</div>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

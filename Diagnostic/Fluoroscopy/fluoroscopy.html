@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fluoroscopy</title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -18px;
+		}
+		.highlight {
+			padding: 0px;
+			border: 2px greenyellow solid;
+			margin: auto;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+		<h2>Fluoroscopy</h2>
+		<table>
+			<tr>
+				<td>Logarithmic errors (DSA)</td>
+				<td>
+					DSA unit contains logarithmic amplifiers <br>
+					<ul>
+						<li class="stroke">to display the exponential decay attenuation into linear gray scale</li>
+						<li class="stroke">using step wedges to check linearity</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+
+</body>
+</html>

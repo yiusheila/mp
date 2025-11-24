@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MRI</title>
+	<link rel="stylesheet" href="../../style.css">
+	<script id="MathJax-script" async src="../../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>MRI</h2>
+
+	<!-- Menu -->
+	<ol class="index" id="menu">
+		<li><a href="#basic">Basic</a></li>
+		<li><a href="#machine">Machine Specification</a></li>
+	</ol>
+	<br><br>
+
+	<h3 id="basic">Basic</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Useful Resources</td>
+			<td>
+				# https://mriquestions.com/index.html
+			</td>
+		</tr>
+
+		<tr>
+			<td>Spin</td>
+			<td>
+				* MRI works on elements with non-integer spin
+			</td>
+		</tr>
+
+		<tr>
+			<td>Larmour Frequency</td>
+			<td>
+				Magnetic moment \(\vec{\mu}\) under an external \(B_0\) field, a torque \(\vec{T}\) is produced
+				\[ \vec{T} = \frac{d \vec{\mu}}{dt} = \vec{\mu} \times \gamma \vec{B_0} \]
+				the solution to this equation describes the precession of \(\vec{\mu}\) about the direction of \(B_0\) at an angular frequency &omega;
+				\[ \omega = \gamma B \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						<i>&omega;</i> = Larmour/precession/resonance frequency (MHz) <br>
+						<i>&gamma;</i> = gyromagnetic ratio <br>
+						<i>B</i> = magnetic field strength (T)
+					</div>
+					<br>
+					<br>
+					e.g. &gamma; of <div class="hl"><sup>1</sup>H</div> = 42.6 MHz T<sup>-1</sup> <br>
+					&emsp;&ensp;&there4; the resonance frequency &omega; <div class="hl">@ 1.5 T</div> = (42.6 MHz T<sup>-1</sup>)(1.5 T) ~ <div class="hl">64 MHz</div> <br>
+					<br>
+				</div>
+				<br>
+				<b>Wavelength of RF in Water</b> <br>
+					<div style="margin-left: 24px;">
+						for <sup>1</sup>H @ 1.5 T, 
+						<div style="width: 50%;">
+							$$
+							\begin{align}
+								\lambda_{H} &= \frac{c}{f} \\
+										&= \frac{3 \times 10^8 ~ms^{-1} }{64 \times 10^6~Hz} \\
+										&= 4.70~m
+							\end{align}
+							$$
+						</div>
+						When the <sup>1</sup>H is in water, <br>
+						we should consider the <div class="hl2">dielectric constant</div> of water, since the RF wave is travelling in a dielectric medium, <br>
+						given &epsilon;<sub>water</sub> = 81 <br>,
+						<div style="width: 50%;">
+							$$ \begin{align}
+								\lambda_{H, w} &= \frac{\lambda_H}{\sqrt{\epsilon}} \\
+												&= \frac{4.70~m}{\sqrt{81}} \\
+												&= 0.52~m \\
+												&= 52~cm
+							\end{align} $$
+						</div>
+
+					</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Susceptibility</td>
+			<td>
+				\[ M = \chi_{V} H \]
+				$$ 
+				\begin{align}
+					B &= \mu_0(M+H) \\
+					&= \mu_0({\chi_{V}} + 1)H \\
+					&= \mu H
+				\end{align}
+				$$
+				where <div class="grp">
+					B = resultant magnetic induction <br>
+					M = magnetic dipole moment per unit volume <br>
+					H = external magnetic field strength <br>
+					&mu;<sub>0</sub> = vacuum permeability <br>
+					&mu; = \(\mu(1+\chi_V)\) = relative permeability
+				</div> <br>
+				<br>
+				<br>
+				<div>
+					<img src="material.png" width="600px" alt="">
+				</div>
+				# http://www.fizika.si/magnetism/MagSusceptibilities.pdf
+
+			</td>
+		</tr>
+	</table>
+
+
+	<br>
+	<br>
+	<table style="margin-left: 24px;">
+
+		<tr>
+			<td>Net Magnetisation</td>
+			<td>
+				\[ M_{z} \approx \frac{\gamma^2 h^2 N_s B}{4kT} \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						<i>&Delta;E = h &omega;</i> <br>
+						<i>&omega;</i> = resonant frequency <br>
+						<i>N<sub>s</sub></i> = number of spin <br>
+						<i>&gamma;</i> = gyromagnetic ratio <br>
+						<i>B</i> = magnetic field strength <br>
+						<i>T</i> = object temperature <br>
+						proton density
+					</div>
+				</div>
+				<br>
+
+
+				\[ \large \frac{N_{high}}{N_{low}} = e^{-\frac{\Delta E}{kT}} \]
+			</td>
+		</tr>
+
+
+
+		<tr>
+			<td>B1 RF Frequency </td>
+			<td>
+				\[ \large f_{pulse} = \frac{\omega_0}{2\pi} \]
+			</td>
+		</tr>
+
+		<tr>
+			<td>T1 Relaxation</td>
+			<td>
+				\[ \large M_z = M_0 \left( 1- e^{-1\frac{t}{T1}} \right) \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						T1&ensp;=&ensp;time for a tissue to recover 63% of magnetisation
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>T2 Relaxation</td>
+			<td>
+				\[ \large M_{xy} = M_0  e^{-\frac{t}{T2}}\]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						T2&ensp;=&ensp;time for a tissue to drop magnetisation to 37%
+					</div>
+				</div>
+				<br>
+
+				faster than T1
+			</td>
+		</tr>
+
+		<tr>
+			<td>Gradients</td>
+			<td>
+				<ol>
+					<li>Slice Selecting Gradient <br>
+						&emsp;|&emsp;on while emitting excitation signal
+						&emsp;|&ensp;need slice rephasing to account for &Delta;f <u>within</u> a slice
+					</li>
+					<li>Phase Encoding Gradient <br>
+						&emsp;|&emsp;on and off before readout gradient
+					</li>
+					<li>Frequency Encoding Gradient <br>
+						&emsp;|&emsp;on while reading out signal <br>
+						&emsp;=&emsp;readout gradient
+					</li>
+				</ol>
+				 <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>k-space</td>
+			<td>
+				<div style="text-align: center;"><img src="k_space.png" alt="" width="30%"></div>
+				<br>
+				centre = no dephase, highest signal <br>
+				both axis can be used in PE and FE <br>
+				<br>
+				\[ \Delta k = \gamma G \Delta t \]
+				$$
+				\begin{align}
+					\Delta x &= \frac{2 \pi}{N \Delta k_x} \\
+					&= \frac{2 \pi}{N \gamma G_x \Delta t}
+				\end{align}
+				$$
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						&Delta;x&ensp;=&ensp;x direction pixel size <br>
+						&Delta;t&ensp;=&ensp;sampling interval <br>
+						N&ensp;=&ensp;number of sample <br>
+						G<sub>x</sub>&ensp;=&ensp;x direction gradient
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Fractional NEX / Echo</td>
+			<td>
+				<b>Fraction NEX</b>
+				<div style="padding-left: 24px;">
+					Complex conjugate symmetry <br>
+					&darr; SNR
+				</div>
+				<br>
+				<b>Fractional Echo</b>
+			</td>
+		</tr>
+
+		<tr>
+			<td>MR Signal</td>
+			<td>
+				<b>Free Induction Decay (FID)</b>
+				<div style="padding: 24px;">
+					Damped by T2* <br>
+					oscillating in Larmor Frequency
+				</div>
+				<br>
+
+				Simulated Echo 
+			</td>
+		</tr>
+
+
+	</table>
+	<br>
+	<br>
+	<h3 id="machine">Machine Specification</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Maximum Gradient Strength</td>
+			<td>
+				(mT/m) <br>
+				1.5T - 3.0T &rarr; 30-45 mT/m
+			</td>
+		</tr>
+		<tr>
+			<td>Slew Rates</td>
+			<td>
+				(T/m/s) <br>
+				&ensp;=&ensp; max gradient strength (mT/m) / rise time (ms) <br>
+				<br>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Quenching</td>
+			<td>
+				Losing superconductivity <br>
+				resistance &gt; 0 <br>
+				power &uarr; heat &uarr; <br>
+				Helium gas volume &uarr;
+			</td>
+		</tr>
+		<tr>
+			<td>Field Homogeneity</td>
+			<td>
+				&lt; (?) ppm over a (?)-cm DSV <br>
+				(DSV = Diameter of Spherical Volume) <br>
+				likely to be reported in RMS <br>
+				<br>
+				fat and water resonance: 3.5 ppm difference <br>
+				MR spectroscopy &rarr; need &uarr; homogeneity + &darr; drift<br>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<h3>Sequencing</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>TE, TR</td>
+			<td>
+				<div style="text-align: center;"><img src="TE_TR_example.png" alt="" width="500px"></div>
+				* TR determines the scan time
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+
+				<b>Gradient Echo </b>
+				<div style="padding-left: 24px;">
+					(1 RF pulse w/ dephasing gradient + rephasing gradient) <br>
+					:) faster <br>
+					:/ affected by chemical shift, static tissue susceptibility gradient, B0 inhomogeneity etc
+				</div>
+				<br>
+				<b>Spin Echo</b>
+				<div style="padding-left: 24px;">
+					90&deg; + 180&deg; refocusing pulse <br>
+					(2 RF pulses)
+				</div>
+				<br>
+				<b>Inversion Recovery</b>
+				<div style="padding-left: 24px;">
+					180&deg; + SE <br>
+					set TE at time when the targeted tissue pass through M=0 axis &rarr; targeted tissue will give no signal &rarr; &ensp;=&ensp;saturated <br>
+					the 90&deg; excitation will not refocus the spins in xy direction <br>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Prescan</td>
+			<td>
+				https://mriquestions.com/automatic-prescan.html <br>
+				<br>
+				<ol>
+					<li>Quick Higher-Order Shimming <br>
+						adjust current through <u>gradient</u> and <u>shim coil</u> to <div class="hl">&uarr; B<sub>0</sub> homogeneity</div> in the presence of patient
+					</li>
+					<li>Coil Tuning/Matching</li>
+					<li>Center Frequency Calibration</li>
+					<li>Transmitter Attenuation/Gain Adjustment</li>
+					<li>Receiver Attenuation/Gain Adjustment</li>
+					<li>Dummy Cycle Stimulation</li>
+				</ol>
+			</td>
+		</tr>
+
+		<tr>
+			<td>DIXON</td>
+			<td>
+				<div style="width: 50%;">
+					<div style="text-align: center; width: 300px">
+						In-phase = Water + Fat <br>
+						Out-of-phase = Water - Fat <br>
+						<div style="border: 1px solid white; border-top: 0px; height: 5px; width: 150px; margin: auto;">&emsp;</div>
+						&darr; <br>
+						In + Out = W + F + W - F = 2W (water only image) <br>
+						In - Out = W + F - W + F = 2F (fat only image) <br>
+					</div>
+				</div>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>DCE</td>
+			<td>
+				 - T1-weighted <br>
+				 - perfusion e.g. T2* (DSC), ASL ... <br>
+				 - temporal resolution important <br>
+				 - can be interpret in (1) qualitative, (2) semi-quantitative, or (3) quantitative approaches <br>
+				 <div style="margin-left: 24px; background-color: rgba(0, 0, 0, 0.3); padding: 6px 12px;">
+					<b>Qualitative</b> <br>
+					<div style="margin-left: 24px;">
+						 = no model-based fitting <br>
+						 = categorise into Type I/II/III based on the shape of curve <br>
+						<img src="DCE_qualitative.gif" alt="" width="700px">
+					</div>
+					<hr>
+					<b>Semi-Quantitative</b> <br>
+					<div style="margin-left: 24px;">
+						
+					</div>
+				 </div>
+				
+				<br>
+				<br>
+				<b>Tofts model</b> <br>
+				<div style="margin-left: 24px;">
+					\[ \Large C_t(t) = v_pC_p(t) + K^{trans} \int^t_0 C_p(\tau)e^{- (K^{trans}/v_e)(t-\tau)} d\tau \]
+					where &ensp; <div class="grp">
+						<i>K<sup>trans</sup></i> <div class="grp">
+							&ensp;=&ensp; influx rate of Gd (blood vessel &rarr; EES) (min<sup>-1</sup>) <br>
+							&ensp;&larr;&ensp; blood flow <br>
+							&ensp;&larr;&ensp; vascular surface area <br>
+							&ensp;&larr;&ensp; vascular permeability <br>
+							&ensp;<div class="button">Gd-time graph</div> &larr; initial slop ( = wash in rate )
+						</div><br>
+						<br>
+						<i>k<sub>ep</sub></i><div class="grp">
+							&ensp;=&ensp; reflux rate of Gd (EES &rarr; blood vessel) <br>
+							&ensp;=&ensp; \( \large K^{trans}/v_e \) <br>
+							&ensp;<div class="button">Gd-time graph</div> &larr; shape of curve 
+						</div><br>
+						<br>
+						<i>v<sub>e</sub></i> <div class="grp">
+							&ensp;=&ensp; volume of EES / tissue volume <br>
+							&ensp;&ensp;&ensp; room for Gd accumulation <br>
+							&ensp;<div class="button">Gd-time graph</div> &larr; peak height / time-to-peak (TTP)
+						</div> <br>
+						<br>
+						<i>v<sub>p</sub></i><div class="grp">
+							&ensp;=&ensp; volume of plasma (in blood vessel) / tissue volume <br>
+							&ensp;<div class="button">Gd-time graph</div> &larr; faster washout
+						</div> <br>
+						
+						<br>
+						<i>C<sub>t</sub></i>&ensp;=&ensp; concentration of Gd in tissue <br>
+					</div>
+					
+				</div>
+				<br>
+				(EES) tissue extracellular extravascular space <br>
+				* Gd DOES NOT enter cell <br>
+				* pharma-co-kinetics <br>
+				<br>
+				<br>
+				Acquisition <br>
+				<div style="margin-left: 24px;">
+					If T2* is also needed (e.g. for brain case) <br>
+					<u>DCE</u> first &rarr; then T2* <br>
+					DCE &rarr; show signal in lesion + leakage to EES <br>
+					T2* &rarr; will NOT be affected by BBB leakage <br>
+					&emsp;&emsp;&rarr; DCE  act as pre-dose of T2*
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>DWI</td>
+			<td>
+				<b>Acquisition</b> <br>
+				During preparation phase (in Philips MR) (= prescan), <br>
+				first scan &rarr; full <br>
+				remaining &rarr; auto (i.e. copy from previous) <br>
+				<br>
+				DWI &rarr; T2-weighted <br>
+				&there4; might contaminated by tissues with very long/very short T2 <br>
+				&emsp; = "T2-shine-through" and "T2-black-out" <br>
+				# https://mriquestions.com/trace-vs-adc-map.html <br>
+				<br>
+				<b>Clinical</b> <br>
+				<div style="margin-left: 24px;">
+					<u>Prostate</u> <br>
+					T2 &darr; intensity = &uarr; inflammation :( <br>
+					\( \Large \frac{ADC_{tumour}}{ADC_{benign}} \normalsize < 0.35 \) <br>
+					<br>
+					<u>Breast</u> <br>
+					ADC < 1.1 &times; 10<sup>-3</sup> mm<sup>2</sup>/s
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>BOLD</td>
+			<td>
+				&ensp;=&emsp;Blood Oxygenation Level Dependent Imaging <br>
+				<br>
+				Neurons <br>
+				<br>
+				<b>Clinical</b> <br>
+				<div style="margin-left: 24px;">
+					 &ensp;&rarr;&emsp;a preliminary warning system before <u>Direct Cortical Simulation (DCS)</u> for risk assessment <br>
+					 &emsp;&emsp;&ensp;DCS = golden standard <br>
+					 &ensp;&rarr;&emsp;Motor/Language Map before brain surgery<br>
+					 &emsp;&emsp;&ensp;Lateral Index = \( \Large \frac{L - R}{L+R} \) <br>
+					 &ensp;&rarr;&emsp;rs-fMRI (Resing-State fMRI) <br>
+					 &emsp;&emsp;&ensp;Exposing the (DMN) Default Mode Network <br>
+					 &emsp;&emsp;&ensp;&emsp;&emsp;&ensp;defining a 'seed' signal &ensp;&rarr;&ensp; <br>
+					 &emsp;&emsp;&ensp;in contrast to Task-Dependent fMRI <br>
+					 &emsp;&emsp;&ensp;Review pathological changes, e.g. dementia/epilepsy  <br>
+					 <br>
+					 Problem: <br>
+					 <div style="margin-left: 24px;">
+					 	false negative due to neurovascular uncoupling <br>
+					 	( = the assumption of linkage between neural activity and haemodynamic response is no longer true) <br>
+					 	<br>
+					 	THe linkage is associated with age, pathology and drugs
+					 </div>
+					 <br>
+
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>ACR QA</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>1. Geometric Accuracy</td>
+			<td>
+				&larr;&ensp;Gradient Linearity
+			</td>
+		</tr>
+		<tr>
+			<td>2. High Contrast Spatial Resolution</td>
+			<td>
+				&larr;&ensp;excessive filtering <br>
+				&larr;&ensp;:( Eddy Current compensation <br>
+			</td>
+		</tr>
+		<tr>
+			<td>3. Slice Thickness Accuracy</td>
+			<td>
+				&larr;&ensp;RF power amplifier nonlinearity
+			</td>
+		</tr>
+		<tr>
+			<td>4. Slice Position Accuracy</td>
+			<td>
+				&larr;&ensp;positioning of the phantom
+			</td>
+		</tr>
+		<tr>
+			<td>5. Image Intensity Uniformity</td>
+			<td>
+				&larr;&ensp;poor centering <br>
+				&larr;&ensp;RF coil problems <br>
+				&larr;&ensp;ghosting
+			</td>
+		</tr>
+		<tr>
+			<td>6. Percent-Signal Ghosting</td>
+			<td>
+				&larr;&ensp;motion <br>
+				&larr;&ensp;instability of measured signals &larr; coil/gradient
+			</td>
+		</tr>
+		<tr>
+			<td>7. Low Contrast Object Detectability</td>
+			<td>
+				&larr;&ensp;partial volumn <br>
+				&larr;&ensp;inadequate SNR
+			</td>
+		</tr>
+	</table>
+	<br><br>
+
+	<br>
+	<br>
+	<h3>Artefact</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td rowspan="6">Tissue/Motion Related</td>
+		</tr>
+		<tr>
+			<td>1. Chemical Shift</td>
+			<td>
+				&emsp;=&emsp;change in <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">resonant frequency</div> due the molecular environment of the nuclei <br>
+				&emsp;e.g. electron cloud in fat shielding the 1H <br> 
+				&emsp;&emsp; 1H experiences less compare to B0 <br>
+				&emsp;:(&emsp;spatial information <br>
+				<br>
+				<div style="border: 1px solid white; padding: 3px 10px;">
+					E.g. 1H in fat &rarr; &ensp;&omega;&emsp;=&emsp;3.5 ppm lower than 1H in water (64 MHz <i>@ 1.5 T</i>) <br>
+					i.e. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;=&emsp;365 MHz - (65 MHz &times; 3.5&times;10<sup>-6</sup>) <br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;=&emsp;65 MHz - 224 Hz <i>@ 1.5 T</i>
+				</div>
+				<br>
+				<b>Type I: &emsp;</b> <div class="grp">
+					Spin Echo or Gradient Echo <br>
+					white or dark band along freq coding direction <br>
+					mostly happen on water surrounded by fat <br>
+				</div>
+				<br>
+				<b>Type II: &ensp;</b> <div class="grp">
+					Gradient Echo <br>
+					black line in all direction around fat/tissue boundaries <br>
+					&larr; Phase cancelling effect &ensp;=&ensp; <div class="grp">
+						&Delta;&omega; = 224 Hz <br>
+						i.e. &Delta;T = 1/224 = 4.46 ms <br>
+						&Delta; at specific TE (n&Delta;T/2 : 2.2 s, 6.6 s, 11.0 s ...) <br>
+						signals of water and fat are out of phase <br>
+						pixels containing both fat and water &rarr; destructive interference &rarr; appears black
+					</div>
+				</div>
+				<br>
+				<br>
+			</td>
+			<td>
+				<b>Reduction</b> <br>
+				<div style="padding-left: 24px;">
+					Fat Saturation
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>2. IR Bounce Point Artefact</td>
+			<td>
+				on Inversion Recovery <br>
+				black outline around anatomical structure <br>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>3. Susceptibility Effect</td>
+			<td>
+				material susceptibility <br>
+				&ensp;&rarr;&ensp; distort B<sub>0</sub> <br>
+				&ensp;&rarr;&ensp; distort freq encoding gradient (FEG)
+				<br>
+			</td>
+			<td>
+				shorten TE <br>
+				use SE instead of GRE (GRE cannot rephase signal loss) <br>
+				&uarr; frequency matrix <br>
+				&darr; slice thickness <br>
+				&uarr; readout gradient strength &rarr; &uarr; bandwidth
+			</td>
+		</tr>
+
+		<tr>
+			<td>Dielectric Effect</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Motion and Ghosting</td>
+			<td>
+				more significant in PE direction
+			</td>
+		</tr>
+
+
+		<tr>
+			<td rowspan="7">Technique/Setting Related</td>
+		</tr>
+		<tr>
+			<td>Partial Volume</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>Gradient Non-Linearity</td>
+			<td>
+			</td>
+			<td>
+				&uarr; receiver bandwidth <br>
+				use centre of the bore <br>
+				stitching
+			</td>
+		</tr>
+
+		<tr>
+			<td>Wraparound</td>
+			<td>
+				FOV too small
+			</td>
+		</tr>
+
+		<tr>
+			<td>Gibbs/Ringing Artefact</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Coil Artefact</td>
+			<td>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>RF Cage</td>
+			<td>
+				Fault in Faraday Cage <br>
+				water leakage under the floor 
+			</td>
+		</tr>
+	</table>
+	<br>
+
+
+	<h3>Safety</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>General</td>
+			<td>
+				<table>
+					<tr>
+						<td rowspan="7" style="vertical-align: middle;">MRI</td>
+						<td rowspan="3" style="vertical-align: middle;">B<sub>0</sub></td>
+						<td>
+							<b>1. Missile Effect</b>
+							<div style="padding-left: 24px;">
+								\[ F \propto B_0 \frac{dB_0}{dr} \]
+								<div style="padding-left: 24px;">
+									where
+									<div style="padding-left: 24px;">
+										\(\large \frac{dB_0}{dr}\)&ensp;=&ensp;spatial field gradient <br>
+										<div style="padding-left: 40px;">
+											* Greatest at the bore rim <br>
+											* active shielding &uarr; spatial field gradient
+										</div>
+									</div>
+								</div>
+								<br>
+								\[ B_0 \propto \frac{1}{r^3} \]
+							</div>
+							<br>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>2. Torque</b>
+							<div style="padding-left: 24px;">
+								\[ T \propto {B_0} ^2 \]
+								* <i>B<sub>0</sub></i> Greatest at the bore centre
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>3. Bioeffects</b>
+							<div style="padding-left: 24px;">
+								e.g. motioned induced current &rarr; visual light flash <br>
+								<div style="padding-left: 22px;">Lorentz force &rarr; vertigo/dizziness</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="vertical-align: middle;">G</td>
+						<td>
+							<b>1. Noise</b>
+							<div style="padding-left: 24px;">
+								rapid switching current in gradient coil <br>
+								lorentz force of the coil <br>
+								loud noise <br>
+								<br>
+								soft gradient = longer rise time
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							2. Peripheral Nerve Stimulation (PNS)
+							<div style="padding-left: 24px;">
+								rapid gradient switching <br>
+								* EPI
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="vertical-align: middle;">RF (B<sub>1</sub>)</td>
+						<td>
+							
+							\[ \nabla \times E = \frac{\partial B_1}{\partial t} \]
+							<div>
+								1. Heat due to induced electric field
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							2. Device Malfunction
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>SAR</td>
+			<td>
+				<b>Specific Absorption Rate</b>
+				<div style="padding-left: 24px;">
+					$$
+					\begin{align}
+						SAR &= \frac{RF~Power}{mass} \\
+						&= \frac{\sigma A^2 \omega^2 {B_1}^2 D }{2 \rho}
+					\end{align}
+					$$
+					<div style="padding-left: 24px;">
+						where
+						<div style="padding-left: 24px;">
+							&sigma;&ensp;=&ensp;tissue conductivity <br>
+							A &ensp;=&ensp; body cross-section area <br>
+							&omega;&ensp;=&ensp;RF frequency <br>
+							B<sub>1</sub> depends on flip angle <br>
+							D&ensp;=&ensp;duty cycle (RF transmit time over the whole pulse sequency)
+						</div>
+					</div>
+					<br>
+					unit: W kg<sup>-1</sup> <br>
+					<br>
+
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Zone</td>
+			<td>
+				<table>
+					<tr>
+						<td style="text-align: center; border: 0px;">Zone</td>
+						<td style="text-align: center; border: 0px;"></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">1</td>
+						<td>reception</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">2</td>
+						<td>screening</td>
+					</tr>
+					<tr>
+						<td style="text-align: center; background-color: rgba(255, 255, 0, 0.3);">3</td>
+						<td style="background-color: rgba(255, 255, 0, 0.3);">restricted area</td>
+						<td class="clean">
+							only tested devices are allowed to enter
+						</td>
+					</tr>
+
+					<tr>
+						<td style="text-align: center; background-color: rgba(255, 0, 0, 0.3);">4</td>
+						<td style="background-color: rgba(255, 0, 0, 0.3);">
+							scanner 
+						</td>
+						<td class="clean">
+							5 Gauss Line should be confined inside the wall <br>
+							<div style="padding-left: 24px;">
+								* B_0 beyond the 5G line might affect pacemakers
+							</div>	
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

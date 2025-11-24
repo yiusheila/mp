@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+			font-size: 12px;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		td.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px solid white;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 24px;
+		}
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+		.line {
+			border-bottom: 2px solid gray;
+			border-right: hidden;
+			border-left: hidden;
+			border-top: 2px solid gray;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -6px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>Detector</h2>
+	<h3>Image Detector</h3>
+	<div style="padding-left: 24px">
+		
+	</div>
+
+
+	<table>
+		<tr>
+			<td rowspan="2">Film</td>
+			<td>Radiographic Film</td>
+			<td>
+				1. Direct Film <br>
+				<div style="padding-left: 24px;">
+					Properties
+					<ul class="first">
+						<li class="stroke">
+							Exposure Range = 0.01 - 10 mGy
+						</li>
+						<li class="stroke">
+							Optical Density<br>
+							$$
+							\begin{align}
+								OD &= log_{10} \left( \frac{I_0}{I_t} \right)  \\
+								&= log_{10} \left( \frac{1}{T} \right)
+							\end{align}
+							$$
+						</li>
+						<li class="stroke">
+							Characteristic Curve <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;OD vs Log(Exposure) Curve
+								<div style="text-align: center;"><img src="film_characteristic_curve.png" alt="" width="300"></div>
+							</div>
+						</li>
+						<li class="stroke">
+							Reciprocity Law <br>
+							<div style="text-align: center; padding: 6px;">
+								<i>Film Response = Exposure &#215; Time</i> 
+							</div>
+							
+						</li>
+						<li class="stroke">
+							Film Density <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;film darkness
+							</div>
+						</li>
+						<li class="stroke">
+							Base Density <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Inherent OD with no exposure <br>
+								&ensp;~&ensp;0.1 <br>
+							</div>
+						</li>
+						<li class="stroke">
+							Fog Density
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Contaminated OD by <br>
+								<ul>
+									<li class="stroke">Accident exposure during storage</li>
+									<li class="stroke">Chemical contamination</li>
+									<li class="stroke">Improper processing</li>
+								</ul>
+								&ensp;&lt;&ensp;0.1
+							</div>
+						</li>
+						<li class="stroke">
+							Film Speed
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Sensitivity to Radiation/Light <br>
+								&ensp;|&ensp;slow&ensp;=&ensp;more exposure
+								\[ Speed = { 1 \over Exposure } \]
+							</div>
+						</li>
+					</ul>
+
+					Mechanism
+					<ul class="first">
+						<li class="stroke">
+							Steps
+							<div style="text-align: center;">
+								exposure <br>
+								&darr; <br>
+								e- in silver halide (AgX) prompted to conduction band <br>
+								e- fall into traps of dopant (=sensitivity speck) <br>
+								form latent image <br>
+								&darr; <br>
+							</div>
+						</li>
+						<li class="stroke">
+							Densitometer <br>
+							<div style="padding-left: 18px;">
+								&ensp;=&ensp;Light Source + Light Sensor
+							</div>
+						</li>
+						<li class="stroke">
+							QA using Sensitometry <br>
+						</li>
+					</ul>
+
+					
+				</div>
+				2. Screen Film <br>
+				<div style="padding-left: 24px;">
+					
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<!--  -->
+			<td>Radiochromic Film</td>
+			<td>
+				File with dyes that changes colour when exposed to ionising radiation <br>
+				<ul class="first">
+					<li class="stroke">need not develop</li>
+				</ul>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Image Intensifier</td>
+			<td colspan="2">
+				<b>Features</b>
+				<ul class="first">
+					<li class="stroke">Convert x-ray into visible light in Real Time</li>
+					<ul>
+						<li class="stroke">Use in Fluoroscopy</li>
+					</ul>
+					<li class="stroke">Magnify x-ray signal</li>
+				</ul>
+				<br>
+				<b>Structure</b>
+				<table style="margin-left: 24px;">
+					<tr>
+						<td class="line">Glass Tube</td>
+						<td class="line">
+							<ul class="first">
+								<li class="stroke">Vacuum</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Input Phosphor Needles (CsI)</td>
+						<td class="line">
+							<ul class="first"></ul>
+							<li class="stroke">Convert X-ray into Visible Light</li>
+							<li class="stroke">d ~ 5&mu;m</li>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Photocathode (usually Cs-Sb compound)</td>
+						<td class="line">
+							<ul class="first">
+								<li class="stroke">Emit e- when stimulated by visible light (&emsp;=&emsp;photoemission) </li>
+								<li class="stroke">no. of e- directly proportional to stimulated light intensity </li>
+							</ul>
+							
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Electron Focusing Lenses</td>
+						<td class="line">
+							<ul class="first">
+								<li class="stroke">Maintaining the path of e-</li>
+								<li class="stroke">High voltage</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Anode</td>
+						<td class="line">
+							<ul class="first">
+								<li class="stroke"> ~ 25 kV across anode-cathode</li>
+								<li class="stroke"> ~ 50 cm between anode-cathode</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td class="line">Output Phosphor (ZnS+CdS, = zinc cadmium sulfide) </td>
+						<td class="line">
+							<ul class="first">
+								<li class="stroke">Convert e- into visible light</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+
+				<br>
+				<b>Properties</b>
+				<ul class="first">
+					<li class="stroke">
+						Brightness Gain <br>
+						\[ \large G_{bright} = G_{focus} G_{flux} \]
+						<ul>
+							<li class="stroke">
+								Flux Gain <br>
+								\[ \large G_{flux} = { N_{output~light~photon} \over N_{input~X-ray~photon}} \]
+							</li>
+							<li class="stroke">
+								Minification Gain <br>
+								<ul>
+									<li class="stroke">same no. of photon focus onto a smaller area</li>
+									<li class="stroke">intensity increases</li>
+								</ul>
+								\[ \large G_{focus} = { {(d_{input~phosphor})}^2 \over {(d_{output~phosphor})}^2 } \]
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+
+			</td>
+		</tr>
+
+
+
+	</table>
+
+
+</body>
+</html>
