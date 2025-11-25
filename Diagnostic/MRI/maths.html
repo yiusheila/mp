@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic | Maths</title>
+	<link rel="stylesheet" href="../style.css"> 
+	<script id="MathJax-script" async src="../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>Basic Maths</h2>
+	<br>
+	<h2>Linear Algebra</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td colspan="2">Linear transformation of vector spaces</td>
+		</tr>
+		<tr>
+			<td>Inner and Outer Product</td>
+			<td>
+				\( u = \begin{pmatrix}
+							u_1 \\
+							u_2 \\
+							u_3
+					   \end{pmatrix}
+				 \), 
+				 \( v = \begin{pmatrix}
+				 			v_1 \\
+				 			v_2 \\
+				 			v_3
+				 		\end{pmatrix}
+				 \) <br>
+				 <br>
+				 <b>Dot Product</b>
+				 <div style="margin-left: 24px;">
+				 	$$
+				 	\begin{align}
+				 		u\cdot v &= u^\intercal v \\
+				 				 &= \begin{pmatrix}  u_1 \quad  u_2 \quad u_3 \end{pmatrix} \begin{pmatrix}  u_1 \\  u_2 \\ u_3 \end{pmatrix} \\
+				 				 &=u_1 v_1 + u_2 v_2 + u_3 v_3
+				 	\end{align}
+				 	$$
+
+				 	
+				 </div>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Gradient of a scaler field</td>
+			<td>
+				For a scaler field <i>f</i> ,
+				\[ \nabla f = \frac{\partial f}{\partial x} \hat{i} + 
+								\frac{\partial f}{\partial y} \hat{j} + 
+								\frac{\partial f}{\partial z} \hat{k}
+				\]
+				&Del;<i> f</i> &ensp;=&ensp;a vector field that gives the direction and magnitude of the greatest changes of each point
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Divergence of a vector
+			</td>
+			<td>
+				For a vector <b>u</b>,
+				\[ \nabla \cdot \textbf{u} = {\partial \over \partial x} u_x + {\partial \over \partial y} u_y + {\partial \over \partial z} u_z \]
+				<br>
+				\(\nabla \cdot u_x > 0 \) indicates net flow OUT of point x <br> 
+				\(\nabla \cdot u_x < 0 \) indicates net flow INTO point x <br>
+				<img src="divergence.png" alt="" height="200"> <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Curl of a vector</td>
+			<td>
+				For <i><b>F</b> = ( F<sub>x</sub>, F<sub>y</sub>, F<sub>z</sub> )</i> , <br>
+				$$
+				\begin{align} 
+					\large \nabla \times F &= \Large \left| {
+						\begin{matrix}
+							\hat{i} & \hat{j} & \hat{k} \\
+							\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+							F_x & F_y & F_z
+						\end{matrix}
+					} \right| \\ \\
+					
+					&= \large (\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z})\hat{i} + (\frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x})\hat{j} + (\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y})\hat{k}
+				\end{align}
+				$$
+			</td>
+		</tr>
+
+		<tr>
+			<td>Laplace Transform</td>
+			<td>
+				\[ F(s) = \int^{\infty}_{0} f(t) e^{-st} ~dt \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\( s = \sigma + i \omega \)
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Fourier Transform</td>
+			<td>
+				\[ F(\omega) = \int^{\infty}_{-\infty} f(t) e^{- i \omega t } dt \]
+				<div style="padding-left: 24px;">
+					where
+					<div style="padding-left: 24px;">
+						\(\omega = 2\pi f\)
+					</div>
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Taylor Series</td>
+			<td>
+				\[ f(a) + \frac{f'(a)}{1!}(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + ...\]
+				<b>Maclaurin Series</b> <br>
+				&ensp;=&ensp;Taylor Series centering at zeros <br>
+				&ensp;i.e.&ensp;<i>a=0</i>
+				<br>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Even/Odd Function</td>
+			<td>
+				Even Function
+				\[ f(-x) = f(x) \]
+				Odd Function
+				\[ f(-x) = -f(x) \]
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Algebra
+			</td>
+			<td>
+				<b>Linear-Quadratic Functions</b><br>
+				<div style="padding-left: 24px;">
+					Solutions can be represented by the intersection of 1 linear equation and 1 quadratic equation
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<b><h3>Matrix</h3></b>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Eigenvector, eigenvalue</td>
+			<td>
+				For a transformation, <br>
+				$$ A =
+				\begin{bmatrix}
+				x_x & y_x \\
+				x_y & y_y
+				\end{bmatrix}
+				$$
+				The vectors that stay at their directions after transformation <br>
+				&ensp;=&ensp;eigenvector \(\large \vec{v}\) <br>
+				<br>
+				The factor of which the vectors changed in size <br>
+				&ensp;=&ensp;eigenvalue \( \large\lambda\)<br>
+				<br>
+				Hence, <br>
+				<div style="border: 2px solid greenyellow; width: 100px; margin-left: auto; margin-right: auto;">\[ \large A \vec{v} = \lambda \vec{v} \]</div>
+				\[ A \vec{v} = (\lambda I) \vec{v} \]
+				Find <i>&lambda;</i> by solving 
+				\[  det(A-\lambda I) = 0\]
+				<br>
+				<br>
+				<b>Eigenfunction</b>
+				<div style="padding-left: 24px;">
+					\[ Af=\lambda f \]
+				</div>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td>Determinant <sup>[1]</sup></td>
+			<td>
+				&ensp;=&ensp;the area change by a transformation <br>
+				\[ A = \begin{bmatrix}
+					1 & 1 \\
+					0 & 1
+				\end{bmatrix},~det(A) = 1\]
+				<div style="padding-left: 24px;">
+					the transformation <i>A</i> does not change the area of a pixel
+				</div>
+				<br>
+
+				\[ B = \begin{bmatrix}
+					3 & 0 \\
+					0 & 2
+				\end{bmatrix} ,~det(B) = 6 \]
+				<div style="padding-left: 24px;">
+					\(det(B) = 6\) means after transforming a place using <i>B</i>, a pixel with area of <i>a</i> will be scaled up by 6
+				</div>
+				<br>
+
+				\[ C = \begin{bmatrix}
+					4 & 2 \\
+					2 & 1
+				\end{bmatrix} ,~ det(C)=0 \]
+				
+				<br>
+				\[ D = \begin{bmatrix}
+					1 & 2 \\
+					3 & 4
+				\end{bmatrix} ,~ det(D)=-2 \]
+				<div style="padding-left: 24px;">
+					Negative det means the orientation of place is inverted, i.e. right hand rule <i>x &times; y</i> signed flipped
+				</div>
+
+				
+			</td>
+		</tr>
+		
+
+		<tr>
+			<td>Rank</td>
+			<td>
+				&ensp;=&ensp;the minimal number of row/column that cannot be reduced via multiplication or summation <br>
+				<br>
+				rank deficiency = with column/row that can be deduced from multiplication or summation of other column/rows
+			</td>
+		</tr>
+
+		<tr>
+			<td>Invertible/Non-Singular Matrix</td>
+			<td>
+				&ensp;=&ensp;a square matrix \(A\) that <br>
+				\[ AA^{-1} = A^{-1}A = I \]
+				<div style="margin-left: 24px;">
+					where, 
+					\(
+						I = \begin{pmatrix}
+						 1 & 0 \\
+						 0 & 1
+						\end{pmatrix}
+					\) <br>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Transformation Matrix</td>
+			<td>
+				\[ v' = Tv \]
+				<div style="margin-left: 24px;">
+					<i>T</i> = transformation matrix <br>
+					<i>v</i> = a point in space <br>
+					\( T = \begin{bmatrix} j_1 & k_1 \\ j_2 & k_2 \end{bmatrix} \) <br>
+					<b><i>j</i></b> and <b><i>k</i></b> are basis vector at origin
+				</div>
+				<br>
+				When the grid lines after transformation <br>
+				&emsp;= still parallel <br>
+				&emsp;= equally spaced <br>
+				 &rarr; Linear Transformation
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3>Geometry</h3> <br>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Distance from a point to a line</td>
+			<td>
+				For a point \( (x_1, y_1) \), <br>
+				and line \( ax + by + c = 0 \), <br>
+				the distance between the point and the line:
+				\[ \frac{| ax_1 + by_1 + c |}{\sqrt{a^2 + b^2}} \]
+			</td>
+		</tr>
+		<tr>
+			<td>Perpendicular Line</td>
+			<td>
+				If line <i>A</i> has slope of <i>m</i>, i.e. \( y = mx + k_A \), 
+				a perpendicular line would have slope of:
+				\[ -\frac{1}{m} \]
+			</td>
+		</tr>
+	</table>
+
+	<h3>Computer Graphic</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Bézier curve</td>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<h3>Complex Number</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Complex Conjudate</td>
+			<td>
+				<i>B = A*</i> <br>
+				<i>B</i> is the complex conjugate of <i>A</i> when all <i>j</i> in <i>A</i> are substituted with <i>-j</i>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	[1] 3Blue1Brown. The determinant | Essence of linear algebra, chapter 6. https://www.youtube.com/watch?v=Ip3X9LOh2dk
+
+</body>
+</html>

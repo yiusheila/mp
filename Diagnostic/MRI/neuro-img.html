@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Neuroimaging</title>
+	<link rel="stylesheet" href="../../style.css">  
+	<script src="../code-prettify-master/loader/run_prettify.js"></script>
+	<script id="MathJax-script" async src="../../code-mathjax/mathjax/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<!-- Header -->
+	<table width="100%" id="menu">
+		<col width="30%">
+		<col width="10%">
+		<col width="30%">
+		<tr>
+			<td class="clean" style="border-bottom: 2px solid white; height: 50%"></td>
+			<td class="clean" rowspan="2" style="text-align: center; vertical-align: middle; "><h2>Neuro-imaging</h2></td>
+			<td class="clean" style="border-bottom: 2px solid white;"></td>
+		</tr>
+		<tr>
+			<td class="clean"></td>
+			<td class="clean"></td>
+		</tr>
+	</table>
+
+	<!-- Menu -->
+	<ol class="index" id="menu">
+		<li><a href="#basic">Basic</a></li>
+		<li><a href="#matrix">Matrix</a></li>
+	</ol>
+
+	<h3 id="basic">Basic</h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Terms</td>
+			<td>
+				(PCA) Principal Component Analysis <br>
+				(ICA) Independent Component Analysis <br>
+				(FDR) False Discovery Rates <br>
+				(FWE) Family wise Error <br>
+				<br>
+				(MNI) Montreal Neurological Institute templates <br>
+				(ALE) Activation Likelihood Estimation <br>
+				(LFO) Low Frequency Oscillations <br>
+				(BOLD) Blood Oxygenation Level Dependent <br>
+				(LFP) Local Field Potential (of post-synaptic potnetials) <br>
+				(MUA) Multi Unit Activity (of action potentials) <br>
+				(rCBF) Regional Cerebral Blood Flow <br>
+				(GLM) General Linear Model <br>
+				(gPPI) Generalised form of context dependent Psycho-Physiological Interaction <br>
+				(DMN) Default Mode Network <br>
+				(RSN) Resting State Network <br>
+				<br>
+				(MVPA) Multivariate Pattern Analysis <br>
+				(ICC) Intrincsic Connectivity Contrast <br>
+				(ILC) Integrated Local Correlation <br>
+				(RCC) Radial Correlation Contrast <br>
+				(RSC) Radial Similarity Contrast <br>
+				(ALFF) Amplitude of low frequency fluctuation <br>
+				(fALFF) fractional ALFF <br>
+				(ReHo) Regional Homogeneity <br>
+				(KCC) Kendall's Coefficient of Concordance <br>
+				<br>
+				(hrf) Haemodynamic Response Function <br>
+				(FBR) Finite BOLD Response <br>
+				<br>
+				(VBM) Voxel Base Morphometry <br>
+				(SBM) Source Base Morphometry <br>
+				(SPM) Statistical Parametric Mapping <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Radiological Space</td>
+			<td class="code">
+				&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[L-R]&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[P-A]&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;[I-S] <br>
+				MNI&ensp;&ensp;&ensp;&ensp;&ensp;: [ -91 (0) 90 ] [ -126 (0) 91 ] [ -72 (0) 109 ] <br>
+				1mm vox : [ 181 (90) 0 ] [ 0 (126) 217 ] [ 0 (72) 181 ]
+			</td>	
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h3></h3>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Time Series Analysis</td>
+			<td>
+				in contrast with probability distribution <br>
+				<br>
+				constant SD, mean trend <br>
+				constant mean, varying SD <br>
+				<br>
+				time series model = signals + noise <br>
+				<br>
+				preprocessing <br>
+				&ensp;>&ensp; detrending <br>
+				&emsp;&emsp; &ensp;>&ensp; non-stationarity <br>
+				&emsp;&emsp; &ensp;>&ensp; seasonality = periodic fluctuations <br>
+				&ensp;>&ensp; differencing = data(t)-data(t-1) <br>
+				&ensp;>&ensp; autocorrelation = memory <br>
+				&emsp;&emsp; &ensp;=&ensp; convoling itself with certain time lag () <br>
+				&ensp;>&ensp; outliers  <br>
+				&ensp;>&ensp; low pass filter <br>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Preprocessing</td>
+			<td class="code">
+				<ol>
+					<li>Unbiased Noise</li>
+					<li>Prewhitening</li>
+					<li>
+						Cross Correlation <br>
+						----------------- <br>
+						R(tau)=integral(x(t)y(t+tau))dt <br>
+						tau = time delay <br>
+						<br>
+						 - if x=y, R=Autocorrelation <br>
+						 - unlike convolution which flip one of the function <br>
+						 <br>
+						Autocorrelation <br>
+						 = time series integrate itself at difference time <br>
+					</li>
+					<li>
+						Realignment <br>
+						----------- <br>
+						1. Rigid Transformation > 6 parameters > <div class="grp">
+							3 x translation <br>
+						    3 x rotation <br>
+						</div> <br>
+						( 2. Reslicing using interpolation < matching the 1st slice ) <br>
+					</li>
+					<li>
+						Normalisation <br>
+						------------- <br>
+						step 1 > estimate > computing the distortion map <br>
+						step 2 > write > warping(non-linearly transform) images according to distortion parameters <br>
+					</li>
+					<li>
+						Unwarping <br>
+						--------- <br>
+						 > non-linear transformation < magnetic susceptibility <br>
+						 < SPM fieldmap <div class="grp"> > .img files <br>
+						                > .vdm (voxel displacement map) <br>
+						                </div>
+					</li>
+					<li>
+						Detrending <br>
+						---------- <br>
+						 < trends caused by e.g. CSF flow, spontaneous neural activities, MR induced drift
+					</li>
+					<li>
+						Segmentation <br>
+						------------ <br>
+						SPM > c1 GM <br>
+						      c2 WM <br>
+						      c3 CSF <br>
+						      c4 bone <br>
+						      c5 soft tissues
+					</li>	
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Transformation</td>
+			<td class="code">
+				Affine <br>
+				 > preserving points, lines and plane linearly <br>
+				 = scaling + placement + shearing + rotation <br>
+				 > 4*3D = 12 DOF <br>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+
+</body>
+</html>
