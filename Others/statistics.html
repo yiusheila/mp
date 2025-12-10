@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Statistics</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Statistics</h2>
+	&deg;
+	<table>
+		<tr>
+			<td>Type I/II Errors</td>
+			<td>
+				<table>
+					<tr>
+						<td class="tight_clean">Type I</td>
+						<td class="tight_clean">False Positive</td>
+					</tr>
+					<tr>
+						<td class="tight_clean">Type II</td>
+						<td class="tight_clean">False Negative</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Type A/B standard uncertainty</td>
+			<td>
+				<table>
+					<tr>
+						<td class="tight_clean">Type A</td>
+						<td class="tight_clean"> =&ensp; the uncertainty of a measuring method</td>
+					</tr>
+					<tr>
+						<td class="tight_clean">Type B</td>
+						<td class="tight_clean"> =&ensp; the uncertainty of other quantities involved in deriving the results
+							<div style="margin-left: 24px;">
+								e.g.
+								<div style="margin-left: 24px;">
+									influence quantities like temperature/pressure <br>
+									uncertainty in derivation of correction factor/textbook values
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Standard Error of the Mean (SEM)</td>
+			<td>
+				&emsp;=&emsp;repeatedly taking samples from a population
+				<div style="margin-left: 32px;">
+					the SD of the sample distribution
+				</div>
+				<div style="margin-left: 24px;">
+					\[ SEM = \frac{s}{\sqrt{n}} \]
+					<div style="margin-left: 24px;">
+						where
+						<div style="margin-left: 24px;">
+							s&ensp;=&ensp;sample SD
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Variation of Sampling Data</td>
+			<td>
+				<b>Coefficient of Variation (CV)</b>
+				\[ CV = \frac{SD}{mean} \]
+				<br>
+				<b>Variance</b> <br>
+				\[ variance = SD^2 \]
+			</td>
+		</tr>
+		<tr>
+			<td>Confidence Interval</td>
+			<td>
+				 \[ 95\% ~CI ~range = Sample~Mean \pm 1.96 \times SE  \] <br>
+				 <br>
+				95% CI = when repeat the study many times, <br>
+				<div style="margin-left: 50px;">
+					the true population mean will be with in the range in 95% occasion
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>SD for Normal Distribution</td>
+			<td>
+				<div style="text-align: center;">
+					<img src="normal_distribution_sd.png" alt="" width="400px">
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Predictive Rate</td>
+			<td>
+				<table style="text-align: center; margin-left: 36px;">
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td colspan="2" style="border: 0px; padding: 0px;">Condition</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;">+</td>
+						<td style="border: 0px; padding: 0px;">-</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="border: 0px; vertical-align: middle;">Predict</td>
+						<td style="border: 0px; vertical-align: middle;">+</td>
+						<td>TRUE <br> + </td>
+						<td>FALSE <br> +</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; vertical-align: middle;">-</td>
+						<td>FALSE <br>-</td>
+						<td>TRUE <br>-</td>
+					</tr>
+				</table>
+
+				<table style="text-align: center; margin-left: 24px;">
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td colspan="2" style="border: 0px; padding: 0px;"><br> &darr; <br></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px; background-color: rgba(0, 255, 0, 0.1);">+</td>
+						<td style="border: 0px; padding: 0px; background-color: rgba(255, 0, 0, 0.1);">-</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="border: 0px; vertical-align: middle;"></td>
+						<td style="border: 0px; vertical-align: middle;">+</td>
+						<td style="background-color: rgba(0, 255, 0, 0.1);">
+							Sensitivity/TPR <br>
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">True+</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Condition+</td></tr>
+							</table>
+						</td>
+						<td style="background-color: rgba(255, 0, 0, 0.1);">
+							FPR <br>
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">False+</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Condition-</td></tr>
+							</table>
+						</td>
+						<td rowspan="2" style="border: 0px; vertical-align: middle;">Compare With Condition</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; vertical-align: middle;">-</td>
+						<td style="background-color: rgba(0, 255, 0, 0.1);">
+							FNR <br>
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">False-</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Condition+</td></tr>
+							</table>
+						</td>
+						<td style="background-color: rgba(255, 0, 0, 0.1);">
+							Specificity/TNR <br>
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">True-</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Condition-</td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<table style="text-align: center; margin-left: 0px;">
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td colspan="2" style="border: 0px; padding: 0px;"><br> &darr; <br></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;"></td>
+						<td style="border: 0px; padding: 0px;">+</td>
+						<td style="border: 0px; padding: 0px;">-</td>
+					</tr>
+					<tr>
+						<td rowspan="2" style="border: 0px; vertical-align: middle;"></td>
+						<td style="border: 0px; vertical-align: middle; background-color: rgba(0, 255, 0, 0.1);">+</td>
+						<td style="background-color: rgba(0, 255, 0, 0.1);">
+							+ Predictive Value
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">True+</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Predict+</td></tr>
+							</table>
+						</td>
+						<td style="background-color: rgba(0, 255, 0, 0.1);">
+							False Discovery Rate
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">False+</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Predict+</td></tr>
+							</table>
+						</td>
+						<td rowspan="2" style="border: 0px; vertical-align: middle;">Compare With Prediction</td>
+					</tr>
+					<tr>
+						<td style="border: 0px; vertical-align: middle; background-color: rgba(255, 0, 0, 0.1);">-</td>
+						<td style="background-color: rgba(255, 0, 0, 0.1);">
+							False Omission Rate
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">False-</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Predict-</td></tr>
+							</table>
+						</td>
+						<td style="background-color: rgba(255, 0, 0, 0.1);">
+							- Predictive Value
+							<table style="margin-left: auto; margin-right: auto;">
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">True-</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Predict-</td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<table style="text-align: center; margin-left: 72px;">
+					<tr>
+						<td colspan="2" style="border: 0px; padding: 0px;"><br> &darr; <br></td>
+					</tr>
+					<tr>
+						<td style="border: 0px; padding: 0px;">+</td>
+						<td style="border: 0px; padding: 0px;">-</td>
+					</tr>
+					<tr>
+						<td>
+							Prevalence <br>
+							<table>
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">+</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Population</td></tr>
+							</table>
+						</td>
+						<td>
+							Accuracy <br>
+							<table>
+								<tr><td style="padding: 0px; border: 0px; border-bottom: 1px solid white;">True+ + True-</td></tr>
+								<tr><td style="padding: 0px; border: 0px;">Population</td></tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+		<tr>
+			<td>Distribution</td>
+			<td>
+				<b>Poisson Distribution</b>
+				<div style="margin-left: 24px;">
+					mean = variance
+				</div>
+			</td>
+		</tr>
+
+
+	</table>
+
+</body>
+</html>

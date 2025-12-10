@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			font-family: Book Antiqua;
+			color: white;
+			font-size: 12px;
+			line-height: 150%;
+			background-color: #383838; 
+		}
+		table {
+			border-collapse: collapse;
+		}
+		tr td {
+			padding: 6px;
+			vertical-align: top;
+			border: 1px solid white;
+		}
+		.clean {
+			padding: 6px;
+			vertical-align: top;
+			border: 0px;
+		}
+		ul {
+			margin: 0px; 
+			padding-left: 32px;
+		}
+		ol {
+			padding-left: 12px;
+			margin: 0px;
+		}
+		li {
+			padding-left: 12px;
+			margin-left: 12px;
+		}
+		.first {
+    		margin: 0px;
+    		padding-left: 0px;
+		}
+		.stroke {
+			list-style-type: none;
+			padding-left: 12px;
+			text-indent: -14px;
+		}
+		.stroke::before {
+			content: "|";
+			padding-right: 12px;
+			margin-left: -18px;
+		}
+		.highlight {
+			padding: 0px;
+			border: 2px greenyellow solid;
+			margin: auto;
+		}
+		
+	</style>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h3>Laser</h3>
+	<table>
+		<tr>
+			<td></td>
+			<td>
+				<b>Hazard</b>
+				<ul>
+					<li class="stroke">Biological (eye/skin)</li>
+					<li class="stroke">Electrical</li>
+					<li class="stroke">Explosion</li>
+					<li class="stroke">Fire</li>
+					<li class="stroke">Compression Gases</li>
+					<li class="stroke">Chemical</li>
+					<li class="stroke">Air Comtamination</li>
+				</ul>
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>Classification</td>
+			<td>
+				<b>IEC 60825-1 Classification</b>
+				<table>
+					<tr>
+						<td class="clean"><b>Class</b></td>
+						<td class="clean"><b>Damage</b></td>
+						<td class="clean"><b>Protection</b></td>
+					</tr>
+					<tr>
+						<td class="clean">1/1C/1M</td>
+						<td rowspan="2" style="vertical-align: middle;">Safe</td>
+						<td rowspan="2" style="vertical-align: middle;">Blink reflex</td>
+					</tr>
+					<tr>
+						<td class="clean">2/2M</td>
+					</tr>
+					<tr>
+						<td class="clean">3R</td>
+						<td>Eye</td>
+						<td>
+							Eyewear <br>
+							Avoid direct beam viewing <br>
+							Avoid unintentional specular reflection
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">3B</td>
+						<td>Eye/Skin</td>
+						<td>
+							+ <br>
+							Eyewear (must) <br>
+							Laser Safety Officer (must) <br>
+							Laser Controlled Area
+						</td>
+					</tr>
+					<tr>
+						<td class="clean">4</td>
+						<td>Eye/Skin/Fire</td>
+						<td>
+							+ <br>
+							Protective clothing of MPE (maximum permissible exposure) exceeded  <br>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Lasing Materials</td>
+			<td>
+				<ul>
+					<li class="stroke">Solid state</li>
+					<li class="stroke">Gas</li>
+					<li class="stroke">Liquid Dye</li>
+					<li class="stroke">Semiconductor</li>
+				</ul>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Working Modes</td>
+			<td>
+				
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

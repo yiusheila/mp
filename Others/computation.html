@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Network / Computation</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+	<h2>Network / Computation</h2>
+
+	<table>
+		<tr>
+			<td>Hospital Network</td>
+			<td>
+				<div style="display: inline-table; padding: 6px; padding-left: 10px; padding-right: 12px;">
+					<table>
+					<tr>
+						<td>Machine</td>
+					</tr>
+					<tr>
+						<td>
+							AE Title <br>
+							IP <br>
+							Port
+						</td>
+					</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Open System Interconnect (OSI)</td>
+			<td>
+				<div style="text-align: center; width: 400px;">
+					7: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 30%">
+						Application
+					</div>
+					<br>
+					6:<div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 40%">
+						Presentation
+					</div>
+					<br>
+					5: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 50%">
+						Session
+					</div>
+					<br>
+					4: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 60%">
+						Transport
+					</div>
+					<br>
+					3: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 70%">
+						Network
+					</div>
+					<br>
+					2: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 80%">
+						Data Link
+					</div>
+					<br>
+					1: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 90%">
+						Physical
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Nyquist Freqency</td>
+			<td>
+				&ensp;=&ensp;half of the sampling rate of discrete signal <br>
+				&ensp;i.e.&ensp;if <i>f<sub>s</sub></i> is the sampling rate, <br>
+				&emsp;&emsp;Nyquist frequency = 0.5<i>f<sub>s</sub></i> <br>
+				<br>
+				* Different from Nyquist rate <br>
+				
+			</td>
+		</tr>
+
+		<tr>
+			<td rowspan="2">DICOM</td>
+			<td class="code">
+				# https://dicom.nema.org/dicom/2013/output/chtml/part10/chapter_7.html <br>
+				<div class="block" style="text-align: center;">
+					DICOM <br>
+					<div class="block" style="width: 90%;">DICOM File Meta Information</div> <br>
+					<div class="block" style="width: 90%;">DICOM Data Set</div>
+				</div> <br>
+				<br>
+				<b>(0002,0010) TransferSyntaxUID</b> <br>
+				<div style="margin-left: 24px;">
+					# https://dicomlibrary.com/dicom/transfer-syntax/ <br>
+					define Implicit/Explicit and Little/Big Endian <br>
+				</div><br>
+				<br>
+				<b>(0008,0005) Specific Character Set</b> <br>
+				<div style="margin-left: 24px;">
+					# https://dicom.innolitics.com/ciods/cr-image/sop-common/00080005 <br>
+					define character set for <div class="tabblock">
+						SH(short string), LO(long string), <br>
+						ST(short text), LT(long text), <br>
+						UC(unlimited characters), UT(unlimited text), or PN(person name), 
+					</div>
+				</div> <br>
+				<br>
+				<b>(0020,0037) Image Orientation (Patient)</b>
+				<div style="margin-left: 24px;">
+					# https://dicomiseasy.blogspot.com/2013/06/getting-oriented-using-image-plane.html
+				</div>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- span -->
+			<td class="code">
+				# https://dicom.nema.org/dicom/2013/output/chtml/part04/sect_i.4.html <br>
+				# https://qual.wikis.its.utexas.edu/display/IRC/New+Enhanced+DICOM+format <br>
+				<br>
+				<b>Problem: </b><div style="display: inline-block; vertical-align: top;">
+					Eclipse failed to read a set of MR DICOM files that were burned as CD from Siemens's updated syngo.via.
+				</div> <br>
+				<br>
+				<b>Investigation: </b><div style="display: inline-block; vertical-align: top;">
+					Seems the export format from Siemens can be in (1) Enhanced or (2) Interoperability mode. <br>
+					The Enhanced mode creates multiframe DICOM file for every volume. <br>
+					<br>
+					The DICOM header of multiframe file differ from commonly seen DICOM file in several ways: <br>
+					<ol>
+						<li>(0002,0002) MediaStorageSOPClassUID for MR is <div class="hl2">1.2.840.10008.5.1.4.1.1.4</div>,<br>
+							that for enhanced MR is <div class="hl2">1.2.840.10008.5.1.4.1.1.4</div><div class="hl">.1</div>
+						</li>
+						<li>Scanning parameters and information are stored one or more layer within either <br>
+							(5200,9229) SharedFunctionalGroupsSequence, or <br>
+							(5200,9239) OerFrameFunctionalGroupsSequence
+						</li>
+					</ol>
+				</div> <br>
+				<b>Solution: </b><div style="display: inline-block; vertical-align: top;">
+					<ol>
+						<li>Import the volume back to Siemens console and push the images through DICOM node</li>
+						<li>
+							Read the multiframe matrix <br>
+							extract the slice one by one <br>
+							and save as a new DICOM file, with <br>
+							(0002,0002) MediaStorageSOPClassUID = 1.2.840.10008.5.1.4.1.1.4 <br>
+							(0002,0003) MediaStorageSOPInstanceUID = (original)+(slice#) <br>
+							(0008,0016) SOPClassUID = MediaStorageSOPClassUID <br>
+							(0008,0018) SOPInstanceUID = MediaStorageSOPInstanceUID <br>
+							<br>
+							(0008,0022) AcquisitionTime &rarr; (0018,9074) FrameAcquisitionDateTime (minus date) <br>
+							(0020,0013) InstanceNumber <br>
+							(0020,1041) SliceLocation <br>
+							(0028,0010) Rows <br>
+							(0028,0011) Columns <br>
+							<br>
+							then copy all relevant information from (5200,9229) SharedFunctionalGroupsSequence and (5200,9239) OerFrameFunctionalGroupsSequence
+						</li>
+					</ol>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>IEEE 754</td>
+			<td></td>
+		</tr>
+	</table>
+
+	<h3>Reference</h3>
+	https://northstar-www.dartmouth.edu/doc/idl/html_6.2/Value_Representations.html
+
+</body>
+</html>
