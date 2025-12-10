@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Therapeutic NM | Overview</title>
+    <link rel="stylesheet" href="../style.css"> 
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <h2>Therapeutic Nuclear Medicine | Y-90 Treatment</h2>
+
+    <table style="margin-left: 24px;">
+        <tr>
+            <td>Target & OAR</td>
+            <td>
+                <b>Target:</b> <br>
+                <div style="margin-left: 24px;">
+                    Liver (&gt; 120 Gy for effective treatment for Hepato-Cellular Carcinoma (HCC))
+                </div>
+                <br>
+                <b>OAR:</b>
+                <div style="margin-left: 24px;">
+                    Lung (&lt; 30 Gy kg<sup>-1</sup>) <br>
+                    Intestine
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Dosimetry</td>
+            <td>
+                <b>Partition Model</b>
+                <div style="margin-left: 24px;">
+                    \( A_{tot} = A_{L} + A_{N} + A_{T} \) <br>
+                    \( L = \large \frac{A_{L}}{A_{total}} \) <br>
+                    \( D_N = 50 \large \frac{A_N}{m_N} \) <br>
+                    <br>
+                    \( \Large \frac{T}{N} = \frac{ \frac{A_{T}}{m_{T}} }{ \frac{A_{N}}{m_{N}} }  \) <br>
+                    \( \large \frac{T}{N} \frac{D_N}{50} = \frac{A_T}{m_T}  \) <br>
+                    <br>
+                    <br>
+                    Derivation
+                    $$
+                        \begin{align}
+                            A_{tot} &= A_{L} + A_{N} + A_{T} \\
+                            A_{tot} &= A_{tot}L + A_{N} + A_{T} \\
+                            (1-L) A_{tot} &= A_{N} + A_{T} \\
+                            \frac{1}{m_T m_N} (1-L) A_{tot} &= \frac{A_N}{m_N} \frac{1}{m_T} + \frac{A_T}{m_T} \frac{1}{m_N} \\
+                            \frac{1}{m_T m_N} (1-L) A_{tot} &= \frac{D_N}{50} \frac{1}{m_T} + \frac{T}{N} \frac{D_N}{50} \frac{1}{m_N} \\
+                            (1-L) A_{tot} = m_N \frac{D_N}{50} + \frac{T}{N}(M_T)\frac{D_N}{50} \\
+                            50 (1-L) A_{tot} = D_N m_N + \frac{T}{N} D_N m_T \\
+                            D_N = \frac{ 50~(1-L)A_{tot} }{ m_N + \frac{T}{N}m_T }
+                        \end{align}
+                    $$
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <b></b>
+ 
+                 <br>
+                 <b>Mechanism</b> <br>
+                 <div style="margin-left: 24px;">
+                    1.&emsp;Embolisation = blocking blood vessel <br>
+                    <ul>
+                        <li class="stroke">
+                           Normal liver cell
+                           <ul> 
+                               <li class="stroke">20-30% blood from hepatic artery</li>
+                               <li class="stroke">70-80% blood from hepatic portal vein</li>
+                           </ul>                    
+                        </li>
+                        <li class="stroke">
+                            Ca Cell
+                           <ul>
+                               <li class="stroke">mainly from hepatic artery</li>
+                           </ul>   
+                        </li>
+                    </ul>
+                    2. Micro-brachytherapy <br>
+                 </div>
+
+                 <br>
+                 <b>Procedure</b><br>
+                 <table style="margin-left: 24px;">
+                     <col width="130">
+                     <tr>
+                         <td class="procedures">(Clinical Triple-phase CT Scan)</td>
+                         <td class="procedures">
+                             <ul class="first">
+                                 <li>Triple-phase = non-contrast/arterial/venous</li>
+                                 <li>for volume and tumor identification</li>
+                             </ul>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">1. Angiogram</td>
+                         <td class="procedures">
+                             <ul class="first">
+                                 <li>to decide arterial delivery site</li>
+                                 <li>to evaluate the pre-tx blood flow </li>
+                             <ul>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">2. Tc MMA Surrogate</td>
+                         <td class="procedures">
+                             <ul class="first">
+                                 <li>2–4 mCi</li>
+                                 <li>Tc-99m MAA \(T_{1/2, eff, lung}\sim 4~h\)</li>
+                             </ul>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">3. Gamma imaging (Planar)</td>
+                         <td class="procedures">
+                            <ul class="first">
+                                 <li>to estimate total dose uptake</li>
+                                 <li>to estimate tumour-normal tissue uptake ratio</li>
+                                 <li>to estimate arteriovenous shunting <br>
+                                     \[ \large L = {C_{lung} \over {C_{liver}+C_{lung}}} \]
+                                     &emsp;&emsp; where <br>
+                                     &emsp;&emsp;&emsp; L = Lung Shunt Ratio <br>
+                                     &emsp;&emsp;&emsp; C = \(\gamma\) Count <br>
+                                     
+                                     disqualify patient candidate if shunt ratio &gt; 20 % <br>
+                                     <br>
+                                     assume tumour density = 1.03
+                                 </li>
+                            </ul>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">(SPECT/CT (3D))</td>                   
+                         <td class="procedures">
+                            <ul class="first">
+                                 <li>to show 3D dose distribution</li>
+                            </ul>
+                         </td>
+                     </tr>
+                    <tr>
+                         <td class="procedures">4. Planning</td>
+                         <td class="procedures">
+                             <ul class="first">
+                                  <li>
+                                      Assume uniform distribution of dose (MIRD model) <br>
+                                      \[Dose~rate = {A~E_{decay} \over m} \]
+                                      &emsp;&emsp;where <br>
+                                      &emsp;&emsp;&emsp;A = drug activity <br>
+                                      &emsp;&emsp;&emsp;\(E_{decay}\) = average decay E <br>
+                                      &emsp;&emsp;&emsp;m = mass of target tissue <br>
+                                      Assuming all decay energy is absorbed by target tissue <br>
+                                      <br>
+                                      As Y-90 brachytherapy is permanently implanted, <br>
+                                      total dose :
+                                      \[ D = {E_{decay} \over m} \int_0^{\infty}{A} \]
+                                  </li>
+                                  <li>
+                                      Voxel-wise Dosimetry <br>
+                                      <ul>
+                                          <li>Monte Carlo derived 3D dose kernel</li>
+                                          <li>Convolve with in vivo activity distribution</li>
+                                      </ul>
+
+                                  </li>
+                             </ul>
+                         </td>
+                    </tr>
+                     <tr>
+                         <td class="procedures">5. Order Y-90</td>
+                         <td class="procedures">
+                            <ul class="first">
+                                <li>do not used if expired at the end of tx</li>
+                            </ul>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">6. Delivery</td>
+                         <td class="procedures">
+                         
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">(Post implant Bremsstralung scan)</td>
+                         <td class="procedures">
+                         
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="procedures">(Clinical Post Tx Scan)</td>
+                         <td class="procedures">
+                         </td>
+                     </tr>
+                 </table>
+
+                 <br>
+                 <b>Others</b><br>
+                 HA provide free Y-90 tx if <br>
+                 1. portal vein invaded, or <br>
+                 2. tumour &gt; 8.5 cm 
+            </td>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

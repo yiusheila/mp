@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Brachytherapy | Treatment Dosimetry</title>
+	<link rel="stylesheet" href="../style.css"> 
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<h2>Brachytherapy | Treatment Dosimetry</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Point Source Rule of Thumb</td>
+			<td>
+				When the linear distance between the source and the measuring device <br>
+				&ensp;&ge;&ensp;5 &times; the size of the measuring device
+			</td>
+		</tr>
+		<tr>
+			<td>Dosimetric System</td>
+			<td>
+				&emsp;=&emsp;Protocol defining <br>
+				<div style="margin-left: 38px;">
+					&rarr;&ensp; applicators type and number <br>
+					&rarr;&ensp; tx duration<br>
+					&rarr;&ensp; dose<br>
+					&rarr;&ensp; incorporation with EXBT ?<br>
+					&rarr;&ensp; irradiation areas<br>
+				</div>
+				<br>
+				<b>Manchester System</b>
+				<ol>
+					<li>Dose to target/OAR is represented by dose to a point <br>
+						<div>
+							(assuming uniform dose throughout treated volume) <br>
+							<br>
+							<div style="text-align: center;">
+								<img src="point_ab.png" alt="" width="250px">
+							</div>
+							<b>Point A</b> <br>
+							<div style="margin-left: 24px">
+								&because;&ensp; Cervix dose prescription is not ideal &because; high dose gradient <br>
+								&emsp;&ensp; the most limiting OAR is in <div class="hl2">paracervical triangle</div> &ensp;=&ensp; point on broad ligament where uterine vessels cross ureter <br>
+								=&emsp;2 cm superior to the external cervix os <br>
+								&ensp;&emsp; 2 cm lateral to <div class="hl">applicator intrauterine tube</div> <br>
+								
+							</div>
+							<br>
+							<b>Point B</b> <br>
+							<div style="margin-left: 24px;">
+								Indicates dose to parametrium <br>
+								=&emsp;2 cm superior to the external cervix os <br>
+								&ensp;&emsp; <div class="hl">5 cm</div> lateral to <div class="hl">patient midline</div> <br>
+							</div>
+							<br>
+							<b>Other OARs</b>
+							<div style="margin-left: 24px;">
+								bladder <br>
+								rectum <br>
+								vaginal mucosa <br>
+								rectovaginal septum
+							</div>
+						</div>
+					</li>
+					<br>
+					<li>
+						Applicator contains of intrauterine tube + ovoid pair
+					</li>
+				</ol>
+				<div style="text-align: center;">
+					<img src="uterus.png" alt="" width="350px">
+				</div>
+				<br>
+				<b>ICRU System</b> <br>
+				<div style="margin-left: 24px;">
+					dose to volume instead of a point
+				</div>
+				<br>
+				<b>Antique Systems (e.g. Paris System)</b>
+				<ol>
+					<li>use mg-hrs to express dose <br>
+						not in line with EXBT
+					</li>
+					<li>not considering difference in target and OAR</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>AAPM TG-43</td>
+			<td>
+				<b>Factors Considered</b> <br>
+				<ol>
+					<li>Dose-rate Constant</li>
+					<li>Specific Source Design</li>
+					<li>Consensus Dosimetry Data
+						<ul>
+							<li class="stroke">measured dose-rate distribution using LiF TLD</li>
+							<li class="stroke">Monte Carlo calculation from literatures</li>
+						</ul>
+					</li>
+					<li>Encapsulated Source</li>
+					<li>Source Geometry
+						<ul>
+							<li class="stroke">
+								Longitudinal Cut = Seed = cylindrical source with effective length <i>L<sub>eff</sub></i> &le; 0.5 cm
+							</li>
+							<li class="stroke">
+								Transverse Cut = Point Source = Dimensionless source with Spherical Dose Distribution
+								<ul>
+									<li class="stroke">inverse square law applied</li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ol>
+				<br>
+				<b>Not Considering</b> <br>
+				<ol>
+					<li>Applicator</li>
+					<li>Attenuation caused by other sources</li>
+					<li>Transit Dose</li>
+					<li>Inhomogeneity</li>
+					<li>&beta;/n emitting sources</li>
+				</ol>
+				<br>
+				<b>Why need TG-43</b> <br>
+				<ul>
+					<li class="stroke">The relapse-free survival rate is correlated with dose (100 - 160 Gy)
+						<ul class="first">
+							<li class="stroke">accurate dosimetry is crucial</li>		
+						</ul>
+					</li>
+				</ul>
+				<br>
+				<br>
+				<b>Dosimetry Formalism</b>
+				\[ \dot{D}(r, \theta) = S_K ~\Lambda ~\frac{G_L(r, \theta)}{G_L(r_0, \theta_0)} ~g_L(r) ~F(r, \theta) \]
+				<div style="padding-left: 24px;">
+					where (on longitudinal plane)
+					<div style="padding-left: 24px;">
+						r<sub>0</sub> = 1cm away from seed centre<br>
+						&theta; = 90&deg; <br>
+						<br>
+						P(r, &theta;) = target point <br>
+						r = distance from seed centre to target point<br>
+						&theta; = angle from z axis CCW to target point<br>
+						<br>
+						<b>5 Components</b> <div style="display: inline-block; background-color: rgba(192, 223, 0, 1); color: black; padding: 3px; padding-top: 0px; padding-bottom: 0px;">* the 3 highlighted components are provided by supplier</div>
+						<table>
+							
+							<tr>
+								<td colspan="2" class="clean">
+									Dose
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right;">
+									<i>S<sub>K</sub></i>
+								</td>
+								<td>
+									Air Kerma Strength of <div style="display: inline-block; background-color: rgba(255, 255, 0, 0.3);">a particular source</div> (&mu;Gy m<sup>2</sup> h<sup>-1</sup>) <br>
+									<div style="padding-left: 24px;">
+										<div class="highlight" style="width: 80px; margin-top: 6px; margin-bottom: 6px;">\( S_K = \dot{K}_\delta(d) ~d^2 \)</div>
+										To measure the <i>S<sub>K</sub></i> of a source,
+										<ol>
+											<li>place a detector at a distance from the centre of the source (on the perpendicular bisector plane), so that the source can be consider as point source</li>
+											<li>measure Air Kerma Rate in vacuo (or corrected for air attenuation and scattering) <sup>[1]</sup></li>
+											<li>take away the contribution of low energy and contamination photons from the reading (usually &lt; 5 keV)</li>
+											<li>multiple the distance d<sup>2</sup> with the net reading</li>
+										</ol>
+										
+									</div>	
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right; background-color: rgba(192, 223, 0, 1); color: black;">
+									<i>&Lambda;</i>
+								</td>
+								<td >
+									Dose Rate Constant <div style="display: inline-block; background-color: rgba(255, 255, 0, 0.3);">in Water</div> (cGy h<sup>-1</sup> U<sup>-1</sup>)
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="clean">
+									<br>
+									Point in Space 
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right;">
+									\(\large \frac{G_{L/P}(r, \theta)}{G_{L/P}(r_0, \theta_0)}\)
+								</td>
+								<td>
+									Geometry Function to interpolate any point with table provided
+									<div style="padding-left: 24px;">
+										<b>Line source approximation</b>
+										$$
+											G_L(r, \theta) = 
+											\begin{cases}
+											\Large \frac{1}{(r^2 - \frac{L^2}{4})} ~~ \scriptstyle \text{if}~\theta~=~0^\circ \\
+											\\
+											\Large \frac{\beta}{L~r~sin\theta} ~~~~ \scriptstyle \text{otherwise}
+											\end{cases}
+										$$
+										<br>
+										<b>Point source approximation</b>
+										\[ G_P = \frac{1}{r^2} \]
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td colspan="2" class="clean">
+									<br>
+									Accounting for <div style="display: inline-block; background-color: rgba(255, 255, 0, 0.3);">scattering</div> and <div style="display: inline-block; background-color: rgba(255, 255, 0, 0.3);">attenuation</div> due to the <div style="display: inline-block; background-color: rgba(255, 255, 0, 0.3);">design of the source</div>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right; background-color: rgba(192, 223, 0, 1); color: black;">
+									\(g_{L/P}(r)\) <br>
+
+								</td>
+								<td>
+									Radial Dose Function
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right; background-color: rgba(192, 223, 0, 1); color: black;">
+									\(F(r, \theta)\)
+								</td>
+								<td>
+									2D Anisotropy Function
+								</td>
+							</tr>
+						</table>
+						<br>
+						
+					</div>
+					
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Source Strength</td>
+			<td>
+				Source strength is qualified by Exposure Rate. <br>
+				<br>
+				How do we obtain Exposure Rate?
+				<ol>
+					<li>Activity</li>
+					<li>Apparent Activity</li>
+					<li></li>
+				</ol>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+    <h3>Antique System</h3>
+    <table style="margin-left: 24px;;">
+        <tr>
+            <td>Dosimetry System</td>
+            <td>
+            	e.g. Paris system
+            </td>
+        </tr>
+    </table>
+. 
+	<br>
+	[1]&emsp;T Sander. Air kerma and absorbed dose standards for reference dosimetry in brachytherapy. Br J Radiol. September 2014; 87(1041). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4453150/
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Brachytherapy | Afterloader</title>
+	<link rel="stylesheet" href="../style.css"> 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Brachytherapy | Afterloader</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>QA</td>
+			<td>
+				<table>
+					<tr>
+						<td class="tight_clean">Daily</td>
+						<td class="tight_clean">
+							<ol style="margin-top: 0px;">
+								<li>Safety: 
+									<div style="margin-left: 24px;">
+										self-test <br>
+										interlock: door / interrupt / emergency <br>
+										REM / beam on light / beam on alarm / CCTV
+									</div>
+								</li>
+								<li>Source Position: check cable and source on check ruler through CCTV </li>
+								<li>Treatment timer</li>
+								<li>C-arm</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="tight_clean">Weekly</td>
+						<td class="tight_clean">
+							<ol style="margin-top: 0px;">
+								<li>Source Position: use film <br>
+									<div class="hl">&lt; 1 mm</div>
+								</li>
+								<li>Activity Constancy Check <br>
+									<div class="hl">&lt; 3%</div> (????????)
+								</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td class="tight_clean">
+							Quarterly <br>
+							&emsp;(New Source AT)
+						</td>
+						<td class="tight_clean">
+							<ol style="margin-top: 0px;">
+								<li>Source Replacement 
+									<div style="margin-left: 24px;">
+										&rarr;&ensp; Activity <br>
+										&rarr;&ensp; Position <br>
+										&rarr;&ensp; Time <br>
+										&rarr;&ensp; Treatment plan match
+									</div>
+								</li>
+								<li>Input new source S/N, AKR into console + TPS</li>
+								<li>Machine timer</li>
+								<li>Curvature check</li>
+								<li>Emergency kit</li>
+							</ol>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>Source</td>
+			<td>
+				Originally use Radium &rarr; daughter Radon gas also radioactive :( <br>
+				Now use Ir-192, :) less thick room shielding
+			</td>
+		</tr>
+		<tr>
+			<td>Machine</td>
+			<td>
+				<img src="afterloader.png" alt="" width="95%" style="padding: 2.5%;"><br>
+				<br>
+				<b>Features</b>
+				<ul>
+					<li class="stroke">Ir-192 Source
+						<ul>
+							<li class="stroke">high specific activity (> 1000 Ci g<sup>-1</sup> )</li>
+							<li class="stroke">low &gamma; energy (317, 468 keV)</li>
+						</ul>
+					</li>
+					<li class="stroke">Check cable slightly longer than source cable</li>
+					<li class="stroke">Feedback Optopair/Encoder
+						<table>
+							<tr>
+								<td class="compact">Locking Ring Optopair</td>
+								<td class="compact">check if locking ring is locked to secure tubes</td>
+							</tr>
+							<tr>
+								<td class="compact">Connected Optopair</td>
+								<td class="compact">check if transfer tube is fully inserted that it blocks the light to optical fibre</td>
+							</tr>
+							<tr>
+								<td class="compact">Channel Selector Optopair</td>
+								<td class="compact">check if the right channel is selected <br>
+								<div style="padding-left: -24px;">
+									5-bit representing 30 channels
+								</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="compact">Reference Optopair</td>
+								<td class="compact">
+									check if source is in safe/out of safe <br>
+									<div style="margin:0px; padding-left: -24px">
+										start timer after a set delay to account for the time from reference optopair to <div style="display: inline; background-color: rgba(255, 255, 0, 0.3);">indexer face</div>
+									</div>
+									
+								</td>
+							</tr>
+							<tr>
+								<td class="compact">Source Cable Encoder</td>
+								<td class="compact">check if cable is obstructed by counting feedback pulse <br>
+								<div style="text-align: center;"><img src="afterloader_emergency_encoder.png" alt="" width="500px" style="margin: 12px;"></div>
+								</td>
+							</tr>
+						</table>
+					</li>
+					<li class="stroke">Cable drum with driving belt to make sure cable swirl around the wheel (Nucletron)
+						<ul class="first">
+							<li class="stroke">Detected/Loose Belt
+								<ul class="first">
+									<li class="stroke">Release column to activate micro-switch </li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Parameters</td>
+			<td>
+				<ol>
+					<table style="margin-left: -6px;">
+						<tr>
+							<td style="padding-top: 0px; padding-bottom: 0px; border: hidden;">
+								<li>Length</li>
+							</td>
+							<td rowspan="2" style="border: hidden; margin: 0px;">
+								<table style="display: inline; ">
+									<tr>
+										<td style="padding: 0px; padding-right: 6px; border-left: 0px;"></td>
+										<td style="padding: 0px; border: 0px; margin: 0px;">
+											<div style="border-bottom: 1px solid white; height: 9px;">&ensp;</div>
+										</td>
+										<td style="padding-top: 0px; padding-bottom: 0px;border: 0px;">
+											Total 48 Steps
+										</td>
+									</tr>
+								</table> 
+								
+							</td>
+						</tr>
+						<tr>
+							<td style="padding-top: 0px; padding-bottom: 0px; border: hidden;">
+								<li>Step Size</li>
+							</td>
+						</tr>
+					</table>
+
+					<li>Dwell Time <br>
+						&ensp;=&ensp;Time from Indexer Face to Destination
+					</li>
+					<li>Decay Correction</li>
+					<li>Applicator Enclosing Cylinder Type</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Applicator</td>
+			<td>
+				Intracavitary
+				<ul>
+					<li class="stroke">Applicator
+						<ul class="first">
+							<li class="stroke">Rotterdam</li>
+							<li class="stroke">Tandem</li>
+							<li class="stroke">Utrecht</li>
+							<li class="stroke">VMC</li>
+							<li class="stroke">Fletcher Williamson</li>
+						</ul>
+					</li>
+				</ul>
+				 
+
+				<br>
+				Intersitial / Surface Mould
+				<ul>
+					<li class="stroke">Flexible Tube / Catheter</li>
+				</ul>
+
+				<br>
+				Interluminal 
+				<ul>
+					<li class="stroke">Lumen Tube / Catheter</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<br><br>
+</body>
+</html>

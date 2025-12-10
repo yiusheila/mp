@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Brachytherapy | Treatment</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<h2>Brachytherapy | Treatment</h2>
+	<table style="margin-left: 24px;">
+       <tr>
+            <td>Treatment</td>
+            <td>
+                 + External Beam <br>
+                 <div style="margin-left: 24px;">
+                     (WPI) Whole pelvis irradiation <br>
+                     <div style="margin-left: 24px;">
+                         OAR = femur head, pelvis bone
+                     </div>
+                     (API) Addition parametrium irradiation <br>
+                     <div style="margin-left: 24px; text-align: center;">
+                         <img src="api_plan.png" alt="" width="350px;" style="margin: 6px;">
+                     </div>
+                     Parametrial Boost (L/R)
+                 </div>
+                 <br>
+            </td>
+        </tr>
+
+        <tr>
+        	<td>ICB for Ca Cervix</td>
+        	<td>
+                <table>
+                    <tr>
+                        <td class="tight_clean">Applicator: </td>
+                        <td class="tight_clean">Rotterdam, 4 cm diameter
+                            <div style="text-align: center; margin: 6px;"><img src="rotterdam.png" alt="" width="300px"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tight_clean">Prescription:</td>
+                        <td class="tight_clean">
+                            4 fr &times; 7 Gy at Point A <br>
+                            100% isodose line length 5 cm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tight_clean">
+                            OAR Dose Constraint: <br>
+                            &emsp;&emsp;(including external beam)
+                        </td>
+                        <td class="tight_clean">
+                            Bladder < 75 Gy EQD<sub>2</sub> <br>
+                            Rectum < 75 Gy EQD<sub>2</sub> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tight_clean">Procedures:</td>
+                        <td class="tight_clean">
+                            <ol style="padding-left: 12px;">
+                                <li>Anaesthetise patient
+                                    <div style="margin-left: 24px;">
+                                        (GA) whole body <br>
+                                        (LA) local anaesthesia <br>
+                                        (SA) low body at sacrum
+                                    </div>
+                                </li>
+                                <li>Insert applicator</li>
+                                <li>(if necessary) Barium + gauze to &uarr; distance between applicator and Bladder/Rectum</li>
+                                <li>(for 2D ICB tx) Scan AP + LAT </li>
+                                <li>
+                                    Position the applicator <br>
+                                    Make sure applicator flange touching cervix os <br>
+                                    Make sure applicator align with patient central axis <br>
+                                    Clamp to hold the applicator
+                                </li>
+                                <li>
+                                    Insert bladder balloon <br>
+                                    through urinary tract <br>
+                                    Fill the balloon with radiobaque contrast to 7 cc large
+                                </li>
+                                <li>
+                                    Find rectal point and bladder point <br>
+                                    <div class="hl">Bladder Point</div>: z = centre <br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; x, y = nearest point from applicator <br>
+                                    <div class="hl">Rectal Point</div>: (a fix point that representing 5 mm posterior from vagina wall) <br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; x = -15 mm <br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; y = -25 mm (ovoid radius + 5 mm) <br>
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; z = 0 <br>
+                                    <div style="text-align: center;">
+                                        <img src="bladder_rectum_point.png" alt="" width="450px">
+                                    </div>
+                                </li>
+                                <li>Load library plan, amend dwell points if needed <br>
+                                    e.g. 8 dwell points @ 1, 3, 5, 7, 9, 11, 13, 15 <br>
+                                    (?) independent QA dose calculation <br>
+                                    (?) deviation tolerance <br>
+                                </li>
+                            </ol>
+
+
+                        </td>
+                    </tr>
+                </table>
+        	</td>
+        </tr>
+
+        <tr>
+        	<td>ICB for Ca Corpus</td>
+        	<td>
+				To eliminate microscopic spread 
+				<table>
+				    <tr>
+				        <td class="tight_clean">Application:</td>
+				        <td class="tight_clean">
+				            (Elekta) Tandem, 2 cm diameter (other size: 2.5/3/4) <br>
+				            the diameter should be just fit into the patient cervix corpus <br>
+				            (?) cross-end Tandem
+				        </td>
+				    </tr>
+				    <tr>
+				        <td class="tight_clean">Prescription:</td>
+				        <td class="tight_clean">
+				            3 fr &times; 7 Gy @ 5 mm from applicator surface <br>
+				            100% isodoe line length = 4 cm <br>
+				            (?) F factor = 1 = 100% prescription <br>
+				             + External beam
+				        </td>
+				    </tr>
+				    <tr>
+				        <td class="tight_clean">OAR:</td>
+				        <td class="tight_clean">
+
+				        </td>
+				    </tr>
+				</table>
+        	</td>
+        </tr>
+
+
+        <tr>
+        	<td>IGBT for Ca Cervix</td>
+        	<td>
+                (refer to EMBRANCE II, in the future: III) <br>
+                <br>
+                <table>
+                	<tr>
+                		<td class="tight_clean">Applicator:</td>
+                		<td class="tight_clean">
+                			(Elekta) Venezia Advanced Gynecological Applicator <br>
+                			4 mm diamter ovoid, 6 cm IU tube at 30&deg;, ovoid source path diameter 2.6 cm (external diameter 3.8 cm) <br>
+                			4 needles inserted to 3 cm beyond flange @ 3, 4, 8, 9 o'clock position 
+                			<div style="text-align: center;">
+                				<img src="venezia.png" alt="" width="300px">
+                			</div>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td class="tight_clean">Prescription:</td>
+                		<td class="tight_clean">
+                			(External Beam + IGBT) <br>
+                			(HR = higher risk, IR = intermediate risk) <br>
+                            <table>
+                                <tr>
+                                    <td class="tight_clean"></td>
+                                    <td class="tight_clean"></td>
+                                    <td class="tight_clean" style="text-align: right;">EXRT: </td> 
+                                    <td class="tight_clean" style="text-align: center;">(2 Gy &times; 20 fr)</td>
+                                    <td class="tight_clean" style="text-align: center;">(1.8 Gy x 25 fr)</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;"></td>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;"></td>
+                                    <td class="tight_clean" style="text-align: center; border: 1px solid white; ">Total EQD2 <br> (Gy)</td>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;">IGBT Dose <br> (Gy)</td>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;">IGBT Dose <br> (Gy)</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">GTV</td>
+                                    <td class="tight_clean">D98</td>
+                                    <td class="tight_clean" style="text-align: center; border-left: 1px solid white; border-right: 1px solid white;">&gt; 90</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 8.25</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 7.75</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">HR CTV</td>
+                                    <td class="tight_clean">D90</td>
+                                    <td class="tight_clean" style="text-align: center; border-left: 1px solid white; border-right: 1px solid white;">&gt; 85</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 7.65</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 7.14</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">HR CTV</td>
+                                    <td class="tight_clean">D98</td>
+                                    <td class="tight_clean" style="text-align: center; border-left: 1px solid white; border-right: 1px solid white;">&gt; 75</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 6.40</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 5.84</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">IR CTV</td>
+                                    <td class="tight_clean">D98</td>
+                                    <td class="tight_clean" style="text-align: center; border-left: 1px solid white; border-right: 1px solid white;">&gt; 60</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 4.20</td>
+                                    <td class="tight_clean" style="text-align: center;">&gt; 3.50</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="tight_clean" style="border-top: 1px solid white;"></td>
+                                </tr>
+                            </table>
+                			(Point A/B as reference) <br>
+                			<br>
+                		</td>
+                	</tr>
+                	<tr>
+                		<td class="tight_clean">OAR:</td>
+                		<td class="tight_clean">
+                            <table>
+                                <tr>
+                                    <td class="tight_clean"></td>
+                                    <td class="tight_clean"></td>
+                                    <td class="tight_clean" style="text-align: right;">EXRT: </td> 
+                                    <td class="tight_clean" style="text-align: center;">(2 Gy &times; 20 fr)</td>
+                                    <td class="tight_clean" style="text-align: center;">(1.8 Gy x 25 fr)</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean" style="border-top: 1px solid white; border-bottom: 1px solid white;"></td>
+                                    <td class="tight_clean" style="border-top: 1px solid white; border-bottom: 1px solid white;"></td>
+                                    <td class="tight_clean" style="text-align:center; border-top: 1px solid white; border-bottom: 1px solid white;">Total EQD2 <br>(Gy)<br>Aim [Limit] </td>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;">IGBT Dose <br> (Gy)<br>Aim [Limit] </td>
+                                    <td class="tight_clean" style="text-align: center; border-bottom: 1px solid white; border-top: 1px solid white;">IGBT Dose <br> (Gy)<br>Aim [Limit] </td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">Bladder</td>
+                                    <td class="tight_clean">D2cc</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 80 [90]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 5.71 [6.55]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 5.44 [6.29]</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">Sigmoid/Small Bowel</td>
+                                    <td class="tight_clean">D2cc</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 70 [75]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 4.80 [5.26]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 4.38 [4.98]</td>
+                                </tr>
+                                <tr>
+                                    <td class="tight_clean">Rectum</td>
+                                    <td class="tight_clean">D2cc</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 65 [75]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 4.30 [5.26]</td>
+                                    <td class="tight_clean" style="text-align:center;">&lt; 3.75 [4.98]</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="5" class="tight_clean" style="border-top: 1px solid white;"></td>
+                                </tr>
+                            </table>
+                			(Bladder & Rectum Point as reference) <br>
+                			<br>
+                		</td>
+                	</tr>
+                    <tr>
+                        <td class="tight_clean">Procedure:</td>
+                        <td class="tight_clean">
+                        	Pre-IGRT External Beam: WPI (or IMRT according to Embrace II) <br> 
+                            (1 week before IGBT) MRI scan (for pre-plan) <br>
+                            Decide the number and position of the needles <br>
+                            <br>
+                            4 fr in 2 weeks, 2 sessions per week in consecutive days (patient stay over-night) <br>
+                            * No API <br>
+                            <br>
+                            (On IGBT 1st Treatment Day) <br>
+                            <ol>
+                            	<li>Insert applicator <br>
+                            		&ensp;&rarr;&ensp; insert obturator (metal) in needle to strengthen the needle for easy insertion <br>
+                                    &ensp;&rarr;&ensp; fill the bladder with 30 cc saline + 7 cc contrast balloon <br>
+                            		&ensp;&rarr;&ensp; insert x-ray marker to 3 tubes <br>
+                            		&ensp;&rarr;&ensp; place the needle at the designated position but not pushing beyond the ovoid plane <br>
+                                    &ensp;&rarr;&ensp; * apply water-like gel to the applicator parts, ESPECIALLY the holes on ovoids <br>
+                                    &ensp;&emsp;&ensp; so that the ovoid orientation and position show more clearly on MRI <br>
+                            		&ensp;&rarr;&ensp; assemble the 3 applicator pieces in patient and lock then in place <br>
+                            		&ensp;&rarr;&ensp; add gauze in between tubes and needles <br>
+                            		&ensp;&rarr;&ensp; use fixation clip to secure all parts of the applicator <br>
+                            		&ensp;&rarr;&ensp; stitch the fixation clip to the patient <br>
+                            		&ensp;&rarr;&ensp; draw a marker on patient skin to indicate the position of the fixation clip <br>
+                            	</li>
+                            	<li>AP+LAT X-ray with mobile C-arm <br>
+                            		<div style="margin-left: 24px;">
+	                            		Make sure the needle insertion lengths are correct <br>
+	                            		and the applicator orientation is correct
+                            		</div>
+
+                            	</li>
+                            	<li>
+                            		CT Sim <br>
+                            		<div style="margin-left: 24px;">
+	                            		Insert x-ray markers to all 3 tubes and all inserted needles <br>
+	                            		Load CT onto TPS <br>
+	                            		Draw the needles as ROI
+                            		</div>
+                            	</li>
+                            	<li>MR <br>
+                            		<div style="margin-left: 24px;">
+	                            		Insert MR markers into 3 tubes (the needles are too thin to insert MR marker) <br>
+	                            		Scan 1 x true patient coordinate T2 for planning <br>
+	                            		Scan 3 x oblique view T2 (TRA+SAG+COR) aligning the coordinate to the IU tube <br>
+	                            		&emsp;&emsp; (or for axial scan, perpendicular to IU tube, i.e. parallel to ovoid flange plane) <br>
+	                            		&emsp;&emsp; &gt; oblique view scan having the IU tube on the same slice <br>
+	                            		&emsp;&emsp; &gt; easier to reconstruct the applicator
+                            		</div>
+                            	</li>
+                            	<li> Planning <br>
+                                    <div style="margin-left: 24px;">
+                                    	(currently still using TG-43, i.e. assuming all surrounding tissue = water, fully scattered) <br>
+                                    	(TG-186 is a newer guideline using patient CT for dose calculation) <br>
+                                        (Planning software QEH uses: Oncentra) <br>
+                                        &ensp;&rarr;&ensp; load the MRI in true patient coordinate <br>
+                                        &ensp;&rarr;&ensp; identify the applicator and needles (catheters) <br>
+                                        &ensp;&rarr;&ensp; align the applicator coordinate axes to the applicator IU tube<br>
+                                        &ensp;&emsp;&ensp; make sure the applicator model matches the markers and gel in empty ovoid holes <br>
+                                        &ensp;&rarr;&ensp; apply library plan <br>
+                                        &ensp;&rarr;&ensp; apply standard dwell points on catheters <br>
+                                        &ensp;&emsp;&ensp; e.g. 1 dwell point at every 2 mm <br>
+                                        &ensp;&emsp;&ensp; offset 5 mm from catheter tip <br>
+                                        &ensp;&rarr;&ensp; define point A, point B, rectal point and bladder point for dose taking <br>
+                                        &ensp;&emsp;&ensp; * remember to adjust point B according to patient-applicator rotation <br>
+                                        &ensp;&rarr;&ensp; adjust dwell point weighting to &uarr; PTV coverage <br>
+                                        <div style="margin-left: 197px;">
+                                            &darr; OAR dose
+                                        </div>
+                                    </div>
+                            		
+                            	</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+        	</td>
+        </tr>
+        <tr>
+            <td>Paris System</td>
+            <td>
+                <div style="text-align: center;"><img src="paris_system.png" alt="" width="600px"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>EMBRACE II</td>
+            <td>
+                 &ensp;=&ensp; protocol for cervical cancer treatment <br>
+                 <div style="margin-left: 24px;">
+                     &ensp;&rarr;&ensp; EBRT+ IGBT + Chemo <br>
+                     &ensp;=&emsp; MRI guided IGBT after EBRT <br>
+                     <br>
+                     <div style="margin-left: 24px;"></div>
+                        Notes on EBRT/Chem <br>
+                        <div style="margin-left: 24px;">
+                            EBRT &ensp;&rarr;&ensp; ~ 40-50 Gy <br>
+
+                        </div>
+                 </div>
+            </td>
+        </tr>
+	</table>
+	<br><br>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Brachytherapy | QA</title>
+	<link rel="stylesheet" href="../style.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+	<h2>Brachytherapy | QA</h2>
+	<table style="margin-left: 24px;">
+		<tr>
+			<td>Daily</td>
+			<td>
+				<ol>
+					<li>Run Machine Self-Test <br>
+						<div style="margin-left: 12px">
+							check warning light (outside and inside tx room) <br>
+							check CCTV function <br>
+							check REM function <br>
+							check audio function
+						</div>
+					</li>
+					<li>check interrupt + emergency button function</li>
+					<li>check door interlock function</li>
+					<li>load daily plan to 1200, check location through CCTV</li>
+					<li>try plan complete</li>
+				</ol>
+			</td>
+		</tr>
+		<tr>
+			<td>Weekly</td>
+			<td>
+				position <div class="hl">(TG-40 tolerance: 1 mm)</div><br>
+				activity <div class="hl">(QE tolerance: 3%, usually 1%)</div>
+			</td>
+		</tr>
+		<tr>
+			<td>Source Exchange</td>
+			<td>
+				<ol>
+					<li>Source Leakage</li>
+					<li>
+						Position Check (visually through CCTV)
+						<div style="margin-left: 24px;">
+							Confirm check cable OK <br>
+							<div class="hl">(TG-40 tolerance: 1 mm)</div>
+						</div>
+					</li>
+					<li>Position Check on Film
+						<div style="margin-left: 24px;">
+							Flex:&ensp; @ 182, 202, ..., 282 <br>
+							GYN: @ 200, 220, ..., 300
+						</div>
+					</li>
+					<li>
+						Time Accuracy <br>
+						<div style="margin-left: 24px;">
+							<div class="hl">(TG-40 Tolerance: 1% / QE: 1 s in 100 s)</div>
+						</div>
+					</li>
+					<li>Activity Check
+						<div style="margin-left: 24px;">
+							TP Correction <br>
+							Taking reading around the max reading position in well chamber <br>
+							&emsp;&rarr;&ensp; to confirm position gives max reading <br>
+							<div class="hl">(RARK Certificate Tolerance: +- 5% at 1 m)</div>
+						</div>
+					</li>
+					<li>
+						Update Source Info <br>
+						on TCC + Oncentra + RadCalc + QA record
+					</li>
+					<li>
+						Treatment Plan Matching with Previous Source 
+						<div style="margin-left: 24px;">
+							in case anisotropic matrix file corrupted
+						</div>
+					</li>
+					<li>Emergency Kit Check</li>
+
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
