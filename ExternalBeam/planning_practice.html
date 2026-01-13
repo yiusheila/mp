@@ -42,6 +42,8 @@
 		<a href="#replan">Re-plan</a> &emsp;
 		<a href="#wax">Generate Wax</a> &emsp;
 		<a href="#mronly">MR Only</a> &emsp;
+		<a href="#mosaiq_offline">Mosaiq Offline Review</a> &emsp;
+		<a href="#varian_cbct">TrueBeam CBCT Adaptive</a> &emsp;
 		<a href="#clinical_protocol">Clinical Protocol</a> &emsp;|&emsp;
 		<a href="#obsolete">Obsolete</a>
 	</div>
@@ -1533,11 +1535,22 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Monsaiq Offline Renew</td>
+			<td id="mosaiq_offline">Mosaiq Offline Review</td>
 			<td>
 				Image &gt; (Unfilter) &gt; (highlight both AP and LAT image) &gt; <div class="button">Review</div> <br>
 				Display Mode &gt; <div class="checkbox">&#x2611;</div> Checkerboard Pattern &gt; Ctrl + drag <br>
 				Make sure Offset values all zeros
+			</td>
+		</tr>
+		<tr>
+			<td id="varian_cbct">Adaptive CBCT</td>
+			<td>
+				When scanning, <br>
+				* pitch = 0&deg; <br>
+				* roll = 0&deg; <br>
+				otherwise dose calculation cannot be done. <br>
+				According to myVarian, tolerance limit for image tilt is 0.005 in DICOM tag (0020,0037). <br>
+				
 			</td>
 		</tr>
 	</table>
