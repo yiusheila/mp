@@ -33,40 +33,6 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Open System Interconnect (OSI)</td>
-			<td>
-				<div style="text-align: center; width: 400px;">
-					7: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 30%">
-						Application
-					</div>
-					<br>
-					6:<div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 40%">
-						Presentation
-					</div>
-					<br>
-					5: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 50%">
-						Session
-					</div>
-					<br>
-					4: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 60%">
-						Transport
-					</div>
-					<br>
-					3: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 70%">
-						Network
-					</div>
-					<br>
-					2: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 80%">
-						Data Link
-					</div>
-					<br>
-					1: <div style="border: 1px solid white; display: inline-block; padding: 3px; margin: 6px; width: 90%">
-						Physical
-					</div>
-				</div>
-			</td>
-		</tr>
-		<tr>
 			<td>Nyquist Freqency</td>
 			<td>
 				&ensp;=&ensp;half of the sampling rate of discrete signal <br>
@@ -79,13 +45,13 @@
 		</tr>
 
 		<tr>
-			<td rowspan="2">DICOM</td>
+			<td rowspan="3">DICOM</td>
 			<td class="code">
 				# https://dicom.nema.org/dicom/2013/output/chtml/part10/chapter_7.html <br>
 				<div class="block" style="text-align: center;">
 					DICOM <br>
 					<div class="block" style="width: 90%;">DICOM File Meta Information</div> <br>
-					<div class="block" style="width: 90%;">DICOM Data Set</div>
+					<div class="block" style="width: 90%; margin-bottom: 6px;">DICOM Data Set</div><br>
 				</div> <br>
 				<br>
 				<b>(0002,0010) TransferSyntaxUID</b> <br>
@@ -103,10 +69,61 @@
 						UC(unlimited characters), UT(unlimited text), or PN(person name), 
 					</div>
 				</div> <br>
-				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="code">
+				<b>(0020,0032) Image Position (Patient)</b> <br>
 				<b>(0020,0037) Image Orientation (Patient)</b>
 				<div style="margin-left: 24px;">
-					# https://dicomiseasy.blogspot.com/2013/06/getting-oriented-using-image-plane.html
+					[1] https://dicomiseasy.blogspot.com/2013/06/getting-oriented-using-image-plane.html <br>
+					[2] https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html <br>
+					<br>
+					This pair together provide information of the tilting of the image <br>
+					<br>
+					Look for (0010,2210) Anatomical Orientation Type, <br>
+					&ensp;&rarr;&ensp; BIPED (or absent) &rarr; <div class="grp">
+						right&rarr;left (increasing x) <br>
+						ant&rarr;pos (increasing y) <br>
+						inf&rarr;sup (increasing z)
+					</div><br>
+					&ensp;&rarr;&ensp; QUADRUPED <br>
+					<br>
+					(0020,0032) Image Position Patient = <div class="grp">
+						in mm, <br>
+						x\y\z coordinate of the <div class="hl">upper left</div> corner pixel centre
+					</div>  <br>
+					<br>
+					(0020,0037) Image Orientation Patient = <div class="grp">
+						direction cosine <br>
+						X<sub>x</sub>\X<sub>y</sub>\X<sub>z</sub>\Y<sub>x</sub>\Y<sub>y</sub>\Y<sub>z</sub> <br>
+						X = row <br>
+						Y = column
+					</div> <br>
+					the row vector and column vector has to be orthogonal, i.e. dot product = 0 [2] <br>
+					<br>
+					To obtain the position of a pixel,
+					\[ \large \begin{bmatrix} P_x \\ P_y \\ P_z \\ 1 \end{bmatrix} = 
+						\begin{bmatrix}
+							X_x~\Delta i & Y_x~\Delta j & 0 & S_x \\
+							X_y~\Delta i & Y_y~\Delta j & 0 & S_y \\
+							X_z~\Delta i & Y_z~\Delta j & 0 & S_z \\
+							0 & 0 & 0 & 1 \\
+						\end{bmatrix}
+						\begin{bmatrix} i \\ j \\ 0 \\ 1 \end{bmatrix} 
+					\]
+					where <div class="grp">
+						<i>P<sub>xyz</sub></i> = coordinate of pixel (i,j)
+						i = column index, j = row index <br>
+						<i>X<sub>xyz</sub></i> = (0020,0037) Image Orientation Patient first 3 values: row direction cosine <br>
+						<i>Y<sub>xyz</sub></i> = (0020,0037) Image Orientation Patient last 3 values: column direction cosine <br>
+						<i>S<sub>xyz</sub></i> = (0020,0032) Image Position Patient <br>
+						<i>&Delta;i</i> and <i>&Delta;j</i> = (0028,0030) Pixel Spacing in mm
+					</div>
+					<br>
+					e.g. 
+					 <br>
 				</div>
 			</td>
 		</tr>
