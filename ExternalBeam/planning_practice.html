@@ -359,10 +359,14 @@
 						System: (version)_Clinical <br>
 						&ensp; &gt;&ensp; RayStation Planning <br>
 						&ensp; &gt;&ensp; Open/Import new patient <br>
-						&ensp; &gt;&ensp; Scripting &ensp;>&ensp; "Retrieve Study ID"
 					</li>
 					<br>
 					Before Optimisation
+					<li>Patient data management <br>
+						&ensp;&gt;&ensp; Scripting &ensp;&gt;&ensp; "Retrieve Study ID" <br>
+						&ensp;&gt;&ensp; Export properties &ensp;&gt;&ensp; Treatment machine name: Alias: (LA8/LA9)
+					</li>
+					br
 					<li>Patient modeling <br>
 						&ensp;>&ensp; ROI 
 							<div style="display: inline-block; vertical-align: top;">
@@ -1550,7 +1554,35 @@
 				* roll = 0&deg; <br>
 				otherwise dose calculation cannot be done. <br>
 				According to myVarian, tolerance limit for image tilt is 0.005 in DICOM tag (0020,0037). <br>
-				
+				<br>
+				<ol>
+					<li>Add couch (according to iso-couch distance from planning CT) <br>
+						if [Image axis orientation is not supported]: <br>
+						<div style="margin-left: 24px;">
+							export CBCT and planning CT to Velocity <br>
+							(Velocity) <br>
+							<div style="margin-left: 24px;">
+								Import <br>
+								Set primary = planning CT, secondary = CBCT <br>
+								Press third button on the left panel <br>
+								Select Rigid &gt; Set ROI &gt; press start auto registration <br>
+								Back to second button &gt; right click CBCT &gt; resample <br>
+								Export resampled CBCT
+							</div>
+							<br>
+							(Eclipse) <br>
+							<div style="margin-left: 24px;">
+								Import resampled CBCT <br>
+								In External Beam &gt; right click series &gt; properties &gt; add CT curve @ Image device <br>
+								Add couch
+							</div>
+						</div>
+					</li>
+					<li>Modify BODY</li>
+					<li>Copy plan</li>
+					<li>Assign structure set </li>
+					<li>Use the default x,y,z for tx iso</li>
+				</ol>
 			</td>
 		</tr>
 	</table>
