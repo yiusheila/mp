@@ -113,7 +113,7 @@ ul li::before {
 }
 
 /* ----------- DIV ----------- */
-.hl, .hl2, .hl3 {
+.hl, .hl2, .hl3, .hl4 {
 	display: inline;
 	margin: 0px;
 	padding: 0px;
@@ -131,6 +131,10 @@ ul li::before {
 
 .hl3 {
 	background-color: rgba(170, 0, 0, 0.3);
+}
+
+.hl4 {
+	background-color: rgba(0, 170, 200, 0.5);
 }
 
 .block {
