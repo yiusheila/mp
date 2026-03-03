@@ -583,6 +583,7 @@
 
 					<br>
 					Before Approve
+					
 					<li>Plan design &ensp;>&ensp; Beams &ensp;>&ensp; Edit <br>
 						&ensp;>&ensp; Isocenter &ensp;>&ensp; Edit <br>
 						&ensp;>&ensp; Name &ensp;=&ensp; RxISO <br>
@@ -590,7 +591,10 @@
 					</li>
 					<br>
 					Approve 
+
 					<li>Plan evaluation &ensp;>&ensp; Approve plan &ensp;>&ensp; Approve plan  </li>
+					<div style="border: 1px solid white;">
+					(Mosaiq) <br>
 					<li>Hide CT Origin</li>
 					<li>Patient data management &ensp;>&ensp; Export <br>
 						&ensp;>&ensp; RT plan <br>
@@ -626,7 +630,34 @@
 							Print Report on pink paper
 						</div>
 					 </li>
+					</div>
+					<div style="border: 1px solid white; border-top: 0px; padding: 6px;">
+						<div class="hl4">(ARIA)</div> <br>
+						11. &emsp; Export approved <div class="button">Plan</div>, <div class="button">Dose</div>, <div class="button">Structure Set</div> <br>
+						<br>
+						12a.&emsp;Import <div class="button">Structure Set</div> <br>
+						12b.&emsp;Right click CT Origin POI &rarr; Move Viewing Planes to Structure <br>
+						12c.&emsp;Right click User Origin &rarr; Set User Origin &rarr; Viewing plan intersection <br>
+						<br>
+						13a.&emsp;Create new course (e.g. C1_RAYS_RA) <br>
+						13b.&emsp;Import <div class="button">Plan</div>, <div class="button">Dose</div> <br>
+						13c.&emsp;Create set up fields and DRRs <br>
+						<div style="margin-left: 36px;">
+							Field ID &emsp;| Gantry | Field X | Field Y<br> 
+							SU &emsp;&emsp;&emsp; |  0&deg; &emsp;&emsp; | 30 cm &ensp; | 30 cm <br>
+							Ant ISO &emsp;| 0&deg; &emsp;&emsp; | 18 cm &ensp; | 18 cm <br>
+							Rt Lat ISO | 270&deg; &emsp; | 18 cm &ensp; | 18 cm <br>
+							<br>
+							Edit DRR &rarr; <div class="hl2">Bone.dps</div> &rarr; Apply
+						</div>
+						13d.&emsp;(Raystation) For each field &rarr; <div class="hl2">Del.time [sec] * 1.5 / 60</div> <br>
+						13e.&emsp;<div class="hl2">Treatment Parameters</div> &rarr; Enter for each field the <div class="hl2">Time [min]</div>  <br>
+						13f.&emsp;Treatment Parameters &rarr; Clear all <div class="hl2">Planned SSD [cm]</div> <br>
+						13g.&emsp;Enter set up info in plan comment <br>
+
+					</div>
 					 <br>
+					Print Documents <br>
 					<li>Visualization &ensp;>&ensp; Default &ensp;>&ensp; Apply clinic defaults</li>
 					<li>Plan optimization &ensp;>&ensp; (right click) Colorbar &ensp;>&ensp; Select template: Routine </li>
 					 <li>Patient data management &ensp;>&ensp; Create plan report &ensp;>&ensp; Template: VMAT Plan Report V(n) &ensp;>&ensp; Create report</li>
@@ -651,6 +682,8 @@
 					 	&ensp;>&ensp; Isodose line <br>
 					 	&ensp;>&ensp; Viewing plan at CT Origin
 					 </li>
+					 <br>
+					 <div style="border: 1px solid white;">
 					 <li>
 					 	Documents <br>
 					 	<ol>
@@ -664,6 +697,7 @@
 					 		<li>Radiation Treatment Record</li>
 					 	</ol>
 					 </li>
+					 </div>
 					<br>
 					Generate QA <br>
 					(If QA before approval, copy a plan out)
