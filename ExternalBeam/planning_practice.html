@@ -633,14 +633,14 @@
 					</div>
 					<div style="border: 1px solid white; border-top: 0px; padding: 6px;">
 						<div class="hl4">(ARIA)</div> <br>
-						11. &emsp; Export approved <div class="button">Plan</div>, <div class="button">Dose</div>, <div class="button">Structure Set</div> <br>
+						11. &emsp; Export <div class="button">Approved Plan</div>, <div class="button">Approved Dose</div>, <div class="button">Approved Structure Set</div> <br>
 						<br>
-						12a.&emsp;Import <div class="button">Structure Set</div> <br>
+						12a.&emsp;Import <div class="button">Approved Structure Set</div> <br>
 						12b.&emsp;Right click CT Origin POI &rarr; Move Viewing Planes to Structure <br>
 						12c.&emsp;Right click User Origin &rarr; Set User Origin &rarr; Viewing plan intersection <br>
 						<br>
 						13a.&emsp;Create new course (e.g. C1_RAYS_RA) <br>
-						13b.&emsp;Import <div class="button">Plan</div>, <div class="button">Dose</div> <br>
+						13b.&emsp;Import <div class="button">Approved Plan</div>, <div class="button">Approved Dose</div> <br>
 						13c.&emsp;Create set up fields and DRRs <br>
 						<div style="margin-left: 36px;">
 							Field ID &emsp;| Gantry | Field X | Field Y<br> 
@@ -651,13 +651,14 @@
 							Edit DRR &rarr; <div class="hl2">Bone.dps</div> &rarr; Apply
 						</div>
 						13d.&emsp;(Raystation) For each field &rarr; <div class="hl2">Del.time [sec] * 1.5 / 60</div> <br>
-						13e.&emsp;<div class="hl2">Treatment Parameters</div> &rarr; Enter for each field the <div class="hl2">Time [min]</div>  <br>
-						13f.&emsp;Treatment Parameters &rarr; Clear all <div class="hl2">Planned SSD [cm]</div> <br>
+						13e.&emsp;<div class="hl2">Plan Parameters</div> &rarr; Enter for each field the <div class="hl2">Time [min]</div>  <br>
+						13f.&emsp;Plan Parameters &rarr; Clear all <div class="hl2">Planned SSD [cm]</div> <br>
 						13g.&emsp;Enter set up info in plan comment <br>
-
 					</div>
 					 <br>
 					Print Documents <br>
+					<div style="border: 1px solid white;">
+					(Raystation)
 					<li>Visualization &ensp;>&ensp; Default &ensp;>&ensp; Apply clinic defaults</li>
 					<li>Plan optimization &ensp;>&ensp; (right click) Colorbar &ensp;>&ensp; Select template: Routine </li>
 					 <li>Patient data management &ensp;>&ensp; Create plan report &ensp;>&ensp; Template: VMAT Plan Report V(n) &ensp;>&ensp; Create report</li>
@@ -682,6 +683,13 @@
 					 	&ensp;>&ensp; Isodose line <br>
 					 	&ensp;>&ensp; Viewing plan at CT Origin
 					 </li>
+					 </div>
+					 <div style="border: 1px solid white; border-top: 0px; padding: 6px;">
+					 	<div class="hl4">(Eclipse)</div> <br>
+					 	14. &emsp; Add Isodose Level <br>
+					 	15. &emsp; Add HL + ML <br>
+					 	16. &emsp; Print ISO
+					 </div>
 					 <br>
 					 <div style="border: 1px solid white;">
 					 <li>
